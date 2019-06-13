@@ -38,7 +38,21 @@ const prompt = inquirer.createPromptModule();
 prompt(cliCommand).then(answers => {
   switch (answers.installation) {
     case "create-react-app":
-      cmd.run("npm i -g create-react-app");
+      prompt(reactComponents).then(({ decision }) => {
+        if (decision === "Install") {
+          cmd.get("npm i -g create-react-app", function(err, data, stderr) {
+            console.log(data);
+          });
+        } else if (decision === "Uninstall") {
+          cmd.get("npm uninstall -g create-react-app", function(
+            err,
+            data,
+            stderr
+          ) {
+            console.log(data);
+          });
+        }
+      });
       break;
     case "react-component":
       prompt(reactComponents).then(answer => console.log(answer));
@@ -53,7 +67,7 @@ prompt(cliCommand).then(answers => {
           ) {
             console.log(data);
           });
-        } else {
+        } else if (decision === "Uninstall") {
           cmd.get("npm uninstall react-router react-router-dom", function(
             err,
             data,
@@ -70,7 +84,7 @@ prompt(cliCommand).then(answers => {
           cmd.get("npm i node-sass", function(err, data, stderr) {
             console.log(data);
           });
-        } else {
+        } else if (decision === "Uninstall") {
           cmd.get("npm uninstall node-sass", function(err, data, stderr) {
             console.log(data);
           });
