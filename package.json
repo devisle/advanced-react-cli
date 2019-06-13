@@ -2,14 +2,21 @@
   "name": "advanced-react-cli",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "cli.js",
   "scripts": {
-    "react-cli": "node index.js"
+    "react-cli": "node index.js",
+    "patch-release": "npm version patch && npm publish && git push --follow-tags",
+    "minor-release": "npm version minor && npm publish && git push --follow-tags",
+    "major-release": "npm version major && npm publish && git push --follow-tags"
+  },
+  "bin": {
+    "arc": "./cli.js"
   },
   "author": "Dev Isle",
   "license": "MIT",
   "dependencies": {
     "inquirer": "^6.3.1",
-    "node-cmd": "^3.0.0"
+    "node-cmd": "^3.0.0",
+    "node-sass": "^4.12.0"
   }
 }
