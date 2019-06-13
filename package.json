@@ -6,7 +6,7 @@
   "scripts": {
     "react-cli": "node index.js"
   },
-  "author": "Shreyas Balachandran",
+  "author": "Dev Isle",
   "license": "MIT",
   "dependencies": {
     "inquirer": "^6.3.1",
