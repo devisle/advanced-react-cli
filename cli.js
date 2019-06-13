@@ -1,3 +1,10 @@
+#!/usr/bin/env node
+
+const [...args] = process.argv;
+
+console.log(`folder name ${args[2]}`);
+console.log(`folder location ${args[3]}`);
+
 const inquirer = require("inquirer");
 const cmd = require("node-cmd");
 
