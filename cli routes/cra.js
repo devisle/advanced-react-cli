@@ -1,18 +1,18 @@
 const inquirer = require("inquirer");
 const cmd = require("node-cmd");
 
-//Cli Model
+// Cli Model
 const cliModel = require("../cli model/cli-model");
 const installOption = cliModel.installOption;
 const addPackage = cliModel.addPackage;
 const installFolder = cliModel.installFolder;
 
-//Cli Install Commands
+// Cli Install Commands
 const installCommands = require("../cli model/install-commands");
 
 const prompt = inquirer.createPromptModule();
 
-//Original Code block
+// Original Code block
 // const cra = () => {
 //   prompt(installOption).then(({ decision }) => {
 //     if (decision === "Install") {
