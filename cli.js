@@ -12,6 +12,11 @@ console.log(cwd);
 const inquirer = require("inquirer");
 const cmd = require("node-cmd");
 
+const cra = require("./cli routes/cra");
+const reactRouter = require("./cli routes/reactroute.js");
+
+// console.log(cra);
+
 const cliCommand = [
   {
     type: "list",
@@ -58,45 +63,13 @@ const prompt = inquirer.createPromptModule();
 prompt(cliCommand).then(answers => {
   switch (answers.installation) {
     case "create-react-app":
-      prompt(reactComponents).then(({ decision }) => {
-        if (decision === "Install") {
-          cmd.get("npm i -g create-react-app", function(err, data, stderr) {
-            console.log(data);
-          });
-        } else if (decision === "Uninstall") {
-          cmd.get("npm uninstall -g create-react-app", function(
-            err,
-            data,
-            stderr
-          ) {
-            console.log(data);
-          });
-        }
-      });
+      cra();
       break;
     case "react-component":
       prompt(reactComponents).then(answer => console.log(answer));
       break;
     case "react-router":
-      prompt(installOption).then(({ decision }) => {
-        if (decision === "Install") {
-          cmd.get("npm i react-router react-router-dom", function(
-            err,
-            data,
-            stderr
-          ) {
-            console.log(data);
-          });
-        } else if (decision === "Uninstall") {
-          cmd.get("npm uninstall react-router react-router-dom", function(
-            err,
-            data,
-            stderr
-          ) {
-            console.log(data);
-          });
-        }
-      });
+      reactRouter();
       break;
     case "node-sass":
       prompt(installOption).then(({ decision }) => {
