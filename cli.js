@@ -35,6 +35,15 @@ const installOption = [
   }
 ];
 
+const installFolder = [
+  {
+    type: "input",
+    name: "destination",
+    message:
+      "Please input the name of the folder you would like to create for your project?"
+  }
+];
+
 const reactComponents = [
   {
     type: "list",
