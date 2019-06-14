@@ -12,52 +12,15 @@ console.log(cwd);
 const inquirer = require("inquirer");
 const cmd = require("node-cmd");
 
+//Cli Model
+const cliModel = require("./cli model/cli-model");
+const cliCommand = cliModel.cliCommand;
+const reactComponents = cliModel.reactComponents;
+
+//Cli Routes
 const cra = require("./cli routes/cra");
 const reactRouter = require("./cli routes/reactroute.js");
 const nodeSass = require("./cli routes/nodeSass");
-
-// console.log(cra);
-
-const cliCommand = [
-  {
-    type: "list",
-    name: "installation",
-    message: "What would you like to install?",
-    choices: [
-      "create-react-app",
-      "react-component",
-      "react-router",
-      "node-sass"
-    ]
-  }
-];
-
-const installOption = [
-  {
-    type: "list",
-    name: "decision",
-    message: "Would you like to Install or Uninstall?",
-    choices: ["Install", "Uninstall"]
-  }
-];
-
-const installFolder = [
-  {
-    type: "input",
-    name: "destination",
-    message:
-      "Please input the name of the folder you would like to create for your project?"
-  }
-];
-
-const reactComponents = [
-  {
-    type: "list",
-    name: "component",
-    message: "Function or Class Component?",
-    choices: ["function", "class"]
-  }
-];
 
 const prompt = inquirer.createPromptModule();
 

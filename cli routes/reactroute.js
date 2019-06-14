@@ -1,16 +1,10 @@
 const inquirer = require("inquirer");
 const cmd = require("node-cmd");
 
-const installOption = [
-  {
-    type: "list",
-    name: "decision",
-    message: "Would you like to Install or Uninstall?",
-    choices: ["Install", "Uninstall"]
-  }
-];
+const cliModel = require("../cli model/cli-model");
 
 const prompt = inquirer.createPromptModule();
+const installOption = cliModel.installOption;
 
 const reactRouter = () => {
   prompt(installOption).then(({ decision }) => {
