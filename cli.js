@@ -14,6 +14,7 @@ const cmd = require("node-cmd");
 
 const cra = require("./cli routes/cra");
 const reactRouter = require("./cli routes/reactroute.js");
+const nodeSass = require("./cli routes/nodeSass");
 
 // console.log(cra);
 
@@ -72,16 +73,6 @@ prompt(cliCommand).then(answers => {
       reactRouter();
       break;
     case "node-sass":
-      prompt(installOption).then(({ decision }) => {
-        if (decision === "Install") {
-          cmd.get("npm i node-sass", function(err, data, stderr) {
-            console.log(data);
-          });
-        } else if (decision === "Uninstall") {
-          cmd.get("npm uninstall node-sass", function(err, data, stderr) {
-            console.log(data);
-          });
-        }
-      });
+      nodeSass();
   }
 });
