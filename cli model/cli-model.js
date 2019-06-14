@@ -21,10 +21,18 @@ module.exports.installOption = [
   }
 ];
 
+module.exports.addPackage = [
+  {
+    type: "input",
+    name: "packageAdd",
+    message: `Would you like to add ? (y/n)`
+  }
+];
+
 module.exports.installFolder = [
   {
     type: "input",
-    name: "destination",
+    name: "folderName",
     message:
       "Please input the name of the folder you would like to create for your project?"
   }
