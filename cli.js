@@ -5,19 +5,19 @@ const [...args] = process.argv;
 console.log(`folder name ${args[2]}`);
 console.log(`folder location ${args[3]}`);
 
-//Current working directory
+// Current working directory
 const cwd = process.cwd();
 console.log(cwd);
 
 const inquirer = require("inquirer");
 const cmd = require("node-cmd");
 
-//Cli Model
+// Cli Model
 const cliModel = require("./cli model/cli-model");
 const cliCommand = cliModel.cliCommand;
 const reactComponents = cliModel.reactComponents;
 
-//Cli Routes
+// Cli Routes
 const cra = require("./cli routes/cra");
 const reactRouter = require("./cli routes/reactroute.js");
 const nodeSass = require("./cli routes/nodeSass");

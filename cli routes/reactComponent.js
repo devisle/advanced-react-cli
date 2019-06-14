@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const cmd = require("node-cmd");
 
-//Cli Model
+// Cli Model
 const cliModel = require("../cli model/cli-model");
 const reactComponents = cliModel.reactComponents;
 

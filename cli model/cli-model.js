@@ -25,7 +25,7 @@ module.exports.addPackage = [
   {
     type: "input",
     name: "packageAdd",
-    message: `Would you like to add ? (y/n)`
+    message: `Would you like to add a package? (y/n)`
   }
 ];
 
