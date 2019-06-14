@@ -1,19 +1,10 @@
 const inquirer = require("inquirer");
 const cmd = require("node-cmd");
 
+const cliModel = require("../cli model/cli-model");
+
 const prompt = inquirer.createPromptModule();
-
-const installOption = [
-  {
-    type: "list",
-    name: "decision",
-    message: "Would you like to Install or Uninstall?",
-    choices: ["Install", "Uninstall"]
-  }
-];
-
-const { installOption } = require("../cli model/cli-model");
-console.log(installOption);
+const installOption = cliModel.installOption;
 
 const nodeSass = () => {
   prompt(installOption).then(({ decision }) => {
