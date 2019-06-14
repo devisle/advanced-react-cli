@@ -1,4 +1,4 @@
-const cliCommand = [
+module.exports.cliCommand = [
   {
     type: "list",
     name: "installation",
@@ -12,7 +12,7 @@ const cliCommand = [
   }
 ];
 
-const installOption = [
+module.exports.installOption = [
   {
     type: "list",
     name: "decision",
@@ -21,7 +21,7 @@ const installOption = [
   }
 ];
 
-const installFolder = [
+module.exports.installFolder = [
   {
     type: "input",
     name: "destination",
@@ -30,7 +30,7 @@ const installFolder = [
   }
 ];
 
-const reactComponents = [
+module.exports.reactComponents = [
   {
     type: "list",
     name: "component",
@@ -38,8 +38,3 @@ const reactComponents = [
     choices: ["function", "class"]
   }
 ];
-
-module.exports = cliCommand;
-module.exports = installOption;
-module.exports = installFolder;
-module.exports = reactComponents;

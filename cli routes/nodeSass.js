@@ -12,6 +12,9 @@ const installOption = [
   }
 ];
 
+const { installOption } = require("../cli model/cli-model");
+console.log(installOption);
+
 const nodeSass = () => {
   prompt(installOption).then(({ decision }) => {
     if (decision === "Install") {
