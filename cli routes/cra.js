@@ -62,7 +62,7 @@ const cra = () => {
               });
             } else if (packageAdd === "n" || packageAdd === "N") {
               console.log("Node Sass");
-              prompt(installOption).then(({ packageAdd }) => {
+              prompt(addPackage).then(({ packageAdd }) => {
                 if (packageAdd === "y" || packageAdd === "Y") {
                   cmd.get(
                     `${installCommands.cra} ${folderName}`,
