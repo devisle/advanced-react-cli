@@ -32,8 +32,10 @@ const cra = () => {
     if (decision === "Install") {
       prompt(installFolder).then(({ folderName }) => {
         if (folderName !== "") {
+          console.log("React Router");
           prompt(addPackage).then(({ packageAdd }) => {
             if (packageAdd === "y" || packageAdd === "Y") {
+              console.log("Node Sass");
               prompt(addPackage).then(({ packageAdd }) => {
                 if (packageAdd === "y" || packageAdd === "Y") {
                   cmd.get(
@@ -59,6 +61,7 @@ const cra = () => {
                 }
               });
             } else if (packageAdd === "n" || packageAdd === "N") {
+              console.log("Node Sass");
               prompt(installOption).then(({ packageAdd }) => {
                 if (packageAdd === "y" || packageAdd === "Y") {
                   cmd.get(
