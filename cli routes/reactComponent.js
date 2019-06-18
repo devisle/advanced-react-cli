@@ -15,16 +15,62 @@ const reactComponent = () => {
     prompt(componentName).then(({ componentName }) => {
       prompt(installFolder).then(({ folderName }) => {
         if (component === "function") {
-          if (folderName === ".") {
+          if (folderName === "." || folderName === "") {
             const writeStream = fs.createWriteStream(`./${componentName}.js`);
-            writeStream.write(`import React, {Component} from "react";
-
+            writeStream.write(`import Reactfrom "react";
 
 const ${componentName} = () => {
 return <div />;
 };
 
 export default ${componentName};`);
+          } else {
+            const writeStream = fs.createWriteStream(
+              `./${folderName}/${componentName}.js`
+            );
+            writeStream.write(`import React from "react";
+
+const ${componentName} = () => {
+return <div />;
+};
+
+export default ${componentName};`);
+          }
+        } else if (component === "class") {
+          if (folderName === "." || folderName === "") {
+            const writeStream = fs.createWriteStream(`./${componentName}.js`);
+            writeStream.write(`import React, { Component } from 'react'
+
+class ${componentName} extends Component {
+  render() {
+    return (
+      <div>
+        // Class Component
+      </div>
+    )
+  }
+}
+
+export default ${componentName};
+            `);
+          } else {
+            const writeStream = fs.createWriteStream(
+              `./${folderName}/${componentName}.js`
+            );
+            writeStream.write(`import React, { Component } from 'react'
+
+class ${componentName} extends Component {
+  render() {
+    return (
+      <div>
+        // Class Component
+      </div>
+    )
+  }
+}
+
+export default ${componentName};
+            `);
           }
         }
       });
