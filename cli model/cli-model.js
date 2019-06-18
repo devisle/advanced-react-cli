@@ -34,7 +34,16 @@ module.exports.installFolder = [
     type: "input",
     name: "folderName",
     message:
-      "Please input the name of the folder you would like to create for your project?"
+      "Please input the name of the folder you would like to create for your project? (Enter a . if for current directory)"
+  }
+];
+
+module.exports.componentName = [
+  {
+    type: "input",
+    name: "componentName",
+    message:
+      "Please enter the file name of the component you would like to create: "
   }
 ];
 

@@ -21,6 +21,7 @@ const reactComponents = cliModel.reactComponents;
 const cra = require("./cli routes/cra");
 const reactRouter = require("./cli routes/reactroute.js");
 const nodeSass = require("./cli routes/nodeSass");
+const reactComponent = require("./cli routes/reactComponent");
 
 const prompt = inquirer.createPromptModule();
 
@@ -30,7 +31,7 @@ prompt(cliCommand).then(answers => {
       cra();
       break;
     case "react-component":
-      prompt(reactComponents).then(answer => console.log(answer));
+      reactComponent();
       break;
     case "react-router":
       reactRouter();
