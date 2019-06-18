@@ -25,6 +25,9 @@ return <div />;
 
 export default ${componentName};`);
           } else {
+            fs.mkdir(`./${folderName}`, { recursive: false }, err => {
+              if (err) throw err;
+            });
             const writeStream = fs.createWriteStream(
               `./${folderName}/${componentName}.js`
             );
@@ -54,6 +57,9 @@ class ${componentName} extends Component {
 export default ${componentName};
             `);
           } else {
+            fs.mkdir(`./${folderName}`, { recursive: false }, err => {
+              if (err) throw err;
+            });
             const writeStream = fs.createWriteStream(
               `./${folderName}/${componentName}.js`
             );
