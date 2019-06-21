@@ -17,7 +17,7 @@ const stateManagement = () => {
       fs.mkdir("./store", err => {
         if (err) throw err;
       });
-      fs.cmd.get(`cd store && touch store.js`);
+      cmd.get(`cd store && touch store.js`);
       const writeStream = fs.createWriteStream("./store/store.js");
       writeStream.write(`import { createStore} from "redux";
 
@@ -37,11 +37,13 @@ const reducer = (state = initialState, action) => {
   }
 }
 
-// Add the below code within these comment blocks, to your respective files where you would like to have redux
+// Add the below code within these comment blocks,
+//to your respective files where you would like to have redux
 
 const mapStateToProps = state => {
   return {
-    //Write your code here which connects the state of this component, to the Redux Store you have passed as props.
+    //Write your code here which connects the state of this component,
+    //to the Redux Store you have passed as props.
   };
 };
 
@@ -53,16 +55,16 @@ const mapDispatchToProps = dispatch => {
 };
 
 
-//
+// End
 
-// Creating the store
+
+
+// Create the store
 const store = createStore(reducer);
 
 //Exporting the Store
 export default store;
-
-
-      `);
+`);
     }
   });
 };
