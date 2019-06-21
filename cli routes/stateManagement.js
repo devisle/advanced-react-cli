@@ -19,8 +19,7 @@ const stateManagement = () => {
       });
       cmd.get(`cd store && touch store.js`);
       const writeStream = fs.createWriteStream("./store/store.js");
-      writeStream.write(`import { createStore} from "redux";
-
+      writeStream.write(`import { createStore } from "redux";
 
 const initialState = {
   // Declare your state here
@@ -47,17 +46,12 @@ const mapStateToProps = state => {
   };
 };
 
-
 const mapDispatchToProps = dispatch => {
   return {
     //Write your code here which dispatches information to your reducer
   };
 };
-
-
 // End
-
-
 
 // Create the store
 const store = createStore(reducer);
