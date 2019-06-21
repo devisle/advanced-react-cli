@@ -65,6 +65,7 @@ const store = createStore(reducer);
 //Exporting the Store
 export default store;
 `);
+      console.log("Redux Store has been created successfully!");
     }
   });
 };
