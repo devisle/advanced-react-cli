@@ -21,6 +21,8 @@ module.exports.installOption = [
   }
 ];
 
+// Add new package Yes/No
+
 module.exports.addPackage = [
   {
     type: "input",
@@ -28,6 +30,8 @@ module.exports.addPackage = [
     message: `Would you like to add a package? (y/n)`
   }
 ];
+
+// Input name for Install Folder
 
 module.exports.installFolder = [
   {
@@ -38,6 +42,8 @@ module.exports.installFolder = [
   }
 ];
 
+// Input name when creating new components for React project
+
 module.exports.componentName = [
   {
     type: "input",
@@ -46,6 +52,8 @@ module.exports.componentName = [
       "Please enter the file name of the component you would like to create: "
   }
 ];
+
+// React Components selection: Functional/Class
 
 module.exports.reactComponents = [
   {
