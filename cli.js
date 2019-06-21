@@ -22,6 +22,7 @@ const cra = require("./cli routes/cra");
 const reactRouter = require("./cli routes/reactroute.js");
 const nodeSass = require("./cli routes/nodeSass");
 const reactComponent = require("./cli routes/reactComponent");
+const stateManagement = require("./cli routes/stateManagement");
 
 const prompt = inquirer.createPromptModule();
 
@@ -38,5 +39,8 @@ prompt(cliCommand).then(answers => {
       break;
     case "node-sass":
       nodeSass();
+      break;
+    case "state-management":
+      stateManagement();
   }
 });
