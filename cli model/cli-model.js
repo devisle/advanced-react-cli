@@ -8,8 +8,8 @@ module.exports.cliCommand = [
       "react-component",
       "react-router",
       "node-sass",
-      'type-checking',
-      'state-management'
+      "type-checking",
+      "state-management"
     ]
   }
 ];
@@ -66,13 +66,13 @@ module.exports.reactComponents = [
   }
 ];
 
-
-// React State Management tools
+// React State Management tools: More options soon! ('Unstated', Easy-Peasy')
 module.exports.stateManagement = [
   {
-    type: 'list',
-    name: 'stateManagement',
-    message: "Please select the tool to add to your project for state management: ",
-    choices: ['Redux', 'Unstated', 'Easy-Peasy']
+    type: "list",
+    name: "state",
+    message:
+      "Please select the tool to add to your project for state management: ",
+    choices: ["Redux"]
   }
-]
+];
