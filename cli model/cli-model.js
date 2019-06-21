@@ -8,7 +8,7 @@ module.exports.cliCommand = [
       "react-component",
       "react-router",
       "node-sass",
-      "type-checking",
+      "prop-types",
       "state-management"
     ]
   }

@@ -19,9 +19,10 @@ const reactComponents = cliModel.reactComponents;
 
 // Cli Routes
 const cra = require("./cli routes/cra");
-const reactRouter = require("./cli routes/reactroute.js");
+const reactRouter = require("./cli routes/reactroute");
 const nodeSass = require("./cli routes/nodeSass");
 const reactComponent = require("./cli routes/reactComponent");
+const propTypes = require("./cli routes/propTypes");
 const stateManagement = require("./cli routes/stateManagement");
 
 const prompt = inquirer.createPromptModule();
@@ -40,7 +41,13 @@ prompt(cliCommand).then(answers => {
     case "node-sass":
       nodeSass();
       break;
+    case "prop-types":
+      propTypes();
+      break;
     case "state-management":
       stateManagement();
+      break;
+    default:
+      console.log("You must select an option!");
   }
 });
