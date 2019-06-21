@@ -7,7 +7,9 @@ module.exports.cliCommand = [
       "create-react-app",
       "react-component",
       "react-router",
-      "node-sass"
+      "node-sass",
+      'type-checking',
+      'state-management'
     ]
   }
 ];
@@ -63,3 +65,14 @@ module.exports.reactComponents = [
     choices: ["function", "class"]
   }
 ];
+
+
+// React State Management tools
+module.exports.stateManagement = [
+  {
+    type: 'list',
+    name: 'stateManagement',
+    message: "Please select the tool to add to your project for state management: ",
+    choices: ['Redux', 'Unstated', 'Easy-Peasy']
+  }
+]
