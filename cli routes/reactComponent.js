@@ -1,5 +1,4 @@
 const inquirer = require("inquirer");
-const cmd = require("node-cmd");
 const fs = require("fs");
 
 // Cli Model
@@ -24,6 +23,9 @@ const ${componentName} = () => {
 };
 
 export default ${componentName};`);
+            console.log(
+              `File Creation: Function component ${componentName} has been created successfully!`
+            );
           } else {
             fs.mkdir(`./${folderName}`, { recursive: false }, err => {
               if (err) throw err;
@@ -38,6 +40,9 @@ return <div />;
 };
 
 export default ${componentName};`);
+            console.log(
+              `File Creation: Function component ${component} in the folder ${folderName} has been created successfully!`
+            );
           }
         } else if (component === "class") {
           if (folderName === "." || folderName === "") {
@@ -56,6 +61,9 @@ class ${componentName} extends Component {
 
 export default ${componentName};
             `);
+            console.log(
+              `File Creation: Class component ${component} has been created successfully!`
+            );
           } else {
             fs.mkdir(`./${folderName}`, { recursive: false }, err => {
               if (err) throw err;
@@ -77,6 +85,9 @@ class ${componentName} extends Component {
 
 export default ${componentName};
             `);
+            console.log(
+              `File Creation: Function component ${component} in the folder ${folderName} has been created successfully!`
+            );
           }
         }
       });

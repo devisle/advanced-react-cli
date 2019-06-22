@@ -16,10 +16,12 @@ const propTypes = () => {
       cmd.get(`${propTypesObj.install}`, function(err, data, stderr) {
         console.log(data);
       });
+      console.log("Packages: prop-types has been installed successfully!");
     } else if (decision === "Uninstall") {
       cmd.get(`${propTypesObj.uninstall}`, function(err, data, stderr) {
         console.log(data);
       });
+      console.log("Packages: prop-types has been uninstalled successfully!");
     }
   });
 };

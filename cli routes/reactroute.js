@@ -16,10 +16,16 @@ const reactRouter = () => {
       cmd.get(`${reactRouterObj.install}`, function(err, data, stderr) {
         console.log(data);
       });
+      console.log(
+        "Packages: react-router & react-router-dom has been installed successfully!"
+      );
     } else if (decision === "Uninstall") {
       cmd.get(`${reactRouterObj.uninstall}`, function(err, data, stderr) {
         console.log(data);
       });
+      console.log(
+        "Packages: react-router & react-router-dom has been uninstalled successfully!"
+      );
     }
   });
 };
