@@ -5,10 +5,10 @@ const fs = require("fs");
 // Cli Model
 const cliModel = require("../cli model/cli-model");
 const installOption = cliModel.installOption;
+const stateOption = cliModel.stateManagement;
 
 // Cli Install Commands
 const { redux } = require("../cli model/install-commands");
-const stateOption = cliModel.stateManagement;
 
 const prompt = inquirer.createPromptModule();
 
