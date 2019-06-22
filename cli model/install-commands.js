@@ -1,18 +1,18 @@
 module.exports = {
   createReactApp: "npx create-react-app",
-  propTypes: {
+  propTypesObj: {
     install: "npm i prop-types",
     uninstall: "npm uninstall prop-types"
   },
-  reactRouter: {
+  reactRouterObj: {
     install: "npm i react-router react-router-dom",
     uninstall: "npm uninstall react-router react-router-dom"
   },
-  nodeSass: {
+  nodeSassObj: {
     install: "npm i node-sass",
     uninstall: "npm uninstall node-sass"
   },
-  redux: {
+  reduxObj: {
     install: "npm i redux react-redux",
     uninstall: "npm uninstall redux react-redux"
   }

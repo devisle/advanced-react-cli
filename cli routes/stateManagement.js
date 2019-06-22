@@ -8,7 +8,7 @@ const installOption = cliModel.installOption;
 const stateOption = cliModel.stateManagement;
 
 // Cli Install Commands
-const { redux } = require("../cli model/install-commands");
+const { reduxObj } = require("../cli model/install-commands");
 
 const prompt = inquirer.createPromptModule();
 
@@ -17,7 +17,7 @@ const stateManagement = () => {
     if (state === "Redux") {
       prompt(installOption).then(({ decision }) => {
         if (decision === "Install") {
-          cmd.get(`${redux.install}`);
+          cmd.get(`${reduxObj.install}`);
           fs.mkdir("./store", err => {
             if (err) throw err;
           });
@@ -68,7 +68,7 @@ export default store;
           );
           console.log("Redux Store has been created successfully!");
         } else if (decision === "Uninstall") {
-          cmd.get(`${redux.uninstall}`);
+          cmd.get(`${reduxObj.uninstall}`);
           console.log(
             "Packages: redux & react-redux has been uninstalled successfully!"
           );
