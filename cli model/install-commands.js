@@ -1,5 +1,5 @@
 module.exports = {
-  cra: "npx create-react-app",
+  createReactApp: "npx create-react-app",
   propTypes: {
     install: "npm i prop-types",
     uninstall: "npm uninstall prop-types"

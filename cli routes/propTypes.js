@@ -5,6 +5,9 @@ const cmd = require("node-cmd");
 const cliModel = require("../cli model/cli-model");
 const installOption = cliModel.installOption;
 
+// Install Commands
+const {} = require("../cli model/install-commands");
+
 const prompt = inquirer.createPromptModule();
 
 const propTypes = () => {

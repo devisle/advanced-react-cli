@@ -4,6 +4,7 @@ const fs = require("fs");
 
 // Cli Model
 const cliModel = require("../cli model/cli-model");
+const installOption = cliModel.installOption;
 
 // Cli Install Commands
 const { redux } = require("../cli model/install-commands");
@@ -14,13 +15,15 @@ const prompt = inquirer.createPromptModule();
 const stateManagement = () => {
   prompt(stateOption).then(({ state }) => {
     if (state === "Redux") {
-      cmd.get(`${redux}`);
-      fs.mkdir("./store", err => {
-        if (err) throw err;
-      });
-      cmd.get(`cd store && touch store.js`);
-      const writeStream = fs.createWriteStream("./store/store.js");
-      writeStream.write(`import { createStore } from "redux";
+      prompt(installOption).then(({ decision }) => {
+        if (decision === "Install") {
+          cmd.get(`${redux.install}`);
+          fs.mkdir("./store", err => {
+            if (err) throw err;
+          });
+          cmd.get(`cd store && touch store.js`);
+          const writeStream = fs.createWriteStream("./store/store.js");
+          writeStream.write(`import { createStore } from "redux";
 
 const initialState = {
   // Declare your state here
@@ -60,10 +63,17 @@ const store = createStore(reducer);
 //Exporting the Store
 export default store;
 `);
-      console.log(
-        "Packages: redux & react-redux has been installed successfully!"
-      );
-      console.log("Redux Store has been created successfully!");
+          console.log(
+            "Packages: redux & react-redux has been installed successfully!"
+          );
+          console.log("Redux Store has been created successfully!");
+        } else if (decision === "Uninstall") {
+          cmd.get(`${redux.uninstall}`);
+          console.log(
+            "Packages: redux & react-redux has been uninstalled successfully!"
+          );
+        }
+      });
     }
   });
 };
