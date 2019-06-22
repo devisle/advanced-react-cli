@@ -41,23 +41,22 @@ return <div />;
 
 export default ${componentName};`);
             console.log(
-              `File Creation: Function component ${component} in the folder ${folderName} has been created successfully!`
-            );
+              `File Creation: Function component ${component} in the folder ${folderName} has been created successfully!`);
           }
         } else if (component === "class") {
           if (folderName === "." || folderName === "") {
             const writeStream = fs.createWriteStream(`./${componentName}.js`);
             writeStream.write(`import React, { Component } from 'react'
 
-class ${componentName} extends Component {
-  render() {
-    return (
-      <div>
-        // Class Component
-      </div>
-    )
-  }
-}
+          class ${componentName} extends Component {
+            render() {
+              return (
+                <div>
+                  // Class Component
+                </div>
+              )
+            }
+          }
 
 export default ${componentName};
             `);
@@ -73,21 +72,20 @@ export default ${componentName};
             );
             writeStream.write(`import React, { Component } from 'react'
 
-class ${componentName} extends Component {
-  render() {
-    return (
-      <div>
-        // Class Component
-      </div>
-    )
-  }
-}
+            class ${componentName} extends Component {
+              render() {
+                return (
+                  <div>
+                    // Class Component
+                  </div>
+                )
+              }
+            }
 
 export default ${componentName};
             `);
             console.log(
-              `File Creation: Function component ${component} in the folder ${folderName} has been created successfully!`
-            );
+              `File Creation: Function component ${component} in the folder ${folderName} has been created successfully!`);
           }
         }
       });
