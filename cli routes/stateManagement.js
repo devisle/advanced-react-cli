@@ -6,7 +6,7 @@ const fs = require("fs");
 const cliModel = require("../cli model/cli-model");
 
 // Cli Install Commands
-const installCommands = require("../cli model/install-commands");
+const { redux } = require("../cli model/install-commands");
 const stateOption = cliModel.stateManagement;
 
 const prompt = inquirer.createPromptModule();
@@ -14,6 +14,7 @@ const prompt = inquirer.createPromptModule();
 const stateManagement = () => {
   prompt(stateOption).then(({ state }) => {
     if (state === "Redux") {
+      cmd.get(`${redux}`);
       fs.mkdir("./store", err => {
         if (err) throw err;
       });
@@ -59,6 +60,9 @@ const store = createStore(reducer);
 //Exporting the Store
 export default store;
 `);
+      console.log(
+        "Packages: redux & react-redux has been installed successfully!"
+      );
       console.log("Redux Store has been created successfully!");
     }
   });

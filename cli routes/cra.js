@@ -7,7 +7,7 @@ const addPackage = cliModel.addPackage;
 const installFolder = cliModel.installFolder;
 
 // Cli Install Commands
-const installCommands = require("../cli model/install-commands");
+const { cra, reactRouter, nodeSass } = require("../cli model/install-commands");
 
 const prompt = inquirer.createPromptModule();
 
@@ -21,18 +21,12 @@ const cra = () => {
           prompt(addPackage).then(({ packageAdd }) => {
             if (packageAdd === "y" || packageAdd === "Y") {
               cmd.get(
-                ` mkdir ${folderName} && cd ${folderName} && ${
-                  installCommands.cra
-                } . && ${installCommands.reactRouter} && ${
-                  installCommands.nodeSass
-                }`,
+                ` mkdir ${folderName} && cd ${folderName} && ${cra} . && ${reactRouter} && ${nodeSass}`,
                 (err, data, stderr) => console.log(data)
               );
             } else if (packageAdd === "n" || packageAdd === "N") {
               cmd.get(
-                ` mkdir ${folderName} && cd ${folderName} && ${
-                  installCommands.cra
-                } . && ${installCommands.reactRouter}`,
+                ` mkdir ${folderName} && cd ${folderName} && ${cra} . && ${reactRouter}`,
                 (err, data, stderr) => console.log(data)
               );
             }
@@ -42,16 +36,12 @@ const cra = () => {
           prompt(addPackage).then(({ packageAdd }) => {
             if (packageAdd === "y" || packageAdd === "Y") {
               cmd.get(
-                ` mkdir ${folderName} && cd ${folderName} && ${
-                  installCommands.cra
-                } . && ${installCommands.nodeSass}`,
+                ` mkdir ${folderName} && cd ${folderName} && ${cra} . && ${nodeSass}`,
                 (err, data, stderr) => console.log(data)
               );
             } else if (packageAdd === "n" || packageAdd === "N") {
               cmd.get(
-                ` mkdir ${folderName} && cd ${folderName} && ${
-                  installCommands.cra
-                } .`,
+                ` mkdir ${folderName} && cd ${folderName} && ${cra} .`,
                 (err, data, stderr) => console.log(data)
               );
             }
@@ -66,15 +56,12 @@ const cra = () => {
           prompt(addPackage).then(({ packageAdd }) => {
             if (packageAdd === "y" || packageAdd === "Y") {
               cmd.get(
-                ` ${installCommands.cra} . && ${
-                  installCommands.reactRouter
-                } && ${installCommands.nodeSass}`,
+                ` ${cra} . && ${reactRouter} && ${nodeSass}`,
                 (err, data, stderr) => console.log(data)
               );
             } else if (packageAdd === "n" || packageAdd === "N") {
-              cmd.get(
-                ` ${installCommands.cra} . && ${installCommands.reactRouter}`,
-                (err, data, stderr) => console.log(data)
+              cmd.get(` ${cra} . && ${reactRouter}`, (err, data, stderr) =>
+                console.log(data)
               );
             }
           });
@@ -82,14 +69,11 @@ const cra = () => {
           console.log("Node Sass");
           prompt(addPackage).then(({ packageAdd }) => {
             if (packageAdd === "y" || packageAdd === "Y") {
-              cmd.get(
-                ` ${installCommands.cra} . && ${installCommands.nodeSass}`,
-                (err, data, stderr) => console.log(data)
-              );
-            } else if (packageAdd === "n" || packageAdd === "N") {
-              cmd.get(` ${installCommands.cra} .`, (err, data, stderr) =>
+              cmd.get(` ${cra} . && ${nodeSass}`, (err, data, stderr) =>
                 console.log(data)
               );
+            } else if (packageAdd === "n" || packageAdd === "N") {
+              cmd.get(` ${cra} .`, (err, data, stderr) => console.log(data));
             }
           });
         }
