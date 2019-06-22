@@ -17,10 +17,10 @@ const reactComponent = () => {
         if (component === "function") {
           if (folderName === "." || folderName === "") {
             const writeStream = fs.createWriteStream(`./${componentName}.js`);
-            writeStream.write(`import Reactfrom "react";
+            writeStream.write(`import React from "react";
 
 const ${componentName} = () => {
-return <div />;
+  return ();
 };
 
 export default ${componentName};`);
