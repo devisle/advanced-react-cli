@@ -18,10 +18,10 @@ const prompt = inquirer.createPromptModule();
 const cra = () => {
   prompt(installFolder).then(({ folderName }) => {
     if (folderName !== "") {
-      console.log("React Router");
+      console.log("React-Router");
       prompt(addPackage).then(({ packageAdd }) => {
         if (packageAdd === "y" || packageAdd === "Y") {
-          console.log("Node Sass");
+          console.log("Node-Sass");
           prompt(addPackage).then(({ packageAdd }) => {
             if (packageAdd === "y" || packageAdd === "Y") {
               cmd.get(
@@ -40,7 +40,7 @@ const cra = () => {
             }
           });
         } else if (packageAdd === "n" || packageAdd === "N") {
-          console.log("Node Sass");
+          console.log("Node-Sass");
           prompt(addPackage).then(({ packageAdd }) => {
             if (packageAdd === "y" || packageAdd === "Y") {
               cmd.get(
@@ -59,10 +59,10 @@ const cra = () => {
         }
       });
     } else if (folderName === ".") {
-      console.log("React Router");
+      console.log("React-Router");
       prompt(addPackage).then(({ packageAdd }) => {
         if (packageAdd === "y" || packageAdd === "Y") {
-          console.log("Node Sass");
+          console.log("Node-Sass");
           prompt(addPackage).then(({ packageAdd }) => {
             if (packageAdd === "y" || packageAdd === "Y") {
               cmd.get(
@@ -79,7 +79,7 @@ const cra = () => {
             }
           });
         } else if (packageAdd === "n" || packageAdd === "N") {
-          console.log("Node Sass");
+          console.log("Node-Sass");
           prompt(addPackage).then(({ packageAdd }) => {
             if (packageAdd === "y" || packageAdd === "Y") {
               cmd.get(
@@ -96,7 +96,7 @@ const cra = () => {
       });
     } else {
       console.log(
-        "You must specify installation directory! (Enter a folder name, like 'my-app') "
+        "You must specify the installation directory! (Enter a folder name, e.g. 'my-app') "
       );
     }
   });

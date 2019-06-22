@@ -16,12 +16,12 @@ const nodeSass = () => {
       cmd.get(`${nodeSassObj.install}`, function(err, data, stderr) {
         console.log(data);
       });
-      console.log("Packages: node-sass has been installed successfully!");
+      console.log("Package: node-sass has been installed successfully!");
     } else if (decision === "Uninstall") {
       cmd.get(`${nodeSassObj.uninstall}`, function(err, data, stderr) {
         console.log(data);
       });
-      console.log("Packages: node-sass has been uninstalled successfully!");
+      console.log("Package: node-sass has been uninstalled successfully!");
     }
   });
 };

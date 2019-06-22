@@ -63,15 +63,11 @@ const store = createStore(reducer);
 //Exporting the Store
 export default store;
 `);
-          console.log(
-            "Packages: redux & react-redux has been installed successfully!"
-          );
+          console.log("Packages: redux & react-redux has been installed successfully!");
           console.log("Redux Store has been created successfully!");
         } else if (decision === "Uninstall") {
           cmd.get(`${reduxObj.uninstall}`);
-          console.log(
-            "Packages: redux & react-redux has been uninstalled successfully!"
-          );
+          console.log("Packages: redux & react-redux has been uninstalled successfully!");
         }
       });
     }
