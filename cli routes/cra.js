@@ -17,7 +17,7 @@ const prompt = inquirer.createPromptModule();
 
 const cra = () => {
   prompt(installFolder).then(({ folderName }) => {
-    if (folderName !== "") {
+    if (folderName.length > 1) {
       console.log("React-Router");
       prompt(addPackage).then(({ packageAdd }) => {
         if (packageAdd === "y" || packageAdd === "Y") {
@@ -96,7 +96,7 @@ const cra = () => {
       });
     } else {
       console.log(
-        "You must specify the installation directory! (Enter a folder name, e.g. 'my-app') "
+        "You must specify the installation directory! (Enter a folder name, e.g. 'my-app', Or Enter '.' to install in current directory) "
       );
     }
   });
