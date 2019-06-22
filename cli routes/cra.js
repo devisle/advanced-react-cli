@@ -21,12 +21,16 @@ const cra = () => {
           prompt(addPackage).then(({ packageAdd }) => {
             if (packageAdd === "y" || packageAdd === "Y") {
               cmd.get(
-                ` mkdir ${folderName} && cd ${folderName} && ${cra} . && ${reactRouter} && ${nodeSass}`,
+                ` mkdir ${folderName} && cd ${folderName} && ${cra} . && ${
+                  reactRouter.install
+                } && ${nodeSass.install}`,
                 (err, data, stderr) => console.log(data)
               );
             } else if (packageAdd === "n" || packageAdd === "N") {
               cmd.get(
-                ` mkdir ${folderName} && cd ${folderName} && ${cra} . && ${reactRouter}`,
+                ` mkdir ${folderName} && cd ${folderName} && ${cra} . && ${
+                  reactRouter.install
+                }`,
                 (err, data, stderr) => console.log(data)
               );
             }
@@ -36,7 +40,9 @@ const cra = () => {
           prompt(addPackage).then(({ packageAdd }) => {
             if (packageAdd === "y" || packageAdd === "Y") {
               cmd.get(
-                ` mkdir ${folderName} && cd ${folderName} && ${cra} . && ${nodeSass}`,
+                ` mkdir ${folderName} && cd ${folderName} && ${cra} . && ${
+                  nodeSass.install
+                }`,
                 (err, data, stderr) => console.log(data)
               );
             } else if (packageAdd === "n" || packageAdd === "N") {
@@ -56,12 +62,13 @@ const cra = () => {
           prompt(addPackage).then(({ packageAdd }) => {
             if (packageAdd === "y" || packageAdd === "Y") {
               cmd.get(
-                ` ${cra} . && ${reactRouter} && ${nodeSass}`,
+                ` ${cra} . && ${reactRouter.install} && ${nodeSass.install}`,
                 (err, data, stderr) => console.log(data)
               );
             } else if (packageAdd === "n" || packageAdd === "N") {
-              cmd.get(` ${cra} . && ${reactRouter}`, (err, data, stderr) =>
-                console.log(data)
+              cmd.get(
+                ` ${cra} . && ${reactRouter.install}`,
+                (err, data, stderr) => console.log(data)
               );
             }
           });
@@ -69,7 +76,7 @@ const cra = () => {
           console.log("Node Sass");
           prompt(addPackage).then(({ packageAdd }) => {
             if (packageAdd === "y" || packageAdd === "Y") {
-              cmd.get(` ${cra} . && ${nodeSass}`, (err, data, stderr) =>
+              cmd.get(` ${cra} . && ${nodeSass.install}`, (err, data, stderr) =>
                 console.log(data)
               );
             } else if (packageAdd === "n" || packageAdd === "N") {
