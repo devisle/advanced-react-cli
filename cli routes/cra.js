@@ -9,8 +9,8 @@ const installFolder = cliModel.installFolder;
 // Cli Install Commands
 const {
   createReactApp,
-  reactRouter,
-  nodeSass
+  reactRouterObj,
+  nodeSassObj
 } = require("../cli model/install-commands");
 
 const prompt = inquirer.createPromptModule();
@@ -26,14 +26,14 @@ const cra = () => {
             if (packageAdd === "y" || packageAdd === "Y") {
               cmd.get(
                 ` mkdir ${folderName} && cd ${folderName} && ${createReactApp} . && ${
-                  reactRouter.install
-                } && ${nodeSass.install}`,
+                  reactRouterObj.install
+                } && ${nodeSassObj.install}`,
                 (err, data, stderr) => console.log(data)
               );
             } else if (packageAdd === "n" || packageAdd === "N") {
               cmd.get(
                 ` mkdir ${folderName} && cd ${folderName} && ${createReactApp} . && ${
-                  reactRouter.install
+                  reactRouterObj.install
                 }`,
                 (err, data, stderr) => console.log(data)
               );
@@ -45,7 +45,7 @@ const cra = () => {
             if (packageAdd === "y" || packageAdd === "Y") {
               cmd.get(
                 ` mkdir ${folderName} && cd ${folderName} && ${createReactApp} . && ${
-                  nodeSass.install
+                  nodeSassObj.install
                 }`,
                 (err, data, stderr) => console.log(data)
               );
@@ -66,14 +66,14 @@ const cra = () => {
           prompt(addPackage).then(({ packageAdd }) => {
             if (packageAdd === "y" || packageAdd === "Y") {
               cmd.get(
-                ` ${createReactApp} . && ${reactRouter.install} && ${
-                  nodeSass.install
+                ` ${createReactApp} . && ${reactRouterObj.install} && ${
+                  nodeSassObj.install
                 }`,
                 (err, data, stderr) => console.log(data)
               );
             } else if (packageAdd === "n" || packageAdd === "N") {
               cmd.get(
-                ` ${createReactApp} . && ${reactRouter.install}`,
+                ` ${createReactApp} . && ${reactRouterObj.install}`,
                 (err, data, stderr) => console.log(data)
               );
             }
@@ -83,7 +83,7 @@ const cra = () => {
           prompt(addPackage).then(({ packageAdd }) => {
             if (packageAdd === "y" || packageAdd === "Y") {
               cmd.get(
-                ` ${createReactApp} . && ${nodeSass.install}`,
+                ` ${createReactApp} . && ${nodeSassObj.install}`,
                 (err, data, stderr) => console.log(data)
               );
             } else if (packageAdd === "n" || packageAdd === "N") {

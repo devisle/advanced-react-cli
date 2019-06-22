@@ -6,18 +6,18 @@ const cliModel = require("../cli model/cli-model");
 const installOption = cliModel.installOption;
 
 // CLI Install Commands
-const { propTypes } = require("../cli model/install-commands");
+const { propTypesObj } = require("../cli model/install-commands");
 
 const prompt = inquirer.createPromptModule();
 
 const propTypes = () => {
   prompt(installOption).then(({ decision }) => {
     if (decision === "Install") {
-      cmd.get(`${propTypes.install}`, function(err, data, stderr) {
+      cmd.get(`${propTypesObj.install}`, function(err, data, stderr) {
         console.log(data);
       });
     } else if (decision === "Uninstall") {
-      cmd.get(`${propTypes.uninstall}`, function(err, data, stderr) {
+      cmd.get(`${propTypesObj.uninstall}`, function(err, data, stderr) {
         console.log(data);
       });
     }
