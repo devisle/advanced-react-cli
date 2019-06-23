@@ -126,7 +126,7 @@ const cra = () => {
         }
       });
     }
-    // The code below will be under review.
+    // The code below will be under review. Fix is necessary
 
     // else if (folderName === ".") {
     //   // Prompts to install React Router
