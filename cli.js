@@ -19,7 +19,7 @@ const reactComponents = cliModel.reactComponents;
 
 // Cli Routes
 const cra = require("./cli routes/cra");
-const reactRouter = require("./cli routes/reactroute");
+const reactRouter = require("./cli routes/reactrouter");
 const nodeSass = require("./cli routes/nodeSass");
 const reactComponent = require("./cli routes/reactComponent");
 const propTypes = require("./cli routes/propTypes");
