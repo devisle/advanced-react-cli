@@ -17,6 +17,8 @@ This CLI uses some of the best GitHub repos' command line instructions to execut
 - [Redux - Redux & React-Redux](https://github.com/reduxjs)
 - [SASS - Node-Sass](https://github.com/sass/node-sass)
 - [ReactTraining - React-Router](https://github.com/ReactTraining/react-router)
+- [Node-CMD](https://github.com/RIAEvangelist/node-cmd)
+- [Inquirer JS](https://github.com/SBoudrias/Inquirer.js/)
 
 Be sure to check the above repos out if you're facing any issues! We will of course, always are open to improvements.
 
