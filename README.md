@@ -4,13 +4,13 @@ This is an npm package which aims to provide a better way to install a React sta
 
 ## Project's Purpose
 
-We at DevIsle, felt that the community has been longing for a good, functional and intuitive CLI rather than always writing on the command line.
+We at DevIsle, felt that the community has been longing for a good, functional and intuitive CLI rather than always writing on the terminal command line.
 
-**Note**: We do not discourage or refrain the community from using the as is command line instructions. In fact, we highly recommend our users to read and understand the docs so you will know what to expect. This CLI is merely an alternative!
+**Note**: We do not discourage or refrain the community from using terminal commands instructions. In fact, we highly recommend our users to read and understand the docs so that you will know what to expect. This CLI is merely an alternative!
 
 ## Credits
 
-This CLI uses some of the best GitHub repos' commands under the hood, to execute it's functionality. We would like to credit the following GitHub repos making this CLI possible
+This CLI uses some of the best GitHub repos' terminal commands under the hood, to execute it's functionality. We would like to credit the following GitHub repos making this CLI possible:
 
 - [Facebook - Create React App](https://github.com/facebook/create-react-app)
 - [Facebook - Prop Types](https://github.com/facebook/prop-types)
@@ -24,7 +24,7 @@ This CLI uses some of the best GitHub repos' commands under the hood, to execute
 
 ## What does this do?
 
-It is still under development. But, as of this current beta version, we have enabled a few options like
+It is still under development. But, as of this current beta version, we have enabled a few options like:
 
 - Installing React using `create-react-app`, with optional packages React Router and Redux as a single bundle.
 - Installing Individual packages such as Node-Sass, React-Router, Prop Types, and Redux.
@@ -36,7 +36,7 @@ It is still under development. But, as of this current beta version, we have ena
 
 - We haven't published it as a npm package yet, but we hope to do so once all of our [Development Checklist](https://github.com/devisle/advanced-react-cli/blob/master/docs/Checklist.md) has been fulfilled.
 
-- But you can meanwhile fork the package, and clone it to your local desktop. Once you've done that, open the terminal in that local folder and run the command `npm install` to install the required dependencies.
+- In the meantime, you can fork the repo, and/or clone it to your local desktop. Once you've done that, open the terminal in that local folder and run the command `npm install` to install the required dependencies.
 - After that, you may open the folder in your editor of choice. Once again, in the terminal you may simply run `npm run react-cli`to get it working. And voila!
 
 2.  Can I report any issues or bugs with the CLI? How do I report it?
