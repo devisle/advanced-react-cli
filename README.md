@@ -10,7 +10,7 @@ We at DevIsle, felt that the community has been longing for a good, functional a
 
 ## Credits
 
-This CLI uses some of the best GitHub repos' commands to execute it's functionality. We would like to credit the following GitHub repos making this CLI possible
+This CLI uses some of the best GitHub repos' commands uner the hood, to execute it's functionality. We would like to credit the following GitHub repos making this CLI possible
 
 - [Facebook - Create React App](https://github.com/facebook/create-react-app)
 - [Facebook - Prop Types](https://github.com/facebook/prop-types)
