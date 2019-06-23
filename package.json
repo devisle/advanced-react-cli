@@ -18,6 +18,8 @@
     "inquirer": "^6.4.1",
     "node-cmd": "^3.0.0",
     "react-redux": "^7.1.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
     "redux": "^4.0.1"
   }
 }

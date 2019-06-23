@@ -1,4 +1,4 @@
-import { createStore } from "redux";
+module.exports = ` import { createStore } from "redux";
 
 const initialState = {
   // Declare your state here
@@ -37,3 +37,4 @@ const store = createStore(reducer);
 
 //Exporting the Store
 export default store;
+`;
