@@ -10,7 +10,7 @@ We at DevIsle, felt that the community has been longing for a good, functional a
 
 ## Credits
 
-This CLI uses some of the best GitHub repos' command line instructions to execute it's functionality. We would like to credit the following GitHub repos making this CLI possible
+This CLI uses some of the best GitHub repos' commands to execute it's functionality. We would like to credit the following GitHub repos making this CLI possible
 
 - [Facebook - Create React App](https://github.com/facebook/create-react-app)
 - [Facebook - Prop Types](https://github.com/facebook/prop-types)
@@ -20,7 +20,7 @@ This CLI uses some of the best GitHub repos' command line instructions to execut
 - [Node-CMD](https://github.com/RIAEvangelist/node-cmd)
 - [Inquirer JS](https://github.com/SBoudrias/Inquirer.js/)
 
-Be sure to check the above repos out if you're facing any issues! We will of course, always are open to improvements.
+**Be sure to check the above repos out if you're facing any issues! We are of course, always open to improvements.**
 
 ## What does this do?
 
