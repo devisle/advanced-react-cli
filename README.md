@@ -26,7 +26,7 @@ This CLI uses some of the best GitHub repos' commands under the hood, to execute
 
 It is still under development. But, as of this current beta version, we have enabled a few options like
 
-- Installing React using create-react-app, with optional packages React Router and Redux as a single bundle.
+- Installing React using `create-react-app`, with optional packages React Router and Redux as a single bundle.
 - Installing Individual packages such as Node-Sass, React-Router, Prop Types, and Redux.
 - Installing Redux automatically generates a store folder containing boiler-plate Redux code with instructions to get you started!
 
@@ -34,7 +34,7 @@ It is still under development. But, as of this current beta version, we have ena
 
 1.  How can I test this out?
 
-- We haven't published it as a npm package yet, but we hope to do so once all of our [ Development Checklist](https://github.com/devisle/advanced-react-cli/blob/master/docs/Checklist.md) has been fulfilled.
+- We haven't published it as a npm package yet, but we hope to do so once all of our [Development Checklist](https://github.com/devisle/advanced-react-cli/blob/master/docs/Checklist.md) has been fulfilled.
 
 - But you can meanwhile fork the package, and clone it to your local desktop. Once you've done that, open the terminal in that local folder and run the command `npm install` to install the required dependencies.
 - After that, you may open the folder in your editor of choice. Once again, in the terminal you may simply run `npm run react-cli`to get it working. And voila!
