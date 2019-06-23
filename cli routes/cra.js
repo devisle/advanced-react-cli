@@ -10,7 +10,7 @@ const installFolder = cliModel.installFolder;
 const {
   createReactApp,
   reactRouterObj,
-  nodeSassObj
+  reduxObj
 } = require("../cli model/install-commands");
 
 const prompt = inquirer.createPromptModule();
@@ -18,19 +18,27 @@ const prompt = inquirer.createPromptModule();
 const cra = () => {
   prompt(installFolder).then(({ folderName }) => {
     if (folderName.length > 1) {
-      console.log("React-Router");
-      prompt(addPackage).then(({ packageAdd }) => {
+      // Prompts to install React Router
+      prompt({
+        ...addPackage[0],
+        message: "Would you like to add React-Router?"
+      }).then(({ packageAdd }) => {
         if (packageAdd === "y" || packageAdd === "Y") {
-          console.log("Node-Sass");
-          prompt(addPackage).then(({ packageAdd }) => {
+          // Prompts to install Redux
+          prompt({
+            ...addPackage[0],
+            message: "Would you like to add Redux?"
+          }).then(({ packageAdd }) => {
             if (packageAdd === "y" || packageAdd === "Y") {
+              // Instals CRA , React Router and Redux
               cmd.get(
                 ` mkdir ${folderName} && cd ${folderName} && ${createReactApp} . && ${
                   reactRouterObj.install
-                } && ${nodeSassObj.install}`,
+                } && ${reduxObj.install}`,
                 (err, data, stderr) => console.log(data)
               );
             } else if (packageAdd === "n" || packageAdd === "N") {
+              // Installs CRA and React Router
               cmd.get(
                 ` mkdir ${folderName} && cd ${folderName} && ${createReactApp} . && ${
                   reactRouterObj.install
@@ -39,17 +47,22 @@ const cra = () => {
               );
             }
           });
+          // If 'n' for React Router, prompts to install Redux
         } else if (packageAdd === "n" || packageAdd === "N") {
-          console.log("Node-Sass");
-          prompt(addPackage).then(({ packageAdd }) => {
+          // Prompts to Install Redux
+          prompt({
+            ...addPackage[0],
+            message: "Would you like to add Redux?"
+          }).then(({ packageAdd }) => {
             if (packageAdd === "y" || packageAdd === "Y") {
               cmd.get(
                 ` mkdir ${folderName} && cd ${folderName} && ${createReactApp} . && ${
-                  nodeSassObj.install
+                  reduxObj.install
                 }`,
                 (err, data, stderr) => console.log(data)
               );
             } else if (packageAdd === "n" || packageAdd === "N") {
+              // If 'no' for Redux and React Router, it installs just CRA.
               cmd.get(
                 ` mkdir ${folderName} && cd ${folderName} && ${createReactApp} .`,
                 (err, data, stderr) => console.log(data)
@@ -59,19 +72,26 @@ const cra = () => {
         }
       });
     } else if (folderName === ".") {
-      console.log("React-Router");
-      prompt(addPackage).then(({ packageAdd }) => {
+      // Prompts to install React Router
+      prompt({
+        ...addPackage[0],
+        message: "Would you like to add React-Router?"
+      }).then(({ packageAdd }) => {
         if (packageAdd === "y" || packageAdd === "Y") {
-          console.log("Node-Sass");
-          prompt(addPackage).then(({ packageAdd }) => {
+          // Prompts to install Redux
+          prompt({
+            ...addPackage[0],
+            message: "Would you like to add Redux?"
+          }).then(({ packageAdd }) => {
             if (packageAdd === "y" || packageAdd === "Y") {
               cmd.get(
                 ` ${createReactApp} . && ${reactRouterObj.install} && ${
-                  nodeSassObj.install
+                  reduxObj.install
                 }`,
                 (err, data, stderr) => console.log(data)
               );
             } else if (packageAdd === "n" || packageAdd === "N") {
+              // If 'no' for Redux, It installs only CRA and React Router
               cmd.get(
                 ` ${createReactApp} . && ${reactRouterObj.install}`,
                 (err, data, stderr) => console.log(data)
@@ -79,14 +99,19 @@ const cra = () => {
             }
           });
         } else if (packageAdd === "n" || packageAdd === "N") {
-          console.log("Node-Sass");
-          prompt(addPackage).then(({ packageAdd }) => {
+          // If No for React Router, it prompts to install Redux
+
+          prompt({
+            ...addPackage[0],
+            message: "Would you like to add Redux?"
+          }).then(({ packageAdd }) => {
             if (packageAdd === "y" || packageAdd === "Y") {
               cmd.get(
-                ` ${createReactApp} . && ${nodeSassObj.install}`,
+                ` ${createReactApp} . && ${reduxObj.install}`,
                 (err, data, stderr) => console.log(data)
               );
             } else if (packageAdd === "n" || packageAdd === "N") {
+              // If 'n' for React Router and Redux, it installs only CRA
               cmd.get(` ${createReactApp} .`, (err, data, stderr) =>
                 console.log(data)
               );
