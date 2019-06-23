@@ -40,7 +40,9 @@ return <div />;
 };
 
 export default ${componentName};`);
-            console.log(`File Creation: Function component ${component} in the folder ${folderName} has been created successfully!`);
+            console.log(
+              `File Creation: Function component ${component} in the folder ${folderName} has been created successfully!`
+            );
           }
         } else if (component === "class") {
           if (folderName === "." || folderName === "") {
@@ -59,7 +61,9 @@ class ${componentName} extends Component {
 
 export default ${componentName};
             `);
-            console.log(`File Creation: Class component ${component} has been created successfully!`);
+            console.log(
+              `File Creation: Class component ${component} has been created successfully!`
+            );
           } else {
             fs.mkdir(`./${folderName}`, { recursive: false }, err => {
               if (err) throw err;
