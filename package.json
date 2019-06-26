@@ -13,7 +13,7 @@
     "arc": "./cli.js"
   },
   "author": "Dev Isle",
-  "license": "MIT",
+  "license": "GNU GPLv3",
   "dependencies": {
     "inquirer": "^6.4.1",
     "node-cmd": "^3.0.0"
