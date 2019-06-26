@@ -44,4 +44,8 @@ It is still under development. But, as of this current beta version, we have ena
 - We appreciate all the reports on bugs or issues from the community!
 - You may report an issue by going to this [Link - Issues](https://github.com/devisle/advanced-react-cli/issues) and clicking on the "New Issue" button highlighted in green.
 
+## License
+
+The source code is released under the [GPL-3.0 License](https://github.com/devisle/advanced-react-cli/blob/master/LICENSE).
+
 ### More info coming soon
