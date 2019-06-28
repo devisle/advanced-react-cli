@@ -16,6 +16,8 @@ const {
 
 const prompt = inquirer.createPromptModule();
 
+// Integrating PropTypes inside of the App. Also Try Piping a conditional variable, which includes PropTypes inside the main app.js
+
 const Reduxing = `import { createStore } from "redux";
 
 const initialState = {
