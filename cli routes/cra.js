@@ -127,59 +127,7 @@ const cra = () => {
           });
         }
       });
-    }
-    // The code below will be under review. Fix is necessary
-
-    // else if (folderName === ".") {
-    //   // Prompts to install React Router
-    //   prompt({
-    //     ...addPackage[0],
-    //     message: "Would you like to add React-Router?"
-    //   }).then(({ packageAdd }) => {
-    //     if (packageAdd === "y" || packageAdd === "Y") {
-    //       // Prompts to install Redux
-    //       prompt({
-    //         ...addPackage[0],
-    //         message: "Would you like to add Redux?"
-    //       }).then(({ packageAdd }) => {
-    //         if (packageAdd === "y" || packageAdd === "Y") {
-    //           cmd.get(
-    //             ` ${createReactApp} . && ${reactRouterObj.install} && ${
-    //               reduxObj.install
-    //             }`,
-    //             (err, data, stderr) => console.log(data)
-    //           );
-    //         } else if (packageAdd === "n" || packageAdd === "N") {
-    //           // If 'no' for Redux, It installs only CRA and React Router
-    //           cmd.get(
-    //             ` ${createReactApp} . && ${reactRouterObj.install}`,
-    //             (err, data, stderr) => console.log(data)
-    //           );
-    //         }
-    //       });
-    //     } else if (packageAdd === "n" || packageAdd === "N") {
-    //       // If No for React Router, it prompts to install Redux
-
-    //       prompt({
-    //         ...addPackage[0],
-    //         message: "Would you like to add Redux?"
-    //       }).then(({ packageAdd }) => {
-    //         if (packageAdd === "y" || packageAdd === "Y") {
-    //           cmd.get(
-    //             ` ${createReactApp} . && ${reduxObj.install}`,
-    //             (err, data, stderr) => console.log(data)
-    //           );
-    //         } else if (packageAdd === "n" || packageAdd === "N") {
-    //           // If 'n' for React Router and Redux, it installs only CRA
-    //           cmd.get(` ${createReactApp} .`, (err, data, stderr) =>
-    //             console.log(data)
-    //           );
-    //         }
-    //       });
-    //     }
-    //   });
-    // }
-    else {
+    } else {
       console.log(
         "You must specify the installation directory! (Enter a folder name, e.g. 'my-app', Or Enter '.' to install in current directory) "
       );

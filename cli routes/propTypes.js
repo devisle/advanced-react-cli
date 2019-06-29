@@ -8,6 +8,8 @@ const installOption = cliModel.installOption;
 // CLI Install Commands
 const { propTypesObj } = require("../cli model/install-commands");
 
+const propTypeBoilerPlate = require("../cli model/starter-code/propTypes");
+
 const prompt = inquirer.createPromptModule();
 
 const propTypes = () => {
