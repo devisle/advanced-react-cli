@@ -1,0 +1,21 @@
+sudo: false
+
+language: node_js
+
+cache:
+  directories:
+    - ~/.npm
+    
+node_js: 
+  - 10
+  - 9
+  - 8
+
+install: npm install
+
+script: npm run react-cli
+
+# after_success: ...
+
+branches:
+  only: master
