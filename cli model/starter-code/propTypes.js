@@ -1,7 +1,7 @@
 module.exports = `import PropTypes from 'prop-types';
 
 //For More, please visit https://reactjs.org/docs/typechecking-with-proptypes.html
-
+// And https://www.npmjs.com/package/prop-types
 MyComponent.propTypes = {
   // You can declare that a prop is a specific JS type. By default, these
   // are all optional.
