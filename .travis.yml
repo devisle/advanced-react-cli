@@ -20,7 +20,7 @@ install: npm install
 
 script:
   - npm run react-cli
-  - "yes"
+  - "enter"
   # - he-world
   # - yes | ./script
   # - y
