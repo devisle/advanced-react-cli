@@ -8,8 +8,8 @@ cache:
 
 node_js:
   - 10
-  - 9
-  - 8
+  # - 9
+  # - 8
 
 os:
   - linux
@@ -20,6 +20,7 @@ install: npm install
 
 script:
   - npm run react-cli
+  - "enter"
 
 after_success: echo "Success"
 
