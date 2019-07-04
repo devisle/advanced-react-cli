@@ -10,7 +10,6 @@ const cwd = process.cwd();
 console.log(cwd);
 
 const inquirer = require("inquirer");
-const cmd = require("node-cmd");
 
 // Cli Model
 const cliModel = require("./cli model/cli-model");
