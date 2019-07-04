@@ -20,7 +20,7 @@ install: npm install
 
 script:
   - npm run react-cli
-  - create-react-app
+  - > create-react-app
 
 after_success: echo "Success"
 
