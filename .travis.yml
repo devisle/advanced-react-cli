@@ -15,7 +15,6 @@ install: npm install
 
 script:
   - npm run react-cli
-  - ENTER
 
 after_success: echo "Success"
 
