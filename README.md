@@ -1,5 +1,7 @@
 # Advanced React CLI (under development)
 
+[![Advanced-React-CLI Build](https://img.shields.io/travis/devisle/advanced-react-cli.svg)](https://travis-ci.org/devisle/advanced-react-cli)
+
 This is an npm package which aims to provide a better way to install a React starter application and third-party packages for your application through an intuitive CLI.
 
 ## Project's Purpose
