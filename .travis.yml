@@ -8,25 +8,18 @@ cache:
 
 node_js:
   - 10
-  # - 9
-  # - 8
+  - 9
+  - 8
 
 os:
   - linux
-  - osx
-  - windows
+  # - osx
+  # - windows
 
 install: npm install
 
 script:
   - npm run react-cli
-  - "enter"
-  # - he-world
-  # - yes | ./script
-  # - y
-  # - yes | ./script
-  # - y
-  # - yes | ./script
 
 after_success: echo "Success"
 
