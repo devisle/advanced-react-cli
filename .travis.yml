@@ -21,12 +21,12 @@ install: npm install
 script:
   - npm run react-cli
   - yes | ./script
-  - he-world
-  - yes | ./script
-  - y
-  - yes | ./script
-  - y
-  - yes | ./script
+  # - he-world
+  # - yes | ./script
+  # - y
+  # - yes | ./script
+  # - y
+  # - yes | ./script
 
 after_success: echo "Success"
 
