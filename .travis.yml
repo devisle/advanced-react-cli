@@ -20,8 +20,6 @@ install: npm install
 
 script:
   - npm run react-cli
-  - ^[[B
-  -
 
 after_success: echo "Success"
 

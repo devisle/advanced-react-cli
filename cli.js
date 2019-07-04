@@ -2,8 +2,8 @@
 
 const [...args] = process.argv;
 
-console.log(`folder name ${args[2]}`);
-console.log(`folder location ${args[3]}`);
+// console.log(`folder name ${args[2]}`);
+// console.log(`folder location ${args[3]}`);
 
 // Current working directory
 const cwd = process.cwd();
@@ -15,7 +15,6 @@ const cmd = require("node-cmd");
 // Cli Model
 const cliModel = require("./cli model/cli-model");
 const cliCommand = cliModel.cliCommand;
-const reactComponents = cliModel.reactComponents;
 
 // Cli Routes
 const cra = require("./cli routes/cra");
