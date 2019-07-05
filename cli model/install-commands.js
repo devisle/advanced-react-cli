@@ -15,7 +15,10 @@ module.exports = {
   reduxObj: {
     install: "npm i redux react-redux",
     uninstall: "npm uninstall redux react-redux"
+  },
+  unstatedObj: {
+    install: "yarn add unstated",
+    uninstall: "yarn remove unstated"
   }
-  // unstated: "yarn add unstated",
   // easyPeasy: "npm install easy-peasy"
 };
