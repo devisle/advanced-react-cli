@@ -42,12 +42,12 @@ const stateManagement = () => {
         if (decision === "Install") {
           cmd.get(`${unstatedObj.install}`);
           console.log("Package: Unstated has been installed!");
-        } else {
-          cmd.get(`${unstatedObj.uninstall}`);
-          console.log("Package: Unstated has been uninstalled!");
           cmd.get(
             `echo "Check out unstated and unstated-next in the following links https://github.com/jamiebuilds/unstated \n https://github.com/jamiebuilds/unstated-next " `
           );
+        } else {
+          cmd.get(`${unstatedObj.uninstall}`);
+          console.log("Package: Unstated has been uninstalled!");
         }
       });
     }
