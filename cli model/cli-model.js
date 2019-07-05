@@ -73,6 +73,6 @@ module.exports.stateManagement = [
     name: "state",
     message:
       "Please select the tool to add to your project for state management: ",
-    choices: ["Redux"]
+    choices: ["Redux", "Unstated"]
   }
 ];
