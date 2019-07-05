@@ -8,7 +8,7 @@ const installOption = cliModel.installOption;
 const stateOption = cliModel.stateManagement;
 
 // Cli Install Commands
-const { reduxObj } = require("../cli model/install-commands");
+const { reduxObj, unstatedObj } = require("../cli model/install-commands");
 
 const ReduxBoilerPlate = require("../cli model/starter-code/redux");
 
@@ -35,6 +35,25 @@ const stateManagement = () => {
           console.log(
             "Packages: redux & react-redux has been uninstalled successfully!"
           );
+        }
+      });
+    } else if (state === "Unstated") {
+      prompt(installOption).then(({ decision }) => {
+        if (decision === "Install") {
+          cmd.get(`${unstatedObj.install}`);
+          fs.mkdir("./stpre", err => {
+            if (err) throw err;
+          });
+          cmd.get("cd store && touch store.js");
+          const writeStream = fs.createWriteStream("./store/store.js");
+          writeStream.write(`${UnstatedBoilerPlate}`);
+          console.log("Package: Unstated has been installed!");
+          console.log(
+            "Package: Unstated Store folder has been created successfully!"
+          );
+        } else {
+          cmd.get(`${unstatedObj.uninstall}`);
+          console.log("Package: Unstated has been uninstalled!");
         }
       });
     }
