@@ -41,16 +41,7 @@ const stateManagement = () => {
       prompt(installOption).then(({ decision }) => {
         if (decision === "Install") {
           cmd.get(`${unstatedObj.install}`);
-          fs.mkdir("./stpre", err => {
-            if (err) throw err;
-          });
-          cmd.get("cd store && touch store.js");
-          const writeStream = fs.createWriteStream("./store/store.js");
-          writeStream.write(`${UnstatedBoilerPlate}`);
           console.log("Package: Unstated has been installed!");
-          console.log(
-            "Package: Unstated Store folder has been created successfully!"
-          );
         } else {
           cmd.get(`${unstatedObj.uninstall}`);
           console.log("Package: Unstated has been uninstalled!");
