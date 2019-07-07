@@ -15,6 +15,10 @@ install: npm install
 
 script:
   - npm run react-cli
+  - a
+  - my-app
+  - "y"
+  - "y"
 
 after_success: echo "Success"
 
