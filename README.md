@@ -27,8 +27,10 @@ This CLI uses some of the best GitHub repos' terminal commands under the hood, t
 It is still under development. But, as of this current beta version, we have enabled a few options like:
 
 - Installing React using `create-react-app`, with optional packages React Router and Redux as a single bundle.
-- Installing Individual packages such as Node-Sass, React-Router, Prop Types, and Redux.
+- Installing Individual packages such as Node-Sass, React-Router, Prop Types, and State Management.
 - Installing Redux automatically generates a store folder containing boiler-plate Redux code with instructions to get you started!
+- Unstated has been added in the State Management alongside Redux
+- Installing PropTypes automaticall generates a file containing a sample code to get started!
 
 # FAQs
 
