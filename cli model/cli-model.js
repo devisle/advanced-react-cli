@@ -1,16 +1,15 @@
 module.exports.cliCommand = [
   {
-    type: "expand",
+    type: "list",
     name: "installation",
     message: "What would you like to install?",
-    key: "a",
     choices: [
-      { key: "a", name: "create-react-app", value: "create-react-app" },
-      { key: "b", name: "react-component", value: "react-component" },
-      { key: "c", name: "react-router", value: "react-router" },
-      { key: "d", name: "node-sass", value: "node-sass" },
-      { key: "e", name: "prop-types", value: "prop-types" },
-      { key: "f", name: "state-management", value: "state-management" }
+      "create-react-app",
+      "react-component",
+      "react-router",
+      "node-sass",
+      "prop-types",
+      "state-management"
     ]
   }
 ];
