@@ -77,6 +77,7 @@ module.exports.stateManagement = [
   }
 ];
 
+// Unstated options
 module.exports.unstatedOptions = [
   {
     type: "list",
