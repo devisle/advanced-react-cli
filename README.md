@@ -28,15 +28,20 @@ It is still under development. But, as of this current beta version, we have ena
 
 - Installing React using `create-react-app`, with optional packages React Router and Redux as a single bundle.
 - Installing Individual packages such as Node-Sass, React-Router, Prop Types, and State Management.
+- Redux, Unstated, Unstated-Next and Redux-Thunk have been added in the State Management.
 - Installing Redux automatically generates a store folder containing boiler-plate Redux code with instructions to get you started!
-- Unstated has been added in the State Management alongside Redux
-- Installing PropTypes automaticall generates a file containing a sample code to get started!
+- Installing Prop Types automatically generates a file containing a sample code to get started!
 
 # FAQs
 
 1.  How can I test this out?
 
 - We haven't published it as a npm package yet, but we hope to do so once all of our [Development Checklist](https://github.com/devisle/advanced-react-cli/blob/master/docs/Checklist.md) has been fulfilled.
+
+- Ensure you have git version control, and npm (node package manager) Installed. You may check if your system has them installed by running the following commands `git --version` and `npm --version`. If you don't have it installed, please visit
+
+  - [Git](https://git-scm.com/downloads) to download/install git.
+  - [NodeJS](https://nodejs.org/en/download/) to download/install Node.Js (NPM gets installed with Node.Js).
 
 - In the meantime, you can fork the repo, and/or clone it to your local desktop. Once you've done that, open the terminal in that local folder and run the command `npm install` to install the required dependencies.
 - After that, you may open the folder in your editor of choice. Once again, in the terminal you may simply run `npm run react-cli`to get it working. And voila!
