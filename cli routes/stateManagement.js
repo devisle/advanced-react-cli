@@ -46,28 +46,28 @@ const stateManagement = () => {
         }
       });
     } else if (state === "Unstated") {
-      prompt(unstatedState).then(({ decision }) => {
-        if (decision === "Unstated") {
+      prompt(unstatedState).then(({ state }) => {
+        if (state === "Unstated") {
           prompt(installOption).then(({ decision }) => {
             if (decision === "Install") {
               cmd.get(`${unstated.install}`);
-              console.log("Package: Unstated has been installed!");
-              cmd.get(
+              console.log(
                 `echo "Check out more on how to get started with unstated on the following link https://github.com/jamiebuilds/unstated" `
               );
+              console.log("Package: Unstated has been installed!");
             } else {
               cmd.get(`${unstated.uninstall}`);
               console.log("Package: Unstated has been uninstalled!");
             }
           });
-        } else if (decision === "Unstated-next") {
+        } else if (state === "Unstated-next") {
           prompt(installOption).then(({ decision }) => {
             if (decision === "Install") {
               cmd.get(`${unstatedNext.install}`);
-              console.log("Package: Unstated-next has been installed!");
-              cmd.get(
+              console.log(
                 `echo "Check out more on how to get started with unstated-next on the following link https://github.com/jamiebuilds/unstated-next " `
               );
+              console.log("Package: Unstated-next has been installed!");
             } else {
               cmd.get(`${unstatedNext.uninstall}`);
               console.log("Package: Unstated-next has been uninstalled!");
@@ -80,7 +80,7 @@ const stateManagement = () => {
         if (decision === "Install") {
           cmd.get(`${reduxThunkObj.install}`);
           console.log("Package: Redux-Thunk has been installed!");
-          cmd.get(
+          console.log(
             `echo "Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk " `
           );
         } else {
