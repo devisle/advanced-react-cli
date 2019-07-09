@@ -58,7 +58,6 @@ The source code is released under the [GPL-3.0 License](https://github.com/devis
 
 ## Dev Isle Community
 
-Are interested in hanging out, contributing to our open-source repos and be a part of a good community? We would love for you to join us on our Discord server.
-[Discord](http://discord.gg/MSTQKRE)
+Are interested in hanging out, contributing to our open-source repos and be a part of a good community? We would love for you to join us on our [Discord](http://discord.gg/MSTQKRE).
 
 ### More info coming soon
