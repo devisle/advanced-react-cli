@@ -6,7 +6,7 @@ const fs = require("fs");
 const cliModel = require("../cli model/cli-model");
 const installOption = cliModel.installOption;
 const stateOption = cliModel.stateManagement;
-const unstatedState = cliModel.unstatedStateManagement;
+const unstatedOption = cliModel.unstatedOptions;
 
 // Cli Install Commands
 const {
@@ -46,13 +46,13 @@ const stateManagement = () => {
         }
       });
     } else if (state === "Unstated") {
-      prompt(unstatedState).then(({ state }) => {
+      prompt(unstatedOption).then(({ state }) => {
         if (state === "Unstated") {
           prompt(installOption).then(({ decision }) => {
             if (decision === "Install") {
               cmd.get(`${unstated.install}`);
               console.log(
-                `echo "Check out more on how to get started with unstated on the following link https://github.com/jamiebuilds/unstated" `
+                "Check out more on how to get started with unstated on the following link https://github.com/jamiebuilds/unstated"
               );
               console.log("Package: Unstated has been installed!");
             } else {
@@ -65,7 +65,7 @@ const stateManagement = () => {
             if (decision === "Install") {
               cmd.get(`${unstatedNext.install}`);
               console.log(
-                `echo "Check out more on how to get started with unstated-next on the following link https://github.com/jamiebuilds/unstated-next " `
+                "Check out more on how to get started with unstated-next on the following link https://github.com/jamiebuilds/unstated-next "
               );
               console.log("Package: Unstated-next has been installed!");
             } else {
@@ -81,7 +81,7 @@ const stateManagement = () => {
           cmd.get(`${reduxThunkObj.install}`);
           console.log("Package: Redux-Thunk has been installed!");
           console.log(
-            `echo "Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk " `
+            "Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk "
           );
         } else {
           cmd.get(`${reduxThunkObj.uninstall}`);
