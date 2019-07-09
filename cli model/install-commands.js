@@ -16,9 +16,19 @@ module.exports = {
     install: "npm i redux react-redux",
     uninstall: "npm uninstall redux react-redux"
   },
+  reduxThunkObj: {
+    install: "npm i redux-thunk",
+    uninstall: "npm uninstall redux-thunk"
+  },
   unstatedObj: {
-    install: "yarn add unstated",
-    uninstall: "yarn remove unstated"
+    unstated: {
+      install: "yarn add unstated",
+      uninstall: "yarn remove unstated"
+    },
+    unstatedNext: {
+      install: "npm install unstated-next",
+      uninstall: "npm uninstall unstated-next"
+    }
   }
   // easyPeasy: "npm install easy-peasy"
 };

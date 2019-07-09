@@ -8,7 +8,11 @@ const installOption = cliModel.installOption;
 const stateOption = cliModel.stateManagement;
 
 // Cli Install Commands
-const { reduxObj, unstatedObj } = require("../cli model/install-commands");
+const {
+  reduxObj,
+  unstatedObj,
+  reduxThunkObj
+} = require("../cli model/install-commands");
 
 const ReduxBoilerPlate = require("../cli model/starter-code/redux");
 
@@ -43,11 +47,24 @@ const stateManagement = () => {
           cmd.get(`${unstatedObj.install}`);
           console.log("Package: Unstated has been installed!");
           cmd.get(
-            `echo "Check out unstated and unstated-next in the following links https://github.com/jamiebuilds/unstated \n https://github.com/jamiebuilds/unstated-next " `
+            `echo "Check out more on how to get started with unstated and unstated-next on the following links https://github.com/jamiebuilds/unstated \n https://github.com/jamiebuilds/unstated-next " `
           );
         } else {
           cmd.get(`${unstatedObj.uninstall}`);
           console.log("Package: Unstated has been uninstalled!");
+        }
+      });
+    } else if (state === "Redux-Thunk") {
+      prompt(installOption).then(({ decision }) => {
+        if (decision === "Install") {
+          cmd.get(`${reduxThunkObj.install}`);
+          console.log("Package: Redux-Thunk has been installed!");
+          cmd.get(
+            `echo "Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk " `
+          );
+        } else {
+          cmd.get(`${reduxThunkObj.uninstall}`);
+          console.log("Package: Redux-Thunk has been uninstalled!");
         }
       });
     }
