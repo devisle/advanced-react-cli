@@ -10,12 +10,26 @@
     "major-release": "npm version major && npm publish && git push --follow-tags"
   },
   "bin": {
-    "arc": "./cli.js"
+    "arc": "cli.js"
   },
+  "keywords": [
+    "react-cli",
+    "react cli",
+    "advanced react cli",
+    "advanced-react-cli"
+  ],
   "author": "Dev Isle",
   "license": "GNU GPLv3",
   "dependencies": {
     "inquirer": "^6.4.1",
     "node-cmd": "^3.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devisle/advanced-react-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devisle/advanced-react-cli/issues"
+  },
+  "homepage": "https://github.com/devisle/advanced-react-cli"
 }
