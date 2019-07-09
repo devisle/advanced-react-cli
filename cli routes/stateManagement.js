@@ -15,6 +15,7 @@ const {
   reduxThunkObj
 } = require("../cli model/install-commands");
 
+// Destructuring the Unstated Object
 const { unstated, unstatedNext } = unstatedObj;
 
 // Importing Redux Boiler plate file
@@ -24,6 +25,7 @@ const prompt = inquirer.createPromptModule();
 
 const stateManagement = () => {
   prompt(stateOption).then(({ state }) => {
+    // Redux
     if (state === "Redux") {
       prompt(installOption).then(({ decision }) => {
         if (decision === "Install") {
@@ -45,7 +47,9 @@ const stateManagement = () => {
           );
         }
       });
-    } else if (state === "Unstated") {
+    }
+    // Unstated
+    else if (state === "Unstated") {
       prompt(unstatedOption).then(({ state }) => {
         if (state === "Unstated") {
           prompt(installOption).then(({ decision }) => {
@@ -75,7 +79,9 @@ const stateManagement = () => {
           });
         }
       });
-    } else if (state === "Redux-Thunk") {
+    }
+    // Redux-Think
+    else if (state === "Redux-Thunk") {
       prompt(installOption).then(({ decision }) => {
         if (decision === "Install") {
           cmd.get(`${reduxThunkObj.install}`);
