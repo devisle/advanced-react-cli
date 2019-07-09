@@ -73,6 +73,16 @@ module.exports.stateManagement = [
     name: "state",
     message:
       "Please select the tool to add to your project for state management: ",
-    choices: ["Redux", "Unstated"]
+    choices: ["Redux", "Unstated", "Redux-Thunk"]
+  }
+];
+
+module.exports.unstatedStateManagement = [
+  {
+    type: "list",
+    name: "state",
+    message:
+      "Please select the which version of Unstated you would like to add to your project: ",
+    choices: ["Unstated", "Unstated-next"]
   }
 ];
