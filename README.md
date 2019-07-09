@@ -17,6 +17,9 @@ This CLI uses some of the best GitHub repos' terminal commands under the hood, t
 - [Redux - Redux & React-Redux](https://github.com/reduxjs)
 - [SASS - Node-Sass](https://github.com/sass/node-sass)
 - [ReactTraining - React-Router](https://github.com/ReactTraining/react-router)
+- [Unstated](https://github.com/jamiebuilds/unstated)
+- [Unstated-next](https://github.com/jamiebuilds/unstated-next)
+- [Redux-Thunk](https://github.com/reduxjs/redux-thunk)
 - [Node-CMD](https://github.com/RIAEvangelist/node-cmd)
 - [Inquirer JS](https://github.com/SBoudrias/Inquirer.js/)
 
