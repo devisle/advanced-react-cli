@@ -24,6 +24,11 @@ This CLI uses some of the best GitHub repos' terminal commands under the hood, t
 
 **Be sure to check the above repos out if you're facing any issues! We are of course, always open to improvements.**
 
+## Try out the Advanced-React-CLI
+
+Just type in the following command in your terminal and run it! (Please check FAQ for more on testing and contributions)
+`npx advanced-react-cli`
+
 ## What does this do?
 
 It is still under development. But, as of this current beta version, we have enabled a few options like:
@@ -38,14 +43,15 @@ It is still under development. But, as of this current beta version, we have ena
 
 1.  How can I test this out?
 
-- We haven't published it as a npm package yet, but we hope to do so once all of our [Development Checklist](https://github.com/devisle/advanced-react-cli/blob/master/docs/Checklist.md) has been fulfilled.
+- Currently we are Beta testing the CLI. If you'd like to try it out , Run the following command `npx advanced-react-cli` in your terminal.
+- We are still continuing to work on our [Development Checklist](https://github.com/devisle/advanced-react-cli/blob/master/docs/Checklist.md).
 
 - Ensure you have git version control, and npm (node package manager) Installed. You may check if your system has them installed by running the following commands `git --version` and `npm --version`. If you don't have it installed, please visit
 
   - [Git](https://git-scm.com/downloads) to download/install git.
   - [NodeJS](https://nodejs.org/en/download/) to download/install Node.Js (NPM gets installed with Node.Js).
 
-- In the meantime, you can fork the repo, and/or clone it to your local desktop. Once you've done that, open the terminal in that local folder and run the command `npm install` to install the required dependencies.
+- Alternatively, if you would like to contribute and test it locally, you may fork the repo, and/or clone it to your local desktop. Once you've done that, open the terminal in that local folder and run the command `npm install` to install the required dependencies.
 - After that, you may open the folder in your editor of choice. Once again, in the terminal you may simply run `npm run react-cli`to get it working. And voila!
 
 2.  Can I report any issues or bugs with the CLI? How do I report it?
