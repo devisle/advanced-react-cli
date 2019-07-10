@@ -7,6 +7,9 @@ const reactComponents = cliModel.reactComponents;
 const installFolder = cliModel.installFolder;
 const componentName = cliModel.componentName;
 
+//React Component Boilerplate
+const componentCode = require("../cli model/starter-code/reactComponent");
+
 const prompt = inquirer.createPromptModule();
 
 const reactComponent = () => {
@@ -16,13 +19,8 @@ const reactComponent = () => {
         if (component === "function") {
           if (folderName === "." || folderName === "") {
             const writeStream = fs.createWriteStream(`./${componentName}.js`);
-            writeStream.write(`import React from "react";
-
-const ${componentName} = () => {
-  return ();
-};
-
-export default ${componentName};`);
+            const fileData = componentCode(`${component}`, `${componentName}`);
+            writeStream.write(fileData);
             console.log(
               `File Creation: Function component ${componentName} has been created successfully!`
             );
@@ -33,13 +31,8 @@ export default ${componentName};`);
             const writeStream = fs.createWriteStream(
               `./${folderName}/${componentName}.js`
             );
-            writeStream.write(`import React from "react";
-
-const ${componentName} = () => {
-return <div />;
-};
-
-export default ${componentName};`);
+            const fileData = componentCode(`${component}`, `${componentName}`);
+            writeStream.write(fileData);
             console.log(
               `File Creation: Function component ${component} in the folder ${folderName} has been created successfully!`
             );
@@ -47,20 +40,8 @@ export default ${componentName};`);
         } else if (component === "class") {
           if (folderName === "." || folderName === "") {
             const writeStream = fs.createWriteStream(`./${componentName}.js`);
-            writeStream.write(`import React, { Component } from 'react'
-
-class ${componentName} extends Component {
-  render() {
-    return (
-      <div>
-        // Class Component
-      </div>
-    )
-  }
-}
-
-export default ${componentName};
-            `);
+            const fileData = componentCode(`${component}`, `${componentName}`);
+            writeStream.write(fileData);
             console.log(
               `File Creation: Class component ${component} has been created successfully!`
             );
@@ -71,20 +52,8 @@ export default ${componentName};
             const writeStream = fs.createWriteStream(
               `./${folderName}/${componentName}.js`
             );
-            writeStream.write(`import React, { Component } from 'react'
-
-class ${componentName} extends Component {
-  render() {
-    return (
-      <div>
-        // Class Component
-      </div>
-    )
-  }
-}
-
-export default ${componentName};
-            `);
+            const fileData = componentCode(`${component}`, `${componentName}`);
+            writeStream.write(fileData);
             console.log(
               `File Creation: Function component ${component} in the folder ${folderName} has been created successfully!`
             );
