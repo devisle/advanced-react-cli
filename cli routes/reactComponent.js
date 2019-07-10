@@ -18,7 +18,7 @@ const reactComponent = () => {
       prompt(installFolder).then(({ folderName }) => {
         //Function Component
         if (component === "function") {
-          if (folderName === "." || folderName === "") {
+          if ([".", ""].includes(folderName)) {
             const writeStream = fs.createWriteStream(`./${componentName}.js`);
             const fileData = componentCode(`${component}`, `${componentName}`);
             writeStream.write(fileData);
@@ -42,7 +42,7 @@ const reactComponent = () => {
 
         //Class Component
         else if (component === "class") {
-          if (folderName === "." || folderName === "") {
+          if ([".", ""].includes(folderName)) {
             const writeStream = fs.createWriteStream(`./${componentName}.js`);
             const fileData = componentCode(`${component}`, `${componentName}`);
             writeStream.write(fileData);
