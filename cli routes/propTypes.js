@@ -16,8 +16,9 @@ const prompt = inquirer.createPromptModule();
 const propTypes = () => {
   prompt(installOption).then(({ decision }) => {
     if (decision === "Install") {
-      cmd.get(`${propTypesObj.install}`, function(err, data, stderr) {
-        console.log(data);
+      cmd.get(`${propTypesObj.install}`, (err, data, stderr) => {
+        if (err) throw err;
+        else console.log(data);
       });
       fs.mkdir("./propTypes", err => {
         if (err) throw err;
@@ -28,8 +29,9 @@ const propTypes = () => {
       console.log("Package: prop-types has been installed successfully!");
       console.log("PropTypes Folder has been created!");
     } else if (decision === "Uninstall") {
-      cmd.get(`${propTypesObj.uninstall}`, function(err, data, stderr) {
-        console.log(data);
+      cmd.get(`${propTypesObj.uninstall}`, (err, data, stderr) => {
+        if (err) throw err;
+        else console.log(data);
       });
       console.log("Package: prop-types has been uninstalled successfully!");
     }

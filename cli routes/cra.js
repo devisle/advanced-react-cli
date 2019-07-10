@@ -16,46 +16,7 @@ const {
 
 const prompt = inquirer.createPromptModule();
 
-const Reduxing = `import { createStore } from "redux";
-
-const initialState = {
-  // Declare your state here
- };
-
- // Your reducer
- const reducer = (state = initialState, action) => {
-  //Use Switch statements
-   switch(action.type){
-     case '':
-     //You usually perform a state change and return it
-     default:
-       return state;
-   }
- }
-
- // Add the below code within these comment blocks,
- //to your respective files where you would like to have redux
-
- const mapStateToProps = state => {
-   return {
-     //Write your code here which connects the state of this component,
-     //to the Redux Store you have passed as props.
-   };
- };
-
- const mapDispatchToProps = dispatch => {
-   return {
-     //Write your code here which dispatches information to your reducer
-   };
- };
-// End
-
- // Create the store
- const store = createStore(reducer);
-
- //Exporting the Store
- export default store;
- `;
+const ReduxBoilerPlate = require("../cli model/starter-code/redux");
 
 const cra = () => {
   prompt({
@@ -69,15 +30,15 @@ const cra = () => {
         ...addPackage[0],
         message: "Would you like to add React-Router?"
       }).then(({ packageAdd }) => {
-        if (packageAdd === "y" || packageAdd === "Y" || packageAdd === "yes" || packageAdd === "Yes") {
+        if (["y", "Y", "yes", "Yes"].includes(packageAdd)) {
           // Prompts to install Redux
           prompt({
             ...addPackage[0],
             message: "Would you like to add Redux?"
           }).then(({ packageAdd }) => {
-            if (packageAdd === "y" || packageAdd === "Y" || packageAdd === "yes" || packageAdd === "Yes") {
+            if (["y", "Y", "yes", "Yes"].includes(packageAdd)) {
               // Installs CRA , React Router and Redux + Redux Store
-              fs.appendFile("store.js", Reduxing, err => {
+              fs.appendFile("store.js", ReduxBoilerPlate, err => {
                 if (err) throw err;
               });
               cmd.get(
@@ -86,40 +47,44 @@ const cra = () => {
                 } && ${
                   reduxObj.install
                 } && mkdir store && cd store && touch store.js && cat < ../../store.js > store.js && cd .. && cd .. && rm store.js `,
-                (err, data, stderr) => console.log(data)
+                (err, data, stderr) =>
+                  err ? console.log(err) : console.log(data)
               );
-            } else if (packageAdd === "n" || packageAdd === "N" || packageAdd === "No" || packageAdd === "no") {
+            } else if (["n", "N", "No", "no"].includes(packageAdd)) {
               // Installs CRA and React Router
               cmd.get(
                 ` mkdir ${folderName} && cd ${folderName} && ${createReactApp} . && ${
                   reactRouterObj.install
                 }`,
-                (err, data, stderr) => console.log(data)
+                (err, data, stderr) =>
+                  err ? console.log(err) : console.log(data)
               );
             }
           });
           // If 'n' for React Router, prompts to install Redux
-        } else if (packageAdd === "n" || packageAdd === "N" || packageAdd === "No" || packageAdd === "no") {
+        } else if (["n", "N", "No", "no"].includes(packageAdd)) {
           // Prompts to Install Redux
           prompt({
             ...addPackage[0],
             message: "Would you like to add Redux?"
           }).then(({ packageAdd }) => {
-            if (packageAdd === "y" || packageAdd === "Y" || packageAdd === "yes" || packageAdd === "Yes") {
-              fs.appendFile("store.js", Reduxing, err => {
+            if (["y", "Y", "yes", "Yes"].includes(packageAdd)) {
+              fs.appendFile("store.js", ReduxBoilerPlate, err => {
                 if (err) throw err;
               });
               cmd.get(
                 ` mkdir ${folderName} && cd ${folderName} && ${createReactApp} . && ${
                   reduxObj.install
                 } && mkdir store && cd store && touch store.js && cat < ../../store.js > store.js && cd .. && cd .. && rm store.js `,
-                (err, data, stderr) => console.log(data)
+                (err, data, stderr) =>
+                  err ? console.log(err) : console.log(data)
               );
-            } else if (packageAdd === "n" || packageAdd === "N" || packageAdd === "No" || packageAdd === "no") {
+            } else if (["n", "N", "No", "no"].includes(packageAdd)) {
               // If 'no' for Redux and React Router, it installs just CRA.
               cmd.get(
                 ` mkdir ${folderName} && cd ${folderName} && ${createReactApp} .`,
-                (err, data, stderr) => console.log(data)
+                (err, data, stderr) =>
+                  err ? console.log(err) : console.log(data)
               );
             }
           });
