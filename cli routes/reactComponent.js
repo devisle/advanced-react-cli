@@ -16,6 +16,7 @@ const reactComponent = () => {
   prompt(reactComponents).then(({ component }) => {
     prompt(componentName).then(({ componentName }) => {
       prompt(installFolder).then(({ folderName }) => {
+        //Function Component
         if (component === "function") {
           if (folderName === "." || folderName === "") {
             const writeStream = fs.createWriteStream(`./${componentName}.js`);
@@ -37,7 +38,10 @@ const reactComponent = () => {
               `File Creation: Function component ${component} in the folder ${folderName} has been created successfully!`
             );
           }
-        } else if (component === "class") {
+        }
+
+        //Class Component
+        else if (component === "class") {
           if (folderName === "." || folderName === "") {
             const writeStream = fs.createWriteStream(`./${componentName}.js`);
             const fileData = componentCode(`${component}`, `${componentName}`);

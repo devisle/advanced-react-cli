@@ -20,7 +20,6 @@ class ${fileName} extends Component {
     )
   }
 }
-export default ${fileName};
-                `;
+export default ${fileName};`;
   }
 };
