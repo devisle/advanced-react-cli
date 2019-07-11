@@ -3,13 +3,13 @@ const cmd = require("node-cmd");
 const fs = require("fs");
 
 // Cli Model
-const cliModel = require("../cli model/cli-model");
+const cliModel = require("../cliModel");
 const installOption = cliModel.installOption;
 
 // CLI Install Commands
-const { propTypesObj } = require("../cli model/install-commands");
+const { propTypesObj } = require("../cliModel/install-commands");
 
-const propTypeBoilerPlate = require("../cli model/starter-code/propTypes");
+const propTypeBoilerPlate = require("../cliModel/starter-code/propTypes");
 
 const prompt = inquirer.createPromptModule();
 

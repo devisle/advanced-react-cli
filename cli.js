@@ -12,16 +12,16 @@ console.log(cwd);
 const inquirer = require("inquirer");
 
 // Cli Model
-const cliModel = require("./cli model/cli-model");
+const cliModel = require("./cliModel");
 const cliCommand = cliModel.cliCommand;
 
 // Cli Routes
-const cra = require("./cli routes/cra");
-const reactRouter = require("./cli routes/reactrouter");
-const nodeSass = require("./cli routes/nodeSass");
-const reactComponent = require("./cli routes/reactComponent");
-const propTypes = require("./cli routes/propTypes");
-const stateManagement = require("./cli routes/stateManagement");
+const cra = require("./cliRoutes/cra");
+const reactRouter = require("./cliRoutes/reactrouter");
+const nodeSass = require("./cliRoutes/nodeSass");
+const reactComponent = require("./cliRoutes/reactComponent");
+const propTypes = require("./cliRoutes/propTypes");
+const stateManagement = require("./cliRoutes/stateManagement");
 
 const prompt = inquirer.createPromptModule();
 

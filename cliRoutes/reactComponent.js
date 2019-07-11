@@ -2,13 +2,13 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 
 // Cli Model
-const cliModel = require("../cli model/cli-model");
+const cliModel = require("../cliModel");
 const reactComponents = cliModel.reactComponents;
 const installFolder = cliModel.installFolder;
 const componentName = cliModel.componentName;
 
 //React Component Boilerplate
-const componentCode = require("../cli model/starter-code/reactComponent");
+const componentCode = require("../cliModel/starter-code/reactComponent");
 
 const prompt = inquirer.createPromptModule();
 
