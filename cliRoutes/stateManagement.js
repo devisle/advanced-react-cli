@@ -3,7 +3,7 @@ const cmd = require("node-cmd");
 const fs = require("fs");
 
 // Cli Model
-const cliModel = require("../cli model/cli-model");
+const cliModel = require("../cliModel/cli-model");
 const installOption = cliModel.installOption;
 const stateOption = cliModel.stateManagement;
 const unstatedOption = cliModel.unstatedOptions;
@@ -13,13 +13,13 @@ const {
   reduxObj,
   unstatedObj,
   reduxThunkObj
-} = require("../cli model/install-commands");
+} = require("../cliModel/install-commands");
 
 // Destructuring the Unstated Object
 const { unstated, unstatedNext } = unstatedObj;
 
 // Importing Redux Boiler plate file
-const ReduxBoilerPlate = require("../cli model/starter-code/redux");
+const ReduxBoilerPlate = require("../cliModel/starter-code/redux");
 
 const prompt = inquirer.createPromptModule();
 

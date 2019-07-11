@@ -3,7 +3,7 @@ const cmd = require("node-cmd");
 const fs = require("fs");
 
 // Cli Model
-const cliModel = require("../cli model/cli-model");
+const cliModel = require("../cliModel/cli-model");
 const addPackage = cliModel.addPackage;
 const installFolder = cliModel.installFolder;
 
@@ -12,11 +12,11 @@ const {
   createReactApp,
   reactRouterObj,
   reduxObj
-} = require("../cli model/install-commands");
+} = require("../cliModel/install-commands");
 
 const prompt = inquirer.createPromptModule();
 
-const ReduxBoilerPlate = require("../cli model/starter-code/redux");
+const ReduxBoilerPlate = require("../cliModel/starter-code/redux");
 
 const cra = () => {
   prompt({
