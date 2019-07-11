@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 
 // Cli Model
-const cliModel = require("../cliModel/cli-model");
+const cliModel = require("../cliModel");
 const reactComponents = cliModel.reactComponents;
 const installFolder = cliModel.installFolder;
 const componentName = cliModel.componentName;

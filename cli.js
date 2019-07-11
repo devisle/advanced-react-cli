@@ -12,7 +12,7 @@ console.log(cwd);
 const inquirer = require("inquirer");
 
 // Cli Model
-const cliModel = require("./cliModel/cli-model");
+const cliModel = require("./cliModel");
 const cliCommand = cliModel.cliCommand;
 
 // Cli Routes

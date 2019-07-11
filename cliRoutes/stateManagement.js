@@ -3,7 +3,7 @@ const cmd = require("node-cmd");
 const fs = require("fs");
 
 // Cli Model
-const cliModel = require("../cliModel/cli-model");
+const cliModel = require("../cliModel");
 const installOption = cliModel.installOption;
 const stateOption = cliModel.stateManagement;
 const unstatedOption = cliModel.unstatedOptions;
