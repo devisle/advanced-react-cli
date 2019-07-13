@@ -41,80 +41,84 @@ const reactComponent = () => {
               reduxBool = ["yes", "y"].includes(packageAdd.toLowerCase())
                 ? true
                 : false;
+              //Function Component
+              if (component === "function") {
+                if ([".", ""].includes(folderName)) {
+                  const writeStream = fs.createWriteStream(
+                    `./${componentName}.js`
+                  );
+                  const fileData = componentCode(
+                    `${component}`,
+                    `${componentName}`,
+                    propTypingBool,
+                    reactRouterBool,
+                    reduxBool
+                  );
+                  writeStream.write(fileData);
+                  console.log(
+                    `File Creation: Function component ${componentName} has been created successfully!`
+                  );
+                } else {
+                  fs.mkdir(`./${folderName}`, { recursive: false }, err => {
+                    if (err) throw err;
+                  });
+                  const writeStream = fs.createWriteStream(
+                    `./${folderName}/${componentName}.js`
+                  );
+                  const fileData = componentCode(
+                    `${component}`,
+                    `${componentName}`,
+                    propTypingBool,
+                    reactRouterBool,
+                    reduxBool
+                  );
+                  writeStream.write(fileData);
+                  console.log(
+                    `File Creation: Function component ${component} in the folder ${folderName} has been created successfully!`
+                  );
+                }
+              }
+
+              //Class Component
+              else if (component === "class") {
+                if ([".", ""].includes(folderName)) {
+                  const writeStream = fs.createWriteStream(
+                    `./${componentName}.js`
+                  );
+                  const fileData = componentCode(
+                    `${component}`,
+                    `${componentName}`,
+                    propTypingBool,
+                    reactRouterBool,
+                    reduxBool
+                  );
+                  writeStream.write(fileData);
+                  console.log(
+                    `File Creation: Class component ${component} has been created successfully!`
+                  );
+                } else {
+                  fs.mkdir(`./${folderName}`, { recursive: false }, err => {
+                    if (err) throw err;
+                  });
+                  const writeStream = fs.createWriteStream(
+                    `./${folderName}/${componentName}.js`
+                  );
+                  const fileData = componentCode(
+                    `${component}`,
+                    `${componentName}`,
+                    propTypingBool,
+                    reactRouterBool,
+                    reduxBool
+                  );
+                  writeStream.write(fileData);
+                  console.log(
+                    `File Creation: Function component ${component} in the folder ${folderName} has been created successfully!`
+                  );
+                }
+              }
             });
           });
         });
-        //Function Component
-        if (component === "function") {
-          if ([".", ""].includes(folderName)) {
-            const writeStream = fs.createWriteStream(`./${componentName}.js`);
-            const fileData = componentCode(
-              `${component}`,
-              `${componentName}`,
-              propTypingBool,
-              reactRouterBool,
-              reduxBool
-            );
-            writeStream.write(fileData);
-            console.log(
-              `File Creation: Function component ${componentName} has been created successfully!`
-            );
-          } else {
-            fs.mkdir(`./${folderName}`, { recursive: false }, err => {
-              if (err) throw err;
-            });
-            const writeStream = fs.createWriteStream(
-              `./${folderName}/${componentName}.js`
-            );
-            const fileData = componentCode(
-              `${component}`,
-              `${componentName}`,
-              propTypingBool,
-              reactRouterBool,
-              reduxBool
-            );
-            writeStream.write(fileData);
-            console.log(
-              `File Creation: Function component ${component} in the folder ${folderName} has been created successfully!`
-            );
-          }
-        }
-
-        //Class Component
-        else if (component === "class") {
-          if ([".", ""].includes(folderName)) {
-            const writeStream = fs.createWriteStream(`./${componentName}.js`);
-            const fileData = componentCode(
-              `${component}`,
-              `${componentName}`,
-              propTypingBool,
-              reactRouterBool,
-              reduxBool
-            );
-            writeStream.write(fileData);
-            console.log(
-              `File Creation: Class component ${component} has been created successfully!`
-            );
-          } else {
-            fs.mkdir(`./${folderName}`, { recursive: false }, err => {
-              if (err) throw err;
-            });
-            const writeStream = fs.createWriteStream(
-              `./${folderName}/${componentName}.js`
-            );
-            const fileData = componentCode(
-              `${component}`,
-              `${componentName}`,
-              propTypingBool,
-              reactRouterBool,
-              reduxBool
-            );
-            writeStream.write(fileData);
-            console.log(
-              `File Creation: Function component ${component} in the folder ${folderName} has been created successfully!`
-            );
-          }
-        }
       });
     });
   });
