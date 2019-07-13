@@ -14,14 +14,12 @@ const nodeSass = () => {
   prompt(installOption).then(({ decision }) => {
     if (decision === "Install") {
       cmd.get(`${nodeSassObj.install}`, (err, data, stderr) => {
-        if (err) throw err;
-        else console.log(data);
+        err ? console.log(err) : console.log(stderr, data);
       });
       console.log("Package: node-sass has been installed successfully!");
     } else if (decision === "Uninstall") {
       cmd.get(`${nodeSassObj.uninstall}`, (err, data, stderr) => {
-        if (err) throw err;
-        else console.log(data);
+        err ? console.log(err) : console.log(stderr, data);
       });
       console.log("Package: node-sass has been uninstalled successfully!");
     }

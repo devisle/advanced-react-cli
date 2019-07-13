@@ -17,8 +17,7 @@ const propTypes = () => {
   prompt(installOption).then(({ decision }) => {
     if (decision === "Install") {
       cmd.get(`${propTypesObj.install}`, (err, data, stderr) => {
-        if (err) throw err;
-        else console.log(data);
+        err ? console.log(err) : console.log(stderr, data);
       });
       fs.mkdir("./propTypes", err => {
         if (err) throw err;
@@ -30,8 +29,7 @@ const propTypes = () => {
       console.log("PropTypes Folder has been created!");
     } else if (decision === "Uninstall") {
       cmd.get(`${propTypesObj.uninstall}`, (err, data, stderr) => {
-        if (err) throw err;
-        else console.log(data);
+        err ? console.log(err) : console.log(stderr, data);
       });
       console.log("Package: prop-types has been uninstalled successfully!");
     }
