@@ -30,8 +30,7 @@ const stateManagement = () => {
       prompt(installOption).then(({ decision }) => {
         if (decision === "Install") {
           cmd.get(`${reduxObj.install}`, (err, data, stderr) => {
-            if (err) throw err;
-            else console.log(data);
+            err ? console.log(err) : console.log(stderr, data);
           });
           fs.mkdir("./store", err => {
             if (err) throw err;
@@ -45,8 +44,7 @@ const stateManagement = () => {
           console.log("Redux Store has been created successfully!");
         } else if (decision === "Uninstall") {
           cmd.get(`${reduxObj.uninstall}`, (err, data, stderr) => {
-            if (err) throw err;
-            else console.log(data);
+            err ? console.log(err) : console.log(stderr, data);
           });
           console.log(
             "Packages: redux & react-redux has been uninstalled successfully!"
@@ -61,8 +59,7 @@ const stateManagement = () => {
           prompt(installOption).then(({ decision }) => {
             if (decision === "Install") {
               cmd.get(`${unstated.install}`, (err, data, stderr) => {
-                if (err) throw err;
-                else console.log(data);
+                err ? console.log(err) : console.log(stderr, data);
               });
               console.log(
                 "Check out more on how to get started with unstated on the following link https://github.com/jamiebuilds/unstated"
@@ -70,8 +67,7 @@ const stateManagement = () => {
               console.log("Package: Unstated has been installed!");
             } else {
               cmd.get(`${unstated.uninstall}`, (err, data, stderr) => {
-                if (err) throw err;
-                else console.log(data);
+                err ? console.log(err) : console.log(stderr, data);
               });
               console.log("Package: Unstated has been uninstalled!");
             }
@@ -80,8 +76,7 @@ const stateManagement = () => {
           prompt(installOption).then(({ decision }) => {
             if (decision === "Install") {
               cmd.get(`${unstatedNext.install}`, (err, data, stderr) => {
-                if (err) throw err;
-                else console.log(data);
+                err ? console.log(err) : console.log(stderr, data);
               });
               console.log(
                 "Check out more on how to get started with unstated-next on the following link https://github.com/jamiebuilds/unstated-next "
@@ -89,8 +84,7 @@ const stateManagement = () => {
               console.log("Package: Unstated-next has been installed!");
             } else {
               cmd.get(`${unstatedNext.uninstall}`, (err, data, stderr) => {
-                if (err) throw err;
-                else console.log(data);
+                err ? console.log(err) : console.log(stderr, data);
               });
               console.log("Package: Unstated-next has been uninstalled!");
             }
@@ -103,8 +97,7 @@ const stateManagement = () => {
       prompt(installOption).then(({ decision }) => {
         if (decision === "Install") {
           cmd.get(`${reduxThunkObj.install}`, (err, data, stderr) => {
-            if (err) throw err;
-            else console.log(data);
+            err ? console.log(err) : console.log(stderr, data);
           });
           console.log("Package: Redux-Thunk has been installed!");
           console.log(
@@ -112,8 +105,7 @@ const stateManagement = () => {
           );
         } else {
           cmd.get(`${reduxThunkObj.uninstall}`, (err, data, stderr) => {
-            if (err) throw err;
-            else console.log(data);
+            err ? console.log(err) : console.log(stderr, data);
           });
           console.log("Package: Redux-Thunk has been uninstalled!");
         }
