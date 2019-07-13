@@ -8,7 +8,7 @@ const propTypesObject = fileName => {
 };
 const reactRouterObj = () => {
   return {
-    import: `import {BrowserRouter as Route, Router, NavLink} from "react-router-dom`,
+    import: `import {BrowserRouter as Route, Router, NavLink} from "react-router-dom"`,
     declare: `Hello World`
   };
 };
