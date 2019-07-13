@@ -25,7 +25,7 @@ const reduxObj = () => {
     // Your code here
   }
 } `,
-    connect: `connect(mapStateToProps, mapDisPatchToProps)`
+    connect: `connect(mapStateToProps, mapDispatchToProps)`
   };
 };
 

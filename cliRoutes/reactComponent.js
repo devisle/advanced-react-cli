@@ -22,7 +22,7 @@ const reactComponent = () => {
           message: "Would you like to add PropTypes? : (Y/N)"
         }).then(({ packageAdd }) => {
           let propTypingBool;
-          propTypingBool = ["yes", "y"].includes(packageAdd.toLowerCase())
+          propTypingBool = ["yes", "y", ""].includes(packageAdd.toLowerCase())
             ? true
             : false;
           prompt({
@@ -30,7 +30,9 @@ const reactComponent = () => {
             message: "Would you like to add react-router? : (Y/N)"
           }).then(({ packageAdd }) => {
             let reactRouterBool;
-            reactRouterBool = ["yes", "y"].includes(packageAdd.toLowerCase())
+            reactRouterBool = ["yes", "y", ""].includes(
+              packageAdd.toLowerCase()
+            )
               ? true
               : false;
             prompt({
@@ -38,7 +40,7 @@ const reactComponent = () => {
               message: "Would you like to add Redux? : (Y/N)"
             }).then(({ packageAdd }) => {
               let reduxBool;
-              reduxBool = ["yes", "y"].includes(packageAdd.toLowerCase())
+              reduxBool = ["yes", "y", ""].includes(packageAdd.toLowerCase())
                 ? true
                 : false;
               //Function Component
