@@ -51,7 +51,7 @@ It is still under development. But, as of this current beta version, we have ena
 1.  How can I test this out?
 
 - Currently we are Beta testing the CLI. If you'd like to try it out , Run the following command `npx advanced-react-cli` in your terminal.
-- We are still continuing to work on our [Development Checklist](https://github.com/devisle/advanced-react-cli/blob/master/docs/Checklist.md).
+- We are still continuing to work on our [Development Checklist](https://github.com/devisle/advanced-react-cli/blob/master/docs/README.md).
 
 - Ensure you have git version control, and npm (node package manager) Installed. You may check if your system has them installed by running the following commands `git --version` and `npm --version`. If you don't have it installed, please visit
 
