@@ -29,6 +29,13 @@ This CLI uses some of the best GitHub repos' terminal commands under the hood, t
 Just type in the following command in your terminal and run it! (Please check FAQ for more on testing and contributions)
 `npx advanced-react-cli`
 
+## Installing the CLI globally
+
+`npm i -g advanced-react-cli`
+
+To invoke the CLI
+`arc`
+
 ## What does this do?
 
 It is still under development. But, as of this current beta version, we have enabled a few options like:
