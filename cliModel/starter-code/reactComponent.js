@@ -17,7 +17,7 @@ const reduxObj = () => {
     import: `import {connect} from 'redux'`,
     mapStateToProps: `const mapStateToProps = state => {
   return {
-    props: state.props
+    // Your code here
   }
 }`,
     mapDispatchToProps: `const mapDispatchToProps = dispatch => {
