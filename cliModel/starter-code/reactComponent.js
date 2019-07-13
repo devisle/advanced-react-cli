@@ -17,7 +17,7 @@ const reduxObj = () => {
     import: `import {connect} from 'redux'`,
     mapStateToProps: `const mapStateToProps = state => {
   return {
-    // Your code here
+    props: state.props
   }
 }`,
     mapDispatchToProps: `const mapDispatchToProps = dispatch => {
@@ -41,7 +41,7 @@ ${propTyping ? propTyping.import : ""}
 ${reactRouting ? reactRouting.import : ""}
 ${reactRedux ? reactRedux.import : ""}
 
-const ${fileName} = () => {
+const ${fileName} = (props) => {
   return (
     <div>
       Hello World
