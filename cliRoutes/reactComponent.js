@@ -5,9 +5,10 @@ const fs = require("fs");
 const cliModel = require("../cliModel");
 const reactComponents = cliModel.reactComponents;
 const installFolder = cliModel.installFolder;
+const addPackage = cliModel.addPackage;
 const componentName = cliModel.componentName;
 
-//React Component Boilerplate
+//React Component Custom Boilerplate
 const componentCode = require("../cliModel/starter-code/reactComponent");
 
 const prompt = inquirer.createPromptModule();
@@ -16,6 +17,33 @@ const reactComponent = () => {
   prompt(reactComponents).then(({ component }) => {
     prompt(componentName).then(({ componentName }) => {
       prompt(installFolder).then(({ folderName }) => {
+        prompt({
+          ...addPackage[0],
+          message: "Would you like to add PropTypes? : (Y/N)"
+        }).then(({ packageAdd }) => {
+          let propTypingBool;
+          propTypingBool = ["yes", "y"].includes(packageAdd.toLowerCase())
+            ? true
+            : false;
+          prompt({
+            ...addPackage[0],
+            message: "Would you like to add react-router? : (Y/N)"
+          }).then(({ packageAdd }) => {
+            let reactRouterBool;
+            reactRouterBool = ["yes", "y"].includes(packageAdd.toLowerCase())
+              ? true
+              : false;
+            prompt({
+              ...addPackage[0],
+              message: "Would you like to add Redux? : (Y/N)"
+            }).then(({ packageAdd }) => {
+              let reduxBool;
+              reduxBool = ["yes", "y"].includes(packageAdd.toLowerCase())
+                ? true
+                : false;
+            });
+          });
+        });
         //Function Component
         if (component === "function") {
           if ([".", ""].includes(folderName)) {
