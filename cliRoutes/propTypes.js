@@ -13,27 +13,35 @@ const propTypeBoilerPlate = require("../cliModel/starter-code/propTypes");
 
 const prompt = inquirer.createPromptModule();
 
-const propTypes = () => {
-  prompt(installOption).then(({ decision }) => {
-    if (decision === "Install") {
-      cmd.get(`${propTypesObj.install}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      fs.mkdir("./propTypes", err => {
-        if (err) throw err;
-      });
-      cmd.get(`cd propTypes && touch propTypes.js`);
-      const writeStream = fs.createWriteStream("./propTypes/propTypes.js");
-      writeStream.write(`${propTypeBoilerPlate}`);
-      console.log("Package: prop-types has been installed successfully!");
-      console.log("PropTypes Folder has been created!");
-    } else if (decision === "Uninstall") {
-      cmd.get(`${propTypesObj.uninstall}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log("Package: prop-types has been uninstalled successfully!");
-    }
-  });
-};
+module.exports = class propTypes {
+  installOrUninstall() {
+    prompt(installOption).then(({ decision }) => {
+      if (decision === "Install") {
+        this.install();
+      } else if (decision === "Uninstall") {
+        this.uninstall();
+      }
+    });
+  }
 
-module.exports = propTypes;
+  install() {
+    cmd.get(`${propTypesObj.install}`, (err, data, stderr) => {
+      err ? console.log(err) : console.log(stderr, data);
+    });
+    fs.mkdir("./propTypes", err => {
+      if (err) throw err;
+    });
+    cmd.get(`cd propTypes && touch propTypes.js`);
+    const writeStream = fs.createWriteStream("./propTypes/propTypes.js");
+    writeStream.write(`${propTypeBoilerPlate}`);
+    console.log("Package: prop-types has been installed successfully!");
+    console.log("PropTypes Folder has been created!");
+  }
+
+  uninstall() {
+    cmd.get(`${propTypesObj.uninstall}`, (err, data, stderr) => {
+      err ? console.log(err) : console.log(stderr, data);
+    });
+    console.log("Package: prop-types has been uninstalled successfully!");
+  }
+};

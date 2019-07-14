@@ -20,7 +20,7 @@ const cra = require("./cliRoutes/cra");
 const ReactRouter = require("./cliRoutes/reactrouter");
 const NodeSass = require("./cliRoutes/nodeSass");
 const reactComponent = require("./cliRoutes/reactComponent");
-const propTypes = require("./cliRoutes/propTypes");
+const PropTypes = require("./cliRoutes/propTypes");
 const stateManagement = require("./cliRoutes/stateManagement");
 
 const prompt = inquirer.createPromptModule();
@@ -40,7 +40,7 @@ prompt(cliCommand).then(answers => {
       new NodeSass().installOrUninstall();
       break;
     case "prop-types":
-      propTypes();
+      new PropTypes().installOrUninstall();
       break;
     case "state-management":
       stateManagement();
