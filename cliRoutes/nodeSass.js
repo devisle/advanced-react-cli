@@ -35,5 +35,3 @@ module.exports = class NodeSass {
     console.log("Package: node-sass has been uninstalled successfully!");
   }
 };
-
-// module.exports = nodeSass;
