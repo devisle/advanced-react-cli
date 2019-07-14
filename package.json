@@ -25,7 +25,8 @@
   "license": "GNU GPLv3",
   "dependencies": {
     "inquirer": "^6.4.1",
-    "node-cmd": "^3.0.0"
+    "node-cmd": "^3.0.0",
+    "prop-types": "^15.7.2"
   },
   "repository": {
     "type": "git",
