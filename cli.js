@@ -16,7 +16,7 @@ const cliModel = require("./cliModel");
 const cliCommand = cliModel.cliCommand;
 
 // Cli Routes
-const cra = require("./cliRoutes/cra");
+const CRA = require("./cliRoutes/cra");
 const ReactRouter = require("./cliRoutes/reactrouter");
 const NodeSass = require("./cliRoutes/nodeSass");
 const ReactComponent = require("./cliRoutes/reactComponent");
@@ -28,7 +28,7 @@ const prompt = inquirer.createPromptModule();
 prompt(cliCommand).then(answers => {
   switch (answers.installation) {
     case "create-react-app":
-      cra();
+      new CRA().CRAPrompt();
       break;
     case "react-component":
       new ReactComponent().whatComponent();
