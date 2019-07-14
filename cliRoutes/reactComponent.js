@@ -1,5 +1,4 @@
 const inquirer = require("inquirer");
-const fs = require("fs");
 
 // Cli Model
 const cliModel = require("../cliModel");
@@ -7,9 +6,6 @@ const reactComponents = cliModel.reactComponents;
 const installFolder = cliModel.installFolder;
 const addPackage = cliModel.addPackage;
 const componentName = cliModel.componentName;
-
-//React Component Custom Boilerplate
-const componentCode = require("../cliModel/starter-code/reactComponent");
 
 // Component Dependencies
 const FunctionComponent = require("./ReactComponent-Dependencies/functionComponent");
