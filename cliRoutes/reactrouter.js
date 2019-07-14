@@ -29,6 +29,7 @@ module.exports = class ReactRouter {
       "Packages: react-router & react-router-dom has been installed successfully!"
     );
   }
+
   uninstall() {
     cmd.get(`${reactRouterObj.uninstall}`, (err, data, stderr) => {
       err ? console.log(err) : console.log(stderr, data);
