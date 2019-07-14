@@ -18,7 +18,7 @@ const cliCommand = cliModel.cliCommand;
 // Cli Routes
 const cra = require("./cliRoutes/cra");
 const ReactRouter = require("./cliRoutes/reactrouter");
-const nodeSass = require("./cliRoutes/nodeSass");
+const NodeSass = require("./cliRoutes/nodeSass");
 const reactComponent = require("./cliRoutes/reactComponent");
 const propTypes = require("./cliRoutes/propTypes");
 const stateManagement = require("./cliRoutes/stateManagement");
@@ -37,7 +37,7 @@ prompt(cliCommand).then(answers => {
       new ReactRouter().installOrUninstall();
       break;
     case "node-sass":
-      nodeSass();
+      new NodeSass().installOrUninstall();
       break;
     case "prop-types":
       propTypes();

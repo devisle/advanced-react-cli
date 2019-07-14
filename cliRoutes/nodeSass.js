@@ -10,20 +10,30 @@ const { nodeSassObj } = require("../cliModel/install-commands");
 
 const prompt = inquirer.createPromptModule();
 
-const nodeSass = () => {
-  prompt(installOption).then(({ decision }) => {
-    if (decision === "Install") {
-      cmd.get(`${nodeSassObj.install}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log("Package: node-sass has been installed successfully!");
-    } else if (decision === "Uninstall") {
-      cmd.get(`${nodeSassObj.uninstall}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log("Package: node-sass has been uninstalled successfully!");
-    }
-  });
+module.exports = class NodeSass {
+  installOrUninstall() {
+    prompt(installOption).then(({ decision }) => {
+      if (decision === "Install") {
+        this.install();
+      } else if (decision === "Uninstall") {
+        this.uninstall();
+      }
+    });
+  }
+
+  install() {
+    cmd.get(`${nodeSassObj.install}`, (err, data, stderr) => {
+      err ? console.log(err) : console.log(stderr, data);
+    });
+    console.log("Package: node-sass has been installed successfully!");
+  }
+
+  uninstall() {
+    cmd.get(`${nodeSassObj.uninstall}`, (err, data, stderr) => {
+      err ? console.log(err) : console.log(stderr, data);
+    });
+    console.log("Package: node-sass has been uninstalled successfully!");
+  }
 };
 
-module.exports = nodeSass;
+// module.exports = nodeSass;
