@@ -11,119 +11,120 @@ const componentName = cliModel.componentName;
 //React Component Custom Boilerplate
 const componentCode = require("../cliModel/starter-code/reactComponent");
 
+// Component Dependencies
+const FunctionComponent = require("./ReactComponent-Dependencies/functionComponent");
+const ClassComponent = require("./ReactComponent-Dependencies/classComponent");
+
 const prompt = inquirer.createPromptModule();
-
-const reactComponent = () => {
-  prompt(reactComponents).then(({ component }) => {
-    prompt(componentName).then(({ componentName }) => {
-      prompt(installFolder).then(({ folderName }) => {
-        prompt({
-          ...addPackage[0],
-          message: "Would you like to add PropTypes? : (Y/N)"
-        }).then(({ packageAdd }) => {
-          let propTypingBool;
-          propTypingBool = ["yes", "y", ""].includes(packageAdd.toLowerCase())
-            ? true
-            : false;
-          prompt({
-            ...addPackage[0],
-            message: "Would you like to add react-router? : (Y/N)"
-          }).then(({ packageAdd }) => {
-            let reactRouterBool;
-            reactRouterBool = ["yes", "y", ""].includes(
-              packageAdd.toLowerCase()
-            )
-              ? true
-              : false;
-            prompt({
-              ...addPackage[0],
-              message: "Would you like to add Redux? : (Y/N)"
-            }).then(({ packageAdd }) => {
-              let reduxBool;
-              reduxBool = ["yes", "y", ""].includes(packageAdd.toLowerCase())
-                ? true
-                : false;
-              //Function Component
-              if (component === "function") {
-                if ([".", ""].includes(folderName)) {
-                  const writeStream = fs.createWriteStream(
-                    `./${componentName}.js`
-                  );
-                  const fileData = componentCode(
-                    `${component}`,
-                    `${componentName}`,
-                    propTypingBool,
-                    reactRouterBool,
-                    reduxBool
-                  );
-                  writeStream.write(fileData);
-                  console.log(
-                    `File Creation: Function component ${componentName} has been created successfully!`
-                  );
-                } else {
-                  fs.mkdir(`./${folderName}`, { recursive: false }, err => {
-                    if (err) throw err;
-                  });
-                  const writeStream = fs.createWriteStream(
-                    `./${folderName}/${componentName}.js`
-                  );
-                  const fileData = componentCode(
-                    `${component}`,
-                    `${componentName}`,
-                    propTypingBool,
-                    reactRouterBool,
-                    reduxBool
-                  );
-                  writeStream.write(fileData);
-                  console.log(
-                    `File Creation: Function component ${component} in the folder ${folderName} has been created successfully!`
-                  );
-                }
-              }
-
-              //Class Component
-              else if (component === "class") {
-                if ([".", ""].includes(folderName)) {
-                  const writeStream = fs.createWriteStream(
-                    `./${componentName}.js`
-                  );
-                  const fileData = componentCode(
-                    `${component}`,
-                    `${componentName}`,
-                    propTypingBool,
-                    reactRouterBool,
-                    reduxBool
-                  );
-                  writeStream.write(fileData);
-                  console.log(
-                    `File Creation: Class component ${component} has been created successfully!`
-                  );
-                } else {
-                  fs.mkdir(`./${folderName}`, { recursive: false }, err => {
-                    if (err) throw err;
-                  });
-                  const writeStream = fs.createWriteStream(
-                    `./${folderName}/${componentName}.js`
-                  );
-                  const fileData = componentCode(
-                    `${component}`,
-                    `${componentName}`,
-                    propTypingBool,
-                    reactRouterBool,
-                    reduxBool
-                  );
-                  writeStream.write(fileData);
-                  console.log(
-                    `File Creation: Function component ${component} in the folder ${folderName} has been created successfully!`
-                  );
-                }
-              }
-            });
-          });
-        });
-      });
+module.exports = class ReactComponent {
+  // Prompts User for Component type
+  whatComponent() {
+    prompt(reactComponents).then(({ component }) => {
+      this.componentName(component);
     });
-  });
-};
+  }
+  // Prompts User for Component Name
+  componentName(component) {
+    prompt(componentName).then(({ componentName }) => {
+      this.folderName(component, componentName);
+    });
+  }
 
-module.exports = reactComponent;
+  // Prompts User for Folder Name
+  folderName(component, componentName) {
+    prompt(installFolder).then(({ folderName }) => {
+      this.propTypesAdd(component, componentName, folderName);
+    });
+  }
+
+  // Prompts User on PropTypes
+  propTypesAdd(component, componentName, folderName) {
+    prompt({
+      ...addPackage[0],
+      message: "Would you like to add PropTypes? : (Y/N)"
+    }).then(({ packageAdd }) => {
+      let propTypingBool;
+      propTypingBool = ["yes", "y", ""].includes(packageAdd.toLowerCase())
+        ? true
+        : false;
+      this.reactRouterAdd(component, componentName, folderName, propTypingBool);
+    });
+  }
+
+  //Prompts User on React-Router
+  reactRouterAdd(component, componentName, folderName, propTypingBool) {
+    prompt({
+      ...addPackage[0],
+      message: "Would you like to add react-router? : (Y/N)"
+    }).then(({ packageAdd }) => {
+      let reactRouterBool;
+      reactRouterBool = ["yes", "y", ""].includes(packageAdd.toLowerCase())
+        ? true
+        : false;
+      this.reduxAdd(
+        component,
+        componentName,
+        folderName,
+        propTypingBool,
+        reactRouterBool
+      );
+    });
+  }
+
+  // Prompts User on Redux
+  reduxAdd(
+    component,
+    componentName,
+    folderName,
+    propTypingBool,
+    reactRouterBool
+  ) {
+    prompt({
+      ...addPackage[0],
+      message: "Would you like to add Redux? : (Y/N)"
+    }).then(({ packageAdd }) => {
+      let reduxBool;
+      reduxBool = ["yes", "y", ""].includes(packageAdd.toLowerCase())
+        ? true
+        : false;
+      this.functionOrClass(
+        component,
+        componentName,
+        folderName,
+        propTypingBool,
+        reactRouterBool,
+        reduxBool
+      );
+    });
+  }
+
+  // Main Logic Split : Function or Class Component
+  functionOrClass(
+    component,
+    componentName,
+    folderName,
+    propTypingBool,
+    reactRouterBool,
+    reduxBool
+  ) {
+    if (component === "function") {
+      FunctionComponent(
+        component,
+        componentName,
+        folderName,
+        propTypingBool,
+        reactRouterBool,
+        reduxBool
+      );
+    } else {
+      ClassComponent(
+        component,
+        componentName,
+        folderName,
+        propTypingBool,
+        reactRouterBool,
+        reduxBool
+      );
+    }
+  }
+};

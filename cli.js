@@ -19,7 +19,7 @@ const cliCommand = cliModel.cliCommand;
 const cra = require("./cliRoutes/cra");
 const ReactRouter = require("./cliRoutes/reactrouter");
 const NodeSass = require("./cliRoutes/nodeSass");
-const reactComponent = require("./cliRoutes/reactComponent");
+const ReactComponent = require("./cliRoutes/reactComponent");
 const PropTypes = require("./cliRoutes/propTypes");
 const StateManagement = require("./cliRoutes/stateManagement");
 
@@ -31,7 +31,7 @@ prompt(cliCommand).then(answers => {
       cra();
       break;
     case "react-component":
-      reactComponent();
+      new ReactComponent().whatComponent();
       break;
     case "react-router":
       new ReactRouter().installOrUninstall();
