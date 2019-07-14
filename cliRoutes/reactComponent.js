@@ -14,7 +14,7 @@ const ClassComponent = require("./ReactComponent-Dependencies/classComponent");
 const prompt = inquirer.createPromptModule();
 module.exports = class ReactComponent {
   // Prompts User for Component type
-  whatComponent() {
+  componentPrompt() {
     prompt(reactComponents).then(({ component }) => {
       this.componentName(component);
     });

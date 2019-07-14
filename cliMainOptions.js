@@ -12,7 +12,7 @@ module.exports = answers => {
       new CRA().CRAPrompt();
       break;
     case "react-component":
-      new ReactComponent().whatComponent();
+      new ReactComponent().componentPrompt();
       break;
     case "react-router":
       new ReactRouter().installOrUninstall();
