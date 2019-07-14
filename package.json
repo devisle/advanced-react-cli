@@ -1,6 +1,6 @@
 {
   "name": "advanced-react-cli",
-  "version": "0.5.0",
+  "version": "0.5.2",
   "description": "An npm package which aims to provide a better way to install packages for your react application through an intuitive CLI",
   "main": "cli.js",
   "scripts": {
