@@ -21,7 +21,7 @@ const ReactRouter = require("./cliRoutes/reactrouter");
 const NodeSass = require("./cliRoutes/nodeSass");
 const reactComponent = require("./cliRoutes/reactComponent");
 const PropTypes = require("./cliRoutes/propTypes");
-const stateManagement = require("./cliRoutes/stateManagement");
+const StateManagement = require("./cliRoutes/stateManagement");
 
 const prompt = inquirer.createPromptModule();
 
@@ -43,7 +43,7 @@ prompt(cliCommand).then(answers => {
       new PropTypes().installOrUninstall();
       break;
     case "state-management":
-      stateManagement();
+      new StateManagement().prompt();
       break;
     default:
       console.log("You must select an option!");
