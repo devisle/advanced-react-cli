@@ -1,18 +1,12 @@
 const inquirer = require("inquirer");
-const cmd = require("node-cmd");
-const fs = require("fs");
 
 // Cli Model
 const cliModel = require("../cliModel");
-const installOption = cliModel.installOption;
 const stateOption = cliModel.stateManagement;
 const unstatedOption = cliModel.unstatedOptions;
 
 // Cli Install Commands
-const { unstatedObj, reduxThunkObj } = require("../cliModel/install-commands");
-
-// Destructuring the Unstated Object
-const { unstated, unstatedNext } = unstatedObj;
+const { unstatedObj } = require("../cliModel/install-commands");
 
 //State Management Dependencies
 const Redux = require("./StateManagement-Dependencies/redux");
