@@ -11,6 +11,7 @@
 - [x] - CRA installation also does the above Redux instructions such as store creation.
 - [x] - Improved React Component generator to smartly add PropTypes, Redux & React Router
 - [ ] - Adding Hooks functionality to the React Component generator
+- [ ] - Adding yarn functionality to all package installs
 - [ ] - Refactoring (in progress0)
 - [ ] - Performance optimization (in progress0)
 - [ ] - Code readability (in progress0)
