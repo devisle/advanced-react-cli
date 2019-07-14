@@ -17,7 +17,11 @@ const {
 const prompt = inquirer.createPromptModule();
 
 const ReduxBoilerPlate = require("../cliModel/starter-code/redux");
+/*
 
+  Installs a Boiler plate react application using Create-react-app + optional packages
+
+*/
 module.exports = class CRA {
   CRAPrompt() {
     prompt({

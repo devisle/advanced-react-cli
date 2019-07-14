@@ -10,6 +10,12 @@ const { nodeSassObj } = require("../cliModel/install-commands");
 
 const prompt = inquirer.createPromptModule();
 
+/*
+
+  Installs/Uninstalls Node-Sass package
+
+*/
+
 module.exports = class NodeSass {
   installOrUninstall() {
     prompt(installOption).then(({ decision }) => {

@@ -10,6 +10,11 @@ const { reactRouterObj } = require("../cliModel/install-commands");
 
 const prompt = inquirer.createPromptModule();
 
+/*
+
+  Installs/Uninstalls React Router package
+
+*/
 module.exports = class ReactRouter {
   installOrUninstall() {
     prompt(installOption).then(({ decision }) => {

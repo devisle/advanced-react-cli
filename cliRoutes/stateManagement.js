@@ -15,6 +15,13 @@ const Unstated = require("./StateManagement-Dependencies/unstated");
 const UnstatedNext = require("./StateManagement-Dependencies/unstatedNext");
 
 const prompt = inquirer.createPromptModule();
+
+/*
+
+  Installs/Uninstalls state-management packages
+
+*/
+
 module.exports = class StateManagement {
   prompt() {
     prompt(stateOption).then(({ state }) => {

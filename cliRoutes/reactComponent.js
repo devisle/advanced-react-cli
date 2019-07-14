@@ -12,6 +12,12 @@ const FunctionComponent = require("./ReactComponent-Dependencies/functionCompone
 const ClassComponent = require("./ReactComponent-Dependencies/classComponent");
 
 const prompt = inquirer.createPromptModule();
+
+/*
+
+  Generates a React Component based on user inputs
+
+*/
 module.exports = class ReactComponent {
   // Prompts User for Component type
   componentPrompt() {

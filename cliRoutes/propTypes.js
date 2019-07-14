@@ -13,6 +13,11 @@ const propTypeBoilerPlate = require("../cliModel/starter-code/propTypes");
 
 const prompt = inquirer.createPromptModule();
 
+/*
+
+  Installs/Uninstalls PropTypes package
+
+*/
 module.exports = class propTypes {
   installOrUninstall() {
     prompt(installOption).then(({ decision }) => {
