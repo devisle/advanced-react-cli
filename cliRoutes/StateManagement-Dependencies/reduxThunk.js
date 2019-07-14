@@ -1,3 +1,14 @@
+const inquirer = require("inquirer");
+const cmd = require("node-cmd");
+
+// Cli Model
+const cliModel = require("../../cliModel/index");
+const installOption = cliModel.installOption;
+
+// Cli Install Commands
+const { reduxThunkObj } = require("../../cliModel/install-commands");
+
+const prompt = inquirer.createPromptModule();
 module.exports = class ReduxThunk {
   installOrUninstall() {
     prompt(installOption).then(({ decision }) => {

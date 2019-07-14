@@ -1,14 +1,25 @@
+const inquirer = require("inquirer");
+const cmd = require("node-cmd");
+
+// Cli Model
+const cliModel = require("../../cliModel/index");
+const installOption = cliModel.installOption;
+
+// Cli Install Commands
+const { unstatedObj } = require("../../cliModel/install-commands");
+const { unstated } = unstatedObj;
+
+const prompt = inquirer.createPromptModule();
+
 module.exports = class Unstated {
   installOrUninstall() {
-    if (state === "Unstated") {
-      prompt(installOption).then(({ decision }) => {
-        if (decision === "Install") {
-          this.install();
-        } else {
-          this.uninstall();
-        }
-      });
-    }
+    prompt(installOption).then(({ decision }) => {
+      if (decision === "Install") {
+        this.install();
+      } else {
+        this.uninstall();
+      }
+    });
   }
 
   install() {

@@ -9,17 +9,10 @@ const stateOption = cliModel.stateManagement;
 const unstatedOption = cliModel.unstatedOptions;
 
 // Cli Install Commands
-const {
-  reduxObj,
-  unstatedObj,
-  reduxThunkObj
-} = require("../cliModel/install-commands");
+const { unstatedObj, reduxThunkObj } = require("../cliModel/install-commands");
 
 // Destructuring the Unstated Object
 const { unstated, unstatedNext } = unstatedObj;
-
-// Importing Redux Boiler plate file
-const ReduxBoilerPlate = require("../cliModel/starter-code/redux");
 
 //State Management Dependencies
 const Redux = require("./StateManagement-Dependencies/redux");
