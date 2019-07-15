@@ -31,7 +31,7 @@ module.exports = class CRA {
         */
         prompt({
           ...addPackage[0],
-          message: "Would you like to add React-Router?"
+          message: "Would you like to add React-Router? (Y/N)"
         }).then(({ packageAdd }) => {
           if (["y", "Y", "yes", "Yes", ""].includes(packageAdd)) {
             /*
@@ -39,7 +39,7 @@ module.exports = class CRA {
             */
             prompt({
               ...addPackage[0],
-              message: "Would you like to add Redux?"
+              message: "Would you like to add Redux? (Y/N)"
             }).then(({ packageAdd }) => {
               if (["y", "Y", "yes", "Yes", ""].includes(packageAdd)) {
                 installAll(folderName);
@@ -56,7 +56,7 @@ module.exports = class CRA {
             */
             prompt({
               ...addPackage[0],
-              message: "Would you like to add Redux?"
+              message: "Would you like to add Redux? (Y/N)"
             }).then(({ packageAdd }) => {
               if (["y", "Y", "yes", "Yes", ""].includes(packageAdd)) {
                 installCRAandRedux(folderName);
