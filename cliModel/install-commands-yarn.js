@@ -1,3 +1,7 @@
+/*
+  Yarn Install commands
+*/
+
 module.exports = {
   createReactAppYarn: "yarn create react-app my-app",
   propTypesObjYarn: {
