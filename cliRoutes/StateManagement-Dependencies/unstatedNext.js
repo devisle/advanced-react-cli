@@ -12,17 +12,17 @@ const { unstatedNext } = unstatedObj;
 const prompt = inquirer.createPromptModule();
 
 module.exports = class UnstatedNext {
-  installOrUninstall() {
+  installOrUninstall(packageInstaller) {
     prompt(installOption).then(({ decision }) => {
       if (decision === "Install") {
-        this.install();
+        this.install(packageInstaller);
       } else {
-        this.uninstall();
+        this.uninstall(packageInstaller);
       }
     });
   }
 
-  install() {
+  install(packageInstaller) {
     cmd.get(`${unstatedNext.install}`, (err, data, stderr) => {
       err ? console.log(err) : console.log(stderr, data);
     });
@@ -32,7 +32,7 @@ module.exports = class UnstatedNext {
     console.log("Package: Unstated-next has been installed!");
   }
 
-  uninstall() {
+  uninstall(packageInstaller) {
     cmd.get(`${unstatedNext.uninstall}`, (err, data, stderr) => {
       err ? console.log(err) : console.log(stderr, data);
     });

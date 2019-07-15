@@ -10,17 +10,17 @@ const { reduxThunkObj } = require("../../cliModel/install-commands");
 
 const prompt = inquirer.createPromptModule();
 module.exports = class ReduxThunk {
-  installOrUninstall() {
+  installOrUninstall(packageInstaller) {
     prompt(installOption).then(({ decision }) => {
       if (decision === "Install") {
-        this.install();
+        this.install(packageInstaller);
       } else {
-        this.uninstall();
+        this.uninstall(packageInstaller);
       }
     });
   }
 
-  install() {
+  install(packageInstaller) {
     cmd.get(`${reduxThunkObj.install}`, (err, data, stderr) => {
       err ? console.log(err) : console.log(stderr, data);
     });
@@ -30,7 +30,7 @@ module.exports = class ReduxThunk {
     );
   }
 
-  uninstall() {
+  uninstall(packageInstaller) {
     cmd.get(`${reduxThunkObj.uninstall}`, (err, data, stderr) => {
       err ? console.log(err) : console.log(stderr, data);
     });

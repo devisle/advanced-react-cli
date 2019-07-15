@@ -12,17 +12,17 @@ const { unstated } = unstatedObj;
 const prompt = inquirer.createPromptModule();
 
 module.exports = class Unstated {
-  installOrUninstall() {
+  installOrUninstall(packageInstaller) {
     prompt(installOption).then(({ decision }) => {
       if (decision === "Install") {
-        this.install();
+        this.install(packageInstaller);
       } else {
-        this.uninstall();
+        this.uninstall(packageInstaller);
       }
     });
   }
 
-  install() {
+  install(packageInstaller) {
     cmd.get(`${unstated.install}`, (err, data, stderr) => {
       err ? console.log(err) : console.log(stderr, data);
     });
@@ -32,7 +32,7 @@ module.exports = class Unstated {
     console.log("Package: Unstated has been installed!");
   }
 
-  uninstall() {
+  uninstall(packageInstaller) {
     cmd.get(`${unstated.uninstall}`, (err, data, stderr) => {
       err ? console.log(err) : console.log(stderr, data);
     });
