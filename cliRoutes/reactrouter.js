@@ -33,7 +33,7 @@ module.exports = class ReactRouter {
   }
 
   install(packageInstaller) {
-    switch (packageManager) {
+    switch (packageInstaller) {
       case "NPM":
         cmd.get(`${reactRouterObj.install}`, (err, data, stderr) => {
           err ? console.log(err) : console.log(stderr, data);
@@ -55,7 +55,7 @@ module.exports = class ReactRouter {
   }
 
   uninstall(packageInstaller) {
-    switch (packageManager) {
+    switch (packageInstaller) {
       case "NPM":
         cmd.get(`${reactRouterObj.uninstall}`, (err, data, stderr) => {
           err ? console.log(err) : console.log(stderr, data);
