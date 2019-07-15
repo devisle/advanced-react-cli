@@ -23,36 +23,44 @@ module.exports = class ReduxThunk {
   }
 
   install(packageInstaller) {
-    if (packageInstaller === "NPM") {
-      cmd.get(`${reduxThunkObj.install}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log("Package: Redux-Thunk has been installed!");
-      console.log(
-        "Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk "
-      );
-    } else {
-      cmd.get(`${reduxThunkObjYarn.install}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log("Package: Redux-Thunk has been installed!");
-      console.log(
-        "Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk "
-      );
+    switch (packageInstaller) {
+      case "NPM":
+        cmd.get(`${reduxThunkObj.install}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log("Package: Redux-Thunk has been installed!");
+        console.log(
+          "Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk "
+        );
+        break;
+
+      case "Yarn":
+        cmd.get(`${reduxThunkObjYarn.install}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log("Package: Redux-Thunk has been installed!");
+        console.log(
+          "Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk "
+        );
+        break;
     }
   }
 
   uninstall(packageInstaller) {
-    if (packageInstaller === "NPM") {
-      cmd.get(`${reduxThunkObj.uninstall}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log("Package: Redux-Thunk has been uninstalled!");
-    } else {
-      cmd.get(`${reduxThunkObjYarn.uninstall}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log("Package: Redux-Thunk has been uninstalled!");
+    switch (packageInstaller) {
+      case "NPM":
+        cmd.get(`${reduxThunkObj.uninstall}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log("Package: Redux-Thunk has been uninstalled!");
+        break;
+
+      case "Yarn":
+        cmd.get(`${reduxThunkObjYarn.uninstall}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log("Package: Redux-Thunk has been uninstalled!");
+        break;
     }
   }
 };

@@ -26,36 +26,44 @@ module.exports = class Unstated {
   }
 
   install(packageInstaller) {
-    if (packageInstaller === "NPM") {
-      cmd.get(`${unstated.install}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log(
-        "Check out more on how to get started with unstated on the following link https://github.com/jamiebuilds/unstated"
-      );
-      console.log("Package: Unstated has been installed!");
-    } else {
-      cmd.get(`${unstatedYarn.install}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log(
-        "Check out more on how to get started with unstated on the following link https://github.com/jamiebuilds/unstated"
-      );
-      console.log("Package: Unstated has been installed!");
+    switch (packageInstaller) {
+      case "NPM":
+        cmd.get(`${unstated.install}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log(
+          "Check out more on how to get started with unstated on the following link https://github.com/jamiebuilds/unstated"
+        );
+        console.log("Package: Unstated has been installed!");
+        break;
+
+      case "Yarn":
+        cmd.get(`${unstatedYarn.install}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log(
+          "Check out more on how to get started with unstated on the following link https://github.com/jamiebuilds/unstated"
+        );
+        console.log("Package: Unstated has been installed!");
+        break;
     }
   }
 
   uninstall(packageInstaller) {
-    if (packageInstaller === "NPM") {
-      cmd.get(`${unstated.uninstall}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log("Package: Unstated has been uninstalled!");
-    } else {
-      cmd.get(`${unstatedYarn.uninstall}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log("Package: Unstated has been uninstalled!");
+    switch (packageInstaller) {
+      case "NPM":
+        cmd.get(`${unstated.uninstall}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log("Package: Unstated has been uninstalled!");
+        break;
+
+      case "Yarn":
+        cmd.get(`${unstatedYarn.uninstall}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log("Package: Unstated has been uninstalled!");
+        break;
     }
   }
 };

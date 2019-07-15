@@ -28,52 +28,60 @@ module.exports = class Redux {
   }
 
   install(packageInstaller) {
-    if (packageInstaller === "NPM") {
-      cmd.get(`${reduxObj.install}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      fs.mkdir("./store", err => {
-        if (err) throw err;
-      });
-      cmd.get(`cd store && touch store.js`);
-      const writeStream = fs.createWriteStream("./store/store.js");
-      writeStream.write(`${ReduxBoilerPlate}`);
-      console.log(
-        "Packages: redux & react-redux has been installed successfully!"
-      );
-      console.log("Redux Store has been created successfully!");
-    } else {
-      cmd.get(`${reduxObjYarn.install}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      fs.mkdir("./store", err => {
-        if (err) throw err;
-      });
-      cmd.get(`cd store && touch store.js`);
-      const writeStream = fs.createWriteStream("./store/store.js");
-      writeStream.write(`${ReduxBoilerPlate}`);
-      console.log(
-        "Packages: redux & react-redux has been installed successfully!"
-      );
-      console.log("Redux Store has been created successfully!");
+    switch (packageInstaller) {
+      case "NPM":
+        cmd.get(`${reduxObj.install}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        fs.mkdir("./store", err => {
+          if (err) throw err;
+        });
+        cmd.get(`cd store && touch store.js`);
+        const writeStream = fs.createWriteStream("./store/store.js");
+        writeStream.write(`${ReduxBoilerPlate}`);
+        console.log(
+          "Packages: redux & react-redux has been installed successfully!"
+        );
+        console.log("Redux Store has been created successfully!");
+        break;
+
+      case "Yarn":
+        cmd.get(`${reduxObjYarn.install}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        fs.mkdir("./store", err => {
+          if (err) throw err;
+        });
+        cmd.get(`cd store && touch store.js`);
+        const writeStream = fs.createWriteStream("./store/store.js");
+        writeStream.write(`${ReduxBoilerPlate}`);
+        console.log(
+          "Packages: redux & react-redux has been installed successfully!"
+        );
+        console.log("Redux Store has been created successfully!");
+        break;
     }
   }
 
   uninstall(packageInstaller) {
-    if (packageInstaller === "NPM") {
-      cmd.get(`${reduxObj.uninstall}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log(
-        "Packages: redux & react-redux has been uninstalled successfully!"
-      );
-    } else {
-      cmd.get(`${reduxObjYarn.uninstall}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log(
-        "Packages: redux & react-redux has been uninstalled successfully!"
-      );
+    switch (packageInstaller) {
+      case "NPM":
+        cmd.get(`${reduxObj.uninstall}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log(
+          "Packages: redux & react-redux has been uninstalled successfully!"
+        );
+        break;
+
+      case "Yarn":
+        cmd.get(`${reduxObjYarn.uninstall}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log(
+          "Packages: redux & react-redux has been uninstalled successfully!"
+        );
+        break;
     }
   }
 };
