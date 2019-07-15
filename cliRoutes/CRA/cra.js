@@ -1,16 +1,16 @@
 const inquirer = require("inquirer");
 
 // Cli Model
-const cliModel = require("../cliModel");
+const cliModel = require("../../cliModel");
 const addPackage = cliModel.addPackage;
 const installFolder = cliModel.installFolder;
 const YarnOrNpm = cliModel.YarnOrNpm;
 
 //Import CRA Install Dependencies
-const installAll = require("./CRA-Dependencies/installAll");
-const installCRA = require("./CRA-Dependencies/installCRA");
-const installCRAandReactRouter = require("./CRA-Dependencies/installCRAandReactRouter");
-const installCRAandRedux = require("./CRA-Dependencies/installCRAandRedux");
+const installAll = require("./installAll");
+const installCRA = require("./installCRA");
+const installCRAandReactRouter = require("./installCRAandReactRouter");
+const installCRAandRedux = require("./installCRAandRedux");
 
 const prompt = inquirer.createPromptModule();
 
