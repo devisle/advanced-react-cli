@@ -1,31 +1,31 @@
 module.exports = {
-  createReactApp: "yarn create react-app my-app",
-  propTypesObj: {
+  createReactAppYarn: "yarn create react-app my-app",
+  propTypesObjYarn: {
     install: "yarn add prop-types",
     uninstall: "yarn remove prop-types"
   },
-  reactRouterObj: {
+  reactRouterObjYarn: {
     install: "yarn add react-router-dom",
     uninstall: "yarn remove react-router react-router-dom"
   },
-  nodeSassObj: {
+  nodeSassObjYarn: {
     install: "yarn add node-sass",
     uninstall: "yarn remove node-sass"
   },
-  reduxObj: {
+  reduxObjYarn: {
     install: "yarn add redux react-redux",
     uninstall: "yarn remove redux react-redux"
   },
-  reduxThunkObj: {
+  reduxThunkObjYarn: {
     install: "yarn add redux-thunk",
     uninstall: "yarn remove redux-thunk"
   },
-  unstatedObj: {
+  unstatedObjYarn: {
     unstated: {
       install: "yarn add unstated",
       uninstall: "yarn remove unstated"
     },
-    unstatedNext: {
+    unstatedNextYarn: {
       install: "yarn add unstated-next",
       uninstall: "yarn remove unstated-next"
     }
