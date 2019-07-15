@@ -1,15 +1,15 @@
 const inquirer = require("inquirer");
 
 // Cli Model
-const cliModel = require("../cliModel");
+const cliModel = require("../../cliModel");
 const reactComponents = cliModel.reactComponents;
 const installFolder = cliModel.installFolder;
 const addPackage = cliModel.addPackage;
 const componentName = cliModel.componentName;
 
 // Component Dependencies
-const FunctionComponent = require("./ReactComponent-Dependencies/functionComponent");
-const ClassComponent = require("./ReactComponent-Dependencies/classComponent");
+const FunctionComponent = require("./functionComponent");
+const ClassComponent = require("./classComponent");
 
 const prompt = inquirer.createPromptModule();
 
