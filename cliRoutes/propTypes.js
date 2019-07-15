@@ -36,44 +36,52 @@ module.exports = class propTypes {
   }
 
   install(packageManager) {
-    if (packageManager === "NPM") {
-      cmd.get(`${propTypesObj.install}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      fs.mkdir("./propTypes", err => {
-        if (err) throw err;
-      });
-      cmd.get(`cd propTypes && touch propTypes.js`);
-      const writeStream = fs.createWriteStream("./propTypes/propTypes.js");
-      writeStream.write(`${propTypeBoilerPlate}`);
-      console.log("Package: prop-types has been installed successfully!");
-      console.log("PropTypes Folder has been created!");
-    } else {
-      cmd.get(`${propTypesObjYarn.install}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      fs.mkdir("./propTypes", err => {
-        if (err) throw err;
-      });
-      cmd.get(`cd propTypes && touch propTypes.js`);
-      const writeStream = fs.createWriteStream("./propTypes/propTypes.js");
-      writeStream.write(`${propTypeBoilerPlate}`);
-      console.log("Package: prop-types has been installed successfully!");
-      console.log("PropTypes Folder has been created!");
+    switch (packageManager) {
+      case "NPM":
+        cmd.get(`${propTypesObj.install}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        fs.mkdir("./propTypes", err => {
+          if (err) throw err;
+        });
+        cmd.get(`cd propTypes && touch propTypes.js`);
+        const writeStream = fs.createWriteStream("./propTypes/propTypes.js");
+        writeStream.write(`${propTypeBoilerPlate}`);
+        console.log("Package: prop-types has been installed successfully!");
+        console.log("PropTypes Folder has been created!");
+        break;
+
+      case "Yarn":
+        cmd.get(`${propTypesObjYarn.install}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        fs.mkdir("./propTypes", err => {
+          if (err) throw err;
+        });
+        cmd.get(`cd propTypes && touch propTypes.js`);
+        const writeStream = fs.createWriteStream("./propTypes/propTypes.js");
+        writeStream.write(`${propTypeBoilerPlate}`);
+        console.log("Package: prop-types has been installed successfully!");
+        console.log("PropTypes Folder has been created!");
+        break;
     }
   }
 
   uninstall(packageManager) {
-    if (packageManager === "NPM") {
-      cmd.get(`${propTypesObj.uninstall}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log("Package: prop-types has been uninstalled successfully!");
-    } else {
-      cmd.get(`${propTypesObjYarn.uninstall}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log("Package: prop-types has been uninstalled successfully!");
+    switch (packageManager) {
+      case "NPM":
+        cmd.get(`${propTypesObj.uninstall}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log("Package: prop-types has been uninstalled successfully!");
+        break;
+
+      case "Yarn":
+        cmd.get(`${propTypesObjYarn.uninstall}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log("Package: prop-types has been uninstalled successfully!");
+        break;
     }
   }
 };
