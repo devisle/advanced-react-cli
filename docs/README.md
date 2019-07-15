@@ -10,6 +10,7 @@
 - [x] - Adding Redux to a project, also as a result of selecting to install Redux, it automatically creates a store folder
 - [x] - CRA installation also does the above Redux instructions such as store creation.
 - [x] - Improved React Component generator to smartly add PropTypes, Redux & React Router
+- [x] - Added in package-manager choice as NPM/Yarn
 - [ ] - Adding Hooks functionality to the React Component generator
 - [ ] - Refactoring (in progress0)
 - [ ] - Performance optimization (in progress0)
