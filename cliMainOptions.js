@@ -1,10 +1,10 @@
 // Cli Routes
-const CRA = require("./cliRoutes/cra");
+const CRA = require("./cliRoutes/CRA/cra");
 const ReactRouter = require("./cliRoutes/reactrouter");
 const NodeSass = require("./cliRoutes/nodeSass");
-const ReactComponent = require("./cliRoutes/reactComponent");
+const ReactComponent = require("./cliRoutes/ReactComponent/mainReactComponent");
 const PropTypes = require("./cliRoutes/propTypes");
-const StateManagement = require("./cliRoutes/stateManagement");
+const StateManagement = require("./cliRoutes/StateManagement/stateManagement");
 
 module.exports = answers => {
   switch (answers.installation) {
