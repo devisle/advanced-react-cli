@@ -34,30 +34,36 @@ module.exports = class NodeSass {
   }
 
   install(packageInstaller) {
-    if (packageInstaller === "NPM") {
-      cmd.get(`${nodeSassObj.install}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log("Package: node-sass has been installed successfully!");
-    } else {
-      cmd.get(`${nodeSassObjYarn.install}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log("Package: node-sass has been installed successfully!");
+    switch (packageInstaller) {
+      case "NPM":
+        cmd.get(`${nodeSassObj.install}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log("Package: node-sass has been installed successfully!");
+        break;
+      case "Yarn":
+        cmd.get(`${nodeSassObjYarn.install}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log("Package: node-sass has been installed successfully!");
+        break;
     }
   }
 
   uninstall(packageInstaller) {
-    if (packageInstaller === "NPM") {
-      cmd.get(`${nodeSassObj.uninstall}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log("Package: node-sass has been uninstalled successfully!");
-    } else {
-      cmd.get(`${nodeSassObjYarn.uninstall}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log("Package: node-sass has been uninstalled successfully!");
+    switch (packageInstaller) {
+      case "NPM":
+        cmd.get(`${nodeSassObj.uninstall}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log("Package: node-sass has been uninstalled successfully!");
+        break;
+      case "Yarn":
+        cmd.get(`${nodeSassObjYarn.uninstall}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log("Package: node-sass has been uninstalled successfully!");
+        break;
     }
   }
 };
