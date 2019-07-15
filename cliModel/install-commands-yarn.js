@@ -3,7 +3,7 @@
 */
 
 module.exports = {
-  createReactAppYarn: "yarn create react-app my-app",
+  createReactAppYarn: "yarn create react-app",
   propTypesObjYarn: {
     install: "yarn add prop-types",
     uninstall: "yarn remove prop-types"
