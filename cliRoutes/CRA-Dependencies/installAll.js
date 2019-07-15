@@ -11,7 +11,7 @@ const {
 // Import Redux Boilerplate
 const ReduxBoilerPlate = require("../../cliModel/starter-code/redux");
 
-module.exports = folderName => {
+module.exports = (folderName, packageInstaller) => {
   fs.appendFile("store.js", ReduxBoilerPlate, err => {
     if (err) throw err;
   });

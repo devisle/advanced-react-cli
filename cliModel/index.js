@@ -92,7 +92,7 @@ module.exports.unstatedOptions = [
 module.exports.YarnOrNpm = [
   {
     type: "list",
-    name: "package-manager",
+    name: "packageManager",
     message: "Would you like to install using Yarn or Npm?",
     choices: ["Yarn", "NPM"]
   }

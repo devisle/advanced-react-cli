@@ -4,6 +4,7 @@ const inquirer = require("inquirer");
 const cliModel = require("../cliModel");
 const addPackage = cliModel.addPackage;
 const installFolder = cliModel.installFolder;
+const YarnOrNpm = cliModel.YarnOrNpm;
 
 //Import CRA Install Dependencies
 const installAll = require("./CRA-Dependencies/installAll");
@@ -20,57 +21,60 @@ const prompt = inquirer.createPromptModule();
 */
 module.exports = class CRA {
   CRAPrompt() {
-    prompt({
-      ...installFolder[0],
-      message:
-        "Please input the name of the folder you would like to create for your project. (Enter a folder name, e.g. 'my-app')"
-    }).then(({ folderName }) => {
-      if (folderName.length > 1) {
-        /*
-          Prompts to install React Router
-        */
-        prompt({
-          ...addPackage[0],
-          message: "Would you like to add React-Router? (Y/N)"
-        }).then(({ packageAdd }) => {
-          if (["y", "Y", "yes", "Yes", ""].includes(packageAdd)) {
-            /*
-              Prompts to install Redux
-            */
-            prompt({
-              ...addPackage[0],
-              message: "Would you like to add Redux? (Y/N)"
-            }).then(({ packageAdd }) => {
-              if (["y", "Y", "yes", "Yes", ""].includes(packageAdd)) {
-                installAll(folderName);
-              } else if (["n", "N", "No", "no"].includes(packageAdd)) {
-                installCRAandReactRouter(folderName);
-              }
-            });
-            /*
-              If 'n' for React Router, prompts to install Redux
-            */
-          } else if (["n", "N", "No", "no"].includes(packageAdd)) {
-            /*
-              Prompts to Install Redux
-            */
-            prompt({
-              ...addPackage[0],
-              message: "Would you like to add Redux? (Y/N)"
-            }).then(({ packageAdd }) => {
-              if (["y", "Y", "yes", "Yes", ""].includes(packageAdd)) {
-                installCRAandRedux(folderName);
-              } else if (["n", "N", "No", "no"].includes(packageAdd)) {
-                installCRA(folderName);
-              }
-            });
-          }
-        });
-      } else {
-        console.log(
-          "You must specify the installation directory! (Enter a folder name, e.g. 'my-app', Or Enter '.' to install in current directory) "
-        );
-      }
+    prompt(YarnOrNpm).then(({ packageManager }) => {
+      const packageInstaller = packageManager;
+      prompt({
+        ...installFolder[0],
+        message:
+          "Please input the name of the folder you would like to create for your project. (Enter a folder name, e.g. 'my-app')"
+      }).then(({ folderName }) => {
+        if (folderName.length > 1) {
+          /*
+            Prompts to install React Router
+          */
+          prompt({
+            ...addPackage[0],
+            message: "Would you like to add React-Router? (Y/N)"
+          }).then(({ packageAdd }) => {
+            if (["y", "Y", "yes", "Yes", ""].includes(packageAdd)) {
+              /*
+                Prompts to install Redux
+              */
+              prompt({
+                ...addPackage[0],
+                message: "Would you like to add Redux? (Y/N)"
+              }).then(({ packageAdd }) => {
+                if (["y", "Y", "yes", "Yes", ""].includes(packageAdd)) {
+                  installAll(folderName, packageInstaller);
+                } else if (["n", "N", "No", "no"].includes(packageAdd)) {
+                  installCRAandReactRouter(folderName, packageInstaller);
+                }
+              });
+              /*
+                If 'n' for React Router, prompts to install Redux
+              */
+            } else if (["n", "N", "No", "no"].includes(packageAdd)) {
+              /*
+                Prompts to Install Redux
+              */
+              prompt({
+                ...addPackage[0],
+                message: "Would you like to add Redux? (Y/N)"
+              }).then(({ packageAdd }) => {
+                if (["y", "Y", "yes", "Yes", ""].includes(packageAdd)) {
+                  installCRAandRedux(folderName, packageInstaller);
+                } else if (["n", "N", "No", "no"].includes(packageAdd)) {
+                  installCRA(folderName, packageInstaller);
+                }
+              });
+            }
+          });
+        } else {
+          console.log(
+            "You must specify the installation directory! (Enter a folder name, e.g. 'my-app', Or Enter '.' to install in current directory) "
+          );
+        }
+      });
     });
   }
 };

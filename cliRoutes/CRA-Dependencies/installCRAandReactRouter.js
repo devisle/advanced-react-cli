@@ -6,7 +6,7 @@ const {
   reactRouterObj
 } = require("../../cliModel/install-commands");
 
-module.exports = folderName => {
+module.exports = (folderName, packageInstaller) => {
   cmd.get(
     ` mkdir ${folderName} && cd ${folderName} && ${createReactApp} . && ${
       reactRouterObj.install
