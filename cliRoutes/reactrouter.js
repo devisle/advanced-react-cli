@@ -33,38 +33,46 @@ module.exports = class ReactRouter {
   }
 
   install(packageInstaller) {
-    if (packageInstaller === "NPM") {
-      cmd.get(`${reactRouterObj.install}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log(
-        "Packages: react-router & react-router-dom has been installed successfully!"
-      );
-    } else {
-      cmd.get(`${reactRouterObjYarn.install}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log(
-        "Packages: react-router & react-router-dom has been installed successfully!"
-      );
+    switch (packageManager) {
+      case "NPM":
+        cmd.get(`${reactRouterObj.install}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log(
+          "Packages: react-router & react-router-dom has been installed successfully!"
+        );
+        break;
+
+      case "Yarn":
+        cmd.get(`${reactRouterObjYarn.install}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log(
+          "Packages: react-router & react-router-dom has been installed successfully!"
+        );
+        break;
     }
   }
 
   uninstall(packageInstaller) {
-    if (packageInstaller === "NPM") {
-      cmd.get(`${reactRouterObj.uninstall}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log(
-        "Packages: react-router & react-router-dom has been uninstalled successfully!"
-      );
-    } else {
-      cmd.get(`${reactRouterObjYarn.uninstall}`, (err, data, stderr) => {
-        err ? console.log(err) : console.log(stderr, data);
-      });
-      console.log(
-        "Packages: react-router & react-router-dom has been uninstalled successfully!"
-      );
+    switch (packageManager) {
+      case "NPM":
+        cmd.get(`${reactRouterObj.uninstall}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log(
+          "Packages: react-router & react-router-dom has been uninstalled successfully!"
+        );
+        break;
+
+      case "Yarn":
+        cmd.get(`${reactRouterObjYarn.uninstall}`, (err, data, stderr) => {
+          err ? console.log(err) : console.log(stderr, data);
+        });
+        console.log(
+          "Packages: react-router & react-router-dom has been uninstalled successfully!"
+        );
+        break;
     }
   }
 };
