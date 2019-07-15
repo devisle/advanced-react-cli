@@ -5,20 +5,20 @@ module.exports = {
     uninstall: "yarn remove prop-types"
   },
   reactRouterObj: {
-    install: "npm i react-router react-router-dom",
-    uninstall: "npm uninstall react-router react-router-dom"
+    install: "yarn add react-router-dom",
+    uninstall: "yarn remove react-router react-router-dom"
   },
   nodeSassObj: {
-    install: "npm i node-sass",
-    uninstall: "npm uninstall node-sass"
+    install: "yarn add node-sass",
+    uninstall: "yarn remove node-sass"
   },
   reduxObj: {
-    install: "npm i redux react-redux",
-    uninstall: "npm uninstall redux react-redux"
+    install: "yarn add redux react-redux",
+    uninstall: "yarn remove redux react-redux"
   },
   reduxThunkObj: {
-    install: "npm i redux-thunk",
-    uninstall: "npm uninstall redux-thunk"
+    install: "yarn add redux-thunk",
+    uninstall: "yarn remove redux-thunk"
   },
   unstatedObj: {
     unstated: {
@@ -26,8 +26,8 @@ module.exports = {
       uninstall: "yarn remove unstated"
     },
     unstatedNext: {
-      install: "npm install unstated-next",
-      uninstall: "npm uninstall unstated-next"
+      install: "yarn add unstated-next",
+      uninstall: "yarn remove unstated-next"
     }
   }
 };
