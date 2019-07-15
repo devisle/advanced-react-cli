@@ -60,11 +60,20 @@ module.exports = class Redux {
   }
 
   uninstall(packageInstaller) {
-    cmd.get(`${reduxObj.uninstall}`, (err, data, stderr) => {
-      err ? console.log(err) : console.log(stderr, data);
-    });
-    console.log(
-      "Packages: redux & react-redux has been uninstalled successfully!"
-    );
+    if (packageInstaller === "NPM") {
+      cmd.get(`${reduxObj.uninstall}`, (err, data, stderr) => {
+        err ? console.log(err) : console.log(stderr, data);
+      });
+      console.log(
+        "Packages: redux & react-redux has been uninstalled successfully!"
+      );
+    } else {
+      cmd.get(`${reduxObjYarn.uninstall}`, (err, data, stderr) => {
+        err ? console.log(err) : console.log(stderr, data);
+      });
+      console.log(
+        "Packages: redux & react-redux has been uninstalled successfully!"
+      );
+    }
   }
 };

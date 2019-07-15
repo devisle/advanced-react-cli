@@ -8,6 +8,8 @@ const installOption = cliModel.installOption;
 // Cli Install Commands
 const { reduxThunkObj } = require("../../cliModel/install-commands");
 
+const { reduxThunkObjYarn } = require("../../cliModel/install-commands-yarn");
+
 const prompt = inquirer.createPromptModule();
 module.exports = class ReduxThunk {
   installOrUninstall(packageInstaller) {
@@ -21,7 +23,24 @@ module.exports = class ReduxThunk {
   }
 
   install(packageInstaller) {
-    cmd.get(`${reduxThunkObj.install}`, (err, data, stderr) => {
+    if (packageInstaller === "NPM") {
+      cmd.get(`${reduxThunkObj.install}`, (err, data, stderr) => {
+        err ? console.log(err) : console.log(stderr, data);
+      });
+      console.log("Package: Redux-Thunk has been installed!");
+      console.log(
+        "Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk "
+      );
+    } else {
+      cmd.get(`${reduxThunkObj.install}`, (err, data, stderr) => {
+        err ? console.log(err) : console.log(stderr, data);
+      });
+      console.log("Package: Redux-Thunk has been installed!");
+      console.log(
+        "Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk "
+      );
+    }
+    cmd.get(`${reduxThunkObjYarn.install}`, (err, data, stderr) => {
       err ? console.log(err) : console.log(stderr, data);
     });
     console.log("Package: Redux-Thunk has been installed!");
@@ -31,9 +50,16 @@ module.exports = class ReduxThunk {
   }
 
   uninstall(packageInstaller) {
-    cmd.get(`${reduxThunkObj.uninstall}`, (err, data, stderr) => {
-      err ? console.log(err) : console.log(stderr, data);
-    });
-    console.log("Package: Redux-Thunk has been uninstalled!");
+    if (packageInstaller === "NPM") {
+      cmd.get(`${reduxThunkObj.uninstall}`, (err, data, stderr) => {
+        err ? console.log(err) : console.log(stderr, data);
+      });
+      console.log("Package: Redux-Thunk has been uninstalled!");
+    } else {
+      cmd.get(`${reduxThunkObjYarn.uninstall}`, (err, data, stderr) => {
+        err ? console.log(err) : console.log(stderr, data);
+      });
+      console.log("Package: Redux-Thunk has been uninstalled!");
+    }
   }
 };
