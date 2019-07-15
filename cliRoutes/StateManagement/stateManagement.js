@@ -1,16 +1,16 @@
 const inquirer = require("inquirer");
 
 // Cli Model
-const cliModel = require("../cliModel");
+const cliModel = require("../../cliModel");
 const stateOption = cliModel.stateManagement;
 const unstatedOption = cliModel.unstatedOptions;
 const YarnOrNpm = cliModel.YarnOrNpm;
 
 //State Management Dependencies
-const Redux = require("./StateManagement-Dependencies/redux");
-const ReduxThunk = require("./StateManagement-Dependencies/reduxThunk");
-const Unstated = require("./StateManagement-Dependencies/unstated");
-const UnstatedNext = require("./StateManagement-Dependencies/unstatedNext");
+const Redux = require("./redux");
+const ReduxThunk = require("./reduxThunk");
+const Unstated = require("./unstated");
+const UnstatedNext = require("./unstatedNext");
 
 const prompt = inquirer.createPromptModule();
 
