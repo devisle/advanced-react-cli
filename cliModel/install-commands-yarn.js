@@ -21,7 +21,7 @@ module.exports = {
     uninstall: "yarn remove redux-thunk"
   },
   unstatedObjYarn: {
-    unstated: {
+    unstatedYarn: {
       install: "yarn add unstated",
       uninstall: "yarn remove unstated"
     },

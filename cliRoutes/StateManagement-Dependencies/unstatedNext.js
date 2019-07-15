@@ -9,6 +9,9 @@ const installOption = cliModel.installOption;
 const { unstatedObj } = require("../../cliModel/install-commands");
 const { unstatedNext } = unstatedObj;
 
+const { unstatedObjYarn } = require("../../cliModel/install-commands-yarn");
+const { unstatedNextYarn } = unstatedObjYarn;
+
 const prompt = inquirer.createPromptModule();
 
 module.exports = class UnstatedNext {
