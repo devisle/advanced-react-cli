@@ -87,3 +87,13 @@ module.exports.unstatedOptions = [
     choices: ["Unstated", "Unstated-next"]
   }
 ];
+
+// Package Manager Options
+module.exports.YarnOrNpm = [
+  {
+    type: "list",
+    name: "package-manager",
+    message: "Would you like to install using Yarn or Npm?",
+    choices: ["Yarn", "NPM"]
+  }
+];
