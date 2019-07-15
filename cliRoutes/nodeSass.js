@@ -41,6 +41,7 @@ module.exports = class NodeSass {
         });
         console.log("Package: node-sass has been installed successfully!");
         break;
+
       case "Yarn":
         cmd.get(`${nodeSassObjYarn.install}`, (err, data, stderr) => {
           err ? console.log(err) : console.log(stderr, data);
@@ -58,6 +59,7 @@ module.exports = class NodeSass {
         });
         console.log("Package: node-sass has been uninstalled successfully!");
         break;
+
       case "Yarn":
         cmd.get(`${nodeSassObjYarn.uninstall}`, (err, data, stderr) => {
           err ? console.log(err) : console.log(stderr, data);
