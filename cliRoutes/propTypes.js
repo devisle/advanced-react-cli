@@ -27,16 +27,16 @@ module.exports = class propTypes {
       const packageInstaller = packageManager;
       prompt(installOption).then(({ decision }) => {
         if (decision === "Install") {
-          this.install(packageManager);
+          this.install(packageInstaller);
         } else if (decision === "Uninstall") {
-          this.uninstall(packageManager);
+          this.uninstall(packageInstaller);
         }
       });
     });
   }
 
-  install(packageManager) {
-    switch (packageManager) {
+  install(packageInstaller) {
+    switch (packageInstaller) {
       case "NPM":
         cmd.get(`${propTypesObj.install}`, (err, data, stderr) => {
           err ? console.log(err) : console.log(stderr, data);
@@ -67,8 +67,8 @@ module.exports = class propTypes {
     }
   }
 
-  uninstall(packageManager) {
-    switch (packageManager) {
+  uninstall(packageInstaller) {
+    switch (packageInstaller) {
       case "NPM":
         cmd.get(`${propTypesObj.uninstall}`, (err, data, stderr) => {
           err ? console.log(err) : console.log(stderr, data);
