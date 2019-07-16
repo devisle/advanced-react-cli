@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
-const cmd = require("node-cmd");
 const fs = require("fs");
+
 const customCMD = require("../customNodeCMD");
 
 // Cli Model
