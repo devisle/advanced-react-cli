@@ -9,7 +9,7 @@ module.exports = {
     uninstall: "yarn remove prop-types"
   },
   reactRouterObjYarn: {
-    install: "yarn add react-router-dom",
+    install: "yarn add react-router react-router-dom",
     uninstall: "yarn remove react-router react-router-dom"
   },
   nodeSassObjYarn: {
