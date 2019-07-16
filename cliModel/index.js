@@ -93,7 +93,7 @@ module.exports.YarnOrNpm = [
   {
     type: 'list',
     name: 'packageManager',
-    message: 'Would you like to install using Yarn or Npm?',
+    message: 'Would you like to install using Yarn or NPM?',
     choices: ['Yarn', 'NPM']
   }
 ]
