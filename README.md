@@ -22,12 +22,12 @@ This CLI uses some of the best GitHub repos' terminal commands under the hood, t
 - [ReactTraining - React-Router](https://github.com/ReactTraining/react-router)
 - [Jamie Kyle - Unstated](https://github.com/jamiebuilds/unstated)
 - [Jamie Kyle - Unstated-next](https://github.com/jamiebuilds/unstated-next)
-- [Node-CMD](https://github.com/RIAEvangelist/node-cmd)
-- [Inquirer JS](https://github.com/SBoudrias/Inquirer.js/)
-- [CLUI](https://www.npmjs.com/package/clui)
+- [Brandon Nozaki Miller - Node-CMD](https://github.com/RIAEvangelist/node-cmd)
+- [Simon Boudrias - Inquirer JS](https://github.com/SBoudrias/Inquirer.js/)
+- [Nathan Peck - CLUI](https://www.npmjs.com/package/clui)
 - [Chalk](https://www.npmjs.com/package/chalk)
-- [Clear](https://github.com/bahamas10/node-clear)
-- [Figlet](https://github.com/patorjk/figlet.js)
+- [Dave Eddy - Clear](https://github.com/bahamas10/node-clear)
+- [Patorjk - Figlet](https://github.com/patorjk/figlet.js)
 
 **Be sure to check the above repos out if you're facing any issues! We are of course, always open to improvements.**
 
