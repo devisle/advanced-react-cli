@@ -28,17 +28,18 @@ module.exports = class Redux {
   }
 
   install(packageInstaller) {
+    fs.mkdir("./store", err => {
+      if (err) throw err;
+    });
+    cmd.get(`cd store && touch store.js`);
+    const writeStream = fs.createWriteStream("./store/store.js");
+    writeStream.write(`${ReduxBoilerPlate}`);
+
     switch (packageInstaller) {
       case "NPM":
         cmd.get(`${reduxObj.install}`, (err, data, stderr) => {
           err ? console.log(err) : console.log(stderr, data);
         });
-        fs.mkdir("./store", err => {
-          if (err) throw err;
-        });
-        cmd.get(`cd store && touch store.js`);
-        const writeStream = fs.createWriteStream("./store/store.js");
-        writeStream.write(`${ReduxBoilerPlate}`);
         console.log(
           "Packages: redux & react-redux has been installed successfully!"
         );
@@ -49,12 +50,6 @@ module.exports = class Redux {
         cmd.get(`${reduxObjYarn.install}`, (err, data, stderr) => {
           err ? console.log(err) : console.log(stderr, data);
         });
-        fs.mkdir("./store", err => {
-          if (err) throw err;
-        });
-        cmd.get(`cd store && touch store.js`);
-        const writeStream = fs.createWriteStream("./store/store.js");
-        writeStream.write(`${ReduxBoilerPlate}`);
         console.log(
           "Packages: redux & react-redux has been installed successfully!"
         );

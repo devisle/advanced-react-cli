@@ -36,17 +36,18 @@ module.exports = class propTypes {
   }
 
   install(packageInstaller) {
+    fs.mkdir("./propTypes", err => {
+      if (err) throw err;
+    });
+    cmd.get(`cd propTypes && touch propTypes.js`);
+    const fileStream = fs.createWriteStream("./propTypes/propTypes.js");
+    fileStream.write(`${propTypeBoilerPlate}`);
+
     switch (packageInstaller) {
       case "NPM":
         cmd.get(`${propTypesObj.install}`, (err, data, stderr) => {
           err ? console.log(err) : console.log(stderr, data);
         });
-        fs.mkdir("./propTypes", err => {
-          if (err) throw err;
-        });
-        cmd.get(`cd propTypes && touch propTypes.js`);
-        const writeStream = fs.createWriteStream("./propTypes/propTypes.js");
-        writeStream.write(`${propTypeBoilerPlate}`);
         console.log("Package: prop-types has been installed successfully!");
         console.log("PropTypes Folder has been created!");
         break;
@@ -55,12 +56,6 @@ module.exports = class propTypes {
         cmd.get(`${propTypesObjYarn.install}`, (err, data, stderr) => {
           err ? console.log(err) : console.log(stderr, data);
         });
-        fs.mkdir("./propTypes", err => {
-          if (err) throw err;
-        });
-        cmd.get(`cd propTypes && touch propTypes.js`);
-        const writeStream = fs.createWriteStream("./propTypes/propTypes.js");
-        writeStream.write(`${propTypeBoilerPlate}`);
         console.log("Package: prop-types has been installed successfully!");
         console.log("PropTypes Folder has been created!");
         break;
