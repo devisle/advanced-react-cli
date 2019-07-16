@@ -4,14 +4,14 @@ const propTypesObject = fileName => {
     declare: `${fileName}.PropTypes = {
   ///
   }`
-  };
-};
+  }
+}
 const reactRouterObj = () => {
   return {
     import: `import {BrowserRouter as Route, Router, NavLink} from "react-router-dom"`,
     declare: `Hello World`
-  };
-};
+  }
+}
 const reduxObj = () => {
   return {
     import: `import {connect} from 'redux'`,
@@ -26,20 +26,20 @@ const reduxObj = () => {
   }
 } `,
     connect: `connect(mapStateToProps, mapDispatchToProps)`
-  };
-};
+  }
+}
 
 module.exports = (componentType, fileName, propTypes, reactRouter, Redux) => {
   //Function Component
-  let propTyping, reactRouting, reactRedux;
-  propTypes === true ? (propTyping = propTypesObject(fileName)) : null;
-  reactRouter === true ? (reactRouting = reactRouterObj()) : null;
-  Redux === true ? (reactRedux = reduxObj()) : null;
-  if (componentType === "function") {
+  let propTyping, reactRouting, reactRedux
+  propTypes === true ? (propTyping = propTypesObject(fileName)) : null
+  reactRouter === true ? (reactRouting = reactRouterObj()) : null
+  Redux === true ? (reactRedux = reduxObj()) : null
+  if (componentType === 'function') {
     return `import React from "react";
-${propTyping ? propTyping.import : ""}
-${reactRouting ? reactRouting.import : ""}
-${reactRedux ? reactRedux.import : ""}
+${propTyping ? propTyping.import : ''}
+${reactRouting ? reactRouting.import : ''}
+${reactRedux ? reactRedux.import : ''}
 
 const ${fileName} = (props) => {
   return (
@@ -49,23 +49,23 @@ const ${fileName} = (props) => {
   );
 };
 
-${propTyping ? propTyping.declare : ""}
-${reactRedux ? reactRedux.mapStateToProps : ""}
-${reactRedux ? reactRedux.mapDispatchToProps : ""}
+${propTyping ? propTyping.declare : ''}
+${reactRedux ? reactRedux.mapStateToProps : ''}
+${reactRedux ? reactRedux.mapDispatchToProps : ''}
 
-export default ${reactRedux ? reactRedux.connect : ""}(${fileName});`;
+export default ${reactRedux ? reactRedux.connect : ''}(${fileName});`
   }
 
   // Class Component
-  else if (componentType === "class") {
-    let propTyping, reactRouting, reactRedux;
-    propTypes === true ? (propTyping = propTypesObject(fileName)) : null;
-    reactRouter === true ? (reactRouting = reactRouterObj()) : null;
-    Redux === true ? (reactRedux = reduxObj()) : null;
+  else if (componentType === 'class') {
+    let propTyping, reactRouting, reactRedux
+    propTypes === true ? (propTyping = propTypesObject(fileName)) : null
+    reactRouter === true ? (reactRouting = reactRouterObj()) : null
+    Redux === true ? (reactRedux = reduxObj()) : null
     return `import React, { Component } from 'react'
-${propTyping ? propTyping.import : ""}
-${reactRouting ? reactRouting.import : ""}
-${reactRedux ? reactRedux.import : ""}
+${propTyping ? propTyping.import : ''}
+${reactRouting ? reactRouting.import : ''}
+${reactRedux ? reactRedux.import : ''}
 
 class ${fileName} extends Component {
   constructor(props) {
@@ -85,10 +85,10 @@ class ${fileName} extends Component {
   }
 }
 
-${propTyping ? propTyping.declare : ""}
-${reactRedux ? reactRedux.mapStateToProps : ""}
-${reactRedux ? reactRedux.mapDispatchToProps : ""}
+${propTyping ? propTyping.declare : ''}
+${reactRedux ? reactRedux.mapStateToProps : ''}
+${reactRedux ? reactRedux.mapDispatchToProps : ''}
 
-export default ${reactRedux ? reactRedux.connect : ""}(${fileName});`;
+export default ${reactRedux ? reactRedux.connect : ''}(${fileName});`
   }
-};
+}

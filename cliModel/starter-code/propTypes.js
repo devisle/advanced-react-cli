@@ -79,4 +79,4 @@ MyComponent.propTypes = {
       );
     }
   })
-};`;
+};`

@@ -37,4 +37,4 @@ const store = createStore(reducer);
 
 //Exporting the Store
 export default store;
-`;
+`
