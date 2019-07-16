@@ -37,9 +37,13 @@ module.exports = class NodeSass {
   install(packageInstaller) {
     switch (packageInstaller) {
       case "NPM":
-        customCMD.get(`${nodeSassObj.install}`, (err, data, stderr) => {
-          err ? console.log(err) : console.log(stderr, data);
-        });
+        customCMD.get(
+          `${nodeSassObj.install}`,
+          (err, data, stderr) => {
+            err ? console.log(err) : console.log(stderr, data);
+          },
+          "install"
+        );
         console.log("Package: node-sass has been installed successfully!");
         break;
 
