@@ -1,20 +1,20 @@
-const inquirer = require("inquirer");
-const cmd = require("node-cmd");
-const fs = require("fs");
+const inquirer = require('inquirer')
+const cmd = require('node-cmd')
+const fs = require('fs')
 
 // Cli Model
-const cliModel = require("../cliModel");
-const installOption = cliModel.installOption;
-const YarnOrNpm = cliModel.YarnOrNpm;
+const cliModel = require('../cliModel')
+const installOption = cliModel.installOption
+const YarnOrNpm = cliModel.YarnOrNpm
 
 // CLI Install Commands
-const { propTypesObj } = require("../cliModel/install-commands");
+const { propTypesObj } = require('../cliModel/install-commands')
 
-const { propTypesObjYarn } = require("../cliModel/install-commands-yarn");
+const { propTypesObjYarn } = require('../cliModel/install-commands-yarn')
 
-const propTypeBoilerPlate = require("../cliModel/starter-code/propTypes");
+const propTypeBoilerPlate = require('../cliModel/starter-code/propTypes')
 
-const prompt = inquirer.createPromptModule();
+const prompt = inquirer.createPromptModule()
 
 /*
 
@@ -22,61 +22,61 @@ const prompt = inquirer.createPromptModule();
 
 */
 module.exports = class propTypes {
-  installOrUninstall() {
+  installOrUninstall () {
     prompt(YarnOrNpm).then(({ packageManager }) => {
-      const packageInstaller = packageManager;
+      const packageInstaller = packageManager
       prompt(installOption).then(({ decision }) => {
-        if (decision === "Install") {
-          this.install(packageInstaller);
-        } else if (decision === "Uninstall") {
-          this.uninstall(packageInstaller);
+        if (decision === 'Install') {
+          this.install(packageInstaller)
+        } else if (decision === 'Uninstall') {
+          this.uninstall(packageInstaller)
         }
-      });
-    });
+      })
+    })
   }
 
-  install(packageInstaller) {
-    fs.mkdir("./propTypes", err => {
-      if (err) throw err;
-    });
-    cmd.get(`cd propTypes && touch propTypes.js`);
-    const fileStream = fs.createWriteStream("./propTypes/propTypes.js");
-    fileStream.write(`${propTypeBoilerPlate}`);
+  install (packageInstaller) {
+    fs.mkdir('./propTypes', err => {
+      if (err) throw err
+    })
+    cmd.get(`cd propTypes && touch propTypes.js`)
+    const fileStream = fs.createWriteStream('./propTypes/propTypes.js')
+    fileStream.write(`${propTypeBoilerPlate}`)
 
     switch (packageInstaller) {
-      case "NPM":
+      case 'NPM':
         cmd.get(`${propTypesObj.install}`, (err, data, stderr) => {
-          err ? console.log(err) : console.log(stderr, data);
-        });
-        console.log("Package: prop-types has been installed successfully!");
-        console.log("PropTypes Folder has been created!");
-        break;
+          err ? console.log(err) : console.log(stderr, data)
+        })
+        console.log('Package: prop-types has been installed successfully!')
+        console.log('PropTypes Folder has been created!')
+        break
 
-      case "Yarn":
+      case 'Yarn':
         cmd.get(`${propTypesObjYarn.install}`, (err, data, stderr) => {
-          err ? console.log(err) : console.log(stderr, data);
-        });
-        console.log("Package: prop-types has been installed successfully!");
-        console.log("PropTypes Folder has been created!");
-        break;
+          err ? console.log(err) : console.log(stderr, data)
+        })
+        console.log('Package: prop-types has been installed successfully!')
+        console.log('PropTypes Folder has been created!')
+        break
     }
   }
 
-  uninstall(packageInstaller) {
+  uninstall (packageInstaller) {
     switch (packageInstaller) {
-      case "NPM":
+      case 'NPM':
         cmd.get(`${propTypesObj.uninstall}`, (err, data, stderr) => {
-          err ? console.log(err) : console.log(stderr, data);
-        });
-        console.log("Package: prop-types has been uninstalled successfully!");
-        break;
+          err ? console.log(err) : console.log(stderr, data)
+        })
+        console.log('Package: prop-types has been uninstalled successfully!')
+        break
 
-      case "Yarn":
+      case 'Yarn':
         cmd.get(`${propTypesObjYarn.uninstall}`, (err, data, stderr) => {
-          err ? console.log(err) : console.log(stderr, data);
-        });
-        console.log("Package: prop-types has been uninstalled successfully!");
-        break;
+          err ? console.log(err) : console.log(stderr, data)
+        })
+        console.log('Package: prop-types has been uninstalled successfully!')
+        break
     }
   }
-};
+}

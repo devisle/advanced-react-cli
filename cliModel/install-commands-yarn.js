@@ -3,35 +3,35 @@
 */
 
 module.exports = {
-  createReactAppYarn: "yarn create react-app",
+  createReactAppYarn: 'yarn create react-app',
   propTypesObjYarn: {
-    install: "yarn add prop-types",
-    uninstall: "yarn remove prop-types"
+    install: 'yarn add prop-types',
+    uninstall: 'yarn remove prop-types'
   },
   reactRouterObjYarn: {
-    install: "yarn add react-router react-router-dom",
-    uninstall: "yarn remove react-router react-router-dom"
+    install: 'yarn add react-router react-router-dom',
+    uninstall: 'yarn remove react-router react-router-dom'
   },
   nodeSassObjYarn: {
-    install: "yarn add node-sass",
-    uninstall: "yarn remove node-sass"
+    install: 'yarn add node-sass',
+    uninstall: 'yarn remove node-sass'
   },
   reduxObjYarn: {
-    install: "yarn add redux react-redux",
-    uninstall: "yarn remove redux react-redux"
+    install: 'yarn add redux react-redux',
+    uninstall: 'yarn remove redux react-redux'
   },
   reduxThunkObjYarn: {
-    install: "yarn add redux-thunk",
-    uninstall: "yarn remove redux-thunk"
+    install: 'yarn add redux-thunk',
+    uninstall: 'yarn remove redux-thunk'
   },
   unstatedObjYarn: {
     unstatedYarn: {
-      install: "yarn add unstated",
-      uninstall: "yarn remove unstated"
+      install: 'yarn add unstated',
+      uninstall: 'yarn remove unstated'
     },
     unstatedNextYarn: {
-      install: "yarn add unstated-next",
-      uninstall: "yarn remove unstated-next"
+      install: 'yarn add unstated-next',
+      uninstall: 'yarn remove unstated-next'
     }
   }
-};
+}
