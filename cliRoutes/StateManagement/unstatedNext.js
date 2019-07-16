@@ -1,5 +1,4 @@
 const inquirer = require("inquirer");
-const cmd = require("node-cmd");
 
 const customCMD = require("../../customNodeCMD");
 
