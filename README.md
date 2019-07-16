@@ -34,7 +34,6 @@ This CLI uses some of the best GitHub repos' terminal commands under the hood, t
 Just type in the following command in your terminal and run it! (Please check FAQ for more on testing and contributions)
 
 - NPM/NPX -> `npx advanced-react-cli`
-- Yarn -> `yarn create advanced-react-cli`
 
 ## Installing the CLI globally
 
@@ -61,7 +60,7 @@ It is still under development. But, as of this current beta version, we have ena
 
 1.  How can I test this out?
 
-- Currently we are Beta testing the CLI. If you'd like to try it out , Run the following command `npx advanced-react-cli` if you're using NPM, or `yarn create advanced-react-cli` if you're using Yarn, in your terminal.
+- Currently we are Beta testing the CLI. If you'd like to try it out , Run the following command `npx advanced-react-cli` in your terminal.
 - We are still continuing to work on our [Development Checklist](https://github.com/devisle/advanced-react-cli/blob/master/docs/README.md).
 
 - Ensure you have git version control, and package manager - either npm (node package manager) or Yarn Installed. You may check if your system has them installed by running the following commands `git --version` and depending on your package manager of choice, run `npm --version` or `yarn --version`. If you don't have it installed, please visit
