@@ -1,26 +1,28 @@
-const cmd = require('node-cmd')
+const customCMD = require("../../customNodeCMD");
 
 // Cli Install Commands
-const { createReactApp } = require('../../cliModel/install-commands')
+const { createReactApp } = require("../../cliModel/install-commands");
 
-const { createReactAppYarn } = require('../../cliModel/install-commands-yarn')
+const { createReactAppYarn } = require("../../cliModel/install-commands-yarn");
 
 module.exports = (folderName, packageInstaller) => {
   switch (packageInstaller) {
-    case 'NPM':
-      cmd.get(
+    case "NPM":
+      customCMD.get(
         ` mkdir ${folderName} && cd ${folderName} && ${createReactApp} .`,
         (err, data, stderr) =>
-          err ? console.log(err) : console.log(stderr, data)
-      )
-      break
+          err ? console.log(err) : console.log(stderr, data),
+        "install"
+      );
+      break;
 
-    case 'Yarn':
-      cmd.get(
+    case "Yarn":
+      customCMD.get(
         ` mkdir ${folderName} && cd ${folderName} && ${createReactAppYarn} .`,
         (err, data, stderr) =>
-          err ? console.log(err) : console.log(stderr, data)
-      )
-      break
+          err ? console.log(err) : console.log(stderr, data),
+        "install"
+      );
+      break;
   }
-}
+};
