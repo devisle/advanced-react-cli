@@ -1,5 +1,11 @@
 module.exports = {
   createReactApp: "npx create-react-app",
+  TypeScriptReactObjYarn: {
+    TypeScript: "npm install --save typescript",
+    typesNodes: "npm install --save @types/nodes",
+    typesReact: "npm install --save @types/react @types/react-dom",
+    typesJest: "npm install --save @types/jest"
+  },
   propTypesObj: {
     install: "npm i prop-types --save",
     uninstall: "npm uninstall prop-types"

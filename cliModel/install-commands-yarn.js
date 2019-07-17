@@ -4,6 +4,12 @@
 
 module.exports = {
   createReactAppYarn: "yarn create react-app",
+  TypeScriptReactObjYarn: {
+    TypeScript: "yarn add typescript",
+    typesNodes: "yarn add @types/nodes",
+    typesReact: "yarn add @types/react @types/react-dom",
+    typesJest: "yarn add @types/jest"
+  },
   propTypesObjYarn: {
     install: "yarn add prop-types",
     uninstall: "yarn remove prop-types"
