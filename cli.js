@@ -27,9 +27,9 @@ const prompt = inquirer.createPromptModule();
 clear();
 console.log(
   chalk.blue(
-    figlet.textSync("Adv. React CLI", {
-      horizontalLayout: "full",
-      font: "Small",
+    figlet.textSync("Advanced React CLI", {
+      horizontalLayout: "fitted",
+      font: "Mini",
       verticalLayout: "full"
     })
   )
