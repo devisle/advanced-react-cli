@@ -1,37 +1,38 @@
-const customCMD = require('../../customNodeCMD')
+const customCMD = require("../../customNodeCMD");
+const errorLogging = require("../../customNodeCMD/customError");
 
 const {
   createReactApp,
   reactRouterObj
-} = require('../../cliModel/install-commands')
+} = require("../../cliModel/install-commands");
 
 const {
   createReactAppYarn,
   reactRouterObjYarn
-} = require('../../cliModel/install-commands-yarn')
+} = require("../../cliModel/install-commands-yarn");
 
 module.exports = (folderName, packageInstaller) => {
   switch (packageInstaller) {
-    case 'NPM':
+    case "NPM":
       customCMD.get(
         ` mkdir ${folderName} && cd ${folderName} && ${createReactApp} . && ${
           reactRouterObj.install
         }`,
         (err, data, stderr) =>
-          err ? console.log(err) : console.log(stderr, data),
-        'install'
-      )
-      break
+          err ? console.log(err) : errorLogging(stderr, data),
+        "install"
+      );
+      break;
 
-    case 'Yarn':
+    case "Yarn":
       customCMD.get(
         ` mkdir ${folderName} && cd ${folderName} && ${createReactAppYarn} . && ${
           reactRouterObjYarn.install
         }`,
         (err, data, stderr) =>
-          err ? console.log(err) : console.log(stderr, data),
-        'install'
-      )
-      break
+          err ? console.log(err) : errorLogging(stderr, data),
+        "install"
+      );
+      break;
   }
-}
+};
