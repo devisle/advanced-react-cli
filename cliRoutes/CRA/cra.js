@@ -16,7 +16,7 @@ const prompt = inquirer.createPromptModule()
 
 /*
 
-  Installs a Boiler plate react application using Create-react-app + optional packages
+  Installs a Boilerplate react application using Create-react-app + optional packages
 
 */
 module.exports = class CRA {

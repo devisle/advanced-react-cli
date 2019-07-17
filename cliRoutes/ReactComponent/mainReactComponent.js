@@ -43,7 +43,7 @@ module.exports = class ReactComponent {
   propTypesAdd (component, componentName, folderName) {
     prompt({
       ...addPackage[0],
-      message: 'Would you like to add PropTypes? : (Y/N)'
+      message: 'Would you like to add PropTypes? (Y/N)'
     }).then(({ packageAdd }) => {
       let propTypingBool
       propTypingBool = ['yes', 'y', ''].includes(packageAdd.toLowerCase())
@@ -53,11 +53,11 @@ module.exports = class ReactComponent {
     })
   }
 
-  //Prompts User on React-Router
+  // Prompts User on React-Router
   reactRouterAdd (component, componentName, folderName, propTypingBool) {
     prompt({
       ...addPackage[0],
-      message: 'Would you like to add react-router? : (Y/N)'
+      message: 'Would you like to add react-router? (Y/N)'
     }).then(({ packageAdd }) => {
       let reactRouterBool
       reactRouterBool = ['yes', 'y', ''].includes(packageAdd.toLowerCase())
@@ -83,7 +83,7 @@ module.exports = class ReactComponent {
   ) {
     prompt({
       ...addPackage[0],
-      message: 'Would you like to add Redux? : (Y/N)'
+      message: 'Would you like to add Redux? (Y/N)'
     }).then(({ packageAdd }) => {
       let reduxBool
       reduxBool = ['yes', 'y', ''].includes(packageAdd.toLowerCase())

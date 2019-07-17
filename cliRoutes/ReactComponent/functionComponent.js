@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-//React Component Custom Boilerplate
+// React Component Custom Boilerplate
 const componentCode = require('../../cliModel/starter-code/reactComponent')
 
 module.exports = (
