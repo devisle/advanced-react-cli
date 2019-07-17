@@ -1,87 +1,87 @@
-const inquirer = require("inquirer");
+const inquirer = require('inquirer')
 
-const customCMD = require("../../customNodeCMD");
-const errorLogging = require("../../customNodeCMD/customError");
+const customCMD = require('../../customNodeCMD')
+const errorLogging = require('../../customNodeCMD/customError')
 
 // Cli Model
-const cliModel = require("../../cliModel/index");
-const installOption = cliModel.installOption;
+const cliModel = require('../../cliModel/index')
+const installOption = cliModel.installOption
 
 // Cli Install Commands
-const { unstatedObj } = require("../../cliModel/install-commands");
-const { unstatedNext } = unstatedObj;
+const { unstatedObj } = require('../../cliModel/install-commands')
+const { unstatedNext } = unstatedObj
 
-const { unstatedObjYarn } = require("../../cliModel/install-commands-yarn");
-const { unstatedNextYarn } = unstatedObjYarn;
+const { unstatedObjYarn } = require('../../cliModel/install-commands-yarn')
+const { unstatedNextYarn } = unstatedObjYarn
 
-const prompt = inquirer.createPromptModule();
+const prompt = inquirer.createPromptModule()
 
 module.exports = class UnstatedNext {
-  installOrUninstall(packageInstaller) {
+  installOrUninstall (packageInstaller) {
     prompt(installOption).then(({ decision }) => {
-      if (decision === "Install") {
-        this.install(packageInstaller);
+      if (decision === 'Install') {
+        this.install(packageInstaller)
       } else {
-        this.uninstall(packageInstaller);
+        this.uninstall(packageInstaller)
       }
-    });
+    })
   }
 
-  install(packageInstaller) {
+  install (packageInstaller) {
     switch (packageInstaller) {
-      case "NPM":
+      case 'NPM':
         customCMD.get(
           `${unstatedNext.install}`,
           (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data);
+            err ? console.log(err) : errorLogging(stderr, data)
           },
-          "install"
-        );
+          'install'
+        )
         console.log(
-          "Check out more on how to get started with unstated-next on the following link https://github.com/jamiebuilds/unstated-next "
-        );
-        console.log("Package: Unstated-next has been installed!");
-        break;
+          'Check out more on how to get started with unstated-next on the following link https://github.com/jamiebuilds/unstated-next '
+        )
+        console.log('Package: Unstated-next has been installed!')
+        break
 
-      case "Yarn":
+      case 'Yarn':
         customCMD.get(
           `${unstatedNextYarn.install}`,
           (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data);
+            err ? console.log(err) : errorLogging(stderr, data)
           },
-          "install"
-        );
+          'install'
+        )
         console.log(
-          "Check out more on how to get started with unstated-next on the following link https://github.com/jamiebuilds/unstated-next "
-        );
-        console.log("Package: Unstated-next has been installed!");
-        break;
+          'Check out more on how to get started with unstated-next on the following link https://github.com/jamiebuilds/unstated-next '
+        )
+        console.log('Package: Unstated-next has been installed!')
+        break
     }
   }
 
-  uninstall(packageInstaller) {
+  uninstall (packageInstaller) {
     switch (packageInstaller) {
-      case "NPM":
+      case 'NPM':
         customCMD.get(
           `${unstatedNext.uninstall}`,
           (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data);
+            err ? console.log(err) : errorLogging(stderr, data)
           },
-          "uninstall"
-        );
-        console.log("Package: Unstated-next has been uninstalled!");
-        break;
+          'uninstall'
+        )
+        console.log('Package: Unstated-next has been uninstalled!')
+        break
 
-      case "Yarn":
+      case 'Yarn':
         customCMD.get(
           `${unstatedNextYarn.uninstall}`,
           (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data);
+            err ? console.log(err) : errorLogging(stderr, data)
           },
-          "uninstall"
-        );
-        console.log("Package: Unstated-next has been uninstalled!");
-        break;
+          'uninstall'
+        )
+        console.log('Package: Unstated-next has been uninstalled!')
+        break
     }
   }
-};
+}
