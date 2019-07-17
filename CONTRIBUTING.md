@@ -22,4 +22,4 @@ Please ensure your pull request adheres to the following guidelines:
 ## Updating your Pull Request
 
 Sometimes, a maintainer of an this list will ask you to edit your Pull Request before it is included. 
-This is normally due to spelling errors or because your PR didn't match the awesome-\* list guidelines.
+This is normally due to spelling errors or because your PR didn't match the guidelines.
