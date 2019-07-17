@@ -111,12 +111,14 @@ module.exports = class ReactComponent {
   ) {
     if (component === 'function') {
       FunctionComponent(
-        component,
-        componentName,
-        folderName,
-        propTypingBool,
-        reactRouterBool,
-        reduxBool
+        {
+          component,
+          componentName,
+          folderName,
+          propTypingBool,
+          reactRouterBool,
+          reduxBool
+        }
       )
     } else {
       ClassComponent(
