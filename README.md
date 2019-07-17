@@ -25,9 +25,9 @@ This CLI uses some of the best GitHub repos' terminal commands under the hood, t
 - [Brandon Nozaki Miller - Node-CMD](https://github.com/RIAEvangelist/node-cmd)
 - [Simon Boudrias - Inquirer JS](https://github.com/SBoudrias/Inquirer.js/)
 - [Nathan Peck - CLUI](https://www.npmjs.com/package/clui)
-- [Chalk](https://www.npmjs.com/package/chalk)
 - [Dave Eddy - Clear](https://github.com/bahamas10/node-clear)
 - [Patorjk - Figlet](https://github.com/patorjk/figlet.js)
+- [Chalk](https://www.npmjs.com/package/chalk)
 
 **Be sure to check the above repos out if you're facing any issues! We are of course, always open to improvements.**
 
