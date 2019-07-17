@@ -29,7 +29,7 @@ module.exports.addPackage = [
   {
     type: 'input',
     name: 'packageAdd',
-    message: `Would you like to add a package? (y/n)`
+    message: `Would you like to add a package? (Y/N)`
   }
 ]
 
@@ -93,7 +93,7 @@ module.exports.YarnOrNpm = [
   {
     type: 'list',
     name: 'packageManager',
-    message: 'Would you like to install using Yarn or Npm?',
+    message: 'Would you like to install using Yarn or NPM?',
     choices: ['Yarn', 'NPM']
   }
 ]

@@ -6,7 +6,7 @@ const stateOption = cliModel.stateManagement
 const unstatedOption = cliModel.unstatedOptions
 const YarnOrNpm = cliModel.YarnOrNpm
 
-//State Management Dependencies
+// State Management Dependencies
 const Redux = require('./redux')
 const ReduxThunk = require('./reduxThunk')
 const Unstated = require('./unstated')
