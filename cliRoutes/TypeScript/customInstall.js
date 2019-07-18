@@ -34,7 +34,7 @@ module.exports = class CustomInstall {
     prompt({
       ...addPackage[0],
       message: "Would you like to install TypeScript? (Y/N)"
-    }).then(({ addPackage }) => {
+    }).then(({ packageAdd }) => {
       if (["y", "yes"].includes(addPackage.toLowerCase())) {
         addTypeScriptNPM, (addTypeScriptYarn = "typescript");
       } else if (["n", "no"].includes(addPackage.toLowerCase())) {
@@ -46,7 +46,7 @@ module.exports = class CustomInstall {
       prompt({
         ...addPackage[0],
         message: "Would you like to add @types/node? (Y/N)"
-      }).then(({ addPackage }) => {
+      }).then(({ packageAdd }) => {
         if (["y", "yes"].includes(addPackage.toLowerCase())) {
           addTypesNodeNPM, (addTypesNodeYarn = "@types/node");
         } else if (["n", "no"].includes(addPackage.toLowerCase())) {
@@ -58,7 +58,7 @@ module.exports = class CustomInstall {
         prompt({
           ...addPackage[0],
           message: "Would you like to add @types/react? (Y/N)"
-        }).then(({ addPackage }) => {
+        }).then(({ packageAdd }) => {
           if (["y", "yes"].includes(addPackage.toLowerCase())) {
             addTypesReactNPM,
               (addTypesReactYarn = "@types/react @types/react-dom");
@@ -71,7 +71,7 @@ module.exports = class CustomInstall {
           prompt({
             ...addPackage[0],
             message: "Would you like to add @types/react-router? (Y/N)"
-          }).then(({ addPackage }) => {
+          }).then(({ packageAdd }) => {
             if (["y", "yes"].includes(addPackage.toLowerCase())) {
               addTypesReactRouterNPM,
                 (addTypesReactRouterYarn =
@@ -86,7 +86,7 @@ module.exports = class CustomInstall {
             prompt({
               ...addPackage[0],
               message: "Would you like to add @types/jest? (Y/N)"
-            }).then(({ addPackage }) => {
+            }).then(({ packageAdd }) => {
               if (["y", "yes"].includes(addPackage.toLowerCase())) {
                 addTypesJestNPM,
                   (addTypesJestYarn =
