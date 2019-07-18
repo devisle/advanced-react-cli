@@ -106,6 +106,7 @@ module.exports.typescriptPackages = [
     name: "typescriptPackage",
     message: "Please select the TypeScript module to add to your project: ",
     choices: [
+      "CustomInstall",
       "TypeScript",
       "@types/node",
       "@types/react @types/react-dom",
