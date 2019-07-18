@@ -99,6 +99,21 @@ module.exports.unstatedOptions = [
   }
 ];
 
+// TypeScript and Packages
+module.exports.unstatedOptions = [
+  {
+    type: "list",
+    name: "typescriptPackage",
+    message: "Please select the TypeScript module to add to your project: ",
+    choices: [
+      "TypeScript",
+      "@types/nodes",
+      "@types/react @types/react-dom",
+      "@types/jest"
+    ]
+  }
+];
+
 // Package Manager Options
 module.exports.YarnOrNpm = [
   {
