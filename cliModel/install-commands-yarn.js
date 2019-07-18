@@ -10,8 +10,8 @@ module.exports = {
       uninstall: "yarn remove typescript"
     },
     typesNodesYarn: {
-      install: "yarn add @types/nodes",
-      uninstall: "yarn remove @types/nodes"
+      install: "yarn add @types/node",
+      uninstall: "yarn remove @types/node"
     },
     typesReactYarn: {
       install: "yarn add @types/react @types/react-dom",
