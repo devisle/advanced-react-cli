@@ -5,6 +5,7 @@ const StylingPackages = require("./cliRoutes/StylingPackages/index");
 const ReactComponent = require("./cliRoutes/ReactComponent/mainReactComponent");
 const PropTypes = require("./cliRoutes/propTypes");
 const StateManagement = require("./cliRoutes/StateManagement/stateManagement");
+const TypeScript = require("./cliRoutes/TypeScript/index");
 
 module.exports = answers => {
   switch (answers.installation) {
@@ -33,7 +34,7 @@ module.exports = answers => {
       break;
 
     case "TypeScript":
-      console.log("TypeScriptyyyyy");
+      new TypeScript().prompt();
       break;
 
     default:
