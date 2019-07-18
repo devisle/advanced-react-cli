@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 
-const customCMD = require("../../customNodeCMD");
-const errorLogging = require("../../customNodeCMD/customError");
+const customCMD = require("../../../customNodeCMD");
+const errorLogging = require("../../../customNodeCMD/customError");
 
 // CLI Model
 const cliModel = require("../../../cliModel/index");
