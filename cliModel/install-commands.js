@@ -5,9 +5,9 @@ module.exports = {
       install: "npm install --save typescript",
       uninstall: "npm uninstall typescript"
     },
-    typesNodes: {
-      install: "npm install --save @types/nodes",
-      uninstall: "npm uninstall @types/nodes"
+    typesNode: {
+      install: "npm install --save @types/node",
+      uninstall: "npm uninstall @types/node"
     },
     typesReact: {
       install: "npm install --save @types/react @types/react-dom",
