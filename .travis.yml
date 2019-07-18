@@ -14,7 +14,7 @@ node_js:
 install: npm install
 
 script:
-  - npm run react-cli
+  - npm run react-cli && echo -e "\n\n\n"
 
 after_success: echo "Success"
 

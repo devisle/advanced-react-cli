@@ -1,17 +1,16 @@
 const inquirer = require('inquirer')
 
-const customCMD = require('../customNodeCMD')
-const errorLogging = require('../customNodeCMD/customError')
+const customCMD = require('../../customNodeCMD')
+const errorLogging = require('../../customNodeCMD/customError')
 
 // Cli Model
-const cliModel = require('../cliModel')
+const cliModel = require('../../cliModel')
 const installOption = cliModel.installOption
-const YarnOrNpm = cliModel.YarnOrNpm
 
 // CLI Install Commands
-const { nodeSassObj } = require('../cliModel/install-commands')
+const { nodeSassObj } = require('../../cliModel/install-commands')
 
-const { nodeSassObjYarn } = require('../cliModel/install-commands-yarn')
+const { nodeSassObjYarn } = require('../../cliModel/install-commands-yarn')
 
 const prompt = inquirer.createPromptModule()
 
@@ -22,16 +21,13 @@ const prompt = inquirer.createPromptModule()
 */
 
 module.exports = class NodeSass {
-  installOrUninstall () {
-    prompt(YarnOrNpm).then(({ packageManager }) => {
-      const packageInstaller = packageManager
-      prompt(installOption).then(({ decision }) => {
-        if (decision === 'Install') {
-          this.install(packageInstaller)
-        } else if (decision === 'Uninstall') {
-          this.uninstall(packageInstaller)
-        }
-      })
+  installOrUninstall (packageInstaller) {
+    prompt(installOption).then(({ decision }) => {
+      if (decision === 'Install') {
+        this.install(packageInstaller)
+      } else if (decision === 'Uninstall') {
+        this.uninstall(packageInstaller)
+      }
     })
   }
 

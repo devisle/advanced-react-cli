@@ -4,6 +4,28 @@
 
 module.exports = {
   createReactAppYarn: 'yarn create react-app',
+  TypeScriptReactObjYarn: {
+    TypeScriptYarn: {
+      install: 'yarn add typescript',
+      uninstall: 'yarn remove typescript'
+    },
+    typesNodeYarn: {
+      install: 'yarn add @types/node',
+      uninstall: 'yarn remove @types/node'
+    },
+    typesReactYarn: {
+      install: 'yarn add @types/react @types/react-dom',
+      uninstall: 'yarn remove @types/react @types/react-dom'
+    },
+    typesReactRouterYarn: {
+      install: 'yarn add @types/react-router @types/react-router-dom',
+      uninstall: 'yarn remove @types/react-router @types/react-router-dom'
+    },
+    typesJestYarn: {
+      install: 'yarn add @types/jest',
+      uninstall: 'yarn remove @types/jest'
+    }
+  },
   propTypesObjYarn: {
     install: 'yarn add prop-types',
     uninstall: 'yarn remove prop-types'
@@ -15,6 +37,10 @@ module.exports = {
   nodeSassObjYarn: {
     install: 'yarn add node-sass',
     uninstall: 'yarn remove node-sass'
+  },
+  styledComponentsObjYarn: {
+    install: 'yarn add styled-components',
+    uninstall: 'yarn remove styled-components'
   },
   reduxObjYarn: {
     install: 'yarn add redux react-redux',

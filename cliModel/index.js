@@ -4,12 +4,13 @@ module.exports.cliCommand = [
     name: 'installation',
     message: 'What would you like to install?',
     choices: [
-      'create-react-app',
-      'react-component',
-      'react-router',
-      'node-sass',
-      'prop-types',
-      'state-management'
+      'CreateReactApp',
+      'ReactComponent',
+      'ReactRouter',
+      'StylingPackages',
+      'PropTypes',
+      'StateManagement',
+      'TypeScript'
     ]
   }
 ]
@@ -66,6 +67,16 @@ module.exports.reactComponents = [
   }
 ]
 
+// Styling Packages
+module.exports.stylingPackages = [
+  {
+    type: 'list',
+    name: 'stylingTool',
+    message: 'Please select the Styling Package to add to your project: ',
+    choices: ['StyledComponents', 'NodeSass']
+  }
+]
+
 // React State Management tools: More options soon! ('Unstated', Easy-Peasy')
 module.exports.stateManagement = [
   {
@@ -85,6 +96,23 @@ module.exports.unstatedOptions = [
     message:
       'Please select the which version of Unstated you would like to add to your project: ',
     choices: ['Unstated', 'Unstated-next']
+  }
+]
+
+// TypeScript and Packages
+module.exports.typescriptPackages = [
+  {
+    type: 'list',
+    name: 'typescriptPackage',
+    message: 'Please select the TypeScript module to add to your project: ',
+    choices: [
+      'CustomInstall',
+      'TypeScript',
+      '@types/node',
+      '@types/react @types/react-dom',
+      '@types/react-router @types/react-router-dom',
+      '@types/jest'
+    ]
   }
 ]
 
