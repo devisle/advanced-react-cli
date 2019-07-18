@@ -109,6 +109,7 @@ module.exports.unstatedOptions = [
       "TypeScript",
       "@types/nodes",
       "@types/react @types/react-dom",
+      "@types/react-router @types/react-router-dom",
       "@types/jest"
     ]
   }
