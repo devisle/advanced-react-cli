@@ -8,7 +8,7 @@ module.exports.cliCommand = [
       "ReactComponent",
       "ReactRouter",
       "NodeSass",
-      "StyledComponents",
+      "StylingPackages",
       "PropTypes",
       "StateManagement",
       "TypeScript"
