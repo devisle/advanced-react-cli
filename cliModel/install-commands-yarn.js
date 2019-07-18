@@ -9,7 +9,7 @@ module.exports = {
       install: "yarn add typescript",
       uninstall: "yarn remove typescript"
     },
-    typesNodesYarn: {
+    typesNodeYarn: {
       install: "yarn add @types/node",
       uninstall: "yarn remove @types/node"
     },
