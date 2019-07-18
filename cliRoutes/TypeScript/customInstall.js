@@ -38,11 +38,9 @@ module.exports = class CustomInstall {
       if (["y", "yes"].includes(packageAdd.toLowerCase())) {
         addTypeScriptNPM = "typescript";
         addTypeScriptYarn = "typescript";
-        console.log(addTypeScriptNPM, addTypeScriptYarn);
       } else if (["n", "no"].includes(packageAdd.toLowerCase())) {
         addTypeScriptNPM = "";
         addTypeScriptYarn = "";
-        console.log(addTypeScriptNPM, addTypeScriptYarn);
       }
       /*
         Prompts to install @types/node
@@ -54,11 +52,9 @@ module.exports = class CustomInstall {
         if (["y", "yes"].includes(packageAdd.toLowerCase())) {
           addTypesNodeNPM = "typescript";
           addTypesNodeYarn = "@types/node";
-          console.log(addTypesNodeNPM, addTypesNodeYarn);
         } else if (["n", "no"].includes(packageAdd.toLowerCase())) {
           addTypesNodeNPM = "";
           addTypesNodeYarn = "";
-          console.log(addTypesNodeNPM, addTypesNodeYarn);
         }
         /*
           Prompts to install @types/react @types/react-dom
@@ -70,11 +66,9 @@ module.exports = class CustomInstall {
           if (["y", "yes"].includes(packageAdd.toLowerCase())) {
             addTypesReactNPM = "@types/react @types/react-dom";
             addTypesReactYarn = "@types/react @types/react-dom";
-            console.log(addTypesReactNPM, addTypesReactYarn);
           } else if (["n", "no"].includes(packageAdd.toLowerCase())) {
             addTypesReactNPM = "";
             addTypesReactYarn = "";
-            console.log(addTypesReactNPM, addTypesReactYarn);
           }
           /*
             Prompts to install @types/react-router @types/react-router-dom
@@ -88,11 +82,9 @@ module.exports = class CustomInstall {
                 "@types/react-router @types/react-router-dom";
               addTypesReactRouterYarn =
                 "@types/react-router @types/react-router-dom";
-              console.log(addTypesReactRouterNPM, addTypesReactRouterYarn);
             } else if (["n", "no"].includes(packageAdd.toLowerCase())) {
               addTypesReactRouterNPM = "";
               addTypesReactRouterYarn = "";
-              console.log(addTypesReactRouterNPM, addTypesReactRouterYarn);
             }
 
             /*
@@ -105,11 +97,9 @@ module.exports = class CustomInstall {
               if (["y", "yes"].includes(packageAdd.toLowerCase())) {
                 addTypesJestNPM = "@types/jest";
                 addTypesJestYarn = "@types/jest";
-                console.log(addTypesJestNPM, addTypeScriptYarn);
               } else if (["n", "no"].includes(packageAdd.toLowerCase())) {
                 addTypesJestNPM = "";
                 addTypesJestYarn = "";
-                console.log(addTypesJestNPM, addTypeScriptYarn);
               }
 
               switch (packageInstaller) {
