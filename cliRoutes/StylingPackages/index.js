@@ -1,15 +1,15 @@
-const inquirer = require("inquirer");
+const inquirer = require('inquirer')
 
 // CLI Model
-const cliModel = require("../../cliModel");
-const stylingPackage = cliModel.stylingPackages;
-const YarnOrNpm = cliModel.YarnOrNpm;
+const cliModel = require('../../cliModel')
+const stylingPackage = cliModel.stylingPackages
+const YarnOrNpm = cliModel.YarnOrNpm
 
 // Styling Packages Dependencies
-const StyledComponents = require("./styledComponents");
-const NodeSass = require("./nodeSass");
+const StyledComponents = require('./styledComponents')
+const NodeSass = require('./nodeSass')
 
-const prompt = inquirer.createPromptModule();
+const prompt = inquirer.createPromptModule()
 
 /*
 
@@ -18,20 +18,20 @@ const prompt = inquirer.createPromptModule();
 */
 
 module.exports = class StylingPackages {
-  prompt() {
+  prompt () {
     prompt(YarnOrNpm).then(({ packageManager }) => {
-      const packageInstaller = packageManager;
+      const packageInstaller = packageManager
       prompt(stylingPackage).then(({ stylingTool }) => {
         switch (stylingTool) {
-          case "StyledComponents":
-            new StyledComponents().installOrUninstall(packageInstaller);
-            break;
+          case 'StyledComponents':
+            new StyledComponents().installOrUninstall(packageInstaller)
+            break
 
-          case "NodeSass":
-            new NodeSass().installOrUninstall(packageInstaller);
-            break;
+          case 'NodeSass':
+            new NodeSass().installOrUninstall(packageInstaller)
+            break
         }
-      });
-    });
+      })
+    })
   }
-};
+}

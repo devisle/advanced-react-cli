@@ -1,22 +1,22 @@
-const inquirer = require("inquirer");
+const inquirer = require('inquirer')
 
-const customCMD = require("../../../customNodeCMD");
-const errorLogging = require("../../../customNodeCMD/customError");
+const customCMD = require('../../../customNodeCMD')
+const errorLogging = require('../../../customNodeCMD/customError')
 
 // CLI Model
-const cliModel = require("../../../cliModel/index");
-const installOption = cliModel.installOption;
+const cliModel = require('../../../cliModel/index')
+const installOption = cliModel.installOption
 
 // Cli Install Commands
-const { TypeScriptReactObj } = require("../../../cliModel/install-commands");
-const { typesJest } = TypeScriptReactObj;
+const { TypeScriptReactObj } = require('../../../cliModel/install-commands')
+const { typesJest } = TypeScriptReactObj
 
 const {
   TypeScriptReactObjYarn
-} = require("../../../cliModel/install-commands-yarn");
-const { typesJestYarn } = TypeScriptReactObjYarn;
+} = require('../../../cliModel/install-commands-yarn')
+const { typesJestYarn } = TypeScriptReactObjYarn
 
-const prompt = inquirer.createPromptModule();
+const prompt = inquirer.createPromptModule()
 
 /*
 
@@ -25,61 +25,61 @@ const prompt = inquirer.createPromptModule();
 */
 
 module.exports = class TypesJest {
-  installOrUninstall(packageInstaller) {
+  installOrUninstall (packageInstaller) {
     prompt(installOption).then(({ decision }) => {
-      if (decision === "Install") {
-        this.install(packageInstaller);
-      } else if (decision === "Uninstall") {
-        this.uninstall(packageInstaller);
+      if (decision === 'Install') {
+        this.install(packageInstaller)
+      } else if (decision === 'Uninstall') {
+        this.uninstall(packageInstaller)
       }
-    });
+    })
   }
 
-  install(packageInstaller) {
+  install (packageInstaller) {
     switch (packageInstaller) {
-      case "NPM":
+      case 'NPM':
         customCMD.get(
           `${typesJest.install}`,
           (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data);
+            err ? console.log(err) : errorLogging(stderr, data)
           },
-          "install"
-        );
-        break;
+          'install'
+        )
+        break
 
-      case "Yarn":
+      case 'Yarn':
         customCMD.get(
           `${typesJestYarn.install}`,
           (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data);
+            err ? console.log(err) : errorLogging(stderr, data)
           },
-          "install"
-        );
-        break;
+          'install'
+        )
+        break
     }
   }
 
-  uninstall(packageInstaller) {
+  uninstall (packageInstaller) {
     switch (packageInstaller) {
-      case "NPM":
+      case 'NPM':
         customCMD.get(
           `${typesJest.uninstall}`,
           (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data);
+            err ? console.log(err) : errorLogging(stderr, data)
           },
-          "uninstall"
-        );
-        break;
+          'uninstall'
+        )
+        break
 
-      case "Yarn":
+      case 'Yarn':
         customCMD.get(
           `${typesJestYarn.uninstall}`,
           (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data);
+            err ? console.log(err) : errorLogging(stderr, data)
           },
-          "uninstall"
-        );
-        break;
+          'uninstall'
+        )
+        break
     }
   }
-};
+}

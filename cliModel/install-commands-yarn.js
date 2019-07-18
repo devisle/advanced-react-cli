@@ -3,61 +3,61 @@
 */
 
 module.exports = {
-  createReactAppYarn: "yarn create react-app",
+  createReactAppYarn: 'yarn create react-app',
   TypeScriptReactObjYarn: {
     TypeScriptYarn: {
-      install: "yarn add typescript",
-      uninstall: "yarn remove typescript"
+      install: 'yarn add typescript',
+      uninstall: 'yarn remove typescript'
     },
     typesNodeYarn: {
-      install: "yarn add @types/node",
-      uninstall: "yarn remove @types/node"
+      install: 'yarn add @types/node',
+      uninstall: 'yarn remove @types/node'
     },
     typesReactYarn: {
-      install: "yarn add @types/react @types/react-dom",
-      uninstall: "yarn remove @types/react @types/react-dom"
+      install: 'yarn add @types/react @types/react-dom',
+      uninstall: 'yarn remove @types/react @types/react-dom'
     },
     typesReactRouterYarn: {
-      install: "yarn add @types/react-router @types/react-router-dom",
-      uninstall: "yarn remove @types/react-router @types/react-router-dom"
+      install: 'yarn add @types/react-router @types/react-router-dom',
+      uninstall: 'yarn remove @types/react-router @types/react-router-dom'
     },
     typesJestYarn: {
-      install: "yarn add @types/jest",
-      uninstall: "yarn remove @types/jest"
+      install: 'yarn add @types/jest',
+      uninstall: 'yarn remove @types/jest'
     }
   },
   propTypesObjYarn: {
-    install: "yarn add prop-types",
-    uninstall: "yarn remove prop-types"
+    install: 'yarn add prop-types',
+    uninstall: 'yarn remove prop-types'
   },
   reactRouterObjYarn: {
-    install: "yarn add react-router react-router-dom",
-    uninstall: "yarn remove react-router react-router-dom"
+    install: 'yarn add react-router react-router-dom',
+    uninstall: 'yarn remove react-router react-router-dom'
   },
   nodeSassObjYarn: {
-    install: "yarn add node-sass",
-    uninstall: "yarn remove node-sass"
+    install: 'yarn add node-sass',
+    uninstall: 'yarn remove node-sass'
   },
   styledComponentsObjYarn: {
-    install: "yarn add styled-components",
-    uninstall: "yarn remove styled-components"
+    install: 'yarn add styled-components',
+    uninstall: 'yarn remove styled-components'
   },
   reduxObjYarn: {
-    install: "yarn add redux react-redux",
-    uninstall: "yarn remove redux react-redux"
+    install: 'yarn add redux react-redux',
+    uninstall: 'yarn remove redux react-redux'
   },
   reduxThunkObjYarn: {
-    install: "yarn add redux-thunk",
-    uninstall: "yarn remove redux-thunk"
+    install: 'yarn add redux-thunk',
+    uninstall: 'yarn remove redux-thunk'
   },
   unstatedObjYarn: {
     unstatedYarn: {
-      install: "yarn add unstated",
-      uninstall: "yarn remove unstated"
+      install: 'yarn add unstated',
+      uninstall: 'yarn remove unstated'
     },
     unstatedNextYarn: {
-      install: "yarn add unstated-next",
-      uninstall: "yarn remove unstated-next"
+      install: 'yarn add unstated-next',
+      uninstall: 'yarn remove unstated-next'
     }
   }
-};
+}
