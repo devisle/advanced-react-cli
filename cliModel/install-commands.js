@@ -1,12 +1,26 @@
 module.exports = {
   createReactApp: "npx create-react-app",
   TypeScriptReactObj: {
-    TypeScript: "npm install --save typescript",
-    typesNodes: "npm install --save @types/nodes",
-    typesReact: "npm install --save @types/react @types/react-dom",
-    typesReactRouter:
-      "npm install --save @types/react-router @types/react-router-dom",
-    typesJest: "npm install --save @types/jest"
+    TypeScript: {
+      install: "npm install --save typescript",
+      uninstall: "npm uninstall typescript"
+    },
+    typesNodes: {
+      install: "npm install --save @types/nodes",
+      uninstall: "npm uninstall @types/nodes"
+    },
+    typesReact: {
+      install: "npm install --save @types/react @types/react-dom",
+      uninstall: "npm uninstall @types/react @types/react-dom"
+    },
+    typesReactRouter: {
+      install: "npm install --save @types/react-router @types/react-router-dom",
+      uninstall: "npm uninstall @types/react-router @types/react-router-dom"
+    },
+    typesJest: {
+      install: "npm install --save @types/jest",
+      uninstall: "npm uninstall @types/jest"
+    }
   },
   propTypesObj: {
     install: "npm i prop-types --save",
