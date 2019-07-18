@@ -12,6 +12,7 @@
 - [x] - Improved React Component generator to smartly add PropTypes, Redux & React Router
 - [x] - Added in package-manager choice as NPM/Yarn
 - [x] - Custom CMD execute commands
+- [x] - Custom installation for TypeScript
 - [ ] - Adding Hooks functionality to the React Component generator
 - [ ] - Refactoring (in progress0)
 - [ ] - Performance optimization (in progress0)
