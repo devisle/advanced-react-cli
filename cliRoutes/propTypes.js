@@ -20,7 +20,7 @@ const prompt = inquirer.createPromptModule()
 
 /*
 
-  Installs/Uninstalls PropTypes package
+  Installs/Uninstalls Prop-Types package
 
 */
 module.exports = class propTypes {

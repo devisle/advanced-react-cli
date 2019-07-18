@@ -29,7 +29,7 @@ console.log(
   chalk.blue(
     figlet.textSync('Advanced React CLI', {
       horizontalLayout: 'fitted',
-      font: 'Mini',
+      font: 'Cybersmall',
       verticalLayout: 'full'
     })
   )
