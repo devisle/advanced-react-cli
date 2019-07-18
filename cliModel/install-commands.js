@@ -1,6 +1,6 @@
 module.exports = {
   createReactApp: "npx create-react-app",
-  TypeScriptReactObjYarn: {
+  TypeScriptReactObj: {
     TypeScript: "npm install --save typescript",
     typesNodes: "npm install --save @types/nodes",
     typesReact: "npm install --save @types/react @types/react-dom",
