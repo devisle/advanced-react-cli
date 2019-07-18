@@ -9,12 +9,12 @@ const installOption = cliModel.installOption;
 
 // Cli Install Commands
 const { TypeScriptReactObj } = require("../../../cliModel/install-commands");
-const { typesNodes } = TypeScriptReactObj;
+const { typesNode } = TypeScriptReactObj;
 
 const {
   TypeScriptReactObjYarn
 } = require("../../../cliModel/install-commands-yarn");
-const { typesNodesYarn } = TypeScriptReactObjYarn;
+const { typesNodeYarn } = TypeScriptReactObjYarn;
 
 const prompt = inquirer.createPromptModule();
 
@@ -39,7 +39,7 @@ module.exports = class TypesNodes {
     switch (packageInstaller) {
       case "NPM":
         customCMD.get(
-          `${typesNodes.install}`,
+          `${typesNode.install}`,
           (err, data, stderr) => {
             err ? console.log(err) : errorLogging(stderr, data);
           },
@@ -49,7 +49,7 @@ module.exports = class TypesNodes {
 
       case "Yarn":
         customCMD.get(
-          `${typesNodesYarn.install}`,
+          `${typesNodeYarn.install}`,
           (err, data, stderr) => {
             err ? console.log(err) : errorLogging(stderr, data);
           },
@@ -63,7 +63,7 @@ module.exports = class TypesNodes {
     switch (packageInstaller) {
       case "NPM":
         customCMD.get(
-          `${typesNodes.uninstall}`,
+          `${typesNode.uninstall}`,
           (err, data, stderr) => {
             err ? console.log(err) : errorLogging(stderr, data);
           },
@@ -73,7 +73,7 @@ module.exports = class TypesNodes {
 
       case "Yarn":
         customCMD.get(
-          `${typesNodesYarn.uninstall}`,
+          `${typesNodeYarn.uninstall}`,
           (err, data, stderr) => {
             err ? console.log(err) : errorLogging(stderr, data);
           },
