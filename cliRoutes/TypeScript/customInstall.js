@@ -37,8 +37,10 @@ module.exports = class CustomInstall {
     }).then(({ packageAdd }) => {
       if (["y", "yes"].includes(packageAdd.toLowerCase())) {
         addTypeScriptNPM, (addTypeScriptYarn = "typescript");
+        return addTypeScriptNPM, addTypeScriptYarn;
       } else if (["n", "no"].includes(packageAdd.toLowerCase())) {
         addTypeScriptNPM, (addTypeScriptYarn = "");
+        return addTypeScriptNPM, addTypeScriptYarn;
       }
       /*
         Prompts to install @types/node
@@ -49,8 +51,10 @@ module.exports = class CustomInstall {
       }).then(({ packageAdd }) => {
         if (["y", "yes"].includes(packageAdd.toLowerCase())) {
           addTypesNodeNPM, (addTypesNodeYarn = "@types/node");
+          return addTypesNodeNPM, addTypesNodeYarn;
         } else if (["n", "no"].includes(packageAdd.toLowerCase())) {
           addTypesNodeNPM, (addTypesNodeYarn = "");
+          return addTypesNodeNPM, addTypesNodeYarn;
         }
         /*
           Prompts to install @types/react @types/react-dom
@@ -62,8 +66,10 @@ module.exports = class CustomInstall {
           if (["y", "yes"].includes(packageAdd.toLowerCase())) {
             addTypesReactNPM,
               (addTypesReactYarn = "@types/react @types/react-dom");
+            return addTypesReactNPM, addTypesReactYarn;
           } else if (["n", "no"].includes(packageAdd.toLowerCase())) {
             addTypesReactNPM, (addTypesReactYarn = "");
+            return addTypesReactNPM, addTypesReactYarn;
           }
           /*
             Prompts to install @types/react-router @types/react-router-dom
@@ -76,8 +82,10 @@ module.exports = class CustomInstall {
               addTypesReactRouterNPM,
                 (addTypesReactRouterYarn =
                   "@types/react-router @types/react-router-dom");
+              return addTypesReactRouterNPM, addTypesReactRouterYarn;
             } else if (["n", "no"].includes(packageAdd.toLowerCase())) {
               addTypesReactRouterNPM, (addTypesReactRouterYarn = "");
+              return addTypesReactRouterNPM, addTypesReactRouterYarn;
             }
 
             /*
@@ -91,8 +99,10 @@ module.exports = class CustomInstall {
                 addTypesJestNPM,
                   (addTypesJestYarn =
                     "@types/react-router @types/react-router-dom");
+                return addTypesJestNPM, addTypeScriptYarn;
               } else if (["n", "no"].includes(packageAdd.toLowerCase())) {
                 addTypesJestNPM, (addTypesJestYarn = "");
+                return addTypesJestNPM, addTypeScriptYarn;
               }
 
               switch (packageInstaller) {
