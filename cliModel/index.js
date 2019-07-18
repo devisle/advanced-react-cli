@@ -68,6 +68,16 @@ module.exports.reactComponents = [
   }
 ];
 
+// Styling Packages
+module.exports.stylingPackages = [
+  {
+    type: "list",
+    name: "stylingTool",
+    message: "Please select the Styling Package to add to your project: ",
+    choices: ["StyledComponents", "NodeSass"]
+  }
+];
+
 // React State Management tools: More options soon! ('Unstated', Easy-Peasy')
 module.exports.stateManagement = [
   {
