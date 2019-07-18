@@ -1,7 +1,4 @@
-const fs = require('fs')
-
-// React Component Custom Boilerplate
-const componentCode = require('../../cliModel/starter-code/reactComponent')
+const writeUtils = require('./writeUtils')
 
 module.exports = generateFunctionComponent
 
@@ -17,59 +14,8 @@ module.exports = generateFunctionComponent
  */
 function generateFunctionComponent (generateInfo) {
   if (['.', ''].includes(generateInfo.folderName)) {
-    writeInCurrentDir(generateInfo)
+    writeUtils.writeInCurrentDir(generateInfo)
   } else {
-    writeInNewDir(generateInfo)
+    writeUtils.writeInNewDir(generateInfo)
   }
-}
-
-function writeInCurrentDir (generateInfo) {
-  const writeStream = fs.createWriteStream(`./${generateInfo.componentName}.js`)
-  writeFile(writeStream, generateInfo)
-
-  console.log(
-    `File Creation: Function component ${
-      generateInfo.componentName
-    } has been created successfully!`
-  )
-}
-
-async function writeInNewDir (generateInfo) {
-  try {
-    await fs.mkdirSync(`./${generateInfo.folderName}`, { recursive: false })
-
-    const writeStream = fs.createWriteStream(
-      `./${generateInfo.folderName}/${generateInfo.componentName}.js`
-    )
-    writeFile(writeStream, generateInfo)
-
-    console.log(
-      `File Creation: Function component ${
-        generateInfo.component
-      } in the folder ${generateInfo.folderName} has been created successfully!`
-    )
-  } catch (err) {
-    handleError(err)
-  }
-}
-
-/**
- * Write to specified location
- * @param {object} writeStream - stream object
- * @param {object} generateInfo
- */
-function writeFile (writeStream, generateInfo) {
-  const fileData = componentCode(
-    `${generateInfo.component}`,
-    `${generateInfo.componentName}`,
-    generateInfo.propTypingBool,
-    generateInfo.reactRouterBool,
-    generateInfo.reduxBool
-  )
-  writeStream.write(fileData)
-}
-
-function handleError (err) {
-  console.error(err.message)
-  process.exit(1)
 }

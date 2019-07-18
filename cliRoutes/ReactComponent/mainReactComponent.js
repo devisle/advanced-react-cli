@@ -119,14 +119,14 @@ module.exports = class ReactComponent {
         reduxBool
       })
     } else {
-      ClassComponent(
+      ClassComponent({
         component,
         componentName,
         folderName,
         propTypingBool,
         reactRouterBool,
         reduxBool
-      )
+      })
     }
   }
 }
