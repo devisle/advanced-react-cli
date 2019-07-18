@@ -16,6 +16,8 @@ const {
 } = require("../../cliModel/install-commands-yarn");
 const { TypeScriptYarn } = TypeScriptReactObjYarn;
 
+const prompt = inquirer.createPromptModule();
+
 /*
 
   Installs TypeScript as a dependency
