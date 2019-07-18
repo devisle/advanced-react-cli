@@ -7,7 +7,6 @@ module.exports.cliCommand = [
       "CreateReactApp",
       "ReactComponent",
       "ReactRouter",
-      "NodeSass",
       "StylingPackages",
       "PropTypes",
       "StateManagement",
