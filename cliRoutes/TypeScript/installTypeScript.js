@@ -16,6 +16,12 @@ const {
 } = require("../../cliModel/install-commands-yarn");
 const { TypeScriptYarn } = TypeScriptReactObjYarn;
 
+/*
+
+  Installs TypeScript as a dependency
+
+*/
+
 module.exports = class TypeScriptInstall {
   installOrUninstall(packageInstaller) {
     prompt(installOption).then(({ decision }) => {
