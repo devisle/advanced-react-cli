@@ -8,6 +8,7 @@ const TypeScriptPackages = cliModel.typescriptPackages;
 const YarnOrNpm = cliModel.YarnOrNpm;
 
 // TypeScript & @types imports
+const CustomInstall = require("./customInstall");
 const TypeScriptInstall = require("./installTypeScript");
 const TypesNode = require("./types/node");
 const TypesReact = require("./types/react");
@@ -28,6 +29,9 @@ module.exports = class TypeScript {
       const packageInstaller = packageManager;
       prompt(TypeScriptPackages).then(({ typescriptPackage }) => {
         switch (typescriptPackage) {
+          case "CustomInstall":
+            new CustomInstall().prompt(packageInstaller);
+            break;
           case "TypeScript":
             new TypeScriptInstall().installOrUninstall(packageInstaller);
             break;
