@@ -8,6 +8,7 @@ module.exports = {
     TypeScript: "yarn add typescript",
     typesNodes: "yarn add @types/nodes",
     typesReact: "yarn add @types/react @types/react-dom",
+    typesReactRouter: "yarn add @types/react-router @types/react-router-dom",
     typesJest: "yarn add @types/jest"
   },
   propTypesObjYarn: {

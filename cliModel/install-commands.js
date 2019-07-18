@@ -4,6 +4,8 @@ module.exports = {
     TypeScript: "npm install --save typescript",
     typesNodes: "npm install --save @types/nodes",
     typesReact: "npm install --save @types/react @types/react-dom",
+    typesReactRouter:
+      "npm install --save @types/react-router @types/react-router-dom",
     typesJest: "npm install --save @types/jest"
   },
   propTypesObj: {
