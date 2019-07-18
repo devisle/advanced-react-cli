@@ -21,7 +21,7 @@ const prompt = inquirer.createPromptModule();
 */
 
 module.exports = class NodeSass {
-  installOrUninstall() {
+  installOrUninstall(packageInstaller) {
     prompt(installOption).then(({ decision }) => {
       if (decision === "Install") {
         this.install(packageInstaller);
