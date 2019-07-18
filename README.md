@@ -13,7 +13,7 @@ We at DevIsle, felt that the community has been longing for a good, functional a
 
 ## Credits
 
-This CLI uses some of the best GitHub repos' terminal commands under the hood, to execute it's functionality. We would like to credit the following GitHub repos making this CLI possible:
+This CLI uses some of the best repos' terminal commands under the hood, to execute it's functionality. We would like to credit the following GitHub repos making this CLI possible:
 
 - [Facebook - Create React App](https://github.com/facebook/create-react-app)
 - [Facebook - Prop Types](https://github.com/facebook/prop-types)
@@ -23,6 +23,11 @@ This CLI uses some of the best GitHub repos' terminal commands under the hood, t
 - [Jamie Kyle - Unstated](https://github.com/jamiebuilds/unstated)
 - [Jamie Kyle - Unstated-next](https://github.com/jamiebuilds/unstated-next)
 - [Brandon Nozaki Miller - Node-CMD](https://github.com/RIAEvangelist/node-cmd)
+- [Microsoft - TypeScript](https://www.npmjs.com/package/typescript)
+- [DefinetlyTyped - @types/node](https://www.npmjs.com/package/@types/node)
+- [DefinetlyTyped - @types/react](https://www.npmjs.com/package/@types/react)
+- [DefinetlyTyped - @types/react-router](https://www.npmjs.com/package/@types/react-router)
+- [DefinetlyTyped - @types/jest](https://www.npmjs.com/package/@types/jest)
 - [Simon Boudrias - Inquirer JS](https://github.com/SBoudrias/Inquirer.js/)
 - [Nathan Peck - CLUI](https://www.npmjs.com/package/clui)
 - [Dave Eddy - Clear](https://github.com/bahamas10/node-clear)
@@ -59,6 +64,8 @@ It is still under development. But, as of this current beta version, we have ena
 - Redux, Unstated, Unstated-Next and Redux-Thunk have been added in the State Management.
 - Installing Redux automatically generates a store folder containing boilerplate Redux code with instructions to get you started!
 - Installing Prop-Types automatically generates a file containing a sample code to get started!
+- Node-Sass and Styled-Components feature under StyledPackages section of the CLI
+- TypeScript and @types definitions for Node, React, React-Router, and Jest
 
 # FAQs
 
