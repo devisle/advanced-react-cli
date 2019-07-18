@@ -63,5 +63,5 @@ function writeInNewDir (generateInfo) {
 
 function handleError (err) {
   // TODO: deal with errors more gracefully
-  throw err;
+  throw err
 }
