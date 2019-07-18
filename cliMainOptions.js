@@ -1,8 +1,8 @@
 // Cli Routes
 const CRA = require("./cliRoutes/CRA/cra");
 const ReactRouter = require("./cliRoutes/reactrouter");
-const NodeSass = require("./cliRoutes/nodeSass");
-const StyledComponents = require("./cliRoutes/styledComponents");
+const NodeSass = require("./cliRoutes/StylingPackages/nodeSass");
+const StyledComponents = require("./cliRoutes/StylingPackages/styledComponents");
 const ReactComponent = require("./cliRoutes/ReactComponent/mainReactComponent");
 const PropTypes = require("./cliRoutes/propTypes");
 const StateManagement = require("./cliRoutes/StateManagement/stateManagement");
