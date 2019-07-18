@@ -25,17 +25,15 @@ const prompt = inquirer.createPromptModule();
 */
 
 module.exports = class TypesNodes {
-  installOrUninstall() {
-    installOrUninstall(packageInstaller) {
-      prompt(installOption).then(({ decision }) => {
-        if (decision === "Install") {
-          this.install(packageInstaller);
-        } else if (decision === "Uninstall") {
-          this.uninstall(packageInstaller);
-        }
-      });
+  installOrUninstall(packageInstaller) {
+    prompt(installOption).then(({ decision }) => {
+      if (decision === "Install") {
+        this.install(packageInstaller);
+      } else if (decision === "Uninstall") {
+        this.uninstall(packageInstaller);
+      }
+    });
   }
-}
 
   install(packageInstaller) {
     switch (packageInstaller) {
@@ -84,4 +82,4 @@ module.exports = class TypesNodes {
         break;
     }
   }
-}
+};
