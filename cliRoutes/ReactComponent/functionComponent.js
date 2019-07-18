@@ -25,14 +25,8 @@ function generateFunctionComponent (generateInfo) {
 
 function writeInCurrentDir (generateInfo) {
   const writeStream = fs.createWriteStream(`./${generateInfo.componentName}.js`)
-  const fileData = componentCode(
-    `${generateInfo.component}`,
-    `${generateInfo.componentName}`,
-    generateInfo.propTypingBool,
-    generateInfo.reactRouterBool,
-    generateInfo.reduxBool
-  )
-  writeStream.write(fileData)
+  writeFile(writeStream, generateInfo)
+
   console.log(
     `File Creation: Function component ${
       generateInfo.componentName
@@ -40,12 +34,31 @@ function writeInCurrentDir (generateInfo) {
   )
 }
 
-function writeInNewDir (generateInfo) {
-  fs.mkdir(`./${generateInfo.folderName}`, { recursive: false }, handleError)
+async function writeInNewDir (generateInfo) {
+  try {
+    await fs.mkdirSync(`./${generateInfo.folderName}`, { recursive: false })
 
-  const writeStream = fs.createWriteStream(
-    `./${generateInfo.folderName}/${generateInfo.componentName}.js`
-  )
+    const writeStream = fs.createWriteStream(
+      `./${generateInfo.folderName}/${generateInfo.componentName}.js`
+    )
+    writeFile(writeStream, generateInfo)
+
+    console.log(
+      `File Creation: Function component ${
+        generateInfo.component
+      } in the folder ${generateInfo.folderName} has been created successfully!`
+    )
+  } catch (err) {
+    handleError(err)
+  }
+}
+
+/**
+ * Write to specified location
+ * @param {object} writeStream - stream object
+ * @param {object} generateInfo
+ */
+function writeFile (writeStream, generateInfo) {
   const fileData = componentCode(
     `${generateInfo.component}`,
     `${generateInfo.componentName}`,
@@ -54,14 +67,9 @@ function writeInNewDir (generateInfo) {
     generateInfo.reduxBool
   )
   writeStream.write(fileData)
-  console.log(
-    `File Creation: Function component ${
-      generateInfo.component
-    } in the folder ${generateInfo.folderName} has been created successfully!`
-  )
 }
 
 function handleError (err) {
-  // TODO: deal with errors more gracefully
-  throw err
+  console.error(err.message)
+  process.exit(1)
 }
