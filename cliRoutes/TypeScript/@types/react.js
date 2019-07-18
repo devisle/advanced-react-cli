@@ -20,7 +20,7 @@ const prompt = inquirer.createPromptModule();
 
 /*
 
-  Installs @types/nodes
+  Installs @types/react @types/react-dom
 
 */
 
