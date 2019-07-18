@@ -100,7 +100,7 @@ module.exports.unstatedOptions = [
 ];
 
 // TypeScript and Packages
-module.exports.unstatedOptions = [
+module.exports.typescriptPackages = [
   {
     type: "list",
     name: "typescriptPackage",
