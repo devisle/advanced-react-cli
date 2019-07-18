@@ -35,9 +35,9 @@ module.exports = class CustomInstall {
       ...addPackage[0],
       message: "Would you like to install TypeScript? (Y/N)"
     }).then(({ packageAdd }) => {
-      if (["y", "yes"].includes(addPackage.toLowerCase())) {
+      if (["y", "yes"].includes(packageAdd.toLowerCase())) {
         addTypeScriptNPM, (addTypeScriptYarn = "typescript");
-      } else if (["n", "no"].includes(addPackage.toLowerCase())) {
+      } else if (["n", "no"].includes(packageAdd.toLowerCase())) {
         addTypeScriptNPM, (addTypeScriptYarn = "");
       }
       /*
@@ -47,9 +47,9 @@ module.exports = class CustomInstall {
         ...addPackage[0],
         message: "Would you like to add @types/node? (Y/N)"
       }).then(({ packageAdd }) => {
-        if (["y", "yes"].includes(addPackage.toLowerCase())) {
+        if (["y", "yes"].includes(packageAdd.toLowerCase())) {
           addTypesNodeNPM, (addTypesNodeYarn = "@types/node");
-        } else if (["n", "no"].includes(addPackage.toLowerCase())) {
+        } else if (["n", "no"].includes(packageAdd.toLowerCase())) {
           addTypesNodeNPM, (addTypesNodeYarn = "");
         }
         /*
@@ -59,10 +59,10 @@ module.exports = class CustomInstall {
           ...addPackage[0],
           message: "Would you like to add @types/react? (Y/N)"
         }).then(({ packageAdd }) => {
-          if (["y", "yes"].includes(addPackage.toLowerCase())) {
+          if (["y", "yes"].includes(packageAdd.toLowerCase())) {
             addTypesReactNPM,
               (addTypesReactYarn = "@types/react @types/react-dom");
-          } else if (["n", "no"].includes(addPackage.toLowerCase())) {
+          } else if (["n", "no"].includes(packageAdd.toLowerCase())) {
             addTypesReactNPM, (addTypesReactYarn = "");
           }
           /*
@@ -72,11 +72,11 @@ module.exports = class CustomInstall {
             ...addPackage[0],
             message: "Would you like to add @types/react-router? (Y/N)"
           }).then(({ packageAdd }) => {
-            if (["y", "yes"].includes(addPackage.toLowerCase())) {
+            if (["y", "yes"].includes(packageAdd.toLowerCase())) {
               addTypesReactRouterNPM,
                 (addTypesReactRouterYarn =
                   "@types/react-router @types/react-router-dom");
-            } else if (["n", "no"].includes(addPackage.toLowerCase())) {
+            } else if (["n", "no"].includes(packageAdd.toLowerCase())) {
               addTypesReactRouterNPM, (addTypesReactRouterYarn = "");
             }
 
@@ -87,11 +87,11 @@ module.exports = class CustomInstall {
               ...addPackage[0],
               message: "Would you like to add @types/jest? (Y/N)"
             }).then(({ packageAdd }) => {
-              if (["y", "yes"].includes(addPackage.toLowerCase())) {
+              if (["y", "yes"].includes(packageAdd.toLowerCase())) {
                 addTypesJestNPM,
                   (addTypesJestYarn =
                     "@types/react-router @types/react-router-dom");
-              } else if (["n", "no"].includes(addPackage.toLowerCase())) {
+              } else if (["n", "no"].includes(packageAdd.toLowerCase())) {
                 addTypesJestNPM, (addTypesJestYarn = "");
               }
 
