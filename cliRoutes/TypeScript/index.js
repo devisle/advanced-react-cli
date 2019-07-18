@@ -9,7 +9,7 @@ const YarnOrNpm = cliModel.YarnOrNpm;
 
 // TypeScript & @types imports
 const TypeScriptInstall = require("./installTypeScript");
-const TypesNode = require("./types/nodes");
+const TypesNode = require("./types/node");
 const TypesReact = require("./types/react");
 const TypesReactRouter = require("./types/reactRouter");
 const TypesJest = require("./types/jest");
@@ -32,7 +32,7 @@ module.exports = class TypeScript {
             new TypeScriptInstall().installOrUninstall(packageInstaller);
             break;
 
-          case "@types/nodes":
+          case "@types/node":
             new TypesNode().installOrUninstall(packageInstaller);
             break;
 
