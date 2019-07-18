@@ -5,21 +5,17 @@
   "main": "cli.js",
   "scripts": {
     "react-cli": "node cli.js",
-    "format": "prettier-standard '**/*.js' '*/**/*.jsx' '**/*.js'",
+    "format": "prettier-standard '**/*.{js,jsx}'",
     "patch-release": "npm version patch && npm publish && git push --follow-tags",
     "minor-release": "npm version minor && npm publish && git push --follow-tags",
     "major-release": "npm version major && npm publish && git push --follow-tags"
   },
   "lint-staged": {
-    "linters": {
-      "**/*.js": [
-        "prettier-standard",
-        "git add"
-      ],
-      "**/*.jsx": [
-        "prettier-standard",
-        "git add"
-      ]
+    "**/*.{js,jsx}": ["npm run format", "git add"]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
   },
   "bin": {
