@@ -6,7 +6,6 @@ const errorLogging = require("../../customNodeCMD/customError");
 // CLI Model
 const cliModel = require("../../cliModel");
 const addPackage = cliModel.addPackage;
-const YarnOrNpm = climodel.YarnOrNpm;
 
 const prompt = inquirer.createPromptModule();
 
