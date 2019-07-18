@@ -17,7 +17,7 @@ const prompt = inquirer.createPromptModule();
 
 */
 
-module.export = class StylingPackages {
+module.exports = class StylingPackages {
   prompt() {
     prompt(YarnOrNpm).then(({ packageManager }) => {
       const packageInstaller = packageManager;
