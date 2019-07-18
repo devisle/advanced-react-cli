@@ -5,23 +5,23 @@
 module.exports = {
   createReactAppYarn: "yarn create react-app",
   TypeScriptReactObjYarn: {
-    TypeScript: {
+    TypeScriptYarn: {
       install: "yarn add typescript",
       uninstall: "yarn remove typescript"
     },
-    typesNodes: {
+    typesNodesYarn: {
       install: "yarn add @types/nodes",
       uninstall: "yarn remove @types/nodes"
     },
-    typesReact: {
+    typesReactYarn: {
       install: "yarn add @types/react @types/react-dom",
       uninstall: "yarn remove @types/react @types/react-dom"
     },
-    typesReactRouter: {
+    typesReactRouterYarn: {
       install: "yarn add @types/react-router @types/react-router-dom",
       uninstall: "yarn remove @types/react-router @types/react-router-dom"
     },
-    typesJest: {
+    typesJestYarn: {
       install: "yarn add @types/jest",
       uninstall: "yarn remove @types/jest"
     }
