@@ -107,7 +107,7 @@ module.exports.typescriptPackages = [
     message: "Please select the TypeScript module to add to your project: ",
     choices: [
       "TypeScript",
-      "@types/nodes",
+      "@types/node",
       "@types/react @types/react-dom",
       "@types/react-router @types/react-router-dom",
       "@types/jest"
