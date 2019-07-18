@@ -2,9 +2,17 @@ const inquirer = require("inquirer");
 
 // CLI Model
 const cliModel = require("../../cliModel");
+
 // const addPackage = cliModel.addPackage
 const TypeScriptPackages = cliModel.typescriptPackages;
 const YarnOrNpm = cliModel.YarnOrNpm;
+
+// TypeScript & @types imports
+const TypeScriptInstall = require("./installTypeScript");
+const TypesNode = require("./types/nodes");
+const TypesReact = require("./types/react");
+const TypesReactRouter = require("./types/reactRouter");
+const TypesJest = require("./types/jest");
 
 const prompt = inquirer.createPromptModule();
 
@@ -21,23 +29,23 @@ module.exports = class TypeScript {
       prompt(TypeScriptPackages).then(({ typescriptPackage }) => {
         switch (typescriptPackage) {
           case "TypeScript":
-            console.log("TypeScript");
+            new TypeScriptInstall().installOrUninstall(packageInstaller);
             break;
 
           case "@types/nodes":
-            console.log("Works");
+            new TypesNode().installOrUninstall(packageInstaller);
             break;
 
           case "@types/react @types/react-dom":
-            console.log("Works");
+            new TypesReact().installOrUninstall(packageInstaller);
             break;
 
           case "@types/react-router @types/react-router-dom":
-            console.log("Works");
+            new TypesReactRouter().installOrUninstall(packageInstaller);
             break;
 
           case "@types/jest":
-            console.log("Works");
+            new TypesJest().installOrUninstall(packageInstaller);
             break;
         }
       });
