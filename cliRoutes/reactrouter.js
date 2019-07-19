@@ -16,7 +16,7 @@ const prompt = inquirer.createPromptModule()
 
 /*
 
-  Installs/Uninstalls React Router package
+  Installs/Uninstalls React-Router package
 
 */
 module.exports = class ReactRouter {
