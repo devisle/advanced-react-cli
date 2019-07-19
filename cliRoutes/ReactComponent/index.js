@@ -1,9 +1,9 @@
 const writeUtils = require('./writeUtils')
 
-module.exports = generateClassComponent
+module.exports = generateComponent
 
 /**
- * Generates a class based react component
+ * Generates a react component
  * @param {object} generateInfo - information required to generate component
  * @param {string} generateInfo.component - type of component (e.g. class or function)
  * @param {string} generateInfo.componentName - name of component
@@ -12,7 +12,7 @@ module.exports = generateClassComponent
  * @param {boolean} generateInfo.reactRouterBool - add react-router
  * @param {boolean} generateInfo.reduxBool - add redux
  */
-function generateClassComponent (generateInfo) {
+function generateComponent (generateInfo) {
   if (['.', ''].includes(generateInfo.folderName)) {
     writeUtils.writeInCurrentDir(generateInfo)
   } else {
