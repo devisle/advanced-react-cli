@@ -6,6 +6,8 @@
   "scripts": {
     "react-cli": "node cli.js",
     "format": "prettier-standard '**/*.{js,jsx}'",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
     "patch-release": "npm version patch && npm publish && git push --follow-tags",
     "minor-release": "npm version minor && npm publish && git push --follow-tags",
     "major-release": "npm version major && npm publish && git push --follow-tags"
@@ -52,6 +54,7 @@
   "homepage": "https://github.com/devisle/advanced-react-cli",
   "devDependencies": {
     "husky": "^3.0.0",
+    "jest": "^24.8.0",
     "lint-staged": "^9.2.0",
     "prettier-standard": "^9.1.1"
   }
