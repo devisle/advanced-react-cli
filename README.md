@@ -7,7 +7,7 @@
     <img src="https://img.shields.io/npm/v/advanced-react-cli.svg?color=blue" alt="package-version" />
   </a>
   <a href="https://www.npmjs.com/package/advanced-react-cli">
-    <img src="https://img.shields.io/npm/dw/advanced-react-cli.svgs" alt="downloads-perweek" />
+    <img src="https://img.shields.io/npm/dw/advanced-react-cli.svg" alt="downloads-perweek" />
   </a>
 </p>
 
