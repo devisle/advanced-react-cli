@@ -21,6 +21,10 @@ module.exports = {
       install: 'yarn add @types/react-router @types/react-router-dom',
       uninstall: 'yarn remove @types/react-router @types/react-router-dom'
     },
+    typesReactReduxYarn: {
+      install: 'yarn add @types/react-redux',
+      uninstall: 'yarn remove @types/react-redux'
+    },
     typesJestYarn: {
       install: 'yarn add @types/jest',
       uninstall: 'yarn remove @types/jest'

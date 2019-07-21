@@ -111,6 +111,7 @@ module.exports.typescriptPackages = [
       '@types/node',
       '@types/react @types/react-dom',
       '@types/react-router @types/react-router-dom',
+      '@types/react-redux',
       '@types/jest'
     ]
   }
