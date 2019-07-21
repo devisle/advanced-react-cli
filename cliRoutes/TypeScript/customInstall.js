@@ -21,11 +21,13 @@ module.exports = class CustomInstall {
       addTypesNodeNPM,
       addTypesReactNPM,
       addTypesReactRouterNPM,
+      addTypesReactReduxNPM,
       addTypesJestNPM,
       addTypeScriptYarn,
       addTypesNodeYarn,
       addTypesReactYarn,
       addTypesReactRouterYarn,
+      addTypesReactReduxYarn,
       addTypesJestYarn
 
     /*
@@ -88,40 +90,57 @@ module.exports = class CustomInstall {
             }
 
             /*
-              Prompts to install @types/jest
+              Prompts to install @types/react-redux
             */
+
             prompt({
               ...addPackage[0],
-              message: 'Would you like to add @types/jest? (Y/N)'
+              message: 'Would you like to add @types/react-router? (Y/N)'
             }).then(({ packageAdd }) => {
               if (['y', 'yes'].includes(packageAdd.toLowerCase())) {
-                addTypesJestNPM = '@types/jest'
-                addTypesJestYarn = '@types/jest'
+                addTypesReactReduxNPM = '@types/react-redux'
+                addTypesReactReduxYarn = '@types/react-redux'
               } else if (['n', 'no'].includes(packageAdd.toLowerCase())) {
-                addTypesJestNPM = ''
-                addTypesJestYarn = ''
+                addTypesReactReduxNPM = ''
+                addTypesReactReduxYarn = ''
               }
 
-              switch (packageInstaller) {
-                case 'NPM':
-                  customCMD.get(
-                    ` npm install --save ${addTypeScriptNPM} ${addTypesNodeNPM} ${addTypesReactNPM} ${addTypesReactRouterNPM} ${addTypesJestNPM}`,
-                    (err, data, stderr) => {
-                      err ? console.log(err) : errorLogging(stderr, data)
-                    },
-                    'install'
-                  )
-                  break
+              /*
+                Prompts to install @types/jest
+              */
+              prompt({
+                ...addPackage[0],
+                message: 'Would you like to add @types/jest? (Y/N)'
+              }).then(({ packageAdd }) => {
+                if (['y', 'yes'].includes(packageAdd.toLowerCase())) {
+                  addTypesJestNPM = '@types/jest'
+                  addTypesJestYarn = '@types/jest'
+                } else if (['n', 'no'].includes(packageAdd.toLowerCase())) {
+                  addTypesJestNPM = ''
+                  addTypesJestYarn = ''
+                }
 
-                case 'Yarn':
-                  customCMD.get(
-                    `yarn add ${addTypeScriptYarn} ${addTypesNodeYarn} ${addTypesReactYarn} ${addTypesReactRouterYarn} ${addTypesJestYarn}`,
-                    (err, data, stderr) => {
-                      err ? console.log(err) : errorLogging(stderr, data)
-                    },
-                    'install'
-                  )
-              }
+                switch (packageInstaller) {
+                  case 'NPM':
+                    customCMD.get(
+                      ` npm install --save ${addTypeScriptNPM} ${addTypesNodeNPM} ${addTypesReactNPM} ${addTypesReactRouterNPM} ${addTypesReactReduxNPM} ${addTypesJestNPM}`,
+                      (err, data, stderr) => {
+                        err ? console.log(err) : errorLogging(stderr, data)
+                      },
+                      'install'
+                    )
+                    break
+
+                  case 'Yarn':
+                    customCMD.get(
+                      `yarn add ${addTypeScriptYarn} ${addTypesNodeYarn} ${addTypesReactYarn} ${addTypesReactRouterYarn} ${addTypesReactReduxYarn} ${addTypesJestYarn}`,
+                      (err, data, stderr) => {
+                        err ? console.log(err) : errorLogging(stderr, data)
+                      },
+                      'install'
+                    )
+                }
+              })
             })
           })
         })
