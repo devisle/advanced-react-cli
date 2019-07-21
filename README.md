@@ -47,8 +47,6 @@ This CLI uses some of the best repos' terminal commands under the hood, to execu
 
 ## Try out the Advanced-React-CLI
 
-**The Yarn functionality is still being tested. To be on safer side, install the package using NPM.**
-
 Just type in the following command in your terminal and run it! (Please check FAQ for more on testing and contributions)
 
 - NPX -> `npx advanced-react-cli`
