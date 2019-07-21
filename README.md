@@ -96,6 +96,11 @@ It is still under development. But, as of this current beta version, we have ena
 - You may report an issue by going to this [Link - Issues](https://github.com/devisle/advanced-react-cli/issues) and clicking on the "New Issue" button highlighted in green.
 - If you wish to get in touch with us quicker, you may join our Discord server! The link is under the "Dev Isle Community" section
 
+3. I would like to make a feature request. Where do I do it?
+
+- We very open to your suggestions for the CLI!
+- If you'd like to make a new feature request, just head over [here](https://github.com/devisle/advanced-react-cli/issues/new/choose) and next to the "Feature Request", click the button "Get Started"!
+
 ## Dev Isle Community
 
 Are interested in hanging out, contributing to our open-source repos and be a part of a good community? We would love for you to join us on our [Discord](http://discord.gg/MSTQKRE).
