@@ -14,8 +14,8 @@
 - [x] - Custom CMD execute commands
 - [x] - Custom installation for TypeScript
 - [ ] - Adding Hooks functionality to the React Component generator
-- [ ] - Refactoring (in progress0)
-- [ ] - Performance optimization (in progress0)
-- [ ] - Code readability (in progress0)
+- [ ] - Refactoring (in progress)
+- [ ] - Performance optimization (in progress)
+- [ ] - Code readability (in progress)
 - [x] - Deployment to NPM done. Beta testing underway.
-- [ ] - Stable Release TBD.
+- [x] - Stable Release.
