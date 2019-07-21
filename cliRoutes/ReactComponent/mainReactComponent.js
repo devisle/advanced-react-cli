@@ -1,15 +1,15 @@
 const inquirer = require('inquirer')
 
 // Cli Model
-const cliModel = require('../../cliModel')
-const reactComponents = cliModel.reactComponents
-const installFolder = cliModel.installFolder
-const addPackage = cliModel.addPackage
-const componentName = cliModel.componentName
+const {
+  reactComponents,
+  installFolder,
+  addPackage,
+  componentName
+} = require('../../cliModel')
 
 // Component Dependencies
-const FunctionComponent = require('./functionComponent')
-const ClassComponent = require('./classComponent')
+const generateComponent = require('./index')
 
 const prompt = inquirer.createPromptModule()
 
@@ -109,24 +109,13 @@ module.exports = class ReactComponent {
     reactRouterBool,
     reduxBool
   ) {
-    if (component === 'function') {
-      FunctionComponent({
-        component,
-        componentName,
-        folderName,
-        propTypingBool,
-        reactRouterBool,
-        reduxBool
-      })
-    } else {
-      ClassComponent(
-        component,
-        componentName,
-        folderName,
-        propTypingBool,
-        reactRouterBool,
-        reduxBool
-      )
-    }
+    generateComponent({
+      component,
+      componentName,
+      folderName,
+      propTypingBool,
+      reactRouterBool,
+      reduxBool
+    })
   }
 }
