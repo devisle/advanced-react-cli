@@ -64,10 +64,12 @@ Just type in the following command in your terminal and run it! (Please check FA
 
 ## What does this do?
 
-It is still under development. But, as of this current beta version, we have enabled a few options like:
+We are continuously working on improving the CLI. But, as of this current stable version, we have enabled a few options like:
 
+- Yarn/NPM option for installtion packages
 - Installing React using `create-react-app`, with optional packages React-Router and Redux as a single bundle.
-- Installing Individual packages such as Node-Sass, React-Router, Prop-Types, and State Management.
+- React Component generator lets you make a class/function component with optional package imports such as prop-types, react-router and redux!
+- Installing Individual packages such as Node-Sass, Styled-Components, React-Router, Prop-Types, and State Management.
 - Redux, Unstated, Unstated-Next and Redux-Thunk have been added in the State Management.
 - Installing Redux automatically generates a store folder containing boilerplate Redux code with instructions to get you started!
 - Installing Prop-Types automatically generates a file containing a sample code to get started!
@@ -78,7 +80,7 @@ It is still under development. But, as of this current beta version, we have ena
 
 1.  How can I test this out?
 
-- We are continuously working on improving the CLI. If you'd like to try it out , Run the following command `npx advanced-react-cli` in your terminal.
+- If you'd like to try it out , Run the following command `npx advanced-react-cli` in your terminal.
 - We are still continuing to work on our [Development Checklist](https://github.com/devisle/advanced-react-cli/blob/master/docs/README.md).
 
 - Ensure you have git version control, and package manager - either npm (node package manager) or Yarn Installed. You may check if your system has them installed by running the following commands `git --version` and depending on your package manager of choice, run `npm --version` or `yarn --version`. If you don't have it installed, please visit:
