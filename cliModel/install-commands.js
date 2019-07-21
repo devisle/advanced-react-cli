@@ -19,7 +19,7 @@ module.exports = {
     },
     typesReactRedux: {
       install: 'npm install --save @types/react-redux',
-      install: 'npm uninstall @types/react-redux'
+      uninstall: 'npm uninstall @types/react-redux'
     },
     typesJest: {
       install: 'npm install --save @types/jest',
