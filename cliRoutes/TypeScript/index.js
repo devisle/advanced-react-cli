@@ -13,6 +13,7 @@ const TypeScriptInstall = require('./installTypeScript')
 const TypesNode = require('./types/node')
 const TypesReact = require('./types/react')
 const TypesReactRouter = require('./types/reactRouter')
+const TypesReactRedux = require('./types/reactRedux')
 const TypesJest = require('./types/jest')
 
 const prompt = inquirer.createPromptModule()
@@ -46,6 +47,10 @@ module.exports = class TypeScript {
 
           case '@types/react-router @types/react-router-dom':
             new TypesReactRouter().installOrUninstall(packageInstaller)
+            break
+
+          case '@types/react-redux':
+            new TypesReactRedux().installOrUninstall(packageInstaller)
             break
 
           case '@types/jest':
