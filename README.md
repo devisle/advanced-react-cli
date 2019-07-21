@@ -1,5 +1,5 @@
 <h1 align="center">
-  Advanced React CLI (under development)
+  Advanced React CLI (Stable Release)
 </h1>
 
 <p align="center">
@@ -35,6 +35,7 @@ This CLI uses some of the best repos' terminal commands under the hood, to execu
 - [DefinetlyTyped - @types/node](https://www.npmjs.com/package/@types/node)
 - [DefinetlyTyped - @types/react](https://www.npmjs.com/package/@types/react)
 - [DefinetlyTyped - @types/react-router](https://www.npmjs.com/package/@types/react-router)
+- [DefinetlyTyped - @types/react-redux](https://www.npmjs.com/package/@types/react-redux)
 - [DefinetlyTyped - @types/jest](https://www.npmjs.com/package/@types/jest)
 - [Simon Boudrias - Inquirer JS](https://github.com/SBoudrias/Inquirer.js/)
 - [Nathan Peck - CLUI](https://www.npmjs.com/package/clui)
@@ -50,7 +51,7 @@ This CLI uses some of the best repos' terminal commands under the hood, to execu
 
 Just type in the following command in your terminal and run it! (Please check FAQ for more on testing and contributions)
 
-- NPM/NPX -> `npx advanced-react-cli`
+- NPX -> `npx advanced-react-cli`
 
 ## Installing the CLI globally
 
@@ -73,13 +74,13 @@ It is still under development. But, as of this current beta version, we have ena
 - Installing Redux automatically generates a store folder containing boilerplate Redux code with instructions to get you started!
 - Installing Prop-Types automatically generates a file containing a sample code to get started!
 - Node-Sass and Styled-Components feature under StyledPackages section of the CLI
-- TypeScript and @types definitions for Node, React, React-Router, and Jest
+- TypeScript and @types definitions for Node, React, React-Router, React-Redux and Jest
 
 # FAQs
 
 1.  How can I test this out?
 
-- Currently we are Beta testing the CLI. If you'd like to try it out , Run the following command `npx advanced-react-cli` in your terminal.
+- We are continuously working on improving the CLI. If you'd like to try it out , Run the following command `npx advanced-react-cli` in your terminal.
 - We are still continuing to work on our [Development Checklist](https://github.com/devisle/advanced-react-cli/blob/master/docs/README.md).
 
 - Ensure you have git version control, and package manager - either npm (node package manager) or Yarn Installed. You may check if your system has them installed by running the following commands `git --version` and depending on your package manager of choice, run `npm --version` or `yarn --version`. If you don't have it installed, please visit:
