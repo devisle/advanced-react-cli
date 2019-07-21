@@ -17,6 +17,10 @@ module.exports = {
       install: 'npm install --save @types/react-router @types/react-router-dom',
       uninstall: 'npm uninstall @types/react-router @types/react-router-dom'
     },
+    typesReactRedux: {
+      install: 'npm install --save @types/react-redux',
+      install: 'npm uninstall @types/react-redux'
+    },
     typesJest: {
       install: 'npm install --save @types/jest',
       uninstall: 'npm uninstall @types/jest'
