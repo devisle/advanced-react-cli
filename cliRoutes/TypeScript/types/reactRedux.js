@@ -9,12 +9,12 @@ const installOption = cliModel.installOption
 
 // Cli Install Commands
 const { TypeScriptReactObj } = require('../../../cliModel/install-commands')
-const { typesReactRouter } = TypeScriptReactObj
+const { typesReactRedux } = TypeScriptReactObj
 
 const {
   TypeScriptReactObjYarn
 } = require('../../../cliModel/install-commands-yarn')
-const { typesReactRouterYarn } = TypeScriptReactObjYarn
+const { typesReactReduxYarn } = TypeScriptReactObjYarn
 
 const prompt = inquirer.createPromptModule()
 
@@ -39,7 +39,7 @@ module.exports = class TypesReactRedux {
     switch (packageInstaller) {
       case 'NPM':
         customCMD.get(
-          `${typesReactRouter.install}`,
+          `${typesReactRedux.install}`,
           (err, data, stderr) => {
             err ? console.log(err) : errorLogging(stderr, data)
           },
@@ -49,7 +49,7 @@ module.exports = class TypesReactRedux {
 
       case 'Yarn':
         customCMD.get(
-          `${typesReactRouterYarn.install}`,
+          `${typesReactReduxYarn.install}`,
           (err, data, stderr) => {
             err ? console.log(err) : errorLogging(stderr, data)
           },
@@ -63,7 +63,7 @@ module.exports = class TypesReactRedux {
     switch (packageInstaller) {
       case 'NPM':
         customCMD.get(
-          `${typesReactRouter.uninstall}`,
+          `${typesReactRedux.uninstall}`,
           (err, data, stderr) => {
             err ? console.log(err) : errorLogging(stderr, data)
           },
@@ -73,7 +73,7 @@ module.exports = class TypesReactRedux {
 
       case 'Yarn':
         customCMD.get(
-          `${typesReactRouterYarn.uninstall}`,
+          `${typesReactReduxYarn.uninstall}`,
           (err, data, stderr) => {
             err ? console.log(err) : errorLogging(stderr, data)
           },
