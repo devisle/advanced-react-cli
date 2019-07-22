@@ -95,7 +95,7 @@ module.exports = class CustomInstall {
 
             prompt({
               ...addPackage[0],
-              message: 'Would you like to add @types/react-router? (Y/N)'
+              message: 'Would you like to add @types/react-redux? (Y/N)'
             }).then(({ packageAdd }) => {
               if (['y', 'yes'].includes(packageAdd.toLowerCase())) {
                 addTypesReactReduxNPM = '@types/react-redux'
