@@ -47,7 +47,7 @@ module.exports = class Redux {
           'install'
         )
         console.log(
-          'Packages: redux & react-redux has been installed successfully!'
+          'Packages: redux & react-redux have been installed successfully!'
         )
         console.log('Redux Store has been created successfully!')
         break
@@ -61,7 +61,7 @@ module.exports = class Redux {
           'install'
         )
         console.log(
-          'Packages: redux & react-redux has been installed successfully!'
+          'Packages: redux & react-redux have been installed successfully!'
         )
         console.log('Redux Store has been created successfully!')
         break
@@ -79,7 +79,7 @@ module.exports = class Redux {
           'uninstall'
         )
         console.log(
-          'Packages: redux & react-redux has been uninstalled successfully!'
+          'Packages: redux & react-redux have been uninstalled successfully!'
         )
         break
 
@@ -92,7 +92,7 @@ module.exports = class Redux {
           'uninstall'
         )
         console.log(
-          'Packages: redux & react-redux has been uninstalled successfully!'
+          'Packages: redux & react-redux have been uninstalled successfully!'
         )
         break
     }

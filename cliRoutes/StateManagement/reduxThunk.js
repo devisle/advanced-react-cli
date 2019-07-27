@@ -34,7 +34,7 @@ module.exports = class ReduxThunk {
           },
           'install'
         )
-        console.log('Package: Redux-Thunk has been installed!')
+        console.log('Package: Redux-Thunk has been installed successfully!')
         console.log(
           'Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk '
         )
@@ -48,7 +48,7 @@ module.exports = class ReduxThunk {
           },
           'install'
         )
-        console.log('Package: Redux-Thunk has been installed!')
+        console.log('Package: Redux-Thunk has been installed successfully!')
         console.log(
           'Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk '
         )
@@ -66,7 +66,7 @@ module.exports = class ReduxThunk {
           },
           'uninstall'
         )
-        console.log('Package: Redux-Thunk has been uninstalled!')
+        console.log('Package: Redux-Thunk has been uninstalled successfully!')
         break
 
       case 'Yarn':
@@ -77,7 +77,7 @@ module.exports = class ReduxThunk {
           },
           'uninstall'
         )
-        console.log('Package: Redux-Thunk has been uninstalled!')
+        console.log('Package: Redux-Thunk has been uninstalled successfully!')
         break
     }
   }

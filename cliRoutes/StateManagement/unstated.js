@@ -40,7 +40,7 @@ module.exports = class Unstated {
         console.log(
           'Check out more on how to get started with unstated on the following link https://github.com/jamiebuilds/unstated'
         )
-        console.log('Package: Unstated has been installed!')
+        console.log('Package: Unstated has been installed successfully!')
         break
 
       case 'Yarn':
@@ -54,7 +54,7 @@ module.exports = class Unstated {
         console.log(
           'Check out more on how to get started with unstated on the following link https://github.com/jamiebuilds/unstated'
         )
-        console.log('Package: Unstated has been installed!')
+        console.log('Package: Unstated has been installed successfully!')
         break
     }
   }
@@ -69,7 +69,7 @@ module.exports = class Unstated {
           },
           'uninstall'
         )
-        console.log('Package: Unstated has been uninstalled!')
+        console.log('Package: Unstated has been uninstalled successfully!')
         break
 
       case 'Yarn':
@@ -80,7 +80,7 @@ module.exports = class Unstated {
           },
           'uninstall'
         )
-        console.log('Package: Unstated has been uninstalled!')
+        console.log('Package: Unstated has been uninstalled successfully!')
         break
     }
   }

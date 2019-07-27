@@ -44,7 +44,7 @@ module.exports = class ReactRouter {
           'install'
         )
         console.log(
-          'Packages: react-router & react-router-dom has been installed successfully!'
+          'Packages: react-router & react-router-dom have been installed successfully!'
         )
         break
 
@@ -57,7 +57,7 @@ module.exports = class ReactRouter {
           'install'
         )
         console.log(
-          'Packages: react-router & react-router-dom has been installed successfully!'
+          'Packages: react-router & react-router-dom have been installed successfully!'
         )
         break
     }
@@ -74,7 +74,7 @@ module.exports = class ReactRouter {
           'uninstall'
         )
         console.log(
-          'Packages: react-router & react-router-dom has been uninstalled successfully!'
+          'Packages: react-router & react-router-dom have been uninstalled successfully!'
         )
         break
 
@@ -87,7 +87,7 @@ module.exports = class ReactRouter {
           'uninstall'
         )
         console.log(
-          'Packages: react-router & react-router-dom has been uninstalled successfully!'
+          'Packages: react-router & react-router-dom have been uninstalled successfully!'
         )
         break
     }
