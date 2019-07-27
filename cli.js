@@ -20,8 +20,7 @@ const cliModel = require('./cliModel')
 const cliCommand = cliModel.cliCommand
 
 // CLI Main Options
-const cliMainOptions = require('./cliMainOptions')
-
+const options = require('./options')
 const prompt = inquirer.createPromptModule()
 
 clear()
@@ -36,5 +35,5 @@ console.log(
 )
 
 prompt(cliCommand).then(answers => {
-  cliMainOptions(answers)
+  options(answers)
 })
