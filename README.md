@@ -100,12 +100,12 @@ We are continuously working on improving the CLI. But, as of this current stable
 
 3. I would like to make a feature request. Where do I do it?
 
-- We are very open to your suggestions for the CLI!
+- We are open to your suggestions for the CLI!
 - If you'd like to make a new feature request, just head over [here](https://github.com/devisle/advanced-react-cli/issues/new/choose) and next to the "Feature Request", click the button "Get Started"!
 
 4. I would like to make a pull request. How can I do it?
 
-- We are very open to your pull request for the CLI!
+- We are open to pull requests for the CLI!
 - Before making a pull request, be sure to read the [contribution guidelines](https://github.com/devisle/advanced-react-cli/blob/master/CONTRIBUTING.md) that also have the pull request guide.
 
 ## Dev Isle Community
