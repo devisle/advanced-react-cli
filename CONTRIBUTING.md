@@ -1,6 +1,6 @@
 # Contribution Guidelines
 
-We want contributing to advanced-react-cli to be fun, enjoyable, and educational for anyone and everyone. All contributions are welcome, including issues, new docs as well as updates, tweaks and more.
+We want contributing to advanced-react-cli to be fun, enjoyable, and educational for anyone and everyone. All contributions are welcome, including new docs as well as updates, tweaks and more.
 
 Please ensure your pull request adheres to the following guidelines:
 

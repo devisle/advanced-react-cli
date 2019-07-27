@@ -26,7 +26,7 @@ const prompt = inquirer.createPromptModule()
 
 clear()
 console.log(
-  chalk.blue(
+  chalk.green(
     figlet.textSync('Adv. React CLI', {
       horizontalLayout: 'fitted',
       font: 'Small',
