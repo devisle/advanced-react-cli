@@ -1,35 +1,16 @@
 const inquirer = require('inquirer')
-// const customCMD = require('../customNodeCMD');
-// const errorLogging = require('../customNodeCMD/customError');
+const customCMD = require('../../customNodeCMD')
+const errorLogging = require('../../customNodeCMD/customError')
 
 // Cli Model
 const cliModel = require('../../cliModel')
 const multiplePackageInstall = cliModel.multiplePackageInstall
+const installFolder = cliModel.installFolder
 const YarnOrNpm = cliModel.YarnOrNpm
 
-const {
-  TypeScriptReactObj,
-  createReactApp,
-  nodeSassObj,
-  propTypesObj,
-  reactRouterObj,
-  reduxObj,
-  reduxThunkObj,
-  styledComponentsObj,
-  unstatedObj
-} = require('../../cliModel/install-commands')
+const { createReactApp } = require('../../cliModel/install-commands')
 
-const {
-  TypeScriptReactObjYarn,
-  createReactAppYarn,
-  nodeSassObjYarn,
-  propTypesObjYarn,
-  reactRouterObjYarn,
-  reduxObjYarn,
-  reduxThunkObjYarn,
-  styledComponentsObjYarn,
-  unstatedObjYarn
-} = require('../../cliModel/install-commands-yarn')
+const { createReactAppYarn } = require('../../cliModel/install-commands-yarn')
 
 const prompt = inquirer.createPromptModule()
 
@@ -41,8 +22,58 @@ const prompt = inquirer.createPromptModule()
 
 module.exports = class CustomPackageInstall {
   prompt () {
-    prompt(multiplePackageInstall).then(({ packages }) => {
-      console.log(packages)
+    prompt(YarnOrNpm).then(({ packageManager }) => {
+      prompt(multiplePackageInstall).then(({ packages }) => {
+        if ([...packages].includes('create-react-app')) {
+          packages.shift()
+          packages.join(' ')
+          switch (packageManager) {
+            case 'Yarn':
+              customCMD.get(
+                `${createReactAppYarn} . && yarn add ${packages.join(' ')} `,
+                (err, data, stderr) => {
+                  err ? console.log(err) : errorLogging(stderr, data)
+                },
+                'install'
+              )
+              break
+
+            case 'NPM':
+              customCMD.get(
+                `${createReactApp} && npm install --save ${packages.join(' ')}`,
+                (err, data, stderr) => {
+                  err ? console.log(err) : errorLogging(stderr, data)
+                },
+                'install'
+              )
+          }
+        } else {
+          switch (packageManager) {
+            case 'Yarn':
+              customCMD.get(
+                `${createReactAppYarn} . && yarn add ${packages.join(' ')} `,
+                (err, data, stderr) => {
+                  err ? console.log(err) : errorLogging(stderr, data)
+                },
+                'install'
+              )
+              break
+
+            case 'NPM':
+              customCMD.get(
+                `${createReactApp} && npm install --save ${packages.join(' ')}`,
+                (err, data, stderr) => {
+                  err ? console.log(err) : errorLogging(stderr, data)
+                },
+                'install'
+              )
+          }
+        }
+        console.log(packages.shift())
+        console.log(packages.join(' '))
+        console.log(packages.join(' '))
+        console.log(`${packages.join(' ')}`)
+      })
     })
   }
 }
