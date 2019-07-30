@@ -5,7 +5,6 @@ const errorLogging = require('../../customNodeCMD/customError')
 // Cli Model
 const cliModel = require('../../cliModel')
 const multiplePackageInstall = cliModel.multiplePackageInstall
-const installFolder = cliModel.installFolder
 const YarnOrNpm = cliModel.YarnOrNpm
 
 const { createReactApp } = require('../../cliModel/install-commands')
@@ -30,7 +29,9 @@ module.exports = class CustomPackageInstall {
           switch (packageManager) {
             case 'Yarn':
               customCMD.get(
-                `${createReactAppYarn} . && yarn add ${packages.join(' ')} `,
+                `${createReactAppYarn} my-app && cd my-app && yarn add ${packages.join(
+                  ' '
+                )} `,
                 (err, data, stderr) => {
                   err ? console.log(err) : errorLogging(stderr, data)
                 },
@@ -40,7 +41,9 @@ module.exports = class CustomPackageInstall {
 
             case 'NPM':
               customCMD.get(
-                `${createReactApp} && npm install --save ${packages.join(' ')}`,
+                `${createReactApp} my-app && cd my-app && npm install --save ${packages.join(
+                  ' '
+                )}`,
                 (err, data, stderr) => {
                   err ? console.log(err) : errorLogging(stderr, data)
                 },
@@ -51,7 +54,7 @@ module.exports = class CustomPackageInstall {
           switch (packageManager) {
             case 'Yarn':
               customCMD.get(
-                `${createReactAppYarn} . && yarn add ${packages.join(' ')} `,
+                `yarn add ${packages.join(' ')} `,
                 (err, data, stderr) => {
                   err ? console.log(err) : errorLogging(stderr, data)
                 },
@@ -61,7 +64,7 @@ module.exports = class CustomPackageInstall {
 
             case 'NPM':
               customCMD.get(
-                `${createReactApp} && npm install --save ${packages.join(' ')}`,
+                `npm install --save ${packages.join(' ')}`,
                 (err, data, stderr) => {
                   err ? console.log(err) : errorLogging(stderr, data)
                 },
@@ -69,10 +72,6 @@ module.exports = class CustomPackageInstall {
               )
           }
         }
-        console.log(packages.shift())
-        console.log(packages.join(' '))
-        console.log(packages.join(' '))
-        console.log(`${packages.join(' ')}`)
       })
     })
   }
