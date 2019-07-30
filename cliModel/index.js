@@ -15,6 +15,29 @@ module.exports.cliCommand = [
   }
 ]
 
+module.exports.multiplePackageInstall = [
+  {
+    type: 'checkbox',
+    name: 'packages',
+    message: 'please select the packages for your new React Project: ',
+    choices: [
+      'ReactRouter',
+      'Redux',
+      'ReduxThunk',
+      'NodeSass',
+      'StyledComponents',
+      'Unstated',
+      'Unstated-Next',
+      'TypeScript',
+      '@types/node',
+      '@types/react @types/react-dom',
+      '@types/react-router @types/react-router-dom',
+      '@types/jest'
+    ],
+    default: ['CreateReactApp']
+  }
+]
+
 module.exports.installOption = [
   {
     type: 'list',
