@@ -4,6 +4,7 @@ module.exports.cliCommand = [
     name: 'installation',
     message: 'What would you like to install?',
     choices: [
+      'CustomPackageInstall',
       'CreateReactApp',
       'ReactComponent',
       'ReactRouter',
@@ -24,6 +25,7 @@ module.exports.multiplePackageInstall = [
       'ReactRouter',
       'Redux',
       'ReduxThunk',
+      'Prop-types',
       'NodeSass',
       'StyledComponents',
       'Unstated',
