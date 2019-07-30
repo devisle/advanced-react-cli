@@ -24,6 +24,7 @@ module.exports.multiplePackageInstall = [
     default: ['CreateReactApp'],
     pageSize: 9,
     choices: [
+      'CreateReactApp',
       'ReactRouter',
       'Redux',
       'ReduxThunk',
