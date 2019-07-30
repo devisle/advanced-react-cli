@@ -22,6 +22,7 @@ module.exports.multiplePackageInstall = [
     name: 'packages',
     message:
       'Select packages for your new React Project: (Use Up/Down arrows to navigage, press spacebar to select") ',
+    default: ['CreateReactApp'],
     choices: [
       'ReactRouter',
       'Redux',
@@ -36,8 +37,7 @@ module.exports.multiplePackageInstall = [
       '@types/react @types/react-dom',
       '@types/react-router @types/react-router-dom',
       '@types/jest'
-    ],
-    default: ['CreateReactApp']
+    ]
   }
 ]
 
