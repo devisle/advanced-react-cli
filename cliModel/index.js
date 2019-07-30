@@ -20,7 +20,8 @@ module.exports.multiplePackageInstall = [
   {
     type: 'checkbox',
     name: 'packages',
-    message: 'please select the packages for your new React Project: ',
+    message:
+      'Select packages for your new React Project: (Use Up/Down arrows to navigage, press spacebar to select") ',
     choices: [
       'ReactRouter',
       'Redux',
