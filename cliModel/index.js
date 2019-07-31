@@ -4,6 +4,7 @@ module.exports.cliCommand = [
     name: 'installation',
     message: 'What would you like to install?',
     choices: [
+      'CustomPackageInstall',
       'CreateReactApp',
       'ReactComponent',
       'ReactRouter',
@@ -11,6 +12,33 @@ module.exports.cliCommand = [
       'PropTypes',
       'StateManagement',
       'TypeScript'
+    ]
+  }
+]
+
+module.exports.multiplePackageInstall = [
+  {
+    type: 'checkbox',
+    name: 'packages',
+    message: 'Select packages for your new React Project: ',
+    default: ['create-react-app'],
+    pageSize: 9,
+    choices: [
+      'create-react-app',
+      'react-router react-router-dom',
+      'redux react-redux',
+      'redux-thunk',
+      'prop-types',
+      'node-sass',
+      'styled-components',
+      'unstated',
+      'unstated-next',
+      'typescript',
+      '@types/node',
+      '@types/react-redux',
+      '@types/react @types/react-dom',
+      '@types/react-router @types/react-router-dom',
+      '@types/jest'
     ]
   }
 ]
