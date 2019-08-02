@@ -9,6 +9,7 @@ install: npm install
 
 script:
   - npm run react-cli && echo -e "\n\n\n"
+  - npm run test && echo -e "\n\n\n"
 
 after_success: echo "Success"
 
