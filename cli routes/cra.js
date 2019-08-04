@@ -11,7 +11,7 @@ const {
   createReactApp,
   reactRouterObj,
   nodeSassObj
-} = require("../cli model/install-commands");
+} = require("../cli model/install-commands");;
 /**
  * tut @shreyas ;)
  * @see f cli.js prompt const for further comment
