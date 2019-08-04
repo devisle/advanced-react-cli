@@ -1,31 +1,18 @@
 #!/usr/bin/env node
 
 const [...args] = process.argv;
-
-console.log(`folder name ${args[2]}`);
-console.log(`folder location ${args[3]}`);
-
-// Current working directory
-const cwd = process.cwd();
-console.log(cwd);
-
+const currentWorkingDir = process.cwd(); // unused? @shreyas
 const inquirer = require("inquirer");
-const cmd = require("node-cmd");
+const _cliModel = require("./cli model/cli-model");
+const _routes = require("./cli routes/index");
 
-// Cli Model
-const cliModel = require("./cli model/cli-model");
-const cliCommand = cliModel.cliCommand;
-const reactComponents = cliModel.reactComponents;
-
-// Cli Routes
-const cra = require("./cli routes/cra");
-const reactRouter = require("./cli routes/reactroute");
-const nodeSass = require("./cli routes/nodeSass");
-const reactComponent = require("./cli routes/reactComponent");
-const propTypes = require("./cli routes/propTypes");
-const stateManagement = require("./cli routes/stateManagement");
-
+/**
+ * @todo export this prompt module, don't create multiple in each cli route!! @shreyas
+ */
 const prompt = inquirer.createPromptModule();
+
+const cliCommand = _cliModel.cliCommand();
+[cra, reactRouter, nodeSass, reactComponent, propTypes, stateManagement] =  _routes.getAllRoutes();
 
 prompt(cliCommand).then(answers => {
   switch (answers.installation) {

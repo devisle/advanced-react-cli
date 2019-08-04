@@ -3,8 +3,8 @@ const cmd = require("node-cmd");
 
 // Cli Model
 const cliModel = require("../cli model/cli-model");
-const addPackage = cliModel.addPackage;
-const installFolder = cliModel.installFolder;
+const addPackage = cliModel.addPackage();
+const installFolder = cliModel.installFolder();
 
 // Cli Install Commands
 const {
@@ -12,7 +12,10 @@ const {
   reactRouterObj,
   nodeSassObj
 } = require("../cli model/install-commands");
-
+/**
+ * tut @shreyas ;)
+ * @see f cli.js prompt const for further comment
+ */
 const prompt = inquirer.createPromptModule();
 
 const cra = () => {

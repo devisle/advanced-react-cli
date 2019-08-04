@@ -4,12 +4,15 @@ const fs = require("fs");
 
 // Cli Model
 const cliModel = require("../cli model/cli-model");
-const installOption = cliModel.installOption;
-const stateOption = cliModel.stateManagement;
+const installOption = cliModel.installOption();
+const stateOption = cliModel.stateManagement();
 
 // Cli Install Commands
 const { reduxObj } = require("../cli model/install-commands");
-
+/**
+ * tut @shreyas ;)
+ * @see f cli.js prompt const for further comment
+ */
 const prompt = inquirer.createPromptModule();
 
 const stateManagement = () => {
@@ -23,6 +26,9 @@ const stateManagement = () => {
           });
           cmd.get(`cd store && touch store.js`);
           const writeStream = fs.createWriteStream("./store/store.js");
+          /**
+           * @todo clean this up, needs proper indentation and ideally remove the comments!
+           */
           writeStream.write(`import { createStore } from "redux";
 
 const initialState = {

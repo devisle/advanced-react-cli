@@ -3,10 +3,13 @@ const fs = require("fs");
 
 // Cli Model
 const cliModel = require("../cli model/cli-model");
-const reactComponents = cliModel.reactComponents;
-const installFolder = cliModel.installFolder;
-const componentName = cliModel.componentName;
-
+const reactComponents = cliModel.reactComponents();
+const installFolder = cliModel.installFolder();
+const componentName = cliModel.componentName();
+/**
+ * tut @shreyas ;)
+ * @see f cli.js prompt const for further comment
+ */
 const prompt = inquirer.createPromptModule();
 
 const reactComponent = () => {

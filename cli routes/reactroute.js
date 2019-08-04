@@ -3,11 +3,14 @@ const cmd = require("node-cmd");
 
 // Cli Model
 const cliModel = require("../cli model/cli-model");
-const installOption = cliModel.installOption;
+const installOption = cliModel.installOption();
 
 // CLI Install Commands
 const { reactRouterObj } = require("../cli model/install-commands");
-
+/**
+ * tut @shreyas ;)
+ * @see f cli.js prompt const for further comment
+ */
 const prompt = inquirer.createPromptModule();
 
 const reactRouter = () => {
