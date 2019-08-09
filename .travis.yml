@@ -1,10 +1,10 @@
 language: node_js
 
 node_js:
-  - 'node'
-  - '6'
-  - '8'
+  - 'node' # stable version
   - '10'
+  - '8'
+#- '6'
 
 cache:
   directories:
@@ -17,6 +17,3 @@ script:
   - npm run test && echo -e "\n\n\n"
 
 after_success: echo "Success"
-
-branches:
-  only: master

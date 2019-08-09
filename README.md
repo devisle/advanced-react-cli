@@ -9,6 +9,9 @@
   <a href="https://www.npmjs.com/package/advanced-react-cli">
     <img src="https://img.shields.io/npm/dw/advanced-react-cli.svg" alt="downloads-perweek" />
   </a>
+  <a href="https://travis-ci.org/devisle/advanced-react-cli">
+    <img src="https://img.shields.io/travis/devisle/advanced-react-cli" alt="Travis-build" />
+  </a>
 </p>
 
 This is an npm package which aims to provide a better way to install a React starter application and third-party packages for your application through an intuitive CLI.
