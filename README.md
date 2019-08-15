@@ -24,7 +24,7 @@ We at DevIsle, felt that the community has been longing for a good, functional a
 
 ## Credits
 
-This CLI uses some of the best repos' terminal commands under the hood, to execute it's functionality. We would like to credit the following GitHub repos making this CLI possible:
+This CLI uses some of the best repos' terminal commands under the hood, to execute it's functionality. We would like to credit the following GitHub repos by making this CLI possible:
 
 - [Facebook - Create React App](https://github.com/facebook/create-react-app)
 - [Facebook - Prop Types](https://github.com/facebook/prop-types)
@@ -52,22 +52,22 @@ This CLI uses some of the best repos' terminal commands under the hood, to execu
 
 Just type in the following command in your terminal and run it! (Please check FAQ for more on testing and contributions)
 
-- NPX -> `npx advanced-react-cli`
+- NPX: `npx advanced-react-cli`
 
 ## Installing the CLI globally
 
-- NPM
+- NPM:
   `npm i -g advanced-react-cli`
 
-- Yarn
+- Yarn:
   `yarn global add advanced-react-cli`
 
-- To invoke the CLI [Both **NPM** & **Yarn**]
+- To invoke the CLI (Both **NPM** & **Yarn**)
   `arc`
 
 ## What does this do?
 
-We are continuously working on improving the CLI. But, as of this current stable version, we have enabled a few options like:
+We are continuously working on improving the CLI. But, as of this current stable version, we have enabled a few options such as:
 
 - Yarn/NPM option for installation packages
 - Installing React using `create-react-app`, with optional packages React-Router and Redux as a single bundle.
@@ -92,8 +92,8 @@ We are continuously working on improving the CLI. But, as of this current stable
   - [NodeJS](https://nodejs.org/en/download/) to download/install Node.Js (NPM gets installed with Node.Js).
   - [Yarn](https://yarnpkg.com/en/docs/getting-started) to download/install Yarn Package Manager
 
-- Alternatively, if you would like to contribute and test it locally, you may fork the repo, and/or clone it to your local desktop. Once you've done that, open the terminal in that local folder and run the command [**NPM Users**] `npm install` or [**Yarn Users**]`yarn install` to install the required dependencies.
-- After that, you may open the folder in your editor of choice. Once again, in the terminal you may simply run [**NPM Users**]`npm run react-cli` or [**Yarn Users**] `yarn run react-cli` to get it working. And voila!
+- Alternatively, if you would like to contribute and test it locally, you may fork the repo, and/or clone it to your local desktop. Once you've done that, open the terminal in that local folder and run the command `npm install` for **NPM users** or `yarn install` for **Yarn users** to install the required dependencies.
+- After that, you may open the folder in your editor of choice. Once again, in the terminal you may simply run `npm run react-cli` or `yarn run react-cli` to get it working. And voila!
 
 2. Can I report any issues or bugs with the CLI? How do I report it?
 
