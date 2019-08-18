@@ -14,4 +14,5 @@ install: npm i
 script:
   - npm run test
 
-after_success: echo "Success"
+branches:
+  only: master

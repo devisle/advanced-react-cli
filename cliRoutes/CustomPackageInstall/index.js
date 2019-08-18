@@ -29,7 +29,7 @@ module.exports = class CustomPackageInstall {
           switch (packageManager) {
             case 'Yarn':
               customCMD.get(
-                `${createReactAppYarn} my-app && cd my-app && yarn add ${packages.join(
+                `${createReactAppYarn} ${folderName} && cd ${folderName} && yarn add ${packages.join(
                   ' '
                 )} `,
                 (err, data, stderr) => {
@@ -41,7 +41,7 @@ module.exports = class CustomPackageInstall {
 
             case 'NPM':
               customCMD.get(
-                `${createReactApp} my-app && cd my-app && npm install --save ${packages.join(
+                `${createReactApp} ${folderName} && cd ${folderName} && npm install --save ${packages.join(
                   ' '
                 )}`,
                 (err, data, stderr) => {
