@@ -5,22 +5,39 @@
 */
 
 const exec = require('child_process').exec
-const ora = require('ora');
+const ora = require('ora')
 
 const commandLineFunctions = {
   get: getCommand,
   run: runCommand
 }
 
+//more to add
 const install = new ora({
   text: 'Installing package(s)...',
-  install: process.argv[2]
-});
+  install: process.argv[2],
+  indent: 3,
+  spinner: {
+    interval: 80, // Optional
+    frames: [
+      '( ●    )',
+      '(  ●   )',
+      '(   ●  )',
+      '(    ● )',
+      '(     ●)',
+      '(    ● )',
+      '(   ●  )',
+      '(  ●   )',
+      '( ●    )',
+      '(●     )'
+    ]
+  }
+})
 
 const uninstall = new ora({
   text: 'Uninstalling package(s)...',
   uninstall: process.argv[2]
-});
+})
 
 function runCommand (command) {
   return exec(command)
@@ -38,13 +55,13 @@ function getCommand (command, callback, installOrUninstall) {
               return
             }
             setTimeout(() => {
-              install.color = 'green';
-            }, 3000);
+              install.color = 'green'
+            }, 3000)
             // callback(err, { data }, { stderr });
             process.stdout.write('\n')
             callback(err, { data }, { stderr })
             process.exit()
-            install.succeed();
+            install.succeed()
           }
           break
 
@@ -55,13 +72,13 @@ function getCommand (command, callback, installOrUninstall) {
               return
             }
             setTimeout(() => {
-              uninstall.color = 'green';
-            }, 3000);
+              uninstall.color = 'green'
+            }, 3000)
             // callback(err, { data }, { stderr });
             process.stdout.write('\n')
             callback(err, { data }, { stderr })
             process.exit()
-            uninstall.succeed();
+            uninstall.succeed()
           }
       }
     })(callback)
