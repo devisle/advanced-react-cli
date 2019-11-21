@@ -12,11 +12,10 @@ const commandLineFunctions = {
   run: runCommand
 }
 
-//more to add
 const install = new ora({
   text: 'Installing package(s)...',
   install: process.argv[2],
-  indent: 3,
+  indent: 2,
   spinner: {
     interval: 80, // Optional
     frames: [
