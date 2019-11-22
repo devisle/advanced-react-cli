@@ -17,7 +17,7 @@ const install = new ora({
   install: process.argv[2],
   indent: 2,
   spinner: {
-    interval: 80, // Optional
+    interval: 100, // Optional
     frames: [
       '( ●    )',
       '(  ●   )',
@@ -49,6 +49,7 @@ function getCommand (command, callback, installOrUninstall) {
       switch (installOrUninstall) {
         case 'install':
           install.start()
+          // console.log('\x1b[36m%s\x1b[0m', install.start);
           return function (err, data, stderr) {
             if (!callback) {
               return
@@ -59,8 +60,12 @@ function getCommand (command, callback, installOrUninstall) {
             // callback(err, { data }, { stderr });
             process.stdout.write('\n')
             callback(err, { data }, { stderr })
+            // console.log('\x1b[33m\x1b[0m', data);
+
+            // console.log('\x1b[36m%s\x1b[0m', stderr);
             process.exit()
             install.succeed()
+            console.log('\x1b[33m\x1b[0m', install.succeed)
           }
           break
 
