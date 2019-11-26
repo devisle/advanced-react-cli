@@ -6,29 +6,55 @@
 
 const exec = require('child_process').exec
 const ora = require('ora')
+const cliProgress = require('cli-progress')
 
 const commandLineFunctions = {
   get: getCommand,
   run: runCommand
 }
 
+// // create new progress bar
+// const install = new cliProgress.SingleBar({
+//     format: 'CLI Progress |' + '| {percentage}% || {value}/{total} Chunks || Speed: {speed}',
+//     barCompleteChar: '\u2588',
+//     barIncompleteChar: '\u2591',
+//     hideCursor: true
+// });
+
+// // initialize the bar - defining payload token "speed" with the default value "N/A"
+// install.start(200, 0, {
+//     speed: "N/A"
+// });
+
+// // update values
+// install.increment();
+// install.update(20);
+
+// // stop the bar
+// install.stop();
+
 const install = new ora({
   text: 'Installing package(s)...',
   install: process.argv[2],
-  indent: 2,
+  indent: 1,
   spinner: {
-    interval: 100, // Optional
+    interval: 100,
     frames: [
-      '( ●    )',
-      '(  ●   )',
-      '(   ●  )',
-      '(    ● )',
-      '(     ●)',
-      '(    ● )',
-      '(   ●  )',
-      '(  ●   )',
-      '( ●    )',
-      '(●     )'
+      '[     ]',
+      '[#    ]',
+      '[##   ]',
+      '[###  ]',
+      '[ ### ]',
+      '[  ## ]',
+      '[   # ]',
+      '[     ]',
+      '[   # ]',
+      '[  ## ]',
+      '[ ### ]',
+      '[#### ]',
+      '[###  ]',
+      '[##   ]',
+      '[#    ]'
     ]
   }
 })
@@ -49,7 +75,7 @@ function getCommand (command, callback, installOrUninstall) {
       switch (installOrUninstall) {
         case 'install':
           install.start()
-          // console.log('\x1b[36m%s\x1b[0m', install.start);
+          // console.log(install.start())
           return function (err, data, stderr) {
             if (!callback) {
               return
@@ -57,15 +83,10 @@ function getCommand (command, callback, installOrUninstall) {
             setTimeout(() => {
               install.color = 'green'
             }, 3000)
-            // callback(err, { data }, { stderr });
             process.stdout.write('\n')
             callback(err, { data }, { stderr })
-            // console.log('\x1b[33m\x1b[0m', data);
-
-            // console.log('\x1b[36m%s\x1b[0m', stderr);
             process.exit()
             install.succeed()
-            console.log('\x1b[33m\x1b[0m', install.succeed)
           }
           break
 
