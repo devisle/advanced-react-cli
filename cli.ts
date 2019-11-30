@@ -20,7 +20,7 @@ const cliModel = require("./cliModel");
 const cliCommand = cliModel.cliCommand;
 
 // CLI Main Options
-const options = require("./options");
+const options = require("./options.ts");
 const InqPrompt = inquirer.createPromptModule();
 
 clear();

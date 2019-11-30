@@ -8,8 +8,8 @@ const StateManagement = require("./cliRoutes/StateManagement/stateManagement");
 const TypeScript = require("./cliRoutes/TypeScript/index");
 const CustomPackageInstall = require("./cliRoutes/CustomPackageInstall");
 
-module.exports = answers => {
-  switch (answers.installation) {
+let Options = ({ installation }) => {
+  switch (installation) {
     case "CreateReactApp":
       new CRA().CRAPrompt();
       break;
@@ -45,3 +45,5 @@ module.exports = answers => {
       console.log("You must select an option!");
   }
 };
+
+module.exports = Options;
