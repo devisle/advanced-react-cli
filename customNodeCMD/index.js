@@ -36,7 +36,22 @@ const install = new ora({
 
 const uninstall = new ora({
   text: 'Uninstalling package(s)...',
-  uninstall: process.argv[2]
+  uninstall: process.argv[2],
+  spinner: {
+    interval: 80,
+    frames: [
+      '( ●    )',
+      '(  ●   )',
+      '(   ●  )',
+      '(    ● )',
+      '(     ●)',
+      '(    ● )',
+      '(   ●  )',
+      '(  ●   )',
+      '( ●    )',
+      '(●     )'
+    ]
+  }
 })
 
 function runCommand (command) {
