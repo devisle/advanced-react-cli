@@ -1,4 +1,6 @@
-const cliCommand: [
+export {};
+
+const CliCommand: [
   { type: string; name: string; message: string; choices: string[] }
 ] = [
   {
@@ -17,9 +19,9 @@ const cliCommand: [
     ]
   }
 ];
-module.exports.cliCommand = cliCommand;
+export { CliCommand };
 
-const multiplePackageInstall: [
+const MultiplePackageInstall: [
   {
     type: string;
     name: string;
@@ -54,9 +56,9 @@ const multiplePackageInstall: [
     ]
   }
 ];
-module.exports.multiplePackageInstall = multiplePackageInstall;
+export { MultiplePackageInstall };
 
-const installOption: [
+const InstallOption: [
   { type: string; name: string; message: string; choices: string[] }
 ] = [
   {
@@ -67,11 +69,11 @@ const installOption: [
   }
 ];
 
-module.exports.installOption = installOption;
+export { InstallOption };
 
 // Add new package Yes/No
 
-const addPackage: [{ type: string; name: string; message: string }] = [
+const AddPackage: [{ type: string; name: string; message: string }] = [
   {
     type: "input",
     name: "packageAdd",
@@ -79,11 +81,11 @@ const addPackage: [{ type: string; name: string; message: string }] = [
   }
 ];
 
-module.exports.addPackage = addPackage;
+export { AddPackage };
 
 // Input name for Install Folder
 
-const installFolder: [{ type: string; name: string; message: string }] = [
+const InstallFolder: [{ type: string; name: string; message: string }] = [
   {
     type: "input",
     name: "folderName",
@@ -92,11 +94,11 @@ const installFolder: [{ type: string; name: string; message: string }] = [
   }
 ];
 
-module.exports.installFolder = installFolder;
+export { InstallFolder };
 
 // Input name when creating new components for React project
 
-const componentName: [{ type: string; name: string; message: string }] = [
+const ComponentName: [{ type: string; name: string; message: string }] = [
   {
     type: "input",
     name: "componentName",
@@ -105,10 +107,10 @@ const componentName: [{ type: string; name: string; message: string }] = [
   }
 ];
 
-module.exports.componentName = componentName;
+export { ComponentName };
 // React Components selection: Functional/Class
 
-const reactComponents: [
+const ReactComponents: [
   { type: string; name: string; message: string; choices: string[] }
 ] = [
   {
@@ -119,11 +121,11 @@ const reactComponents: [
   }
 ];
 
-module.exports.reactComponents = reactComponents;
+export { ReactComponents };
 
 // Styling Packages
 
-const stylingPackages: [
+const StylingPackages: [
   { type: string; name: string; message: string; choices: string[] }
 ] = [
   {
@@ -134,11 +136,11 @@ const stylingPackages: [
   }
 ];
 
-module.exports.stylingPackages = stylingPackages;
+export { StylingPackages };
 
 // React State Management tools: More options soon! ('Unstated', Easy-Peasy')
 
-const stateManagement: [
+const StateManagement: [
   { type: string; name: string; message: string; choices: string[] }
 ] = [
   {
@@ -150,11 +152,11 @@ const stateManagement: [
   }
 ];
 
-module.exports.stateManagement = stateManagement;
+export { StateManagement };
 
 // Unstated options
 
-const unstatedOptions: [
+const UnstatedOptions: [
   { type: string; name: string; message: string; choices: string[] }
 ] = [
   {
@@ -166,11 +168,11 @@ const unstatedOptions: [
   }
 ];
 
-module.exports.unstatedOptions = unstatedOptions;
+export { UnstatedOptions };
 
 // TypeScript and Packages
 
-const typescriptPackages: [
+const TypescriptPackages: [
   { type: string; name: string; message: string; choices: string[] }
 ] = [
   {
@@ -189,7 +191,7 @@ const typescriptPackages: [
   }
 ];
 
-module.exports.typescriptPackages = typescriptPackages;
+export { TypescriptPackages };
 
 // Package Manager Options
 
@@ -204,4 +206,4 @@ const YarnOrNpm: [
   }
 ];
 
-module.exports.YarnOrNpm = YarnOrNpm;
+export { YarnOrNpm };

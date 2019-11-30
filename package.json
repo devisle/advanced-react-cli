@@ -40,9 +40,13 @@
   "author": "Dev Isle",
   "license": "GNU GPLv3",
   "dependencies": {
+    "@types/clear": "^0.1.0",
+    "@types/figlet": "^1.2.0",
+    "@types/inquirer": "^6.5.0",
     "chalk": "^2.4.2",
     "clear": "^0.1.0",
     "clui": "^0.3.6",
+    "esm": "^3.2.25",
     "figlet": "^1.2.3",
     "inquirer": "^6.4.1",
     "ora": "^4.0.2"

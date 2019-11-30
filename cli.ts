@@ -7,20 +7,21 @@
 
 // Current working directory
 const cwd = process.cwd();
+require = require("esm")(module /*, options*/);
 // console.log(cwd);
 
-const inquirer = require("inquirer");
-
-const chalk = require("chalk");
-const clear = require("clear");
-const figlet = require("figlet");
+import inquirer from "inquirer";
+import chalk from "chalk";
+import clear from "clear";
+import figlet from "figlet";
 
 // Cli Model
-const cliModel = require("./cliModel");
-const cliCommand = cliModel.cliCommand;
+import { CliCommand } from "./cliModel/index";
+// const cliModel = require("./cliModel");
 
 // CLI Main Options
-const options = require("./options.ts");
+import { Options } from "./options";
+// const options = require("./options.ts");
 const InqPrompt = inquirer.createPromptModule();
 
 clear();
@@ -34,6 +35,6 @@ console.log(
   )
 );
 
-InqPrompt(cliCommand).then(answers => {
-  options(answers);
+InqPrompt(CliCommand).then(answers => {
+  Options(answers);
 });

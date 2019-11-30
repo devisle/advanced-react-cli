@@ -46,4 +46,4 @@ let Options = ({ installation }) => {
   }
 };
 
-module.exports = Options;
+export { Options };
