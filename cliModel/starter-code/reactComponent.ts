@@ -1,111 +1,131 @@
-const propTypesObject: (
-  fileName: string
-) => { import: string; declare: string } = fileName => {
-  return {
-    import: `import PropTypes from 'prop-types'`,
-    declare: `${fileName}.PropTypes = {
-  ///
-  }`
+interface IReactComponent {
+  propTypeObject: (fileName: string) => { import: string; declare: string };
+  reactRouterObj: () => { import: string; declare: string };
+  reduxObj: () => {
+    import: string;
+    mapStateToProps: string;
+    mapDispatchToProps: string;
+    connect: string;
   };
-};
+  ComponentGenerator: (
+    componentType: string,
+    fileName: string,
+    propTypes: boolean,
+    reactRouter: boolean,
+    Redux: boolean
+  ) => string;
+}
 
-const reactRouterObj: () => { import: string; declare: string } = () => {
-  return {
-    import: `import {BrowserRouter as Route, Router, NavLink} from "react-router-dom"`,
-    declare: `Hello World`
+class ReactComponentGen implements IReactComponent {
+  propTypeObject: (
+    fileName: string
+  ) => { import: string; declare: string } = fileName => {
+    return {
+      import: `import PropTypes from 'prop-types'`,
+      declare: `${fileName}.PropTypes = {
+    ///
+    }`
+    };
   };
-};
 
-const reduxObj: () => {
-  import: string;
-  mapStateToProps: string;
-  mapDispatchToProps: string;
-  connect: string;
-} = () => {
-  return {
-    import: `import {connect} from 'redux'`,
-    mapStateToProps: `const mapStateToProps = state => {
-  return {
-    // Your code here
-  }
-}`,
-    mapDispatchToProps: `const mapDispatchToProps = dispatch => {
-  return {
-    // Your code here
-  }
-} `,
-    connect: `connect(mapStateToProps, mapDispatchToProps)`
+  reactRouterObj: () => { import: string; declare: string } = () => {
+    return {
+      import: `import {BrowserRouter as Route, Router, NavLink} from "react-router-dom"`,
+      declare: `Hello World`
+    };
   };
-};
 
-const ComponentGenerator: (
-  componentType: string,
-  fileName: string,
-  propTypes: boolean,
-  reactRouter: boolean,
-  Redux: boolean
-) => string = (componentType, fileName, propTypes, reactRouter, Redux) => {
-  //Function Component
-  let propTyping, reactRouting, reactRedux;
-  propTypes === true ? (propTyping = propTypesObject(fileName)) : null;
-  reactRouter === true ? (reactRouting = reactRouterObj()) : null;
-  Redux === true ? (reactRedux = reduxObj()) : null;
-  if (componentType === "function") {
-    return `import React from "react";
-    ${propTyping ? propTyping.import : ""}
-    ${reactRouting ? reactRouting.import : ""}
-    ${reactRedux ? reactRedux.import : ""}
+  reduxObj: () => {
+    import: string;
+    mapStateToProps: string;
+    mapDispatchToProps: string;
+    connect: string;
+  } = () => {
+    return {
+      import: `import {connect} from 'redux'`,
+      mapStateToProps: `const mapStateToProps = state => {
+    return {
+      // Your code here
+    }
+  }`,
+      mapDispatchToProps: `const mapDispatchToProps = dispatch => {
+    return {
+      // Your code here
+    }
+  } `,
+      connect: `connect(mapStateToProps, mapDispatchToProps)`
+    };
+  };
 
-    const ${fileName} = (props) => {
-      return (
-        <div>
-        Hello World
-        </div>
-        );
-      };
-
-      ${propTyping ? propTyping.declare : ""}
-      ${reactRedux ? reactRedux.mapStateToProps : ""}
-      ${reactRedux ? reactRedux.mapDispatchToProps : ""}
-
-      export default ${reactRedux ? reactRedux.connect : ""}(${fileName});`;
-  }
-
-  // Class Component
-  else if (componentType === "class") {
+  ComponentGenerator: (
+    componentType: string,
+    fileName: string,
+    propTypes: boolean,
+    reactRouter: boolean,
+    Redux: boolean
+  ) => string = (componentType, fileName, propTypes, reactRouter, Redux) => {
+    //Function Component
     let propTyping, reactRouting, reactRedux;
-    propTypes === true ? (propTyping = propTypesObject(fileName)) : null;
-    reactRouter === true ? (reactRouting = reactRouterObj()) : null;
-    Redux === true ? (reactRedux = reduxObj()) : null;
-    return `import React, { Component } from 'react'
+    propTypes === true ? (propTyping = this.propTypeObject(fileName)) : null;
+    reactRouter === true ? (reactRouting = this.reactRouterObj()) : null;
+    Redux === true ? (reactRedux = this.reduxObj()) : null;
+    if (componentType === "function") {
+      return `import React from "react";
       ${propTyping ? propTyping.import : ""}
       ${reactRouting ? reactRouting.import : ""}
       ${reactRedux ? reactRedux.import : ""}
 
-      class ${fileName} extends Component {
-        constructor(props) {
-          super(props);
-        }
+      const ${fileName} = (props) => {
+        return (
+          <div>
+          Hello World
+          </div>
+          );
+        };
 
-        state = {
-          // Declare your component state here
-  }
+        ${propTyping ? propTyping.declare : ""}
+        ${reactRedux ? reactRedux.mapStateToProps : ""}
+        ${reactRedux ? reactRedux.mapDispatchToProps : ""}
 
-  render() {
-    return (
-      <div>
-      <h2>Class Component</h2>
-      </div>
-      )
+        export default ${reactRedux ? reactRedux.connect : ""}(${fileName});`;
     }
-  }
 
-  ${propTyping ? propTyping.declare : ""}
-  ${reactRedux ? reactRedux.mapStateToProps : ""}
-  ${reactRedux ? reactRedux.mapDispatchToProps : ""}
+    // Class Component
+    else if (componentType === "class") {
+      let propTyping, reactRouting, reactRedux;
+      propTypes === true ? (propTyping = this.propTypeObject(fileName)) : null;
+      reactRouter === true ? (reactRouting = this.reactRouterObj()) : null;
+      Redux === true ? (reactRedux = this.reduxObj()) : null;
+      return `import React, { Component } from 'react'
+        ${propTyping ? propTyping.import : ""}
+        ${reactRouting ? reactRouting.import : ""}
+        ${reactRedux ? reactRedux.import : ""}
 
-  export default ${reactRedux ? reactRedux.connect : ""}(${fileName});`;
-  }
-};
+        class ${fileName} extends Component {
+          constructor(props) {
+            super(props);
+          }
 
-module.exports = ComponentGenerator;
+          state = {
+            // Declare your component state here
+    }
+
+    render() {
+      return (
+        <div>
+        <h2>Class Component</h2>
+        </div>
+        )
+      }
+    }
+
+    ${propTyping ? propTyping.declare : ""}
+    ${reactRedux ? reactRedux.mapStateToProps : ""}
+    ${reactRedux ? reactRedux.mapDispatchToProps : ""}
+
+    export default ${reactRedux ? reactRedux.connect : ""}(${fileName});`;
+    }
+  };
+}
+
+module.exports.ReactComponentGen = new ReactComponentGen();
