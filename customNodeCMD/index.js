@@ -13,48 +13,23 @@ const commandLineFunctions = {
   run: runCommand
 }
 
-// // create new progress bar
-// const install = new cliProgress.SingleBar({
-//     format: 'CLI Progress |' + '| {percentage}% || {value}/{total} Chunks || Speed: {speed}',
-//     barCompleteChar: '\u2588',
-//     barIncompleteChar: '\u2591',
-//     hideCursor: true
-// });
-
-// // initialize the bar - defining payload token "speed" with the default value "N/A"
-// install.start(200, 0, {
-//     speed: "N/A"
-// });
-
-// // update values
-// install.increment();
-// install.update(20);
-
-// // stop the bar
-// install.stop();
-
 const install = new ora({
   text: 'Installing package(s)...',
   install: process.argv[2],
   indent: 1,
   spinner: {
-    interval: 100,
+    interval: 80,
     frames: [
-      '[     ]',
-      '[#    ]',
-      '[##   ]',
-      '[###  ]',
-      '[ ### ]',
-      '[  ## ]',
-      '[   # ]',
-      '[     ]',
-      '[   # ]',
-      '[  ## ]',
-      '[ ### ]',
-      '[#### ]',
-      '[###  ]',
-      '[##   ]',
-      '[#    ]'
+      '( ●    )',
+      '(  ●   )',
+      '(   ●  )',
+      '(    ● )',
+      '(     ●)',
+      '(    ● )',
+      '(   ●  )',
+      '(  ●   )',
+      '( ●    )',
+      '(●     )'
     ]
   }
 })

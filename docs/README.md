@@ -19,3 +19,4 @@
 - [ ] - Code readability (in progress)
 - [x] - Deployment to NPM done. Beta testing underway.
 - [x] - Stable Release.
+- [ ] - Adding progressbar with %.
