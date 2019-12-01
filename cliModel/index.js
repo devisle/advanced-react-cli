@@ -68,9 +68,8 @@ module.exports.installFolder = [
   {
     type: 'input',
     name: 'folderName',
-    message:
-      'Please input the name of the folder you would like to create for your project? (Enter a . if for current directory)'
-  }
+    message: 'Please name your project folder '
+  } // Concise option menu
 ]
 
 // Input name when creating new components for React project

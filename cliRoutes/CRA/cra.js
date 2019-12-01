@@ -25,8 +25,7 @@ module.exports = class CRA {
       const packageInstaller = packageManager
       prompt({
         ...installFolder[0],
-        message:
-          "Please input the name of the folder you would like to create for your project. (Enter a folder name, e.g. 'my-app')"
+        message: 'Please give project name, example (my-app)'
       }).then(({ folderName }) => {
         if (folderName.length > 1) {
           /*
