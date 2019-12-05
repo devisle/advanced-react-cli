@@ -2,7 +2,7 @@ export {};
 
 const inquirer = require("inquirer");
 const customCMD = require("../../customNodeCMD");
-const errorLogging = require("../../customNodeCMD/customError");
+const ErrorLogging = require("../../customNodeCMD/customError.ts");
 
 // Cli Model
 const cliModel = require("../../cliModel.ts");
@@ -35,7 +35,7 @@ module.exports = class CustomPackageInstall {
                   " "
                 )} `,
                 (err, data, stderr) => {
-                  err ? console.log(err) : errorLogging(stderr, data);
+                  err ? console.log(err) : ErrorLogging(stderr, data);
                 },
                 "install"
               );
@@ -47,7 +47,7 @@ module.exports = class CustomPackageInstall {
                   " "
                 )}`,
                 (err, data, stderr) => {
-                  err ? console.log(err) : errorLogging(stderr, data);
+                  err ? console.log(err) : ErrorLogging(stderr, data);
                 },
                 "install"
               );
@@ -58,7 +58,7 @@ module.exports = class CustomPackageInstall {
               customCMD.get(
                 `yarn add ${packages.join(" ")} `,
                 (err, data, stderr) => {
-                  err ? console.log(err) : errorLogging(stderr, data);
+                  err ? console.log(err) : ErrorLogging(stderr, data);
                 },
                 "install"
               );
@@ -68,7 +68,7 @@ module.exports = class CustomPackageInstall {
               customCMD.get(
                 `npm install --save ${packages.join(" ")}`,
                 (err, data, stderr) => {
-                  err ? console.log(err) : errorLogging(stderr, data);
+                  err ? console.log(err) : ErrorLogging(stderr, data);
                 },
                 "install"
               );
