@@ -59,6 +59,10 @@ type InstallCommandsNPM = {
       install: string;
       uninstall: string;
     };
+    reactA11y: {
+      install: string;
+      uninstall: string;
+    };
   };
 };
 
@@ -122,6 +126,10 @@ const npmInstallCommands: InstallCommandsNPM = {
     unstatedNext: {
       install: "npm install unstated-next --save",
       uninstall: "npm uninstall unstated-next"
+    },
+    reactA11y: {
+      install: "npm install react-a11y --save",
+      uninstall: "npm uninstall react-a11y"
     }
   }
   // easyPeasy: "npm install easy-peasy"

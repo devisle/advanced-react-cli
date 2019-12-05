@@ -58,6 +58,10 @@ module.exports = {
     unstatedNext: {
       install: 'npm install unstated-next --save',
       uninstall: 'npm uninstall unstated-next'
+    },
+    reactA11y: {
+      install: 'npm install react-a11y --save',
+      uninstall: 'npm uninstall react-a11y'
     }
   }
   // easyPeasy: "npm install easy-peasy"
