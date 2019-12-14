@@ -89,8 +89,7 @@ const InstallFolder: [{ type: string; name: string; message: string }] = [
   {
     type: "input",
     name: "folderName",
-    message:
-      "Please input the name of the folder you would like to create for your project? (Enter a . if for current directory)"
+    message: "Please name your project folder "
   }
 ];
 
