@@ -2,7 +2,7 @@
   "name": "advanced-react-cli",
   "version": "1.2.3",
   "description": "NPM package which aims to provide a better way to install packages for your react application through an intuitive CLI",
-  "main": "cli.js",
+  "main": "cli.ts",
   "scripts": {
     "react-cli": "node cli.ts",
     "format": "prettier-standard '**/*.{js,jsx}'",
@@ -10,7 +10,10 @@
     "test:coverage": "jest --coverage",
     "patch-release": "npm version patch && npm publish && git push --follow-tags",
     "minor-release": "npm version minor && npm publish && git push --follow-tags",
-    "major-release": "npm version major && npm publish && git push --follow-tags"
+    "major-release": "npm version major && npm publish && git push --follow-tags",
+    "watch": "babel --watch . --out-dir lib --extensions .ts,.tsx",
+    "build": "babel . --out-dir lib --extensions '.ts,.tsx'",
+    "tsc": "tsc"
   },
   "lint-staged": {
     "**/*.{js,jsx}": [
@@ -43,10 +46,12 @@
     "@types/clear": "^0.1.0",
     "@types/figlet": "^1.2.0",
     "@types/inquirer": "^6.5.0",
+    "@types/jest": "^24.0.23",
     "chalk": "^2.4.2",
     "clear": "^0.1.0",
     "cli-progress": "^3.4.0",
     "clui": "^0.3.6",
+    "cli-progress": "^3.4.0",
     "esm": "^3.2.25",
     "figlet": "^1.2.3",
     "inquirer": "^6.4.1",
@@ -62,6 +67,10 @@
   },
   "homepage": "https://github.com/devisle/advanced-react-cli",
   "devDependencies": {
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.4",
     "husky": "^3.0.0",
     "jest": "^24.8.0",
     "lint-staged": "^9.2.0",

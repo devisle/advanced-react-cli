@@ -62,6 +62,10 @@ module.exports = {
     unstatedNextYarn: {
       install: 'yarn add unstated-next',
       uninstall: 'yarn remove unstated-next'
+    },
+    reactA11yYarn: {
+      install: 'yarn add react-a11y',
+      uninstall: 'yarn remove react-a11y'
     }
   }
 }
