@@ -1,11 +1,20 @@
-const WriteUtils = require('./writeUtils')
+const WriteUtils = require("./writeUtils");
 
-export default GenerateComponent;
+type generateInfo = {
+  component: string;
+  componentName: string;
+  folderName: string;
+  propTypingBool: boolean;
+  reactRouterBool: boolean;
+  reduxBool: boolean;
+};
 
-function GenerateComponent (generateInfo) {
-  if (['.', ''].includes(generateInfo.folderName)) {
-    WriteUtils.writeInCurrentDir(generateInfo)
+function GenerateComponent(generateInfo: generateInfo) {
+  if ([".", ""].includes(generateInfo.folderName)) {
+    WriteUtils.writeInCurrentDir(generateInfo);
   } else {
-    WriteUtils.writeInNewDir(generateInfo)
+    WriteUtils.writeInNewDir(generateInfo);
   }
 }
+
+export default GenerateComponent;

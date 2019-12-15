@@ -35,6 +35,6 @@ console.log(
   )
 );
 
-InqPrompt(CliCommand).then(answers => {
+InqPrompt(CliCommand).then((answers: any) => {
   Options(answers);
 });
