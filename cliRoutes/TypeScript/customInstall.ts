@@ -16,7 +16,7 @@ const prompt = inquirer.createPromptModule();
 */
 
 module.exports = class CustomInstall {
-  prompt (packageInstaller) {
+  prompt (packageInstaller: any) {
     let addTypeScriptNPM: string,
       addTypesNodeNPM: string,
       addTypesReactNPM: string,
@@ -124,7 +124,7 @@ module.exports = class CustomInstall {
                   case 'NPM':
                     customCMD.get(
                       ` npm install --save ${addTypeScriptNPM} ${addTypesNodeNPM} ${addTypesReactNPM} ${addTypesReactRouterNPM} ${addTypesReactReduxNPM} ${addTypesJestNPM}`,
-                      (err, data, stderr) => {
+                      (err: any, data: any, stderr: any) => {
                         err ? console.log(err) : ErrorLogging(stderr, data)
                       },
                       'install'
@@ -134,7 +134,7 @@ module.exports = class CustomInstall {
                   case 'Yarn':
                     customCMD.get(
                       `yarn add ${addTypeScriptYarn} ${addTypesNodeYarn} ${addTypesReactYarn} ${addTypesReactRouterYarn} ${addTypesReactReduxYarn} ${addTypesJestYarn}`,
-                      (err, data, stderr) => {
+                      (err: any, data: any, stderr: any) => {
                         err ? console.log(err) : ErrorLogging(stderr, data)
                       },
                       'install'
