@@ -1,11 +1,13 @@
+export {};
+
 const exec = require('child_process').exec
-const ora = require('ora')
-const cliProgress = require('cli-progress')
+const ora = require('ora');
+const cliProgress = require('cli-progress');
 
 const CommandLineFunctions = {
   get: getCommand,
   run: runCommand
-}
+};
 
 const install = new ora({
   text: 'Installing package(s)...',
@@ -26,7 +28,7 @@ const install = new ora({
       '(●     )'
     ]
   }
-})
+});
 
 const uninstall = new ora({
   text: 'Uninstalling package(s)...',
@@ -46,11 +48,11 @@ const uninstall = new ora({
       '(●     )'
     ]
   }
-})
+});
 
 function runCommand (command) {
   return exec(command)
-}
+};
 
 function getCommand (command, callback, installOrUninstall) {
   exec(
@@ -59,39 +61,35 @@ function getCommand (command, callback, installOrUninstall) {
       switch (installOrUninstall) {
         case 'install':
           install.start()
-          // console.log(install.start())
           return function (err, data, stderr) {
             if (!callback) {
               return
-            }
+            };
             setTimeout(() => {
               install.color = 'green'
             }, 3000)
             process.stdout.write('\n')
-            callback(err, { data }, { stderr })
-            process.exit()
-            install.succeed()
-          }
-          break
+            callback(err, { data }, { stderr });
+            install.succeed();
+            process.exit();
+          };
+          break;
 
         case 'uninstall':
           uninstall.start()
           return function (err, data, stderr) {
             if (!callback) {
               return
-            }
+            };
             setTimeout(() => {
               uninstall.color = 'green'
             }, 3000)
             // callback(err, { data }, { stderr });
             process.stdout.write('\n')
-            callback(err, { data }, { stderr })
-            process.exit()
-            uninstall.succeed()
-          }
-      }
-    })(callback)
-  )
-}
-
-export default CommandLineFunctions;
+            callback(err, { data }, { stderr });
+            uninstall.succeed();
+            process.exit();
+          };
+      };
+    });(callback)
+  };

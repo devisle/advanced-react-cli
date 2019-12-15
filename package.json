@@ -10,10 +10,7 @@
     "test:coverage": "jest --coverage",
     "patch-release": "npm version patch && npm publish && git push --follow-tags",
     "minor-release": "npm version minor && npm publish && git push --follow-tags",
-    "major-release": "npm version major && npm publish && git push --follow-tags",
-    "watch": "babel --watch . --out-dir lib --extensions .ts,.tsx",
-    "build": "babel . --out-dir lib --extensions '.ts,.tsx'",
-    "tsc": "tsc"
+    "major-release": "npm version major && npm publish && git push --follow-tags"
   },
   "lint-staged": {
     "**/*.{js,jsx}": [

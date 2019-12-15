@@ -2,7 +2,7 @@ export {};
 
 const inquirer = require("inquirer");
 const customCMD = require("../../customNodeCMD");
-const ErrorLogging = require("../../customNodeCMD/customError.ts");
+const { ErrorLogging } = require("../../customNodeCMD/customError");
 
 // Cli Model
 const cliModel = require("../../cliModel.ts");
@@ -51,7 +51,7 @@ module.exports = class CustomPackageInstall {
                 },
                 "install"
               );
-          }
+          };
         } else {
           switch (packageManager) {
             case "Yarn":
@@ -72,9 +72,9 @@ module.exports = class CustomPackageInstall {
                 },
                 "install"
               );
-          }
-        }
+          };
+        };
       });
     });
-  }
+  };
 };
