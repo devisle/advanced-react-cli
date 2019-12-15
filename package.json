@@ -50,12 +50,11 @@
     "clear": "^0.1.0",
     "cli-progress": "^3.4.0",
     "clui": "^0.3.6",
-    "cli-progress": "^3.4.0",
     "esm": "^3.2.25",
     "figlet": "^1.2.3",
     "inquirer": "^6.4.1",
     "ora": "^4.0.2",
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.3"
   },
   "repository": {
     "type": "git",
@@ -67,12 +66,12 @@
   "homepage": "https://github.com/devisle/advanced-react-cli",
   "devDependencies": {
     "@babel/cli": "^7.7.4",
-    "@babel/core": "^7.7.4",
+    "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.4",
     "@babel/preset-typescript": "^7.7.4",
     "husky": "^3.0.0",
     "jest": "^24.8.0",
-    "lint-staged": "^9.2.0",
+    "lint-staged": "^9.5.0",
     "prettier-standard": "^9.1.1"
   }
 }

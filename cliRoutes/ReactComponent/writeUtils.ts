@@ -1,7 +1,16 @@
 import fs from "fs";
 import { ComponentCode } from "../../cliModel/starter-code/reactComponent";
 
-exports.writeInCurrentDir = function writeInCurrentDir(generateInfo: any) {
+type GenerateInfo = {
+  component: string;
+  componentName: string;
+  folderName: string;
+  propTypingBool: boolean;
+  reactRouterBool: boolean;
+  reduxBool: boolean;
+};
+
+export const writeInCurrentDir = (generateInfo: GenerateInfo) => {
   const writeStream = fs.createWriteStream(
     `./${generateInfo.componentName}.js`
   );
@@ -18,7 +27,7 @@ exports.writeInCurrentDir = function writeInCurrentDir(generateInfo: any) {
   }
 };
 
-exports.writeInNewDir = async function writeInNewDir(generateInfo: any) {
+export const writeInNewDir = async (generateInfo: GenerateInfo) => {
   try {
     await fs.mkdirSync(`./${generateInfo.folderName}`, { recursive: false });
 
