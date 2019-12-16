@@ -50,18 +50,18 @@ const uninstall = new ora({
   }
 });
 
-function runCommand (command) {
+function runCommand (command: any) {
   return exec(command)
 };
 
-function getCommand (command, callback, installOrUninstall) {
+function getCommand (command: any, callback: any, installOrUninstall: any) {
   exec(
     command,
     (function () {
       switch (installOrUninstall) {
         case 'install':
           install.start()
-          return function (err, data, stderr) {
+          return function (err: any, data: any, stderr: any) {
             if (!callback) {
               return
             };
@@ -77,7 +77,7 @@ function getCommand (command, callback, installOrUninstall) {
 
         case 'uninstall':
           uninstall.start()
-          return function (err, data, stderr) {
+          return function (err: any, data: any, stderr: any) {
             if (!callback) {
               return
             };
@@ -91,5 +91,5 @@ function getCommand (command, callback, installOrUninstall) {
             process.exit();
           };
       };
-    });(callback)
+    })(callback)
   };

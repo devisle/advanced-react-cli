@@ -2,7 +2,7 @@ export {};
 
 const chalk = require('chalk');
 
-function ErrorLogging (stderr, data) {
+function ErrorLogging (stderr: any, data: any) {
   let NewData = data.data.split('\n')
   let NewStderr = stderr.stderr.split('\n')
 

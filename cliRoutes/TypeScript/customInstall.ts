@@ -1,7 +1,7 @@
 import inquirer from 'inquirer';
 
 const customCMD = require('../../customNodeCMD');
-const { ErrorLogging } = require('../../customNodeCMD/customError');
+const { ErrorLogging } = require('../../customNodeCMD/CustomError');
 
 // CLI Model
 const cliModel = require('../../cliModel');

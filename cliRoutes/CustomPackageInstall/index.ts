@@ -2,7 +2,7 @@ export {};
 
 const inquirer = require("inquirer");
 const customCMD = require("../../customNodeCMD");
-const { ErrorLogging } = require("../../customNodeCMD/customError");
+const { ErrorLogging } = require("../../customNodeCMD/CustomError");
 
 // Cli Model
 const cliModel = require("../../cliModel.ts");
@@ -34,7 +34,7 @@ module.exports = class CustomPackageInstall {
                 `${createReactAppYarn} ${folderName} && cd ${folderName} && yarn add ${packages.join(
                   " "
                 )} `,
-                (err, data, stderr) => {
+                (err: any, data: any, stderr: any) => {
                   err ? console.log(err) : ErrorLogging(stderr, data);
                 },
                 "install"
@@ -57,7 +57,7 @@ module.exports = class CustomPackageInstall {
             case "Yarn":
               customCMD.get(
                 `yarn add ${packages.join(" ")} `,
-                (err, data, stderr) => {
+                (err: any, data: any, stderr: any) => {
                   err ? console.log(err) : ErrorLogging(stderr, data);
                 },
                 "install"
@@ -67,7 +67,7 @@ module.exports = class CustomPackageInstall {
             case "NPM":
               customCMD.get(
                 `npm install --save ${packages.join(" ")}`,
-                (err, data, stderr) => {
+                (err: any, data: any, stderr: any) => {
                   err ? console.log(err) : ErrorLogging(stderr, data);
                 },
                 "install"
