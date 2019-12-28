@@ -4,9 +4,9 @@
  Kindly visit https://github.com/RIAEvangelist/node-cmd and support them <3
 */
 
+const spawn = require('child_process').spawn
 const exec = require('child_process').exec
 const ora = require('ora')
-const cliProgress = require('cli-progress')
 
 const commandLineFunctions = {
   get: getCommand,
@@ -15,56 +15,43 @@ const commandLineFunctions = {
 
 const install = new ora({
   text: 'Installing package(s)...',
-  install: process.argv[2],
-  indent: 1,
-  spinner: {
-    interval: 80,
-    frames: [
-      '( ●    )',
-      '(  ●   )',
-      '(   ●  )',
-      '(    ● )',
-      '(     ●)',
-      '(    ● )',
-      '(   ●  )',
-      '(  ●   )',
-      '( ●    )',
-      '(●     )'
-    ]
-  }
-})
+  install: process.argv[2]
+}) //Posible deletion
 
 const uninstall = new ora({
   text: 'Uninstalling package(s)...',
-  uninstall: process.argv[2],
-  spinner: {
-    interval: 80,
-    frames: [
-      '( ●    )',
-      '(  ●   )',
-      '(   ●  )',
-      '(    ● )',
-      '(     ●)',
-      '(    ● )',
-      '(   ●  )',
-      '(  ●   )',
-      '( ●    )',
-      '(●     )'
-    ]
-  }
-})
+  uninstall: process.argv[2]
+}) //Possible deletion
 
 function runCommand (command) {
   return exec(command)
 }
 
+/*
+This feature was aided by my friend Gensen, github: choyg.
+I just want to give him credit for helping me with node related question.
+
+Todo: Change the node default progress bar to something different.
+Display custom message instead default node progress bar
+*/
 function getCommand (command, callback, installOrUninstall) {
+  const subproc = spawn(command, { stdio: 'inherit', shell: true })
+  subproc.stdout.on('data', data => {
+    console.log(data)
+  })
+  subproc.stderr.on('data', data => {
+    if (data) {
+      throw console.log(data)
+    }
+  })
+  return
   exec(
     command,
     (function () {
       switch (installOrUninstall) {
         case 'install':
-          install.start()
+          // install.start()
+
           // console.log(install.start())
           return function (err, data, stderr) {
             if (!callback) {
@@ -75,6 +62,8 @@ function getCommand (command, callback, installOrUninstall) {
             }, 3000)
             process.stdout.write('\n')
             callback(err, { data }, { stderr })
+            // console.log('\x1b[33m%s\x1b[0m', data);  //yellow
+
             process.exit()
             install.succeed()
           }
