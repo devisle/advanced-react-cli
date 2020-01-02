@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://user-images.githubusercontent.com/39559256/71696409-90d26d80-2dbd-11ea-9f48-4c3e0950f59c.PNG" alt="Advanced React CLI">
+  <img src="https://user-images.githubusercontent.com/39559256/71696217-1275cb80-2dbd-11ea-8847-228f0e615c3d.PNG" alt="Advanced-React-CLI">
 </h1>
 
 [![version](https://img.shields.io/npm/v/advanced-react-cli.svg?color=blue)](https://www.npmjs.com/package/advanced-react-cli) [![downloads](https://img.shields.io/npm/dw/advanced-react-cli.svg)](https://www.npmjs.com/package/advanced-react-cli) [![build](https://img.shields.io/travis/devisle/advanced-react-cli)](https://travis-ci.org/devisle/advanced-react-cli)
@@ -8,7 +8,7 @@ This is an npm package which aims to provide a better way to install a React sta
 
 ## Project's Purpose
 
-We at DevIsle, felt that the community has been longing for a good, functional and intuitive CLI rather than always writing on the terminal command line.
+We at Dev Isle, felt that the community has been longing for a good, functional and intuitive CLI rather than always writing on the terminal command line.
 
 **Note**: We do not discourage or refrain the community from using terminal commands instructions. In fact, we highly recommend our users to read and understand the docs so that you will know what to expect. This CLI is merely an alternative!
 
