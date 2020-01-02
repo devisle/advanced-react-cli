@@ -1,4 +1,8 @@
-# Advanced React CLI [![version](https://img.shields.io/npm/v/advanced-react-cli.svg?color=blue)](https://www.npmjs.com/package/advanced-react-cli) [![downloads](https://img.shields.io/npm/dw/advanced-react-cli.svg)](https://www.npmjs.com/package/advanced-react-cli) [![build](https://img.shields.io/travis/devisle/advanced-react-cli)](https://travis-ci.org/devisle/advanced-react-cli)
+<h1 align="center">
+  <img src="https://user-images.githubusercontent.com/39559256/71695261-3d125500-2dba-11ea-863a-5a7271b31964.PNG" alt="Advanced React CLI">
+</h1>
+
+[![version](https://img.shields.io/npm/v/advanced-react-cli.svg?color=blue)](https://www.npmjs.com/package/advanced-react-cli) [![downloads](https://img.shields.io/npm/dw/advanced-react-cli.svg)](https://www.npmjs.com/package/advanced-react-cli) [![build](https://img.shields.io/travis/devisle/advanced-react-cli)](https://travis-ci.org/devisle/advanced-react-cli)
 
 This is an npm package which aims to provide a better way to install a React starter application and third-party packages for your application through an intuitive CLI.
 
