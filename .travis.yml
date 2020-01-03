@@ -6,17 +6,6 @@ node_js:
   - '10'
   - '8'
 
-cache:
-  directories:
-    - node_modules
-
-notifications:
-  email:
-    on_success: never
-    on_failure: always
-
-install: npm i
-
 script:
   - npm run test
   - npm run test:coverage
