@@ -11,7 +11,8 @@ module.exports.cliCommand = [
       'StylingPackages',
       'PropTypes',
       'StateManagement',
-      'TypeScript'
+      'TypeScript',
+      'AccesibilityPackages'
     ]
   }
 ]
@@ -34,6 +35,8 @@ module.exports.multiplePackageInstall = [
       'unstated',
       'unstated-next',
       'typescript',
+      'react-a11y',
+      'react-axe',
       '@types/node',
       '@types/react-redux',
       '@types/react @types/react-dom',
@@ -140,6 +143,18 @@ module.exports.typescriptPackages = [
       '@types/react-router @types/react-router-dom',
       '@types/react-redux',
       '@types/jest'
+    ]
+  }
+]
+
+module.exports.accesibilityPackages = [
+  {
+    type: 'list',
+    name: 'accesibilityPackage',
+    message: 'Please select the accesibility package to add to your project: ',
+    choices: [
+      'react-a11y',
+      'react-axe'
     ]
   }
 ]
