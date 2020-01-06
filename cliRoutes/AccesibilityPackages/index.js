@@ -6,8 +6,8 @@ const accesibilityPackage = cliModel.accesibilityPackages
 const YarnOrNpm = cliModel.YarnOrNpm
 
 // Accesibility Packages Dependencies
-const A11y = require('./a11y')
-const Axe = require('./axe')
+const Reacta11y = require('./a11y')
+const Reactaxe = require('./axe')
 
 const prompt = inquirer.createPromptModule()
 
@@ -21,14 +21,14 @@ module.exports = class AccesibilityPackages {
   prompt () {
     prompt(YarnOrNpm).then(({ packageManager }) => {
       const packageInstaller = packageManager
-      prompt(accesibilityPackage).then(({ accesibilityPackage }) => {
-        switch (accesibilityPackage) {
-          case 'A11y':
-            new A11y().installOrUninstall(packageInstaller)
+      prompt(accesibilityPackage).then(({ access }) => {
+        switch (access) {
+          case 'Reacta11y':
+            new Reacta11y().installOrUninstall(packageInstaller)
             break
 
-          case 'Axe':
-            new Axe().installOrUninstall(packageInstaller)
+          case 'Reactaxe':
+            new Reactaxe().installOrUninstall(packageInstaller)
             break
         }
       })

@@ -150,11 +150,11 @@ module.exports.typescriptPackages = [
 module.exports.accesibilityPackages = [
   {
     type: 'list',
-    name: 'accesibilityPackage',
+    name: 'access',
     message: 'Please select the accesibility package to add to your project: ',
     choices: [
-      'react-a11y',
-      'react-axe'
+      'Reacta11y',
+      'Reactaxe'
     ]
   }
 ]

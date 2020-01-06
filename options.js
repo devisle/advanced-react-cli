@@ -7,6 +7,7 @@ const PropTypes = require('./cliRoutes/propTypes')
 const StateManagement = require('./cliRoutes/StateManagement/stateManagement')
 const TypeScript = require('./cliRoutes/TypeScript/index')
 const CustomPackageInstall = require('./cliRoutes/CustomPackageInstall')
+const AccesibilityPackages = require('./cliRoutes/AccesibilityPackages')
 
 module.exports = answers => {
   switch (answers.installation) {
@@ -37,8 +38,13 @@ module.exports = answers => {
     case 'TypeScript':
       new TypeScript().prompt()
       break
+
     case 'CustomPackageInstall':
       new CustomPackageInstall().prompt()
+      break
+
+    case 'AccesibilityPackages':
+      new AccesibilityPackages().prompt()
       break
 
     default:
