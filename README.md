@@ -67,6 +67,7 @@ We are continuously working on improving the CLI. But, as of this current stable
 - Installing Redux automatically generates a store folder containing boilerplate Redux code with instructions to get you started!
 - Installing Prop-Types automatically generates a file containing a sample code to get started!
 - Node-Sass and Styled-Components feature under StyledPackages section of the CLI
+- Installing packages used for accesibility such as React-A11y and React-Axe.
 - TypeScript and `@types` definitions for Node, React, React-Router, React-Redux and Jest
 
 # FAQs
