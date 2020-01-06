@@ -39,7 +39,8 @@ module.exports.multiplePackageInstall = [
       '@types/react @types/react-dom',
       '@types/react-router @types/react-router-dom',
       '@types/jest',
-      '@babel/types'
+      '@types/async',
+      '@types/cors'
     ]
   }
 ]
@@ -141,7 +142,8 @@ module.exports.typescriptPackages = [
       '@types/react-router @types/react-router-dom',
       '@types/react-redux',
       '@types/jest',
-      '@babel/types'
+      '@types/async',
+      '@types/cors'
     ]
   }
 ]

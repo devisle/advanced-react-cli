@@ -29,9 +29,13 @@ module.exports = {
       install: 'yarn add @types/jest',
       uninstall: 'yarn remove @types/jest'
     },
-    typesBabelYarn: {
-      install: 'yarn add @babel/types --dev',
-      uninstall: 'yarn remove @babel/types'
+    typesAsyncYarn: {
+      install: 'yarn add @types/async',
+      uninstall: 'yarn remove @types/async'
+    },
+    typesCorsYarn: {
+      install: 'yarn add @types/cors',
+      uninstall: 'yarn remove @types/cors'
     }
   },
   propTypesObjYarn: {

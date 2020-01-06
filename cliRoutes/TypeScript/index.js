@@ -15,7 +15,8 @@ const TypesReact = require('./types/react')
 const TypesReactRouter = require('./types/reactRouter')
 const TypesReactRedux = require('./types/reactRedux')
 const TypesJest = require('./types/jest')
-const TypesBabel = require('./types/babel')
+const TypesAsync = require('./types/async')
+const TypesCors = require('./types/cors')
 
 const prompt = inquirer.createPromptModule()
 
@@ -58,8 +59,12 @@ module.exports = class TypeScript {
             new TypesJest().installOrUninstall(packageInstaller)
             break
 
-          case '@babel/types':
-            new TypesBabel().installOrUninstall(packageInstaller)
+          case '@types/async':
+            new TypesAsync().installOrUninstall(packageInstaller)
+            break
+
+          case '@types/cors':
+            new TypesCors().installOrUninstall(packageInstaller)
             break
         }
       })

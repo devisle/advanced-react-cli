@@ -9,22 +9,22 @@ const installOption = cliModel.installOption
 
 // Cli Install Commands
 const { TypeScriptReactObj } = require('../../../cliModel/install-commands')
-const { typesBabel } = TypeScriptReactObj
+const { typesAsync } = TypeScriptReactObj
 
 const {
   TypeScriptReactObjYarn
 } = require('../../../cliModel/install-commands-yarn')
-const { typesBabelYarn } = TypeScriptReactObjYarn
+const { typesAsyncYarn } = TypeScriptReactObjYarn
 
 const prompt = inquirer.createPromptModule()
 
 /*
 
-  Installs @babel/types
+  Installs @types/async
 
 */
 
-module.exports = class TypesBabel {
+module.exports = class TypesAsync {
   installOrUninstall (packageInstaller) {
     prompt(installOption).then(({ decision }) => {
       if (decision === 'Install') {
@@ -39,7 +39,7 @@ module.exports = class TypesBabel {
     switch (packageInstaller) {
       case 'NPM':
         customCMD.get(
-          `${typesBabel.install}`,
+          `${typesAsync.install}`,
           (err, data, stderr) => {
             err ? console.log(err) : errorLogging(stderr, data)
           },
@@ -49,7 +49,7 @@ module.exports = class TypesBabel {
 
       case 'Yarn':
         customCMD.get(
-          `${typesBabelYarn.install}`,
+          `${typesAsyncYarn.install}`,
           (err, data, stderr) => {
             err ? console.log(err) : errorLogging(stderr, data)
           },
@@ -63,7 +63,7 @@ module.exports = class TypesBabel {
     switch (packageInstaller) {
       case 'NPM':
         customCMD.get(
-          `${typesBabel.uninstall}`,
+          `${typesAsync.uninstall}`,
           (err, data, stderr) => {
             err ? console.log(err) : errorLogging(stderr, data)
           },
@@ -73,7 +73,7 @@ module.exports = class TypesBabel {
 
       case 'Yarn':
         customCMD.get(
-          `${typesBabelYarn.uninstall}`,
+          `${typesAsyncYarn.uninstall}`,
           (err, data, stderr) => {
             err ? console.log(err) : errorLogging(stderr, data)
           },
