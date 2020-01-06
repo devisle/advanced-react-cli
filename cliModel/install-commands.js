@@ -24,7 +24,15 @@ module.exports = {
     typesJest: {
       install: 'npm install --save @types/jest',
       uninstall: 'npm uninstall @types/jest'
-    }
+   },
+   typesAsync: {
+     install: 'npm install --save @types/async',
+     uninstall: 'npm uninstall @types/async'
+   },
+   typesCors: {
+     install: 'npm install --save @types/cors',
+     uninstall: 'npm uninstall @types/cors'
+  }
   },
   propTypesObj: {
     install: 'npm i prop-types --save',
