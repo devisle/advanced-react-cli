@@ -127,35 +127,32 @@ module.exports = class CustomInstall {
                 /*
                   Prompts to install @types/async
                 */
+                prompt({
+                  ...addPackage[0],
+                  message: 'Would you like to add @types/async? (Y/N)'
+                }).then(({ packageAdd }) => {
+                  if (['y', 'yes'].includes(packageAdd.toLowerCase())) {
+                    addTypesAsyncNPM = '@types/async'
+                    addTypesAsyncYarn = '@types/async'
+                  } else if (['n', 'no'].includes(packageAdd.toLowerCase())) {
+                    addTypesAsyncNPM = ''
+                    addTypesAsyncYarn = ''
+                  }
 
+                  /*
+                    Prompts to install @types/cors
+                  */
                   prompt({
                     ...addPackage[0],
-                    message: 'Would you like to add @types/async? (Y/N)'
+                    message: 'Would you like to add @types/cors? (Y/N)'
                   }).then(({ packageAdd }) => {
                     if (['y', 'yes'].includes(packageAdd.toLowerCase())) {
-                      addTypesAsyncNPM = '@types/async'
-                      addTypesAsyncYarn = '@types/async'
+                      addTypesCorsNPM = '@types/cors'
+                      addTypesCorsYarn = '@types/cors'
                     } else if (['n', 'no'].includes(packageAdd.toLowerCase())) {
-                      addTypesAsyncNPM = ''
-                      addTypesAsyncYarn = ''
+                      addTypesCorsNPM = ''
+                      addTypesCorsYarn = ''
                     }
-
-                    /*
-                      Prompts to install @types/cors
-                    */
-
-                      prompt({
-                        ...addPackage[0],
-                        message: 'Would you like to add @types/cors? (Y/N)'
-                      }).then(({ packageAdd }) => {
-                        if (['y', 'yes'].includes(packageAdd.toLowerCase())) {
-                          addTypesCorsNPM = '@types/cors'
-                          addTypesCorsYarn = '@types/cors'
-                        } else if (['n', 'no'].includes(packageAdd.toLowerCase())) {
-                          addTypesCorsNPM = ''
-                          addTypesCorsYarn = ''
-                        }
-
 
                 switch (packageInstaller) {
                   case 'NPM':
@@ -178,7 +175,9 @@ module.exports = class CustomInstall {
                     )
                 }
               })
+             })
             })
+           })
           })
         })
       })
