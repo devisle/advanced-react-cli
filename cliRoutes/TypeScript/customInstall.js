@@ -123,15 +123,15 @@ module.exports = class CustomInstall {
                 }
 
                 /*
-                  Prompts to install @types/babel
+                  Prompts to install @babel/types
                 */
                 prompt({
                   ...addPackage[0],
-                  message: 'Would you like to add @types/babel? (Y/N)'
+                  message: 'Would you like to add @babel/types? (Y/N)'
                 }).then(({ packageAdd }) => {
                   if (['y', 'yes'].includes(packageAdd.toLowerCase())) {
-                    addTypesBabelNPM = '@types/babel'
-                    addTypesBabelYarn = '@types/babel'
+                    addTypesBabelNPM = '@babel/types'
+                    addTypesBabelYarn = '@babel/types'
                   } else if (['n', 'no'].includes(packageAdd.toLowerCase())) {
                     addTypesBabelNPM = ''
                     addTypesBabelYarn = ''

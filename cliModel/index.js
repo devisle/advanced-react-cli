@@ -38,7 +38,8 @@ module.exports.multiplePackageInstall = [
       '@types/react-redux',
       '@types/react @types/react-dom',
       '@types/react-router @types/react-router-dom',
-      '@types/jest'
+      '@types/jest',
+      '@babel/types'
     ]
   }
 ]
@@ -140,7 +141,7 @@ module.exports.typescriptPackages = [
       '@types/react-router @types/react-router-dom',
       '@types/react-redux',
       '@types/jest',
-      '@types/babel'
+      '@babel/types'
     ]
   }
 ]

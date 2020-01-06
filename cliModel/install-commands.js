@@ -26,8 +26,8 @@ module.exports = {
       uninstall: 'npm uninstall @types/jest'
   },
   typesBabel: {
-    install: 'npm install --save @types/babel',
-    uninstall: 'npm uninstall @types/babel'
+    install: 'npm install --save-dev @babel/types',
+    uninstall: 'npm uninstall @babel/types'
   }
   },
   propTypesObj: {

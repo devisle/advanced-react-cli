@@ -58,7 +58,7 @@ module.exports = class TypeScript {
             new TypesJest().installOrUninstall(packageInstaller)
             break
 
-          case '@types/babel':
+          case '@babel/types':
             new TypesBabel().installOrUninstall(packageInstaller)
             break
         }

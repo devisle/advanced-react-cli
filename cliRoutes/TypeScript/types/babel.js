@@ -20,7 +20,7 @@ const prompt = inquirer.createPromptModule()
 
 /*
 
-  Installs @types/babel
+  Installs @babel/types
 
 */
 

@@ -30,8 +30,8 @@ module.exports = {
       uninstall: 'yarn remove @types/jest'
     },
     typesBabelYarn: {
-      install: 'yarn add @types/babel',
-      uninstall: 'yarn remove @types/babel'
+      install: 'yarn add @babel/types --dev',
+      uninstall: 'yarn remove @babel/types'
     }
   },
   propTypesObjYarn: {
