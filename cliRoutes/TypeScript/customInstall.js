@@ -23,12 +23,14 @@ module.exports = class CustomInstall {
       addTypesReactRouterNPM,
       addTypesReactReduxNPM,
       addTypesJestNPM,
+      addTypesBabelNPM,
       addTypeScriptYarn,
       addTypesNodeYarn,
       addTypesReactYarn,
       addTypesReactRouterYarn,
       addTypesReactReduxYarn,
-      addTypesJestYarn
+      addTypesJestYarn,
+      addTypesBabelYarn,
 
     /*
         Prompts to install TypeScript
@@ -120,10 +122,25 @@ module.exports = class CustomInstall {
                   addTypesJestYarn = ''
                 }
 
+                /*
+                  Prompts to install @types/babel
+                */
+                prompt({
+                  ...addPackage[0],
+                  message: 'Would you like to add @types/babel? (Y/N)'
+                }).then(({ packageAdd }) => {
+                  if (['y', 'yes'].includes(packageAdd.toLowerCase())) {
+                    addTypesBabelNPM = '@types/babel'
+                    addTypesBabelYarn = '@types/babel'
+                  } else if (['n', 'no'].includes(packageAdd.toLowerCase())) {
+                    addTypesBabelNPM = ''
+                    addTypesBabelYarn = ''
+                  }
+
                 switch (packageInstaller) {
                   case 'NPM':
                     customCMD.get(
-                      ` npm install --save ${addTypeScriptNPM} ${addTypesNodeNPM} ${addTypesReactNPM} ${addTypesReactRouterNPM} ${addTypesReactReduxNPM} ${addTypesJestNPM}`,
+                      ` npm install --save ${addTypeScriptNPM} ${addTypesNodeNPM} ${addTypesReactNPM} ${addTypesReactRouterNPM} ${addTypesReactReduxNPM} ${addTypesJestNPM} ${addTypesBabelNPM}`,
                       (err, data, stderr) => {
                         err ? console.log(err) : errorLogging(stderr, data)
                       },
@@ -133,7 +150,7 @@ module.exports = class CustomInstall {
 
                   case 'Yarn':
                     customCMD.get(
-                      `yarn add ${addTypeScriptYarn} ${addTypesNodeYarn} ${addTypesReactYarn} ${addTypesReactRouterYarn} ${addTypesReactReduxYarn} ${addTypesJestYarn}`,
+                      `yarn add ${addTypeScriptYarn} ${addTypesNodeYarn} ${addTypesReactYarn} ${addTypesReactRouterYarn} ${addTypesReactReduxYarn} ${addTypesJestYarn} ${addTypesBabelYarn}`,
                       (err, data, stderr) => {
                         err ? console.log(err) : errorLogging(stderr, data)
                       },

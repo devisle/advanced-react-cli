@@ -28,6 +28,10 @@ module.exports = {
     typesJestYarn: {
       install: 'yarn add @types/jest',
       uninstall: 'yarn remove @types/jest'
+    },
+    typesBabelYarn: {
+      install: 'yarn add @types/babel',
+      uninstall: 'yarn remove @types/babel'
     }
   },
   propTypesObjYarn: {
