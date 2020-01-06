@@ -16,7 +16,7 @@ const prompt = inquirer.createPromptModule()
 
 /*
 
-  Installs/Uninstalls Node-Sass package
+  Installs/Uninstalls A11y package
 
 */
 

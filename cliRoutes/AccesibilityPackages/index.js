@@ -13,16 +13,16 @@ const prompt = inquirer.createPromptModule()
 
 /*
 
-  Installs/Uninstalls Styling Packages
+  Installs/Uninstalls Accesibility Packages
 
 */
 
-module.exports = class StylingPackages {
+module.exports = class AccesibilityPackages {
   prompt () {
     prompt(YarnOrNpm).then(({ packageManager }) => {
       const packageInstaller = packageManager
-      prompt(accesibilityPackage).then(({ stylingTool }) => {
-        switch (stylingTool) {
+      prompt(accesibilityPackage).then(({ accesibilityPackage }) => {
+        switch (accesibilityPackage) {
           case 'A11y':
             new A11y().installOrUninstall(packageInstaller)
             break
