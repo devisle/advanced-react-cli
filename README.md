@@ -16,7 +16,7 @@
 - [Development Checklist](https://github.com/devisle/advanced-react-cli/tree/master/docs)
 - [What does this do?](#what-does-this-do)
 - [FAQs](#faqs)
-- [Dev isle community](#dev-isle-community)
+- [Dev Isle community](#dev-isle-community)
 - [License](https://github.com/devisle/advanced-react-cli/blob/master/LICENSE)
 
 ## About
