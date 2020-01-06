@@ -4,6 +4,23 @@
 
 [![version](https://img.shields.io/npm/v/advanced-react-cli.svg?color=blue)](https://www.npmjs.com/package/advanced-react-cli) [![downloads](https://img.shields.io/npm/dw/advanced-react-cli.svg)](https://www.npmjs.com/package/advanced-react-cli) [![build](https://img.shields.io/travis/devisle/advanced-react-cli)](https://travis-ci.org/devisle/advanced-react-cli)
 
+## Table of Contents
+
+- [About](#about)
+- [Project's purpose](#projects-purpose)
+- [Credits](#credits)
+- [Run the CLI](#run-the-cli)
+- [Installing the CLI globally](#installing-the-cli-globally)
+- [Running tests](#running-tests)
+- [Contributing](CONTRIBUTING.md)
+- [Development Checklist](https://github.com/devisle/advanced-react-cli/tree/master/docs)
+- [What does this do?](#what-does-this-do)
+- [FAQs](#faqs)
+- [Dev isle community](#dev-isle-community)
+- [License](https://github.com/devisle/advanced-react-cli/blob/master/LICENSE)
+
+## About
+
 This is an npm package which aims to provide a better way to install a React starter application and third-party packages for your application through an intuitive CLI.
 
 ## Project's Purpose
@@ -38,7 +55,7 @@ This CLI uses some of the best repos' terminal commands under the hood, to execu
 
 **Be sure to check the above repos out if you're facing any issues! We are of course, always open to improvements.**
 
-## Try out the Advanced-React-CLI
+## Run the CLI
 
 Just type in the following command in your terminal and run it! (Please check FAQ for more on testing and contributions)
 
@@ -54,6 +71,20 @@ Just type in the following command in your terminal and run it! (Please check FA
 
 - To invoke the CLI (Both **NPM** & **Yarn**)
   `arc`
+
+## Running tests
+
+Test:
+
+ ```sh
+ npm run test or yarn test
+ ```
+
+Test coverage:
+
+```sh
+npm run test:coverage or yarn test:coverage
+```
 
 ## What does this do?
 
