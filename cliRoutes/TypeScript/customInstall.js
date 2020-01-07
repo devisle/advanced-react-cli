@@ -23,16 +23,12 @@ module.exports = class CustomInstall {
       addTypesReactRouterNPM,
       addTypesReactReduxNPM,
       addTypesJestNPM,
-      addTypesAsyncNPM,
-      addTypesCorsNPM,
       addTypeScriptYarn,
       addTypesNodeYarn,
       addTypesReactYarn,
       addTypesReactRouterYarn,
       addTypesReactReduxYarn,
-      addTypesJestYarn,
-      addTypesAsyncYarn,
-      addTypesCorsYarn
+      addTypesJestYarn
 
     /*
         Prompts to install TypeScript
@@ -124,40 +120,10 @@ module.exports = class CustomInstall {
                   addTypesJestYarn = ''
                 }
 
-                /*
-                  Prompts to install @types/async
-                */
-                prompt({
-                  ...addPackage[0],
-                  message: 'Would you like to add @types/async? (Y/N)'
-                }).then(({ packageAdd }) => {
-                  if (['y', 'yes'].includes(packageAdd.toLowerCase())) {
-                    addTypesAsyncNPM = '@types/async'
-                    addTypesAsyncYarn = '@types/async'
-                  } else if (['n', 'no'].includes(packageAdd.toLowerCase())) {
-                    addTypesAsyncNPM = ''
-                    addTypesAsyncYarn = ''
-                  }
-
-                  /*
-                    Prompts to install @types/cors
-                  */
-                  prompt({
-                    ...addPackage[0],
-                    message: 'Would you like to add @types/cors? (Y/N)'
-                  }).then(({ packageAdd }) => {
-                    if (['y', 'yes'].includes(packageAdd.toLowerCase())) {
-                      addTypesCorsNPM = '@types/cors'
-                      addTypesCorsYarn = '@types/cors'
-                    } else if (['n', 'no'].includes(packageAdd.toLowerCase())) {
-                      addTypesCorsNPM = ''
-                      addTypesCorsYarn = ''
-                    }
-
                 switch (packageInstaller) {
                   case 'NPM':
                     customCMD.get(
-                      ` npm install --save ${addTypeScriptNPM} ${addTypesNodeNPM} ${addTypesReactNPM} ${addTypesReactRouterNPM} ${addTypesReactReduxNPM} ${addTypesJestNPM} ${addTypesAsyncNPM} ${addTypesCorsNPM}`,
+                      ` npm install --save ${addTypeScriptNPM} ${addTypesNodeNPM} ${addTypesReactNPM} ${addTypesReactRouterNPM} ${addTypesReactReduxNPM} ${addTypesJestNPM}`,
                       (err, data, stderr) => {
                         err ? console.log(err) : errorLogging(stderr, data)
                       },
@@ -167,7 +133,7 @@ module.exports = class CustomInstall {
 
                   case 'Yarn':
                     customCMD.get(
-                      `yarn add ${addTypeScriptYarn} ${addTypesNodeYarn} ${addTypesReactYarn} ${addTypesReactRouterYarn} ${addTypesReactReduxYarn} ${addTypesJestYarn} ${addTypesAsyncYarn} ${addTypesCorsYarn}`,
+                      `yarn add ${addTypeScriptYarn} ${addTypesNodeYarn} ${addTypesReactYarn} ${addTypesReactRouterYarn} ${addTypesReactReduxYarn} ${addTypesJestYarn}`,
                       (err, data, stderr) => {
                         err ? console.log(err) : errorLogging(stderr, data)
                       },
@@ -175,9 +141,7 @@ module.exports = class CustomInstall {
                     )
                 }
               })
-             })
             })
-           })
           })
         })
       })

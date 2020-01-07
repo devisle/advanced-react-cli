@@ -6,6 +6,7 @@
   "scripts": {
     "react-cli": "node cli.js",
     "format": "prettier-standard '**/*.{js,jsx}'",
+    "build": "babel . -d lib",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "patch-release": "npm version patch && npm publish && git push --follow-tags",
@@ -58,6 +59,10 @@
   },
   "homepage": "https://github.com/devisle/advanced-react-cli",
   "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "babel-jest": "^24.9.0",
     "husky": "^3.0.0",
     "jest": "^24.8.0",
     "lint-staged": "^9.2.0",
