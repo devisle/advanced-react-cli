@@ -1,0 +1,16 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env"
+    ]
+  ],
+  "ignore": [
+        "node_modules",
+        "store.js",
+        "coverage"
+    ],
+    "plugins": [
+        "@babel/plugin-transform-regenerator",
+        "@babel/plugin-transform-runtime"
+    ]
+}
