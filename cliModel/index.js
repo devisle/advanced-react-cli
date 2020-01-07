@@ -11,7 +11,8 @@ module.exports.cliCommand = [
       'StylingPackages',
       'PropTypes',
       'StateManagement',
-      'TypeScript'
+      'TypeScript',
+      'AccesibilityPackages'
     ]
   }
 ]
@@ -34,6 +35,8 @@ module.exports.multiplePackageInstall = [
       'unstated',
       'unstated-next',
       'typescript',
+      'react-a11y',
+      'react-axe',
       '@types/node',
       '@types/react-redux',
       '@types/react @types/react-dom',
@@ -144,6 +147,18 @@ module.exports.typescriptPackages = [
       '@types/jest',
       '@types/async',
       '@types/cors'
+    ]
+  }
+]
+
+module.exports.accesibilityPackages = [
+  {
+    type: 'list',
+    name: 'access',
+    message: 'Please select the accesibility package to add to your project: ',
+    choices: [
+      'Reacta11y',
+      'Reactaxe'
     ]
   }
 ]

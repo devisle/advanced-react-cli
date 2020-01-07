@@ -58,6 +58,14 @@ module.exports = {
     install: 'npm i redux-thunk --save',
     uninstall: 'npm uninstall redux-thunk'
   },
+  reacta11yObj: {
+    install: 'npm i react-a11y --save',
+    uninstall: 'npm uninstall react-a11y'
+  },
+  reactaxeObj: {
+    install: 'npm i react-axe --save-dev',
+    uninstall: 'npm uninstall react-axe'
+  },
   unstatedObj: {
     unstated: {
       install: 'npm install unstated --save',

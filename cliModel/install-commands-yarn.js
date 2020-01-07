@@ -62,6 +62,14 @@ module.exports = {
     install: 'yarn add redux-thunk',
     uninstall: 'yarn remove redux-thunk'
   },
+  reacta11yObjYarn: {
+    install: 'yarn add react-a11y',
+    uninstall: 'yarn remove react-a11y'
+  },
+  reactaxeObjYarn: {
+    install: 'yarn add react-axe --dev',
+    uninstall: 'yarn remove react-axe'
+  },
   unstatedObjYarn: {
     unstatedYarn: {
       install: 'yarn add unstated',
