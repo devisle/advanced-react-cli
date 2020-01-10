@@ -33,24 +33,13 @@ We at Dev Isle, felt that the community has been longing for a good, functional 
 
 This CLI uses some of the best repos' terminal commands under the hood, to execute it's functionality. We would like to credit the following GitHub repos by making this CLI possible:
 
-- [Facebook - Create React App](https://github.com/facebook/create-react-app)
-- [Facebook - Prop Types](https://github.com/facebook/prop-types)
-- [Redux - Redux, React-Redux and Redux-Thunk](https://github.com/reduxjs)
 - [SASS - Node-Sass](https://github.com/sass/node-sass)
-- [ReactTraining - React-Router](https://github.com/ReactTraining/react-router)
-- [Jamie Kyle - Unstated](https://github.com/jamiebuilds/unstated)
-- [Jamie Kyle - Unstated-next](https://github.com/jamiebuilds/unstated-next)
 - [Brandon Nozaki Miller - Node-CMD](https://github.com/RIAEvangelist/node-cmd)
-- [Microsoft - TypeScript](https://www.npmjs.com/package/typescript)
-- [DefinitelyTyped - @types/node](https://www.npmjs.com/package/@types/node)
-- [DefinitelyTyped - @types/react](https://www.npmjs.com/package/@types/react)
-- [DefinitelyTyped - @types/react-router](https://www.npmjs.com/package/@types/react-router)
-- [DefinitelyTyped - @types/react-redux](https://www.npmjs.com/package/@types/react-redux)
-- [DefinitelyTyped - @types/jest](https://www.npmjs.com/package/@types/jest)
 - [Simon Boudrias - Inquirer JS](https://github.com/SBoudrias/Inquirer.js/)
 - [Nathan Peck - CLUI](https://www.npmjs.com/package/clui)
 - [Dave Eddy - Clear](https://github.com/bahamas10/node-clear)
 - [Patorjk - Figlet](https://github.com/patorjk/figlet.js)
+- [Sindre Sorhus - Ora](https://github.com/sindresorhus/ora)
 - [Chalk](https://www.npmjs.com/package/chalk)
 
 **Be sure to check the above repos out if you're facing any issues! We are of course, always open to improvements.**
