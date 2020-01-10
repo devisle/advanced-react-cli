@@ -63,7 +63,7 @@ Just type in the following command in your terminal and run it! (Please check FA
 
 ## Packages
 
-This CLI currently has these packages available for download:
+This CLI currently has these packages available for installation:
 
 - [Create-React-App](https://github.com/facebook/create-react-app)
 - [React-Router & React-Router-Dom](https://github.com/ReactTraining/react-router)
