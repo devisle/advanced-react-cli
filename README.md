@@ -33,7 +33,6 @@ We at Dev Isle, felt that the community has been longing for a good, functional 
 
 This CLI uses some of the best repos' terminal commands under the hood, to execute it's functionality. We would like to credit the following GitHub repos by making this CLI possible:
 
-- [SASS - Node-Sass](https://github.com/sass/node-sass)
 - [Brandon Nozaki Miller - Node-CMD](https://github.com/RIAEvangelist/node-cmd)
 - [Simon Boudrias - Inquirer JS](https://github.com/SBoudrias/Inquirer.js/)
 - [Nathan Peck - CLUI](https://www.npmjs.com/package/clui)
