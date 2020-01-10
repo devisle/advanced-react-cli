@@ -79,8 +79,8 @@ This CLI currently has these packages available for download:
 - [React-Axe](https://github.com/dequelabs/react-axe)
 - [@types/node](https://www.npmjs.com/package/@types/node)
 - [@types/react-redux](https://www.npmjs.com/package/@types/react-redux)
-- [@types/react](https://www.npmjs.com/package/@types/react) & - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom)
-- [@types/react-router](https://www.npmjs.com/package/@types/react-router) & - [@types/react-router-dom](https://www.npmjs.com/package/@types/react-router-dom)
+- [@types/react](https://www.npmjs.com/package/@types/react) & [@types/react-dom](https://www.npmjs.com/package/@types/react-dom)
+- [@types/react-router](https://www.npmjs.com/package/@types/react-router) & [@types/react-router-dom](https://www.npmjs.com/package/@types/react-router-dom)
 - [@types/jest](https://www.npmjs.com/package/@types/jest)
 
 ## Running tests
