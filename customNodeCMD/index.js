@@ -34,8 +34,8 @@ Todo: Change the node default progress bar to something different.
 Display custom message instead default node progress bar
 */
 
-function getCommand (command, finalCommand) {
-  console.log('Installing Packages...')
+function getCommand (command, installOrUninstall, finalCommand) {
+  console.log(`${installOrUninstall}ling Packages...`)
   return new Promise((resolve, reject) => {
     const subproc = spawn(command, {
       stdio: 'inherit',
@@ -45,58 +45,13 @@ function getCommand (command, finalCommand) {
       subproc.stdout.on('data', data => {
         console.log(`Creating project: ${data}...`)
       })
-      resolve(() => finalCommand)
-
-      reject(() => {
-        subproc.stderr.on('data', data => {
-          console.error(`stderr: ${data}`)
-        })
-      })
     }
+
+    subproc.on('exit', () => console.log(`${finalCommand}\n`))
+  }).catch(err => {
+    subproc.stderr.on('data', data => {
+      console.error(`stderr: ${data}`)
+    })
   })
-
-  // exec(
-  //   //Why exec and code below is greyed out?
-  //   command,
-  //   (function() {
-  //     switch (installOrUninstall) {
-  //       case "install":
-  //         // install.start()
-
-  //         // console.log(install.start())
-  //         return function(err, data, stderr) {
-  //           if (!callback) {
-  //             return;
-  //           }
-  //           setTimeout(() => {
-  //             install.color = "green";
-  //           }, 3000);
-  //           process.stdout.write("\n");
-  //           callback(err, { data }, { stderr });
-  //           // console.log('\x1b[33m%s\x1b[0m', data);  //yellow
-
-  //           process.exit();
-  //           install.succeed();
-  //         };
-  //         break;
-
-  //       case "uninstall":
-  //         uninstall.start();
-  //         return function(err, data, stderr) {
-  //           if (!callback) {
-  //             return;
-  //           }
-  //           setTimeout(() => {
-  //             uninstall.color = "green";
-  //           }, 3000);
-  //           // callback(err, { data }, { stderr });
-  //           process.stdout.write("\n");
-  //           callback(err, { data }, { stderr });
-  //           process.exit();
-  //           uninstall.succeed();
-  //         };
-  //     }
-  //   })(callback)
-  // );
 }
 module.exports = commandLineFunctions
