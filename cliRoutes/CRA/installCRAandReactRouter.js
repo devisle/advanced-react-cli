@@ -18,9 +18,8 @@ module.exports = (folderName, packageInstaller) => {
         ` mkdir ${folderName} && cd ${folderName} && ${createReactApp} . && ${
           reactRouterObj.install
         }`,
-        (err, data, stderr) =>
-          err ? console.log(err) : errorLogging(stderr, data),
-        'install'
+        'install',
+        'Package(s): React (using npx create-react-app), and React-Router have been installed successfully!'
       )
       break
 
@@ -29,9 +28,8 @@ module.exports = (folderName, packageInstaller) => {
         ` mkdir ${folderName} && cd ${folderName} && ${createReactAppYarn} . && ${
           reactRouterObjYarn.install
         }`,
-        (err, data, stderr) =>
-          err ? console.log(err) : errorLogging(stderr, data),
-        'install'
+        'install',
+        'Package(s): React (using yarn react-app), and React-Router have been installed successfully!'
       )
       break
   }

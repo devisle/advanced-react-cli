@@ -31,9 +31,8 @@ module.exports = (folderName, packageInstaller) => {
         } && ${
           reduxObj.install
         } && mkdir store && cd store && touch store.js && cat < ../../store.js > store.js && cd .. && cd .. && rm store.js `,
-        (err, data, stderr) =>
-          err ? console.log(err) : errorLogging(stderr, data),
-        'install'
+        'install',
+        'Package(s): React (using npx create-react-app), React-Router and Redux have been installed successfully!'
       )
       break
 
@@ -47,9 +46,8 @@ module.exports = (folderName, packageInstaller) => {
         } && ${
           reduxObjYarn.install
         } && mkdir store && cd store && touch store.js && cat < ../../store.js > store.js && cd .. && cd .. && rm store.js `,
-        (err, data, stderr) =>
-          err ? console.log(err) : errorLogging(stderr, data),
-        'install'
+        'install',
+        'Package(s): React (using yarn react-app), React-Router and Redux have been installed successfully!'
       )
       break
   }

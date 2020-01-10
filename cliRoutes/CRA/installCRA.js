@@ -11,18 +11,16 @@ module.exports = (folderName, packageInstaller) => {
     case 'NPM':
       customCMD.get(
         ` mkdir ${folderName} && cd ${folderName} && ${createReactApp} .`,
-        (err, data, stderr) =>
-          err ? console.log(err) : errorLogging(stderr, data),
-        'install'
+        'install',
+        'Package(s): React, React-Dom (using npx create-react-app) installed successfully!'
       )
       break
 
     case 'Yarn':
       customCMD.get(
         ` mkdir ${folderName} && cd ${folderName} && ${createReactAppYarn} .`,
-        (err, data, stderr) =>
-          err ? console.log(err) : errorLogging(stderr, data),
-        'install'
+        'install',
+        'Package(s): React, React-Dom (using yarn react-app) uninstalled successfully!'
       )
       break
   }
