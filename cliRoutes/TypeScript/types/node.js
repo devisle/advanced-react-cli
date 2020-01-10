@@ -40,20 +40,16 @@ module.exports = class TypesNodes {
       case 'NPM':
         customCMD.get(
           `${typesNode.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          `Package(s): @types/node has been installed successfully!`
         )
         break
 
       case 'Yarn':
         customCMD.get(
           `${typesNodeYarn.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          `Package(s): @types/node has been installed successfully!`
         )
         break
     }
@@ -64,20 +60,16 @@ module.exports = class TypesNodes {
       case 'NPM':
         customCMD.get(
           `${typesNode.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          `Package(s): @types/node has been uninstalled successfully!`
         )
         break
 
       case 'Yarn':
         customCMD.get(
           `${typesNodeYarn.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          `Package(s): @types/node has been uninstalled successfully!`
         )
         break
     }

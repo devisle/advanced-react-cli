@@ -40,20 +40,16 @@ module.exports = class TypesReactRedux {
       case 'NPM':
         customCMD.get(
           `${typesReactRedux.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          'Package(s): @types/react-redux have been installed successfully!'
         )
         break
 
       case 'Yarn':
         customCMD.get(
           `${typesReactReduxYarn.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          'Package(s): @types/react-redux have been installed successfully!'
         )
         break
     }
@@ -64,20 +60,16 @@ module.exports = class TypesReactRedux {
       case 'NPM':
         customCMD.get(
           `${typesReactRedux.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          'Package(s): @types/react-redux have been uninstalled successfully!'
         )
         break
 
       case 'Yarn':
         customCMD.get(
           `${typesReactReduxYarn.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          'Package(s): @types/react-redux have been uninstalled successfully!'
         )
         break
     }

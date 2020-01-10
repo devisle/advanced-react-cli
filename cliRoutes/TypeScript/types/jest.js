@@ -40,20 +40,17 @@ module.exports = class TypesJest {
       case 'NPM':
         customCMD.get(
           `${typesJest.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+
+          'install',
+          `Package: @types/jest has been installed successfully!`
         )
         break
 
       case 'Yarn':
         customCMD.get(
           `${typesJestYarn.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          `Package: @types/jest has been installed successfully!`
         )
         break
     }
@@ -64,20 +61,16 @@ module.exports = class TypesJest {
       case 'NPM':
         customCMD.get(
           `${typesJest.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          `Package: @types/jest has been uninstalled successfully!`
         )
         break
 
       case 'Yarn':
         customCMD.get(
           `${typesJestYarn.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          `Package: @types/jest has been uninstalled successfully!`
         )
         break
     }

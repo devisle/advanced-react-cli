@@ -40,20 +40,16 @@ module.exports = class TypesReact {
       case 'NPM':
         customCMD.get(
           `${typesReact.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          'Package(s): @types/react @types/react-dom have been installed successfully!'
         )
         break
 
       case 'Yarn':
         customCMD.get(
           `${typesReactYarn.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          'Package(s): @types/react @types/react-dom have been installed successfully!'
         )
         break
     }
@@ -64,20 +60,16 @@ module.exports = class TypesReact {
       case 'NPM':
         customCMD.get(
           `${typesReact.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          'Package(s): @types/react @types/react-dom have been uninstalled successfully!'
         )
         break
 
       case 'Yarn':
         customCMD.get(
           `${typesReactYarn.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          'Package(s): @types/react @types/react-dom have been uninstalled successfully!'
         )
         break
     }

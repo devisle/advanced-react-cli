@@ -40,20 +40,16 @@ module.exports = class TypeScriptInstall {
       case 'NPM':
         customCMD.get(
           `${TypeScript.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          'Package: typescript has been installed successfully!'
         )
         break
 
       case 'Yarn':
         customCMD.get(
           `${TypeScriptYarn.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          'Package: typescript has been installed successfully!'
         )
         break
     }
@@ -64,20 +60,16 @@ module.exports = class TypeScriptInstall {
       case 'NPM':
         customCMD.get(
           `${TypeScript.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          'Package: typescript has been uninstalled successfully!'
         )
         break
 
       case 'Yarn':
         customCMD.get(
           `${TypeScriptYarn.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          'Package: typescript has been uninstalled successfully!'
         )
         break
     }

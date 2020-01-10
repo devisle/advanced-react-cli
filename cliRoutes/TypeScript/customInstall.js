@@ -124,20 +124,16 @@ module.exports = class CustomInstall {
                   case 'NPM':
                     customCMD.get(
                       ` npm install --save ${addTypeScriptNPM} ${addTypesNodeNPM} ${addTypesReactNPM} ${addTypesReactRouterNPM} ${addTypesReactReduxNPM} ${addTypesJestNPM}`,
-                      (err, data, stderr) => {
-                        err ? console.log(err) : errorLogging(stderr, data)
-                      },
-                      'install'
+                      'install',
+                      `Package: ${addTypeScriptNPM} ${addTypesNodeNPM} ${addTypesReactNPM} ${addTypesReactRouterNPM} ${addTypesReactReduxNPM} ${addTypesJestNPM} has been installed successfully!`
                     )
                     break
 
                   case 'Yarn':
                     customCMD.get(
                       `yarn add ${addTypeScriptYarn} ${addTypesNodeYarn} ${addTypesReactYarn} ${addTypesReactRouterYarn} ${addTypesReactReduxYarn} ${addTypesJestYarn}`,
-                      (err, data, stderr) => {
-                        err ? console.log(err) : errorLogging(stderr, data)
-                      },
-                      'install'
+                      'install',
+                      `Package: ${addTypeScriptNPM} ${addTypesNodeNPM} ${addTypesReactNPM} ${addTypesReactRouterNPM} ${addTypesReactReduxNPM} ${addTypesJestNPM} has been installed successfully!`
                     )
                 }
               })
