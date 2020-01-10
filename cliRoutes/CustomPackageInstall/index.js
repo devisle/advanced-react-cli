@@ -32,10 +32,10 @@ module.exports = class CustomPackageInstall {
                 `${createReactAppYarn} ${folderName} && cd ${folderName} && yarn add ${packages.join(
                   ' '
                 )} `,
-                (err, data, stderr) => {
-                  err ? console.log(err) : errorLogging(stderr, data)
-                },
-                'install'
+                'install',
+                `Package(s): React (using npx create-react-app), and ${packages.join(
+                  ' '
+                )} have been installed successfully!`
               )
               break
 
@@ -44,10 +44,10 @@ module.exports = class CustomPackageInstall {
                 `${createReactApp} ${folderName} && cd ${folderName} && npm install --save ${packages.join(
                   ' '
                 )}`,
-                (err, data, stderr) => {
-                  err ? console.log(err) : errorLogging(stderr, data)
-                },
-                'install'
+                'install',
+                `Package(s): React (using yarn react-app), and ${packages.join(
+                  ' '
+                )} have been installed successfully!`
               )
           }
         } else {
@@ -55,20 +55,20 @@ module.exports = class CustomPackageInstall {
             case 'Yarn':
               customCMD.get(
                 `yarn add ${packages.join(' ')} `,
-                (err, data, stderr) => {
-                  err ? console.log(err) : errorLogging(stderr, data)
-                },
-                'install'
+                'install',
+                `Package(s): ${packages.join(
+                  ' '
+                )} have been installed successfully!`
               )
               break
 
             case 'NPM':
               customCMD.get(
                 `npm install --save ${packages.join(' ')}`,
-                (err, data, stderr) => {
-                  err ? console.log(err) : errorLogging(stderr, data)
-                },
-                'install'
+                'install',
+                `Package(s): ${packages.join(
+                  ' '
+                )} have been installed successfully!`
               )
           }
         }
