@@ -87,9 +87,9 @@ The CLI currently has these packages available for installation:
 
 Test:
 
- ```sh
- npm run test or yarn test
- ```
+```sh
+npm run test or yarn test
+```
 
 Test coverage:
 
@@ -147,6 +147,15 @@ We are continuously working on improving the CLI. But, as of this current stable
 ## Dev Isle Community
 
 Are you interested in hanging out, contributing to our open-source repos and be a part of a good community? We would love for you to join us on our [Discord](http://discord.gg/MSTQKRE).
+
+## Authors
+
+- [@shreyas1307](https://github.com/shreyas1307) - Creator and Maintainer
+- [@endormi](https://github.com/endormi) - Maintainer
+- [@munsterberg](https://github.com/Munsterberg) - Contributor
+- [@natedeploys](https://github.com/Natedeploys) - Contributor
+- [@kruzus](https://github.com/kruzus) - Contributor
+- [@jgiamanco](https://github.com/jgiamanco) - Contributor
 
 ## License
 
