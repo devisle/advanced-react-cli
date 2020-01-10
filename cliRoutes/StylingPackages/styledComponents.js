@@ -38,12 +38,7 @@ module.exports = class StyledComponents {
       case 'NPM':
         customCMD.get(
           `${styledComponentsObj.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
-        )
-        console.log(
+          'install',
           'Package: styled-components has been installed successfully!'
         )
         break
@@ -51,12 +46,7 @@ module.exports = class StyledComponents {
       case 'Yarn':
         customCMD.get(
           `${styledComponentsObjYarn.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
-        )
-        console.log(
+          'install',
           'Package: styled-components has been installed successfully!'
         )
         break
@@ -68,12 +58,7 @@ module.exports = class StyledComponents {
       case 'NPM':
         customCMD.get(
           `${styledComponentsObj.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
-        )
-        console.log(
+          'uninstall',
           'Package: styled-components has been uninstalled successfully!'
         )
         break
@@ -81,12 +66,7 @@ module.exports = class StyledComponents {
       case 'Yarn':
         customCMD.get(
           `${styledComponentsObjYarn.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
-        )
-        console.log(
+          'uninstall',
           'Package: styled-components has been uninstalled successfully!'
         )
         break

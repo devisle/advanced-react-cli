@@ -36,23 +36,18 @@ module.exports = class NodeSass {
       case 'NPM':
         customCMD.get(
           `${nodeSassObj.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          'Package: node-sass has been installed successfully!'
         )
-        console.log('Package: node-sass has been installed successfully!')
+
         break
 
       case 'Yarn':
         customCMD.get(
           `${nodeSassObjYarn.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          'Package: node-sass has been installed successfully!'
         )
-        console.log('Package: node-sass has been installed successfully!')
         break
     }
   }
@@ -62,23 +57,17 @@ module.exports = class NodeSass {
       case 'NPM':
         customCMD.get(
           `${nodeSassObj.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          'Package: node-sass has been uninstalled successfully!'
         )
-        console.log('Package: node-sass has been uninstalled successfully!')
         break
 
       case 'Yarn':
         customCMD.get(
           `${nodeSassObjYarn.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          'Package: node-sass has been uninstalled successfully!'
         )
-        console.log('Package: node-sass has been uninstalled successfully!')
         break
     }
   }
