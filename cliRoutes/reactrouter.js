@@ -38,12 +38,7 @@ module.exports = class ReactRouter {
       case 'NPM':
         customCMD.get(
           `${reactRouterObj.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
-        )
-        console.log(
+          'install',
           'Packages: react-router & react-router-dom have been installed successfully!'
         )
         break
@@ -51,12 +46,7 @@ module.exports = class ReactRouter {
       case 'Yarn':
         customCMD.get(
           `${reactRouterObjYarn.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
-        )
-        console.log(
+          'install',
           'Packages: react-router & react-router-dom have been installed successfully!'
         )
         break
@@ -68,12 +58,7 @@ module.exports = class ReactRouter {
       case 'NPM':
         customCMD.get(
           `${reactRouterObj.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
-        )
-        console.log(
+          'uninstall',
           'Packages: react-router & react-router-dom have been uninstalled successfully!'
         )
         break
@@ -81,12 +66,7 @@ module.exports = class ReactRouter {
       case 'Yarn':
         customCMD.get(
           `${reactRouterObjYarn.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
-        )
-        console.log(
+          'uninstall',
           'Packages: react-router & react-router-dom have been uninstalled successfully!'
         )
         break
