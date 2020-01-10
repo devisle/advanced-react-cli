@@ -34,22 +34,27 @@ Todo: Change the node default progress bar to something different.
 Display custom message instead default node progress bar
 */
 
-function getCommand (command, packages) {
+function getCommand (command, finalCommand) {
   console.log('Installing Packages...')
-  const subproc = spawn(command, {
-    stdio: 'inherit',
-    shell: true
-  })
-  if (subproc.stdout !== null) {
-    subproc.stdout.on('data', data => {
-      console.log(`Creating project: ${data}...`)
+  return new Promise((resolve, reject) => {
+    const subproc = spawn(command, {
+      stdio: 'inherit',
+      shell: true
     })
-    subproc.stderr.on('data', data => {
-      console.error(`stderr: ${data}`)
-    })
-  }
+    if (subproc.stdout !== null) {
+      subproc.stdout.on('data', data => {
+        console.log(`Creating project: ${data}...`)
+      })
+      resolve(() => finalCommand)
 
-  return
+      reject(() => {
+        subproc.stderr.on('data', data => {
+          console.error(`stderr: ${data}`)
+        })
+      })
+    }
+  })
+
   // exec(
   //   //Why exec and code below is greyed out?
   //   command,
