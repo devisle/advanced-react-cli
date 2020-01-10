@@ -32,29 +32,17 @@ module.exports = class UnstatedNext {
       case 'NPM':
         customCMD.get(
           `${unstatedNext.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          'Package: Unstated-next has been installed successfully! Check out more on how to get started with unstated-next on the following link https://github.com/jamiebuilds/unstated-next '
         )
-        console.log(
-          'Check out more on how to get started with unstated-next on the following link https://github.com/jamiebuilds/unstated-next '
-        )
-        console.log('Package: Unstated-next has been installed successfully!')
         break
 
       case 'Yarn':
         customCMD.get(
           `${unstatedNextYarn.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          'Package: Unstated-next has been installed successfully! Check out more on how to get started with unstated-next on the following link https://github.com/jamiebuilds/unstated-next '
         )
-        console.log(
-          'Check out more on how to get started with unstated-next on the following link https://github.com/jamiebuilds/unstated-next '
-        )
-        console.log('Package: Unstated-next has been installed successfully!')
         break
     }
   }
@@ -64,23 +52,17 @@ module.exports = class UnstatedNext {
       case 'NPM':
         customCMD.get(
           `${unstatedNext.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          'Package: Unstated-next has been uninstalled successfully!'
         )
-        console.log('Package: Unstated-next has been uninstalled successfully!')
         break
 
       case 'Yarn':
         customCMD.get(
           `${unstatedNextYarn.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          'Package: Unstated-next has been uninstalled successfully!'
         )
-        console.log('Package: Unstated-next has been uninstalled successfully!')
         break
     }
   }

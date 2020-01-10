@@ -32,29 +32,17 @@ module.exports = class Unstated {
       case 'NPM':
         customCMD.get(
           `${unstated.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          'Package: Unstated has been installed successfully! Check out more on how to get started with unstated on the following link https://github.com/jamiebuilds/unstated'
         )
-        console.log(
-          'Check out more on how to get started with unstated on the following link https://github.com/jamiebuilds/unstated'
-        )
-        console.log('Package: Unstated has been installed successfully!')
         break
 
       case 'Yarn':
         customCMD.get(
           `${unstatedYarn.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          'Package: Unstated has been installed successfully! Check out more on how to get started with unstated on the following link https://github.com/jamiebuilds/unstated'
         )
-        console.log(
-          'Check out more on how to get started with unstated on the following link https://github.com/jamiebuilds/unstated'
-        )
-        console.log('Package: Unstated has been installed successfully!')
         break
     }
   }
@@ -64,23 +52,17 @@ module.exports = class Unstated {
       case 'NPM':
         customCMD.get(
           `${unstated.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          'Package: Unstated has been uninstalled successfully'
         )
-        console.log('Package: Unstated has been uninstalled successfully!')
         break
 
       case 'Yarn':
         customCMD.get(
           `${unstatedYarn.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          'Package: Unstated has been uninstalled successfully'
         )
-        console.log('Package: Unstated has been uninstalled successfully!')
         break
     }
   }

@@ -41,29 +41,17 @@ module.exports = class Redux {
       case 'NPM':
         customCMD.get(
           `${reduxObj.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          'Packages: redux & react-redux have been installed successfully! Redux Store has been created successfully!'
         )
-        console.log(
-          'Packages: redux & react-redux have been installed successfully!'
-        )
-        console.log('Redux Store has been created successfully!')
         break
 
       case 'Yarn':
         customCMD.get(
           `${reduxObjYarn.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          'Packages: redux & react-redux have been installed successfully! Redux Store has been created successfully!'
         )
-        console.log(
-          'Packages: redux & react-redux have been installed successfully!'
-        )
-        console.log('Redux Store has been created successfully!')
         break
     }
   }
@@ -73,12 +61,7 @@ module.exports = class Redux {
       case 'NPM':
         customCMD.get(
           `${reduxObj.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
-        )
-        console.log(
+          'install',
           'Packages: redux & react-redux have been uninstalled successfully!'
         )
         break
@@ -86,12 +69,7 @@ module.exports = class Redux {
       case 'Yarn':
         customCMD.get(
           `${reduxObjYarn.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
-        )
-        console.log(
+          'install',
           'Packages: redux & react-redux have been uninstalled successfully!'
         )
         break

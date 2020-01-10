@@ -29,28 +29,18 @@ module.exports = class ReduxThunk {
       case 'NPM':
         customCMD.get(
           `${reduxThunkObj.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          'Package: Redux-Thunk has been installed successfully! Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk'
         )
-        console.log('Package: Redux-Thunk has been installed successfully!')
-        console.log(
-          'Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk '
-        )
+        console.log()
+
         break
 
       case 'Yarn':
         customCMD.get(
           `${reduxThunkObjYarn.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
-        )
-        console.log('Package: Redux-Thunk has been installed successfully!')
-        console.log(
-          'Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk '
+          'install',
+          'Package: Redux-Thunk has been installed successfully! Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk'
         )
         break
     }
@@ -61,23 +51,18 @@ module.exports = class ReduxThunk {
       case 'NPM':
         customCMD.get(
           `${reduxThunkObj.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          'Package: Redux-Thunk has been uninstalled successfully!'
         )
-        console.log('Package: Redux-Thunk has been uninstalled successfully!')
         break
 
       case 'Yarn':
         customCMD.get(
           `${reduxThunkObjYarn.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          'Package: Redux-Thunk has been uninstalled successfully!'
         )
-        console.log('Package: Redux-Thunk has been uninstalled successfully!')
+
         break
     }
   }
