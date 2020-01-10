@@ -36,23 +36,17 @@ module.exports = class Reacta11y {
       case 'NPM':
         customCMD.get(
           `${reacta11yObj.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'Install',
+          'Package: react-a11y has been installed successfully!'
         )
-        console.log('Package: react-a11y has been installed successfully!')
         break
 
       case 'Yarn':
         customCMD.get(
           `${reacta11yObjYarn.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'Install',
+          'Package: react-a11y has been installed successfully!'
         )
-        console.log('Package: react-a11y has been installed successfully!')
         break
     }
   }
@@ -62,23 +56,17 @@ module.exports = class Reacta11y {
       case 'NPM':
         customCMD.get(
           `${reacta11yObj.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'Uninstall',
+          'Package: react-a11y has been uninstalled successfully!'
         )
-        console.log('Package: react-a11y has been uninstalled successfully!')
         break
 
       case 'Yarn':
         customCMD.get(
           `${reacta11yObjYarn.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'Uninstall',
+          'Package: react-a11y has been uninstalled successfully!'
         )
-        console.log('Package: react-a11y has been uninstalled successfully!')
         break
     }
   }

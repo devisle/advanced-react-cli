@@ -39,9 +39,9 @@ module.exports = class Reactaxe {
           (err, data, stderr) => {
             err ? console.log(err) : errorLogging(stderr, data)
           },
-          'install'
+          'Install',
+          'Package: react-axe has been installed successfully!'
         )
-        console.log('Package: react-axe has been installed successfully!')
         break
 
       case 'Yarn':
@@ -50,9 +50,9 @@ module.exports = class Reactaxe {
           (err, data, stderr) => {
             err ? console.log(err) : errorLogging(stderr, data)
           },
-          'install'
+          'Install',
+          'Package: react-axe has been installed successfully!'
         )
-        console.log('Package: react-axe has been installed successfully!')
         break
     }
   }
@@ -65,9 +65,9 @@ module.exports = class Reactaxe {
           (err, data, stderr) => {
             err ? console.log(err) : errorLogging(stderr, data)
           },
-          'uninstall'
+          'uninstall',
+          'Package: react-axe has been uninstalled successfully!'
         )
-        console.log('Package: react-axe has been uninstalled successfully!')
         break
 
       case 'Yarn':
@@ -76,9 +76,9 @@ module.exports = class Reactaxe {
           (err, data, stderr) => {
             err ? console.log(err) : errorLogging(stderr, data)
           },
-          'uninstall'
+          'uninstall',
+          'Package: react-axe has been uninstalled successfully!'
         )
-        console.log('Package: react-axe has been uninstalled successfully!')
         break
     }
   }
