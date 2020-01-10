@@ -11,6 +11,7 @@
 - [Credits](#credits)
 - [Run the CLI](#run-the-cli)
 - [Installing the CLI globally](#installing-the-cli-globally)
+- [Packages](#packages)
 - [Running tests](#running-tests)
 - [Contributing](CONTRIBUTING.md)
 - [Development Checklist](https://github.com/devisle/advanced-react-cli/tree/master/docs)
@@ -59,6 +60,28 @@ Just type in the following command in your terminal and run it! (Please check FA
 
 - To invoke the CLI (Both **NPM** & **Yarn**)
   `arc`
+
+## Packages
+
+This CLI currently has these packages available for download:
+
+- [Create-React-App](https://github.com/facebook/create-react-app)
+- [React-Router & React-Router-Dom](https://github.com/ReactTraining/react-router)
+- [Redux](https://github.com/reduxjs/redux) & [React-Redux](https://github.com/reduxjs/react-redux)
+- [Redux-Thunk](https://github.com/reduxjs/redux-thunk)
+- [Prop-Types](https://github.com/facebook/prop-types)
+- [Node-Sass](https://github.com/sass/node-sass)
+- [Styled Components](https://github.com/styled-components/styled-components)
+- [Unstated](https://github.com/jamiebuilds/unstated)
+- [Unstated-Next](https://github.com/jamiebuilds/unstated-next)
+- [TypeScript](https://github.com/Microsoft/TypeScript)
+- [React-A11y](https://github.com/reactjs/react-a11y)
+- [React-Axe](https://github.com/dequelabs/react-axe)
+- [@types/node](https://www.npmjs.com/package/@types/node)
+- [@types/react-redux](https://www.npmjs.com/package/@types/react-redux)
+- [@types/react](https://www.npmjs.com/package/@types/react) & - [@types/react-dom](https://www.npmjs.com/package/@types/react-dom)
+- [@types/react-router](https://www.npmjs.com/package/@types/react-router) & - [@types/react-router-dom](https://www.npmjs.com/package/@types/react-router-dom)
+- [@types/jest](https://www.npmjs.com/package/@types/jest)
 
 ## Running tests
 
