@@ -49,25 +49,16 @@ module.exports = class propTypes {
       case 'NPM':
         customCMD.get(
           `${propTypesObj.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          'Package: prop-types has been installed successfully! PropTypes Folder has been created!'
         )
-        console.log('Package: prop-types has been installed successfully!')
-        console.log('PropTypes Folder has been created!')
-        break
 
       case 'Yarn':
         customCMD.get(
           `${propTypesObjYarn.install}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'install'
+          'install',
+          'Package: prop-types has been installed successfully! PropTypes Folder has been created!'
         )
-        console.log('Package: prop-types has been installed successfully!')
-        console.log('PropTypes Folder has been created!')
         break
     }
   }
@@ -77,23 +68,17 @@ module.exports = class propTypes {
       case 'NPM':
         customCMD.get(
           `${propTypesObj.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          'Package: prop-types has been uninstalled successfully!'
         )
-        console.log('Package: prop-types has been uninstalled successfully!')
         break
 
       case 'Yarn':
         customCMD.get(
           `${propTypesObjYarn.uninstall}`,
-          (err, data, stderr) => {
-            err ? console.log(err) : errorLogging(stderr, data)
-          },
-          'uninstall'
+          'uninstall',
+          'Package: prop-types has been uninstalled successfully!'
         )
-        console.log('Package: prop-types has been uninstalled successfully!')
         break
     }
   }
