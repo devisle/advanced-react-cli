@@ -1,5 +1,7 @@
 # Checklist
 
+## Done
+
 - [x] - Active on command
 - [x] - Global installation
 - [x] - Take an OS path
@@ -14,10 +16,13 @@
 - [x] - Added in package-manager choice as NPM/Yarn
 - [x] - Custom CMD execute commands
 - [x] - Custom installation for TypeScript
+- [x] - Deployment to NPM done. Beta testing underway.
+- [x] - Stable Release.
+
+## TBD
+
 - [ ] - Adding Hooks functionality to the React Component generator
 - [ ] - Refactoring (in progress)
 - [ ] - Performance optimization (in progress)
 - [ ] - Code readability (in progress)
-- [x] - Deployment to NPM done. Beta testing underway.
-- [x] - Stable Release.
 - [ ] - Adding progressbar with %.

@@ -11,6 +11,7 @@
 - [Credits](#credits)
 - [Run the CLI](#run-the-cli)
 - [Installing the CLI globally](#installing-the-cli-globally)
+- [Packages](#packages)
 - [Running tests](#running-tests)
 - [Contributing](CONTRIBUTING.md)
 - [Development Checklist](https://github.com/devisle/advanced-react-cli/tree/master/docs)
@@ -33,24 +34,12 @@ We at Dev Isle, felt that the community has been longing for a good, functional 
 
 This CLI uses some of the best repos' terminal commands under the hood, to execute it's functionality. We would like to credit the following GitHub repos by making this CLI possible:
 
-- [Facebook - Create React App](https://github.com/facebook/create-react-app)
-- [Facebook - Prop Types](https://github.com/facebook/prop-types)
-- [Redux - Redux, React-Redux and Redux-Thunk](https://github.com/reduxjs)
-- [SASS - Node-Sass](https://github.com/sass/node-sass)
-- [ReactTraining - React-Router](https://github.com/ReactTraining/react-router)
-- [Jamie Kyle - Unstated](https://github.com/jamiebuilds/unstated)
-- [Jamie Kyle - Unstated-next](https://github.com/jamiebuilds/unstated-next)
 - [Brandon Nozaki Miller - Node-CMD](https://github.com/RIAEvangelist/node-cmd)
-- [Microsoft - TypeScript](https://www.npmjs.com/package/typescript)
-- [DefinitelyTyped - @types/node](https://www.npmjs.com/package/@types/node)
-- [DefinitelyTyped - @types/react](https://www.npmjs.com/package/@types/react)
-- [DefinitelyTyped - @types/react-router](https://www.npmjs.com/package/@types/react-router)
-- [DefinitelyTyped - @types/react-redux](https://www.npmjs.com/package/@types/react-redux)
-- [DefinitelyTyped - @types/jest](https://www.npmjs.com/package/@types/jest)
 - [Simon Boudrias - Inquirer JS](https://github.com/SBoudrias/Inquirer.js/)
 - [Nathan Peck - CLUI](https://www.npmjs.com/package/clui)
 - [Dave Eddy - Clear](https://github.com/bahamas10/node-clear)
 - [Patorjk - Figlet](https://github.com/patorjk/figlet.js)
+- [Sindre Sorhus - Ora](https://github.com/sindresorhus/ora)
 - [Chalk](https://www.npmjs.com/package/chalk)
 
 **Be sure to check the above repos out if you're facing any issues! We are of course, always open to improvements.**
@@ -71,6 +60,28 @@ Just type in the following command in your terminal and run it! (Please check FA
 
 - To invoke the CLI (Both **NPM** & **Yarn**)
   `arc`
+
+## Packages
+
+This CLI currently has these packages available for installation:
+
+- [Create-React-App](https://github.com/facebook/create-react-app)
+- [React-Router & React-Router-Dom](https://github.com/ReactTraining/react-router)
+- [Redux](https://github.com/reduxjs/redux) & [React-Redux](https://github.com/reduxjs/react-redux)
+- [Redux-Thunk](https://github.com/reduxjs/redux-thunk)
+- [Prop-Types](https://github.com/facebook/prop-types)
+- [Node-Sass](https://github.com/sass/node-sass)
+- [Styled Components](https://github.com/styled-components/styled-components)
+- [Unstated](https://github.com/jamiebuilds/unstated)
+- [Unstated-Next](https://github.com/jamiebuilds/unstated-next)
+- [TypeScript](https://github.com/Microsoft/TypeScript)
+- [React-A11y](https://github.com/reactjs/react-a11y)
+- [React-Axe](https://github.com/dequelabs/react-axe)
+- [@types/node](https://www.npmjs.com/package/@types/node)
+- [@types/react-redux](https://www.npmjs.com/package/@types/react-redux)
+- [@types/react](https://www.npmjs.com/package/@types/react) & [@types/react-dom](https://www.npmjs.com/package/@types/react-dom)
+- [@types/react-router](https://www.npmjs.com/package/@types/react-router) & [@types/react-router-dom](https://www.npmjs.com/package/@types/react-router-dom)
+- [@types/jest](https://www.npmjs.com/package/@types/jest)
 
 ## Running tests
 
