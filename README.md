@@ -63,7 +63,7 @@ Just type in the following command in your terminal and run it! (Please check FA
 
 ## Packages
 
-This CLI currently has these packages available for installation:
+The CLI currently has these packages available for installation:
 
 - [Create-React-App](https://github.com/facebook/create-react-app)
 - [React-Router & React-Router-Dom](https://github.com/ReactTraining/react-router)
@@ -71,7 +71,7 @@ This CLI currently has these packages available for installation:
 - [Redux-Thunk](https://github.com/reduxjs/redux-thunk)
 - [Prop-Types](https://github.com/facebook/prop-types)
 - [Node-Sass](https://github.com/sass/node-sass)
-- [Styled Components](https://github.com/styled-components/styled-components)
+- [Styled-Components](https://github.com/styled-components/styled-components)
 - [Unstated](https://github.com/jamiebuilds/unstated)
 - [Unstated-Next](https://github.com/jamiebuilds/unstated-next)
 - [TypeScript](https://github.com/Microsoft/TypeScript)
