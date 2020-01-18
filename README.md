@@ -39,7 +39,6 @@ This CLI uses some of the best repos' terminal commands under the hood, to execu
 - [Nathan Peck - CLUI](https://www.npmjs.com/package/clui)
 - [Dave Eddy - Clear](https://github.com/bahamas10/node-clear)
 - [Patorjk - Figlet](https://github.com/patorjk/figlet.js)
-- [Sindre Sorhus - Ora](https://github.com/sindresorhus/ora)
 - [Chalk](https://www.npmjs.com/package/chalk)
 
 **Be sure to check the above repos out if you're facing any issues! We are of course, always open to improvements.**
