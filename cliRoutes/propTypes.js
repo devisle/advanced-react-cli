@@ -52,6 +52,7 @@ module.exports = class propTypes {
           'install',
           'Package: prop-types has been installed successfully! PropTypes Folder has been created!'
         )
+        break
 
       case 'Yarn':
         customCMD.get(

@@ -68,5 +68,4 @@ module.exports = {
       uninstall: 'npm uninstall unstated-next'
     }
   }
-  // easyPeasy: "npm install easy-peasy"
 }

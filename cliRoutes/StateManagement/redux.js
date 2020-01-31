@@ -61,7 +61,7 @@ module.exports = class Redux {
       case 'NPM':
         customCMD.get(
           `${reduxObj.uninstall}`,
-          'install',
+          'uninstall',
           'Packages: redux & react-redux have been uninstalled successfully!'
         )
         break
@@ -69,7 +69,7 @@ module.exports = class Redux {
       case 'Yarn':
         customCMD.get(
           `${reduxObjYarn.uninstall}`,
-          'install',
+          'uninstall',
           'Packages: redux & react-redux have been uninstalled successfully!'
         )
         break
