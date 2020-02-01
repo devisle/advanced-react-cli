@@ -8,8 +8,7 @@
         "node_modules",
         "store.js",
         "coverage",
-        "legacy",
-        "cliModel/starter-code"
+        "legacy"
     ],
     "plugins": [
         "@babel/plugin-transform-regenerator",
