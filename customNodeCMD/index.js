@@ -35,7 +35,11 @@ Display custom message instead default node progress bar
 */
 
 function getCommand (command, installOrUninstall, finalCommand) {
-  console.log(`${installOrUninstall}ing Packages...`)
+  let installTxt = installOrUninstall.replace(
+    installOrUninstall[0],
+    installOrUninstall[0].toUpperCase()
+  )
+  console.log(`${installTxt}ing Packages...`)
   return new Promise((resolve, reject) => {
     const subproc = spawn(command, {
       stdio: 'inherit',

@@ -39,7 +39,6 @@ module.exports = class NodeSass {
           'install',
           'Package: node-sass has been installed successfully!'
         )
-
         break
 
       case 'Yarn':

@@ -57,7 +57,7 @@
   "bugs": {
     "url": "https://github.com/devisle/advanced-react-cli/issues"
   },
-  "homepage": "https://devisle.netlify.com/cli",
+  "homepage": "https://devisle.netlify.com",
   "devDependencies": {
     "@babel/cli": "^7.7.7",
     "@babel/core": "^7.7.7",

@@ -32,8 +32,6 @@ module.exports = class ReduxThunk {
           'install',
           'Package: Redux-Thunk has been installed successfully! Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk'
         )
-        console.log()
-
         break
 
       case 'Yarn':
@@ -62,7 +60,6 @@ module.exports = class ReduxThunk {
           'uninstall',
           'Package: Redux-Thunk has been uninstalled successfully!'
         )
-
         break
     }
   }

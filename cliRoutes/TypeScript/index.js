@@ -33,6 +33,7 @@ module.exports = class TypeScript {
           case 'CustomInstall':
             new CustomInstall().prompt(packageInstaller)
             break
+
           case 'TypeScript':
             new TypeScriptInstall().installOrUninstall(packageInstaller)
             break
