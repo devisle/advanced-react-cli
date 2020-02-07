@@ -21,9 +21,9 @@
 
 ## In progress
 
-- [ ] - Refactoring (in progress)
-- [ ] - Performance optimization (in progress)
-- [ ] - Code readability (in progress)
+- [ ] - Refactoring
+- [ ] - Performance optimization
+- [ ] - Code readability
 
 ## TBD
 

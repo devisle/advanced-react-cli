@@ -14,7 +14,7 @@
 - [Packages](#packages)
 - [Running tests](#running-tests)
 - [Contributing](CONTRIBUTING.md)
-- [Development Checklist](https://github.com/devisle/advanced-react-cli/tree/master/doc)
+- [Development Checklist](CHECKLIST.md)
 - [What does this do?](#what-does-this-do)
 - [FAQs](#faqs)
 - [Dev Isle community](#dev-isle-community)
@@ -116,7 +116,7 @@ We are continuously working on improving the CLI. But, as of this current stable
 1. How can I test this out?
 
 - If you'd like to try it out , Run the following command `npx advanced-react-cli` in your terminal.
-- We are still continuing to work on our [Development Checklist](https://github.com/devisle/advanced-react-cli/tree/master/doc).
+- We are still continuing to work on our [Development Checklist](CHECKLIST.md).
 
 - Ensure you have git version control, and package manager - either npm (node package manager) or Yarn Installed. You may check if your system has them installed by running the following commands `git --version` and depending on your package manager of choice, run `npm --version` or `yarn --version`. If you don't have it installed, please visit:
 
@@ -142,6 +142,12 @@ We are continuously working on improving the CLI. But, as of this current stable
 
 - We are open to pull requests for the CLI!
 - Before making a pull request, be sure to read the [contribution guidelines](https://github.com/devisle/advanced-react-cli/blob/master/CONTRIBUTING.md) that also have the pull request guide.
+
+5. How can I run the documentation site?
+
+- The documentation site is built using [docsify](https://docsify.js.org/#/).
+- Install `docsify` if you haven't done that already `npm i docsify-cli -g`.
+- Run the site `docsify serve docs`.
 
 ## Dev Isle Community
 
