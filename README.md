@@ -146,6 +146,7 @@ We are continuously working on improving the CLI. But, as of this current stable
 5. How can I run the documentation site?
 
 - The documentation site is built using [docsify](https://docsify.js.org/#/).
+- Install `docsify` if you haven't done that already `npm i docsify-cli -g`.
 - Run the site `docsify serve docs`.
 
 ## Dev Isle Community
