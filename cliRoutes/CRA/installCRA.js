@@ -20,7 +20,7 @@ module.exports = (folderName, packageInstaller) => {
       customCMD.get(
         ` mkdir ${folderName} && cd ${folderName} && ${createReactAppYarn} .`,
         'install',
-        'Package(s): React, React-Dom (using yarn react-app) uninstalled successfully!'
+        'Package(s): React, React-Dom (using yarn react-app) installed successfully!'
       )
       break
   }
