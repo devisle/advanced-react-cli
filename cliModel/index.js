@@ -4,6 +4,7 @@ module.exports.cliCommand = [
     name: 'installation',
     message: 'What would you like to install?',
     choices: [
+      'Search Online',
       'CustomPackageInstall',
       'CreateReactApp',
       'ReactComponent',
@@ -152,10 +153,7 @@ module.exports.accesibilityPackages = [
     type: 'list',
     name: 'access',
     message: 'Please select the accesibility package to add to your project: ',
-    choices: [
-      'Reacta11y',
-      'Reactaxe'
-    ]
+    choices: ['Reacta11y', 'Reactaxe']
   }
 ]
 
@@ -166,5 +164,13 @@ module.exports.YarnOrNpm = [
     name: 'packageManager',
     message: 'Would you like to install using Yarn or NPM?',
     choices: ['Yarn', 'NPM']
+  }
+]
+
+module.exports.SearchTerm = [
+  {
+    type: 'input',
+    name: 'searchTerm',
+    message: 'Search package(s)...'
   }
 ]

@@ -1,4 +1,6 @@
 // Cli Routes
+const axios = require('axios')
+
 const CRA = require('./cliRoutes/CRA/cra')
 const ReactRouter = require('./cliRoutes/reactrouter')
 const StylingPackages = require('./cliRoutes/StylingPackages/index')
@@ -8,9 +10,13 @@ const StateManagement = require('./cliRoutes/StateManagement/stateManagement')
 const TypeScript = require('./cliRoutes/TypeScript/index')
 const CustomPackageInstall = require('./cliRoutes/CustomPackageInstall')
 const AccesibilityPackages = require('./cliRoutes/AccesibilityPackages')
+const SearchOnline = require('./cliRoutes/CustomSearch')
 
 module.exports = answers => {
   switch (answers.installation) {
+    case 'Search Online':
+      new SearchOnline().search()
+      break
     case 'CreateReactApp':
       new CRA().CRAPrompt()
       break
