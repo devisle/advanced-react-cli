@@ -5,6 +5,10 @@ const { SearchTerm } = cliModel
 const prompt = inquirer.createPromptModule()
 
 module.exports = class SearchOnline {
+  constructor () {
+    this.packagesSelected = []
+  }
+
   search () {
     prompt(SearchTerm[0]).then(({ searchTerm }) => {
       if (searchTerm.length > 0) {
@@ -28,10 +32,16 @@ module.exports = class SearchOnline {
                 type: 'checkbox',
                 name: 'Options',
                 choices: data
-              }).then(({ Options }) => console.log(Options))
+              }).then(({ Options }) => {
+                Options.forEach(opt => this.packagesSelected.push(opt))
+                console.log(
+                  "You've selected these Package(s): ",
+                  this.packagesSelected.join(', ')
+                )
+              })
               return this.search()
             } else {
-              console.log('No packages found')
+              // console.log("No packages found");
               return this.search()
             }
           })
