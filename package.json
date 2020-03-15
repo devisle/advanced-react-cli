@@ -1,6 +1,6 @@
 {
   "name": "advanced-react-cli",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "NPM package which aims to provide a better way to install packages for your react application through an intuitive CLI",
   "main": "cli.js",
   "scripts": {
