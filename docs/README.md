@@ -103,7 +103,9 @@ This CLI uses some of the best repos' terminal commands under the hood, to execu
 
 ## Dev Isle Community
 
-Are you interested in hanging out, contributing to our open-source repos and be a part of a good community? We would love for you to join us on our [Discord](http://discord.gg/MSTQKRE).
+Are you interested in hanging out, contributing to our open source repositories and be a part of a good community?
+
+We would love for you to join us on our [Discord](http://discord.gg/MSTQKRE).
 
 ## License
 
