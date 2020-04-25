@@ -155,12 +155,16 @@ Are you interested in hanging out, contributing to our open-source repos and be 
 
 ## Authors
 
-- [@shreyas1307](https://github.com/shreyas1307) - Creator and Maintainer
-- [@endormi](https://github.com/endormi) - Maintainer
-- [@munsterberg](https://github.com/Munsterberg) - Contributor
-- [@natedeploys](https://github.com/Natedeploys) - Contributor
-- [@kruzus](https://github.com/kruzus) - Contributor
-- [@jgiamanco](https://github.com/jgiamanco) - Contributor
+### Maintainers
+- [@shreyas1307](https://github.com/shreyas1307) - Creator
+- [@endormi](https://github.com/endormi)
+
+### Contributors
+- [@munsterberg](https://github.com/Munsterberg)
+- [@natedeploys](https://github.com/Natedeploys)
+- [@kruzus](https://github.com/kruzus)
+- [@jgiamanco](https://github.com/jgiamanco)
+- [@rakeshshubhu](https://github.com/rakeshshubhu)
 
 ## License
 
