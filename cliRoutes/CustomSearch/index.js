@@ -1,7 +1,8 @@
 const axios = require('axios')
 const inquirer = require('inquirer')
 const cliModel = require('../../cliModel')
-const { SearchTerm } = cliModel
+const customCMD = require('../../customNodeCMD')
+const { SearchTerm, YarnOrNpm, ConfirmSelection } = cliModel
 const prompt = inquirer.createPromptModule()
 
 module.exports = class SearchOnline {
@@ -27,19 +28,51 @@ module.exports = class SearchOnline {
                 // })
                 data.push(x.name)
               })
-              console.table(data)
               prompt({
                 type: 'checkbox',
                 name: 'Options',
                 choices: data
               }).then(({ Options }) => {
                 Options.forEach(opt => this.packagesSelected.push(opt))
+                if (this.packagesSelected.length === 0) return this.search
                 console.log(
                   "You've selected these Package(s): ",
                   this.packagesSelected.join(', ')
                 )
+                return prompt(ConfirmSelection).then(({ confirmation }) => {
+                  switch (confirmation) {
+                    case 'Yes':
+                      prompt(YarnOrNpm).then(({ packageManager }) => {
+                        switch (packageManager) {
+                          case 'Yarn':
+                            customCMD.get(
+                              `yarn add ${this.packagesSelected.join(' ')} -g`,
+                              'install',
+                              `Package(s): ${this.packagesSelected.join(
+                                ' '
+                              )} have been installed successfully!`
+                            )
+                            break
+
+                          case 'NPM':
+                            customCMD.get(
+                              `npm install ${this.packagesSelected.join(
+                                ' '
+                              )} -g`,
+                              'install',
+                              `Package(s): ${this.packagesSelected.join(
+                                ' '
+                              )} have been installed successfully!`
+                            )
+                            break
+                        }
+                      })
+                      break
+                    case 'No':
+                      return this.search()
+                  }
+                })
               })
-              return this.search()
             } else {
               // console.log("No packages found");
               return this.search()

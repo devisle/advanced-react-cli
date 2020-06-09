@@ -171,6 +171,16 @@ module.exports.SearchTerm = [
   {
     type: 'input',
     name: 'searchTerm',
-    message: 'Search package(s)...'
+    message: 'Search package(s): \n'
+  }
+]
+
+module.exports.ConfirmSelection = [
+  {
+    type: 'list',
+    name: 'confirmation',
+    message:
+      'Are you sure you would like to proceed with the above packages? \n',
+    choices: ['Yes', 'No']
   }
 ]
