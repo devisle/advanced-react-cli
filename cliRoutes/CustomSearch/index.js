@@ -2,7 +2,7 @@ const axios = require('axios')
 const inquirer = require('inquirer')
 const cliModel = require('../../cliModel')
 const customCMD = require('../../customNodeCMD')
-const { SearchTerm, YarnOrNpm, ConfirmSelection } = cliModel
+const { SearchTerm, YarnOrNpm, ConfirmSelection, GlobalOrNot } = cliModel
 const prompt = inquirer.createPromptModule()
 
 module.exports = class SearchOnline {
@@ -19,13 +19,6 @@ module.exports = class SearchOnline {
           .then(response => {
             if (response.data && response.data.length > 0) {
               response.data.forEach(x => {
-                // let dataObject = {};
-                // dataObject.name = x.name;
-                // dataObject.version = x.version;
-                // dataObject.description = x.description;
-                // x.links && Object.keys(x.links).map(y => {
-                //   dataObject[y] = x.links(y)
-                // })
                 data.push(x.name)
               })
               prompt({
@@ -45,26 +38,56 @@ module.exports = class SearchOnline {
                       prompt(YarnOrNpm).then(({ packageManager }) => {
                         switch (packageManager) {
                           case 'Yarn':
-                            customCMD.get(
-                              `yarn add ${this.packagesSelected.join(' ')} -g`,
-                              'install',
-                              `Package(s): ${this.packagesSelected.join(
-                                ' '
-                              )} have been installed successfully!`
-                            )
+                            prompt(GlobalOrNot).then(({ confirm }) => {
+                              switch (confirm) {
+                                case 'Yes':
+                                  customCMD.get(
+                                    `yarn add ${this.packagesSelected.join(' ')} -g`,
+                                    'install',
+                                    `Package(s): ${this.packagesSelected.join(
+                                      ' '
+                                    )} have been installed successfully!`
+                                  )
+                                  break
+
+                                case 'No':
+                                  customCMD.get(
+                                    `yarn add ${this.packagesSelected.join(' ')}`,
+                                    'install',
+                                    `Package(s): ${this.packagesSelected.join(
+                                      ' '
+                                    )} have been installed successfully!`
+                                  )
+                                  break
+                              }
+                            })
                             break
 
                           case 'NPM':
-                            customCMD.get(
-                              `npm install ${this.packagesSelected.join(
-                                ' '
-                              )} -g`,
-                              'install',
-                              `Package(s): ${this.packagesSelected.join(
-                                ' '
-                              )} have been installed successfully!`
-                            )
-                            break
+                            prompt(GlobalOrNot).then(({ confirm }) => {
+                              switch (confirm) {
+                                case 'Yes':
+                                  customCMD.get(
+                                    `npm install ${this.packagesSelected.join(' ')} -g`,
+                                    'install',
+                                    `Package(s): ${this.packagesSelected.join(
+                                      ' '
+                                    )} have been installed successfully!`
+                                  )
+                                  break
+
+                                case 'No':
+                                  customCMD.get(
+                                    `npm install ${this.packagesSelected.join(' ')}`,
+                                    'install',
+                                    `Package(s): ${this.packagesSelected.join(
+                                      ' '
+                                    )} have been installed successfully!`
+                                  )
+                                  break
+                              }
+                            })
+                          break
                         }
                       })
                       break

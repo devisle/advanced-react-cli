@@ -180,7 +180,17 @@ module.exports.ConfirmSelection = [
     type: 'list',
     name: 'confirmation',
     message:
-      'Are you sure you would like to proceed with the above packages? \n',
+      'Are you sure you would like to proceed with the above packages?',
+    choices: ['Yes', 'No']
+  }
+]
+
+module.exports.GlobalOrNot = [
+  {
+    type: 'list',
+    name: 'confirm',
+    message:
+      'Do you want to install package(s) globally?',
     choices: ['Yes', 'No']
   }
 ]
