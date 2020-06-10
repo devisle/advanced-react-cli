@@ -4,6 +4,7 @@ module.exports.cliCommand = [
     name: 'installation',
     message: 'What would you like to install?',
     choices: [
+      'Search Online (experimental)',
       'CustomPackageInstall',
       'CreateReactApp',
       'ReactComponent',
@@ -152,10 +153,7 @@ module.exports.accesibilityPackages = [
     type: 'list',
     name: 'access',
     message: 'Please select the accesibility package to add to your project: ',
-    choices: [
-      'Reacta11y',
-      'Reactaxe'
-    ]
+    choices: ['Reacta11y', 'Reactaxe']
   }
 ]
 
@@ -166,5 +164,33 @@ module.exports.YarnOrNpm = [
     name: 'packageManager',
     message: 'Would you like to install using Yarn or NPM?',
     choices: ['Yarn', 'NPM']
+  }
+]
+
+module.exports.SearchTerm = [
+  {
+    type: 'input',
+    name: 'searchTerm',
+    message: 'Search package(s): \n'
+  }
+]
+
+module.exports.ConfirmSelection = [
+  {
+    type: 'list',
+    name: 'confirmation',
+    message:
+      'Are you sure you would like to proceed with the above packages?',
+    choices: ['Yes', 'No']
+  }
+]
+
+module.exports.GlobalOrNot = [
+  {
+    type: 'list',
+    name: 'confirm',
+    message:
+      'Do you want to install package(s) globally?',
+    choices: ['Yes', 'No']
   }
 ]
