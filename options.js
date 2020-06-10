@@ -14,7 +14,7 @@ const SearchOnline = require('./cliRoutes/CustomSearch')
 
 module.exports = answers => {
   switch (answers.installation) {
-    case 'Search Online':
+    case 'Search Online (experimental)':
       new SearchOnline().search()
       break
     case 'CreateReactApp':

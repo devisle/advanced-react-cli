@@ -4,7 +4,7 @@ module.exports.cliCommand = [
     name: 'installation',
     message: 'What would you like to install?',
     choices: [
-      'Search Online',
+      'Search Online (experimental)',
       'CustomPackageInstall',
       'CreateReactApp',
       'ReactComponent',
