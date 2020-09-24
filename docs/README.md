@@ -77,6 +77,12 @@ npm i -g advanced-react-cli
 yarn global add advanced-react-cli
 ```
 
+#### Invoke the CLI (Both NPM & Yarn)
+
+```sh
+arc
+```
+
 ## FAQs
 
 ### Can I report any issues or bugs with the CLI?
