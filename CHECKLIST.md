@@ -18,7 +18,7 @@
 - [x] - Custom installation for TypeScript
 - [x] - Deployment to NPM done. Beta testing underway.
 - [x] - Stable Release.
-- [x] - Search for packages and install (experimental).
+- [x] - Search for packages and install.
 
 ## In progress
 
