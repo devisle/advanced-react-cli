@@ -27,7 +27,7 @@
 
 ## About
 
-This is an npm package which aims to provide a better way to install a React starter application and third-party packages for your application through an intuitive CLI.
+This is an **NPM package** which aims to provide a better way to install a React-starter application and third-party packages for your application through an intuitive CLI.
 
 ## Project's Purpose
 

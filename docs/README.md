@@ -2,7 +2,7 @@
 
 [![version](https://img.shields.io/npm/v/advanced-react-cli.svg?color=blue)](https://www.npmjs.com/package/advanced-react-cli) [![downloads](https://img.shields.io/npm/dw/advanced-react-cli.svg)](https://www.npmjs.com/package/advanced-react-cli) ![Test](https://github.com/devisle/advanced-react-cli/workflows/Test/badge.svg)
 
-This is an npm package which aims to provide a better way to install a React starter application and third-party packages for your application through an intuitive CLI.
+This is an **NPM package** which aims to provide a better way to install a React-starter application and third-party packages for your application through an intuitive CLI.
 
 ### Project's Purpose
 
