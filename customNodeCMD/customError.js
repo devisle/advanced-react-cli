@@ -9,7 +9,7 @@ function errorLogging (stderr, data) {
     if (warning) {
       const warn = chalk.bgYellow.black('WARN')
       log.replace('WARN', warn)
-      console.log(log.replace('WARN', warn))
+      console.error(log.replace('WARN', warn))
     }
   })
 
@@ -18,7 +18,7 @@ function errorLogging (stderr, data) {
     if (warning) {
       const warn = chalk.bgYellow('WARN')
       log.replace('WARN', warn)
-      console.log(log.replace('WARN', warn))
+      console.error(log.replace('WARN', warn))
     }
   })
 }
