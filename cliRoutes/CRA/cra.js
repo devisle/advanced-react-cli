@@ -35,7 +35,7 @@ module.exports = class CRA {
             ...addPackage[0],
             message: 'Would you like to add React-Router? (Y/N)'
           }).then(({ packageAdd }) => {
-            if (['y', 'Y', 'yes', 'Yes', ''].includes(packageAdd)) {
+            if (['y', 'yes', ''].includes(packageAdd.toLowerCase())) {
               /*
                 Prompts to install Redux
               */
@@ -43,16 +43,16 @@ module.exports = class CRA {
                 ...addPackage[0],
                 message: 'Would you like to add Redux? (Y/N)'
               }).then(({ packageAdd }) => {
-                if (['y', 'Y', 'yes', 'Yes', ''].includes(packageAdd)) {
+                if (['y', 'yes', ''].includes(packageAdd.toLowerCase())) {
                   installAll(folderName, packageInstaller)
-                } else if (['n', 'N', 'No', 'no'].includes(packageAdd)) {
+                } else if (['n', 'no'].includes(packageAdd.toLowerCase())) {
                   installCRAandReactRouter(folderName, packageInstaller)
                 }
               })
               /*
                 If 'n' for React Router, prompts to install Redux
               */
-            } else if (['n', 'N', 'No', 'no'].includes(packageAdd)) {
+            } else if (['n', 'no'].includes(packageAdd.toLowerCase())) {
               /*
                 Prompts to Install Redux
               */
@@ -60,9 +60,9 @@ module.exports = class CRA {
                 ...addPackage[0],
                 message: 'Would you like to add Redux? (Y/N)'
               }).then(({ packageAdd }) => {
-                if (['y', 'Y', 'yes', 'Yes', ''].includes(packageAdd)) {
+                if (['y', 'yes', ''].includes(packageAdd.toLowerCase())) {
                   installCRAandRedux(folderName, packageInstaller)
-                } else if (['n', 'N', 'No', 'no'].includes(packageAdd)) {
+                } else if (['n', 'no'].includes(packageAdd.toLowerCase())) {
                   installCRA(folderName, packageInstaller)
                 }
               })
