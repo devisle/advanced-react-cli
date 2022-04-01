@@ -7,7 +7,7 @@
 
 ```
 
-[![version](https://img.shields.io/npm/v/advanced-react-cli.svg?color=blue)](https://www.npmjs.com/package/advanced-react-cli) [![downloads](https://img.shields.io/npm/dw/advanced-react-cli.svg)](https://www.npmjs.com/package/advanced-react-cli) ![Test](https://github.com/devisle/advanced-react-cli/workflows/Test/badge.svg)
+[![version](https://img.shields.io/npm/v/advanced-react-cli.svg?color=blue)](https://www.npmjs.com/package/advanced-react-cli) [![downloads](https://img.shields.io/npm/dw/advanced-react-cli.svg)](https://www.npmjs.com/package/advanced-react-cli) ![Test](https://github.com/devisle/advanced-react-cli/workflows/Test/badge.svg) ![CodeQL](https://github.com/devisle/advanced-react-cli/actions/workflows/codeql.yml/badge.svg)
 
 ## Table of Contents
 
