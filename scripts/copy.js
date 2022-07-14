@@ -3,7 +3,7 @@ const fs = require('fs')
 const fileName = 'README.md'
 
 // If in scripts folder
-// it will cd ..
+// will cd ..
 if (!fs.existsSync('package.json')) process.chdir('..')
 
 // Find file
