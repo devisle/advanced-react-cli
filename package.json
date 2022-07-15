@@ -7,6 +7,7 @@
     "react-cli": "node cli.js",
     "format": "prettier-standard '**/*.{js,jsx}'",
     "build": "babel . -d lib",
+    "docs": "docsify serve docs",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "patch-release": "npm version patch && npm publish && git push --follow-tags",
