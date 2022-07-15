@@ -1,31 +1,45 @@
-```
+<div class="highlight">
+<pre tabindex="0" class="chroma">
+<code class="language-fallback" data-lang="fallback">
      _        _                          _            _    ____                     _       ____  _      ___
     / \    __| |__   __ __ _  _ __    __| |  ___   __| |  |  _ \  ___   __ _   ___ | |_    / ___|| |    |_ _|
    / _ \  / _` |\ \ / // _` || '_ \  / _` | / _ \ / _` |  | |_) |/ _ \ / _` | / __|| __|  | |    | |     | |
   / ___ \| (_| | \ V /| (_| || | | || (_| ||  __/| (_| |  |  _ <|  __/| (_| || (__ | |_   | |___ | |___  | |
  /_/   \_\\__,_|  \_/  \__,_||_| |_| \__,_| \___| \__,_|  |_| \_\\___| \__,_| \___| \__|   \____||_____||___|
 
-```
+</code>
+</pre>
+</div>
 
-[![version](https://img.shields.io/npm/v/advanced-react-cli.svg?color=blue)](https://www.npmjs.com/package/advanced-react-cli) [![downloads](https://img.shields.io/npm/dw/advanced-react-cli.svg)](https://www.npmjs.com/package/advanced-react-cli) ![Test](https://github.com/devisle/advanced-react-cli/workflows/Test/badge.svg) ![CodeQL](https://github.com/devisle/advanced-react-cli/actions/workflows/codeql.yml/badge.svg)
+<div>
+  <h2>
+    <span>
+      Table of Contents
+    </span>
+  </h2>
+</div>
 
-## Table of Contents
-
-- [About](#about)
-- [Project's purpose](#projects-purpose)
-- [Credits](#credits)
-- [Run the CLI](#run-the-cli)
-- [Installing the CLI globally](#installing-the-cli-globally)
-- [Packages](#packages)
-- [Running tests](#running-tests)
-- [Contributing](CONTRIBUTING.md)
-- [Development Checklist](CHECKLIST.md)
-- [What does this do?](#what-does-this-do)
-- [FAQs](#faqs)
-- [Dev Isle community](#dev-isle-community)
-- [License](https://github.com/devisle/advanced-react-cli/blob/master/LICENSE)
+<div>
+  <ul>
+    <li><a href="#About">About</a></li>
+    <li><a href="#projects-purpose">Project's purpose</a></li>
+    <li><a href="#credits">Credits</a></li>
+    <li><a href="#run-the-cli">Run the CLI</a></li>
+    <li><a href="#installing-the-cli-globally">Installing the CLI globally</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#running-tests">Running tests</a></li>
+    <li><a href="https://github.com/devisle/advanced-react-cli/blob/master/CONTRIBUTING.md">Contributing</a></li>
+    <li><a href="https://github.com/devisle/advanced-react-cli/blob/master/CHECKLIST.md">Development Checklist</a></li>
+    <li><a href="#what-does-this-do">What does this do?</a></li>
+    <li><a href="#faqs">FAQs</a></li>
+    <li><a href="#dev-isle-community">Dev Isle community</a></li>
+    <li><a href="https://github.com/devisle/advanced-react-cli/blob/master/LICENSE">License</a></li>
+  </ul>
+</div>
 
 ## About
+
+[![version](https://img.shields.io/npm/v/advanced-react-cli.svg?color=blue)](https://www.npmjs.com/package/advanced-react-cli) [![downloads](https://img.shields.io/npm/dw/advanced-react-cli.svg)](https://www.npmjs.com/package/advanced-react-cli) ![Test](https://github.com/devisle/advanced-react-cli/workflows/Test/badge.svg) ![CodeQL](https://github.com/devisle/advanced-react-cli/actions/workflows/codeql.yml/badge.svg)
 
 This is an **NPM package** which aims to provide a better way to install a React-starter application and third-party packages for your application through an intuitive CLI.
 
@@ -34,17 +48,6 @@ This is an **NPM package** which aims to provide a better way to install a React
 We at Dev Isle, felt that the community has been longing for a good, functional and intuitive CLI rather than always writing on the terminal command line.
 
 **Note**: We do not discourage or refrain the community from using terminal commands instructions. In fact, we highly recommend our users to read and understand the docs so that you will know what to expect. This CLI is merely an alternative!
-
-## Credits
-
-This CLI uses some of the best repos' terminal commands under the hood, to execute it's functionality. We would like to credit the following GitHub repos by making this CLI possible:
-
-- [Brandon Nozaki Miller - Node-CMD](https://github.com/RIAEvangelist/node-cmd)
-- [Simon Boudrias - Inquirer JS](https://github.com/SBoudrias/Inquirer.js/)
-- [Nathan Peck - CLUI](https://www.npmjs.com/package/clui)
-- [Dave Eddy - Clear](https://github.com/bahamas10/node-clear)
-- [Patorjk - Figlet](https://github.com/patorjk/figlet.js)
-- [Chalk](https://www.npmjs.com/package/chalk)
 
 **Be sure to check the above repos out if you're facing any issues! We are of course, always open to improvements.**
 
@@ -87,20 +90,6 @@ The CLI currently has these packages available for installation:
 - [@types/react-router](https://www.npmjs.com/package/@types/react-router) & [@types/react-router-dom](https://www.npmjs.com/package/@types/react-router-dom)
 - [@types/jest](https://www.npmjs.com/package/@types/jest)
 
-## Running tests
-
-Test:
-
-```sh
-npm run test or yarn test
-```
-
-Test coverage:
-
-```sh
-npm run test:coverage or yarn test:coverage
-```
-
 ## What does this do?
 
 We are continuously working on improving the CLI. But, as of this current stable version, we have enabled a few options such as:
@@ -116,7 +105,32 @@ We are continuously working on improving the CLI. But, as of this current stable
 - Installing packages used for accessibility such as React-A11y and React-Axe.
 - TypeScript and `@types` definitions for Node, React, React-Router, React-Redux and Jest
 
-# FAQs
+## Running tests
+
+Test:
+
+```sh
+npm run test or yarn test
+```
+
+Test coverage:
+
+```sh
+npm run test:coverage or yarn test:coverage
+```
+
+## Credits
+
+This CLI uses some of the best repos' terminal commands under the hood, to execute it's functionality. We would like to credit the following GitHub repos by making this CLI possible:
+
+- [Brandon Nozaki Miller - Node-CMD](https://github.com/RIAEvangelist/node-cmd)
+- [Simon Boudrias - Inquirer JS](https://github.com/SBoudrias/Inquirer.js/)
+- [Nathan Peck - CLUI](https://www.npmjs.com/package/clui)
+- [Dave Eddy - Clear](https://github.com/bahamas10/node-clear)
+- [Patorjk - Figlet](https://github.com/patorjk/figlet.js)
+- [Chalk](https://www.npmjs.com/package/chalk)
+
+## FAQs
 
 1. How can I test this out?
 
@@ -152,7 +166,7 @@ We are continuously working on improving the CLI. But, as of this current stable
 
 - The documentation site is built using [docsify](https://docsify.js.org/#/).
 - Install `docsify` if you haven't done that already `npm i docsify-cli -g`.
-- Run the site `docsify serve docs`.
+- Run the site `npm run docs`.
 
 ## Dev Isle Community
 
