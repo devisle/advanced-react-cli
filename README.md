@@ -49,7 +49,7 @@ We at Dev Isle, felt that the community has been longing for a good, functional 
 
 **Note**: We do not discourage or refrain the community from using terminal commands instructions. In fact, we highly recommend our users to read and understand the docs so that you will know what to expect. This CLI is merely an alternative!
 
-**Be sure to check the above repos out if you're facing any issues! We are of course, always open to improvements.**
+**Be sure to check the repos in [credits](#credits) if you're facing any issues! We are of course, always open to improvements.**
 
 ## Run the CLI
 
