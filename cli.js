@@ -2,15 +2,7 @@
 
 const [...args] = process.argv
 
-// console.log(`folder name ${args[2]}`);
-// console.log(`folder location ${args[3]}`);
-
-// Current working directory
-const cwd = process.cwd()
-console.log(cwd)
-
 const inquirer = require('inquirer')
-
 const chalk = require('chalk')
 const clear = require('clear')
 const figlet = require('figlet')
