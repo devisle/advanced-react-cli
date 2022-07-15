@@ -135,7 +135,7 @@ This CLI uses some of the best repos' terminal commands under the hood, to execu
 1. How can I test this out?
 
 - If you'd like to try it out , Run the following command `npx advanced-react-cli` in your terminal.
-- We are still continuing to work on our [Development Checklist](CHECKLIST.md).
+- We are still continuing to work on our [Development Checklist](https://github.com/devisle/advanced-react-cli/blob/master/CHECKLIST.md).
 
 - Ensure you have git version control, and package manager - either npm (node package manager) or Yarn Installed. You may check if your system has them installed by running the following commands `git --version` and depending on your package manager of choice, run `npm --version` or `yarn --version`. If you don't have it installed, please visit:
 
