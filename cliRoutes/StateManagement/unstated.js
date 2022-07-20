@@ -28,42 +28,26 @@ module.exports = class Unstated {
   }
 
   install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${unstated.install}`,
-          'install',
-          'Package: Unstated has been installed successfully! Check out more on how to get started with unstated on the following link https://github.com/jamiebuilds/unstated'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${unstatedYarn.install}`,
-          'install',
-          'Package: Unstated has been installed successfully! Check out more on how to get started with unstated on the following link https://github.com/jamiebuilds/unstated'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${unstated.install}`
+          : `${unstatedYarn.install}`
+      }`,
+      'install',
+      'Package: Unstated has been installed successfully! Check out more on how to get started with unstated on the following link https://github.com/jamiebuilds/unstated'
+    )
   }
 
   uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${unstated.uninstall}`,
-          'uninstall',
-          'Package: Unstated has been uninstalled successfully'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${unstatedYarn.uninstall}`,
-          'uninstall',
-          'Package: Unstated has been uninstalled successfully'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${unstated.uninstall}`
+          : `${unstatedYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Package: Unstated has been uninstalled successfully!'
+    )
   }
 }

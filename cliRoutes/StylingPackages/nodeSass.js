@@ -32,42 +32,26 @@ module.exports = class NodeSass {
   }
 
   install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${nodeSassObj.install}`,
-          'install',
-          'Package: node-sass has been installed successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${nodeSassObjYarn.install}`,
-          'install',
-          'Package: node-sass has been installed successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${nodeSassObj.install}`
+          : `${nodeSassObjYarn.install}`
+      }`,
+      'install',
+      'Package: node-sass has been installed successfully!'
+    )
   }
 
   uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${nodeSassObj.uninstall}`,
-          'uninstall',
-          'Package: node-sass has been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${nodeSassObjYarn.uninstall}`,
-          'uninstall',
-          'Package: node-sass has been uninstalled successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${nodeSassObj.uninstall}`
+          : `${nodeSassObjYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Package: node-sass has been uninstalled successfully!'
+    )
   }
 }

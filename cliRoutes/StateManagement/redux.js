@@ -37,42 +37,26 @@ module.exports = class Redux {
     const writeStream = fs.createWriteStream('./store/store.js')
     writeStream.write(`${ReduxBoilerPlate}`)
 
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${reduxObj.install}`,
-          'install',
-          'Packages: redux & react-redux have been installed successfully! Redux Store has been created successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${reduxObjYarn.install}`,
-          'install',
-          'Packages: redux & react-redux have been installed successfully! Redux Store has been created successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${reduxObj.install}`
+          : `${reduxObjYarn.install}`
+      }`,
+      'install',
+      'Packages: redux & react-redux have been installed successfully! Redux Store has been created successfully!'
+    )
   }
 
   uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${reduxObj.uninstall}`,
-          'uninstall',
-          'Packages: redux & react-redux have been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${reduxObjYarn.uninstall}`,
-          'uninstall',
-          'Packages: redux & react-redux have been uninstalled successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${reduxObj.uninstall}`
+          : `${reduxObjYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Packages: redux & react-redux have been uninstalled successfully!'
+    )
   }
 }

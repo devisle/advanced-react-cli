@@ -34,42 +34,26 @@ module.exports = class StyledComponents {
   }
 
   install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${styledComponentsObj.install}`,
-          'install',
-          'Package: styled-components has been installed successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${styledComponentsObjYarn.install}`,
-          'install',
-          'Package: styled-components has been installed successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${styledComponentsObj.install}`
+          : `${styledComponentsObjYarn.install}`
+      }`,
+      'install',
+      'Package: styled-components has been installed successfully!'
+    )
   }
 
   uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${styledComponentsObj.uninstall}`,
-          'uninstall',
-          'Package: styled-components has been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${styledComponentsObjYarn.uninstall}`,
-          'uninstall',
-          'Package: styled-components has been uninstalled successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${styledComponentsObj.uninstall}`
+          : `${styledComponentsObjYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Package: styled-components has been uninstalled successfully!'
+    )
   }
 }

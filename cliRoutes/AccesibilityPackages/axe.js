@@ -32,42 +32,26 @@ module.exports = class Reactaxe {
   }
 
   install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${reactaxeObj.install}`,
-          'Install',
-          'Package: react-axe has been installed successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${reactaxeObjYarn.install}`,
-          'Install',
-          'Package: react-axe has been installed successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${reactaxeObj.install}`
+          : `${reactaxeObjYarn.install}`
+      }`,
+      'Install',
+      'Package: react-axe has been installed successfully!'
+    )
   }
 
   uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${reactaxeObj.uninstall}`,
-          'uninstall',
-          'Package: react-axe has been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${reactaxeObjYarn.uninstall}`,
-          'uninstall',
-          'Package: react-axe has been uninstalled successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${reactaxeObj.uninstall}`
+          : `${reactaxeObjYarn.uninstall}`
+      }`,
+      'Uninstall',
+      'Package: react-axe has been uninstalled successfully!'
+    )
   }
 }

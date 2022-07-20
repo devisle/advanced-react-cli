@@ -28,42 +28,26 @@ module.exports = class UnstatedNext {
   }
 
   install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${unstatedNext.install}`,
-          'install',
-          'Package: Unstated-next has been installed successfully! Check out more on how to get started with unstated-next on the following link https://github.com/jamiebuilds/unstated-next '
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${unstatedNextYarn.install}`,
-          'install',
-          'Package: Unstated-next has been installed successfully! Check out more on how to get started with unstated-next on the following link https://github.com/jamiebuilds/unstated-next '
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${unstatedNext.install}`
+          : `${unstatedNextYarn.install}`
+      }`,
+      'install',
+      'Package: Unstated-next has been installed successfully! Check out more on how to get started with unstated-next on the following link https://github.com/jamiebuilds/unstated-next '
+    )
   }
 
   uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${unstatedNext.uninstall}`,
-          'uninstall',
-          'Package: Unstated-next has been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${unstatedNextYarn.uninstall}`,
-          'uninstall',
-          'Package: Unstated-next has been uninstalled successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${unstatedNext.uninstall}`
+          : `${unstatedNextYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Package: Unstated-next has been uninstalled successfully!'
+    )
   }
 }

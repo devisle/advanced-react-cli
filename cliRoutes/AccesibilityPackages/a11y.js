@@ -32,42 +32,26 @@ module.exports = class Reacta11y {
   }
 
   install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${reacta11yObj.install}`,
-          'Install',
-          'Package: react-a11y has been installed successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${reacta11yObjYarn.install}`,
-          'Install',
-          'Package: react-a11y has been installed successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${reacta11yObj.install}`
+          : `${reacta11yObjYarn.install}`
+      }`,
+      'Install',
+      'Package: react-a11y has been installed successfully!'
+    )
   }
 
   uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${reacta11yObj.uninstall}`,
-          'Uninstall',
-          'Package: react-a11y has been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${reacta11yObjYarn.uninstall}`,
-          'Uninstall',
-          'Package: react-a11y has been uninstalled successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${reacta11yObj.uninstall}`
+          : `${reacta11yObjYarn.uninstall}`
+      }`,
+      'Uninstall',
+      'Package: react-a11y has been uninstalled successfully!'
+    )
   }
 }

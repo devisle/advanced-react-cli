@@ -45,42 +45,26 @@ module.exports = class propTypes {
     const fileStream = fs.createWriteStream('./propTypes/propTypes.js')
     fileStream.write(`${propTypeBoilerPlate}`)
 
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${propTypesObj.install}`,
-          'install',
-          'Package: prop-types has been installed successfully! PropTypes Folder has been created!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${propTypesObjYarn.install}`,
-          'install',
-          'Package: prop-types has been installed successfully! PropTypes Folder has been created!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${propTypesObj.install}`
+          : `${propTypesObjYarn.install}`
+      }`,
+      'install',
+      'Package: prop-types has been installed successfully! PropTypes Folder has been created!'
+    )
   }
 
   uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${propTypesObj.uninstall}`,
-          'uninstall',
-          'Package: prop-types has been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${propTypesObjYarn.uninstall}`,
-          'uninstall',
-          'Package: prop-types has been uninstalled successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${propTypesObj.uninstall}`
+          : `${propTypesObjYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Package: prop-types has been uninstalled successfully!'
+    )
   }
 }

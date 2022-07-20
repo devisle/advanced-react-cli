@@ -25,42 +25,26 @@ module.exports = class ReduxThunk {
   }
 
   install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${reduxThunkObj.install}`,
-          'install',
-          'Package: Redux-Thunk has been installed successfully! Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${reduxThunkObjYarn.install}`,
-          'install',
-          'Package: Redux-Thunk has been installed successfully! Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${reduxThunkObj.install}`
+          : `${reduxThunkObjYarn.install}`
+      }`,
+      'install',
+      'Package: Redux-Thunk has been installed successfully! Check out more on how to get started with Redux-Thunk on the following links https://github.com/reduxjs/redux-thunk'
+    )
   }
 
   uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${reduxThunkObj.uninstall}`,
-          'uninstall',
-          'Package: Redux-Thunk has been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${reduxThunkObjYarn.uninstall}`,
-          'uninstall',
-          'Package: Redux-Thunk has been uninstalled successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${reduxThunkObj.uninstall}`
+          : `${reduxThunkObjYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Package: Redux-Thunk has been uninstalled successfully!'
+    )
   }
 }

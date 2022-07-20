@@ -34,42 +34,26 @@ module.exports = class ReactRouter {
   }
 
   install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${reactRouterObj.install}`,
-          'install',
-          'Packages: react-router & react-router-dom have been installed successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${reactRouterObjYarn.install}`,
-          'install',
-          'Packages: react-router & react-router-dom have been installed successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${reactRouterObj.install}`
+          : `${reactRouterObjYarn.install}`
+      }`,
+      'install',
+      'Packages: react-router & react-router-dom have been installed successfully!'
+    )
   }
 
   uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${reactRouterObj.uninstall}`,
-          'uninstall',
-          'Packages: react-router & react-router-dom have been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${reactRouterObjYarn.uninstall}`,
-          'uninstall',
-          'Packages: react-router & react-router-dom have been uninstalled successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${reactRouterObj.uninstall}`
+          : `${reactRouterObjYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Packages: react-router & react-router-dom have been uninstalled successfully!'
+    )
   }
 }
