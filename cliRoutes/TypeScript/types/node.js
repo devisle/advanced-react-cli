@@ -36,42 +36,26 @@ module.exports = class TypesNodes {
   }
 
   install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesNode.install}`,
-          'install',
-          `Package(s): @types/node has been installed successfully!`
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesNodeYarn.install}`,
-          'install',
-          `Package(s): @types/node has been installed successfully!`
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${typesNode.install}`
+          : `${typesNodeYarn.install}`
+      }`,
+      'install',
+      `Package(s): @types/node has been installed successfully!`
+    )
   }
 
   uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesNode.uninstall}`,
-          'uninstall',
-          `Package(s): @types/node has been uninstalled successfully!`
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesNodeYarn.uninstall}`,
-          'uninstall',
-          `Package(s): @types/node has been uninstalled successfully!`
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${typesNode.uninstall}`
+          : `${typesNodeYarn.uninstall}`
+      }`,
+      'uninstall',
+      `Package(s): @types/node has been uninstalled successfully!`
+    )
   }
 }

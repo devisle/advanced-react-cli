@@ -36,42 +36,26 @@ module.exports = class TypesReactRedux {
   }
 
   install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesReactRedux.install}`,
-          'install',
-          'Package(s): @types/react-redux have been installed successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesReactReduxYarn.install}`,
-          'install',
-          'Package(s): @types/react-redux have been installed successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${typesReactRedux.install}`
+          : `${typesReactReduxYarn.install}`
+      }`,
+      'install',
+      'Package(s): @types/react-redux have been installed successfully!'
+    )
   }
 
   uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesReactRedux.uninstall}`,
-          'uninstall',
-          'Package(s): @types/react-redux have been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesReactReduxYarn.uninstall}`,
-          'uninstall',
-          'Package(s): @types/react-redux have been uninstalled successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${typesReactRedux.uninstall}`
+          : `${typesReactReduxYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Package(s): @types/react-redux have been uninstalled successfully!'
+    )
   }
 }

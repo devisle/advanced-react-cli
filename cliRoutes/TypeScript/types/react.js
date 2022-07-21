@@ -36,42 +36,26 @@ module.exports = class TypesReact {
   }
 
   install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesReact.install}`,
-          'install',
-          'Package(s): @types/react @types/react-dom have been installed successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesReactYarn.install}`,
-          'install',
-          'Package(s): @types/react @types/react-dom have been installed successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${typesReact.install}`
+          : `${typesReactYarn.install}`
+      }`,
+      'install',
+      'Package(s): @types/react @types/react-dom have been installed successfully!'
+    )
   }
 
   uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesReact.uninstall}`,
-          'uninstall',
-          'Package(s): @types/react @types/react-dom have been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesReactYarn.uninstall}`,
-          'uninstall',
-          'Package(s): @types/react @types/react-dom have been uninstalled successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${typesReact.uninstall}`
+          : `${typesReactYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Package(s): @types/react @types/react-dom have been uninstalled successfully!'
+    )
   }
 }

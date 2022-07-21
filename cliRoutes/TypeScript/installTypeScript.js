@@ -36,42 +36,26 @@ module.exports = class TypeScriptInstall {
   }
 
   install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${TypeScript.install}`,
-          'install',
-          'Package: typescript has been installed successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${TypeScriptYarn.install}`,
-          'install',
-          'Package: typescript has been installed successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${TypeScript.install}`
+          : `${TypeScriptYarn.install}`
+      }`,
+      'install',
+      'Package: typescript has been installed successfully!'
+    )
   }
 
   uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${TypeScript.uninstall}`,
-          'uninstall',
-          'Package: typescript has been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${TypeScriptYarn.uninstall}`,
-          'uninstall',
-          'Package: typescript has been uninstalled successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${TypeScript.uninstall}`
+          : `${TypeScriptYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Package: typescript has been uninstalled successfully!'
+    )
   }
 }

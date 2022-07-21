@@ -36,43 +36,26 @@ module.exports = class TypesJest {
   }
 
   install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesJest.install}`,
-
-          'install',
-          `Package: @types/jest has been installed successfully!`
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesJestYarn.install}`,
-          'install',
-          `Package: @types/jest has been installed successfully!`
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${typesJest.install}`
+          : `${typesJestYarn.install}`
+      }`,
+      'install',
+      `Package: @types/jest has been installed successfully!`
+    )
   }
 
   uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesJest.uninstall}`,
-          'uninstall',
-          `Package: @types/jest has been uninstalled successfully!`
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesJestYarn.uninstall}`,
-          'uninstall',
-          `Package: @types/jest has been uninstalled successfully!`
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${typesJest.uninstall}`
+          : `${typesJestYarn.uninstall}`
+      }`,
+      'uninstall',
+      `Package: @types/jest has been uninstalled successfully!`
+    )
   }
 }

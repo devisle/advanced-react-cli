@@ -36,42 +36,26 @@ module.exports = class TypesReactRouter {
   }
 
   install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesReactRouter.install}`,
-          'install',
-          'Package(s): @types/react-router @types/react-router-dom have been installed successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesReactRouterYarn.install}`,
-          'install',
-          'Package(s): @types/react-router @types/react-router-dom have been installed successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${typesReactRouter.install}`
+          : `${typesReactRouterYarn.install}`
+      }`,
+      'install',
+      'Package(s): @types/react-router @types/react-router-dom have been installed successfully!'
+    )
   }
 
   uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesReactRouter.uninstall}`,
-          'uninstall',
-          'Package(s): @types/react-router @types/react-router-dom have been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesReactRouterYarn.uninstall}`,
-          'uninstall',
-          'Package(s): @types/react-router @types/react-router-dom have been uninstalled successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageInstaller === 'NPM'
+          ? `${typesReactRouter.uninstall}`
+          : `${typesReactRouterYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Package(s): @types/react-router @types/react-router-dom have been uninstalled successfully!'
+    )
   }
 }
