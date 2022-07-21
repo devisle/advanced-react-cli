@@ -36,68 +36,34 @@ module.exports = class SearchOnline {
                   switch (confirmation) {
                     case 'Yes':
                       prompt(YarnOrNpm).then(({ packageManager }) => {
-                        switch (packageManager) {
-                          case 'Yarn':
-                            prompt(GlobalOrNot).then(({ confirm }) => {
-                              switch (confirm) {
-                                case 'Yes':
-                                  customCMD.get(
-                                    `yarn add ${this.packagesSelected.join(' ')} -g`,
-                                    'install',
-                                    `Package(s): ${this.packagesSelected.join(
-                                      ' '
-                                    )} have been installed successfully!`
-                                  )
-                                  break
-
-                                case 'No':
-                                  customCMD.get(
-                                    `yarn add ${this.packagesSelected.join(' ')}`,
-                                    'install',
-                                    `Package(s): ${this.packagesSelected.join(
-                                      ' '
-                                    )} have been installed successfully!`
-                                  )
-                                  break
-                              }
-                            })
-                            break
-
-                          case 'NPM':
-                            prompt(GlobalOrNot).then(({ confirm }) => {
-                              switch (confirm) {
-                                case 'Yes':
-                                  customCMD.get(
-                                    `npm install ${this.packagesSelected.join(' ')} -g`,
-                                    'install',
-                                    `Package(s): ${this.packagesSelected.join(
-                                      ' '
-                                    )} have been installed successfully!`
-                                  )
-                                  break
-
-                                case 'No':
-                                  customCMD.get(
-                                    `npm install ${this.packagesSelected.join(' ')}`,
-                                    'install',
-                                    `Package(s): ${this.packagesSelected.join(
-                                      ' '
-                                    )} have been installed successfully!`
-                                  )
-                                  break
-                              }
-                            })
-                          break
-                        }
+                        prompt(GlobalOrNot).then(({ confirm }) => {
+                          customCMD.get(
+                            `${
+                              packageManager === 'NPM'
+                                ? 'npm install'
+                                : `yarn ${
+                                    confirm === 'Yes' ? 'global' : ''
+                                  } add`
+                            } ${
+                              confirm === 'Yes' && packageManager === 'NPM'
+                                ? '-g'
+                                : ''
+                            } ${this.packagesSelected.join(' ')}`,
+                            'install',
+                            `Package(s): ${this.packagesSelected.join(
+                              ' '
+                            )} have been installed successfully!`
+                          )
+                        })
                       })
                       break
+
                     case 'No':
                       return this.search()
                   }
                 })
               })
             } else {
-              // console.log("No packages found");
               return this.search()
             }
           })
