@@ -19,17 +19,17 @@ const ReduxBoilerPlate = require('../../cliModel/starter-code/redux')
 const prompt = inquirer.createPromptModule()
 
 module.exports = class Redux {
-  installOrUninstall (packageInstaller) {
+  installOrUninstall (packageManager) {
     prompt(installOption).then(({ decision }) => {
       if (decision === 'Install') {
-        this.install(packageInstaller)
+        this.install(packageManager)
       } else if (decision === 'Uninstall') {
-        this.uninstall(packageInstaller)
+        this.uninstall(packageManager)
       }
     })
   }
 
-  install (packageInstaller) {
+  install (packageManager) {
     fs.mkdir('./store', err => {
       if (err) throw err
     })
@@ -39,7 +39,7 @@ module.exports = class Redux {
 
     customCMD.get(
       `${
-        packageInstaller === 'NPM'
+        packageManager === 'NPM'
           ? `${reduxObj.install}`
           : `${reduxObjYarn.install}`
       }`,
@@ -48,10 +48,10 @@ module.exports = class Redux {
     )
   }
 
-  uninstall (packageInstaller) {
+  uninstall (packageManager) {
     customCMD.get(
       `${
-        packageInstaller === 'NPM'
+        packageManager === 'NPM'
           ? `${reduxObj.uninstall}`
           : `${reduxObjYarn.uninstall}`
       }`,

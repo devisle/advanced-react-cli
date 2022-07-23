@@ -21,20 +21,20 @@ const prompt = inquirer.createPromptModule()
 */
 
 module.exports = class Reacta11y {
-  installOrUninstall (packageInstaller) {
+  installOrUninstall (packageManager) {
     prompt(installOption).then(({ decision }) => {
       if (decision === 'Install') {
-        this.install(packageInstaller)
+        this.install(packageManager)
       } else if (decision === 'Uninstall') {
-        this.uninstall(packageInstaller)
+        this.uninstall(packageManager)
       }
     })
   }
 
-  install (packageInstaller) {
+  install (packageManager) {
     customCMD.get(
       `${
-        packageInstaller === 'NPM'
+        packageManager === 'NPM'
           ? `${reacta11yObj.install}`
           : `${reacta11yObjYarn.install}`
       }`,
@@ -43,10 +43,10 @@ module.exports = class Reacta11y {
     )
   }
 
-  uninstall (packageInstaller) {
+  uninstall (packageManager) {
     customCMD.get(
       `${
-        packageInstaller === 'NPM'
+        packageManager === 'NPM'
           ? `${reacta11yObj.uninstall}`
           : `${reacta11yObjYarn.uninstall}`
       }`,

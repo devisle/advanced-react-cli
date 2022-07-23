@@ -25,20 +25,20 @@ const prompt = inquirer.createPromptModule()
 */
 
 module.exports = class TypeScriptInstall {
-  installOrUninstall (packageInstaller) {
+  installOrUninstall (packageManager) {
     prompt(installOption).then(({ decision }) => {
       if (decision === 'Install') {
-        this.install(packageInstaller)
+        this.install(packageManager)
       } else if (decision === 'Uninstall') {
-        this.uninstall(packageInstaller)
+        this.uninstall(packageManager)
       }
     })
   }
 
-  install (packageInstaller) {
+  install (packageManager) {
     customCMD.get(
       `${
-        packageInstaller === 'NPM'
+        packageManager === 'NPM'
           ? `${TypeScript.install}`
           : `${TypeScriptYarn.install}`
       }`,
@@ -47,10 +47,10 @@ module.exports = class TypeScriptInstall {
     )
   }
 
-  uninstall (packageInstaller) {
+  uninstall (packageManager) {
     customCMD.get(
       `${
-        packageInstaller === 'NPM'
+        packageManager === 'NPM'
           ? `${TypeScript.uninstall}`
           : `${TypeScriptYarn.uninstall}`
       }`,

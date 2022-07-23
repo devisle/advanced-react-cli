@@ -22,7 +22,6 @@ const prompt = inquirer.createPromptModule()
 module.exports = class CRA {
   CRAPrompt () {
     prompt(YarnOrNpm).then(({ packageManager }) => {
-      const packageInstaller = packageManager
       prompt({
         ...installFolder[0],
         message: 'Please give project name, example (my-app)'
@@ -44,9 +43,9 @@ module.exports = class CRA {
                 message: 'Would you like to add Redux? (Y/N)'
               }).then(({ packageAdd }) => {
                 if (['y', 'yes', ''].includes(packageAdd.toLowerCase())) {
-                  installAll(folderName, packageInstaller)
+                  installAll(folderName, packageManager)
                 } else if (['n', 'no'].includes(packageAdd.toLowerCase())) {
-                  installCRAandReactRouter(folderName, packageInstaller)
+                  installCRAandReactRouter(folderName, packageManager)
                 }
               })
               /*
@@ -61,9 +60,9 @@ module.exports = class CRA {
                 message: 'Would you like to add Redux? (Y/N)'
               }).then(({ packageAdd }) => {
                 if (['y', 'yes', ''].includes(packageAdd.toLowerCase())) {
-                  installCRAandRedux(folderName, packageInstaller)
+                  installCRAandRedux(folderName, packageManager)
                 } else if (['n', 'no'].includes(packageAdd.toLowerCase())) {
-                  installCRA(folderName, packageInstaller)
+                  installCRA(folderName, packageManager)
                 }
               })
             }

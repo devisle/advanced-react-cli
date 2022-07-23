@@ -25,20 +25,20 @@ const prompt = inquirer.createPromptModule()
 */
 
 module.exports = class TypesNodes {
-  installOrUninstall (packageInstaller) {
+  installOrUninstall (packageManager) {
     prompt(installOption).then(({ decision }) => {
       if (decision === 'Install') {
-        this.install(packageInstaller)
+        this.install(packageManager)
       } else if (decision === 'Uninstall') {
-        this.uninstall(packageInstaller)
+        this.uninstall(packageManager)
       }
     })
   }
 
-  install (packageInstaller) {
+  install (packageManager) {
     customCMD.get(
       `${
-        packageInstaller === 'NPM'
+        packageManager === 'NPM'
           ? `${typesNode.install}`
           : `${typesNodeYarn.install}`
       }`,
@@ -47,10 +47,10 @@ module.exports = class TypesNodes {
     )
   }
 
-  uninstall (packageInstaller) {
+  uninstall (packageManager) {
     customCMD.get(
       `${
-        packageInstaller === 'NPM'
+        packageManager === 'NPM'
           ? `${typesNode.uninstall}`
           : `${typesNodeYarn.uninstall}`
       }`,

@@ -16,7 +16,7 @@ const prompt = inquirer.createPromptModule()
 */
 
 module.exports = class CustomInstall {
-  prompt (packageInstaller) {
+  prompt (packageManager) {
     let addTypeScriptNPM,
       addTypesNodeNPM,
       addTypesReactNPM,
@@ -120,7 +120,7 @@ module.exports = class CustomInstall {
                   addTypesJestYarn = ''
                 }
 
-                switch (packageInstaller) {
+                switch (packageManager) {
                   case 'NPM':
                     customCMD.get(
                       ` npm install --save ${addTypeScriptNPM} ${addTypesNodeNPM} ${addTypesReactNPM} ${addTypesReactRouterNPM} ${addTypesReactReduxNPM} ${addTypesJestNPM}`,

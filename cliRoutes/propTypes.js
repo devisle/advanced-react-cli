@@ -26,18 +26,17 @@ const prompt = inquirer.createPromptModule()
 module.exports = class propTypes {
   installOrUninstall () {
     prompt(YarnOrNpm).then(({ packageManager }) => {
-      const packageInstaller = packageManager
       prompt(installOption).then(({ decision }) => {
         if (decision === 'Install') {
-          this.install(packageInstaller)
+          this.install(packageManager)
         } else if (decision === 'Uninstall') {
-          this.uninstall(packageInstaller)
+          this.uninstall(packageManager)
         }
       })
     })
   }
 
-  install (packageInstaller) {
+  install (packageManager) {
     fs.mkdir('./propTypes', err => {
       if (err) throw err
     })
@@ -47,7 +46,7 @@ module.exports = class propTypes {
 
     customCMD.get(
       `${
-        packageInstaller === 'NPM'
+        packageManager === 'NPM'
           ? `${propTypesObj.install}`
           : `${propTypesObjYarn.install}`
       }`,
@@ -56,10 +55,10 @@ module.exports = class propTypes {
     )
   }
 
-  uninstall (packageInstaller) {
+  uninstall (packageManager) {
     customCMD.get(
       `${
-        packageInstaller === 'NPM'
+        packageManager === 'NPM'
           ? `${propTypesObj.uninstall}`
           : `${propTypesObjYarn.uninstall}`
       }`,

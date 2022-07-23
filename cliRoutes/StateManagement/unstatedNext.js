@@ -17,20 +17,20 @@ const { unstatedNextYarn } = unstatedObjYarn
 const prompt = inquirer.createPromptModule()
 
 module.exports = class UnstatedNext {
-  installOrUninstall (packageInstaller) {
+  installOrUninstall (packageManager) {
     prompt(installOption).then(({ decision }) => {
       if (decision === 'Install') {
-        this.install(packageInstaller)
+        this.install(packageManager)
       } else {
-        this.uninstall(packageInstaller)
+        this.uninstall(packageManager)
       }
     })
   }
 
-  install (packageInstaller) {
+  install (packageManager) {
     customCMD.get(
       `${
-        packageInstaller === 'NPM'
+        packageManager === 'NPM'
           ? `${unstatedNext.install}`
           : `${unstatedNextYarn.install}`
       }`,
@@ -39,10 +39,10 @@ module.exports = class UnstatedNext {
     )
   }
 
-  uninstall (packageInstaller) {
+  uninstall (packageManager) {
     customCMD.get(
       `${
-        packageInstaller === 'NPM'
+        packageManager === 'NPM'
           ? `${unstatedNext.uninstall}`
           : `${unstatedNextYarn.uninstall}`
       }`,

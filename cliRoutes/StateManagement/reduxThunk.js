@@ -14,20 +14,20 @@ const { reduxThunkObjYarn } = require('../../cliModel/install-commands-yarn')
 
 const prompt = inquirer.createPromptModule()
 module.exports = class ReduxThunk {
-  installOrUninstall (packageInstaller) {
+  installOrUninstall (packageManager) {
     prompt(installOption).then(({ decision }) => {
       if (decision === 'Install') {
-        this.install(packageInstaller)
+        this.install(packageManager)
       } else {
-        this.uninstall(packageInstaller)
+        this.uninstall(packageManager)
       }
     })
   }
 
-  install (packageInstaller) {
+  install (packageManager) {
     customCMD.get(
       `${
-        packageInstaller === 'NPM'
+        packageManager === 'NPM'
           ? `${reduxThunkObj.install}`
           : `${reduxThunkObjYarn.install}`
       }`,
@@ -36,10 +36,10 @@ module.exports = class ReduxThunk {
     )
   }
 
-  uninstall (packageInstaller) {
+  uninstall (packageManager) {
     customCMD.get(
       `${
-        packageInstaller === 'NPM'
+        packageManager === 'NPM'
           ? `${reduxThunkObj.uninstall}`
           : `${reduxThunkObjYarn.uninstall}`
       }`,

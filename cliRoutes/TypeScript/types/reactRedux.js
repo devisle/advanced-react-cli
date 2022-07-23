@@ -25,20 +25,20 @@ const prompt = inquirer.createPromptModule()
 */
 
 module.exports = class TypesReactRedux {
-  installOrUninstall (packageInstaller) {
+  installOrUninstall (packageManager) {
     prompt(installOption).then(({ decision }) => {
       if (decision === 'Install') {
-        this.install(packageInstaller)
+        this.install(packageManager)
       } else if (decision === 'Uninstall') {
-        this.uninstall(packageInstaller)
+        this.uninstall(packageManager)
       }
     })
   }
 
-  install (packageInstaller) {
+  install (packageManager) {
     customCMD.get(
       `${
-        packageInstaller === 'NPM'
+        packageManager === 'NPM'
           ? `${typesReactRedux.install}`
           : `${typesReactReduxYarn.install}`
       }`,
@@ -47,10 +47,10 @@ module.exports = class TypesReactRedux {
     )
   }
 
-  uninstall (packageInstaller) {
+  uninstall (packageManager) {
     customCMD.get(
       `${
-        packageInstaller === 'NPM'
+        packageManager === 'NPM'
           ? `${typesReactRedux.uninstall}`
           : `${typesReactReduxYarn.uninstall}`
       }`,

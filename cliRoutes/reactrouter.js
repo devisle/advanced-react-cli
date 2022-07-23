@@ -22,21 +22,20 @@ const prompt = inquirer.createPromptModule()
 module.exports = class ReactRouter {
   installOrUninstall () {
     prompt(YarnOrNpm).then(({ packageManager }) => {
-      const packageInstaller = packageManager
       prompt(installOption).then(({ decision }) => {
         if (decision === 'Install') {
-          this.install(packageInstaller)
+          this.install(packageManager)
         } else if (decision === 'Uninstall') {
-          this.uninstall(packageInstaller)
+          this.uninstall(packageManager)
         }
       })
     })
   }
 
-  install (packageInstaller) {
+  install (packageManager) {
     customCMD.get(
       `${
-        packageInstaller === 'NPM'
+        packageManager === 'NPM'
           ? `${reactRouterObj.install}`
           : `${reactRouterObjYarn.install}`
       }`,
@@ -45,10 +44,10 @@ module.exports = class ReactRouter {
     )
   }
 
-  uninstall (packageInstaller) {
+  uninstall (packageManager) {
     customCMD.get(
       `${
-        packageInstaller === 'NPM'
+        packageManager === 'NPM'
           ? `${reactRouterObj.uninstall}`
           : `${reactRouterObjYarn.uninstall}`
       }`,

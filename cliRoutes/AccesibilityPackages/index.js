@@ -19,8 +19,7 @@ const prompt = inquirer.createPromptModule()
 
 module.exports = class AccesibilityPackages {
   prompt () {
-    prompt(YarnOrNpm).then(({ packageManager }) => {
-      const packageInstaller = packageManager
+    prompt(YarnOrNpm).then(({ packageInstaller }) => {
       prompt(accesibilityPackage).then(({ access }) => {
         switch (access) {
           case 'Reacta11y':
