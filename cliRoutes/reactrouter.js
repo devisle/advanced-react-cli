@@ -22,54 +22,37 @@ const prompt = inquirer.createPromptModule()
 module.exports = class ReactRouter {
   installOrUninstall () {
     prompt(YarnOrNpm).then(({ packageManager }) => {
-      const packageInstaller = packageManager
       prompt(installOption).then(({ decision }) => {
         if (decision === 'Install') {
-          this.install(packageInstaller)
+          this.install(packageManager)
         } else if (decision === 'Uninstall') {
-          this.uninstall(packageInstaller)
+          this.uninstall(packageManager)
         }
       })
     })
   }
 
-  install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${reactRouterObj.install}`,
-          'install',
-          'Packages: react-router & react-router-dom have been installed successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${reactRouterObjYarn.install}`,
-          'install',
-          'Packages: react-router & react-router-dom have been installed successfully!'
-        )
-        break
-    }
+  install (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${reactRouterObj.install}`
+          : `${reactRouterObjYarn.install}`
+      }`,
+      'install',
+      'Packages: react-router & react-router-dom have been installed successfully!'
+    )
   }
 
-  uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${reactRouterObj.uninstall}`,
-          'uninstall',
-          'Packages: react-router & react-router-dom have been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${reactRouterObjYarn.uninstall}`,
-          'uninstall',
-          'Packages: react-router & react-router-dom have been uninstalled successfully!'
-        )
-        break
-    }
+  uninstall (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${reactRouterObj.uninstall}`
+          : `${reactRouterObjYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Packages: react-router & react-router-dom have been uninstalled successfully!'
+    )
   }
 }

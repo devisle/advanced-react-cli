@@ -26,18 +26,17 @@ const prompt = inquirer.createPromptModule()
 module.exports = class propTypes {
   installOrUninstall () {
     prompt(YarnOrNpm).then(({ packageManager }) => {
-      const packageInstaller = packageManager
       prompt(installOption).then(({ decision }) => {
         if (decision === 'Install') {
-          this.install(packageInstaller)
+          this.install(packageManager)
         } else if (decision === 'Uninstall') {
-          this.uninstall(packageInstaller)
+          this.uninstall(packageManager)
         }
       })
     })
   }
 
-  install (packageInstaller) {
+  install (packageManager) {
     fs.mkdir('./propTypes', err => {
       if (err) throw err
     })
@@ -45,42 +44,26 @@ module.exports = class propTypes {
     const fileStream = fs.createWriteStream('./propTypes/propTypes.js')
     fileStream.write(`${propTypeBoilerPlate}`)
 
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${propTypesObj.install}`,
-          'install',
-          'Package: prop-types has been installed successfully! PropTypes Folder has been created!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${propTypesObjYarn.install}`,
-          'install',
-          'Package: prop-types has been installed successfully! PropTypes Folder has been created!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${propTypesObj.install}`
+          : `${propTypesObjYarn.install}`
+      }`,
+      'install',
+      'Package: prop-types has been installed successfully! PropTypes Folder has been created!'
+    )
   }
 
-  uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${propTypesObj.uninstall}`,
-          'uninstall',
-          'Package: prop-types has been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${propTypesObjYarn.uninstall}`,
-          'uninstall',
-          'Package: prop-types has been uninstalled successfully!'
-        )
-        break
-    }
+  uninstall (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${propTypesObj.uninstall}`
+          : `${propTypesObjYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Package: prop-types has been uninstalled successfully!'
+    )
   }
 }

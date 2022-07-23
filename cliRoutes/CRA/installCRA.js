@@ -6,8 +6,8 @@ const { createReactApp } = require('../../cliModel/install-commands')
 
 const { createReactAppYarn } = require('../../cliModel/install-commands-yarn')
 
-module.exports = (folderName, packageInstaller) => {
-  switch (packageInstaller) {
+module.exports = (folderName, packageManager) => {
+  switch (packageManager) {
     case 'NPM':
       customCMD.get(
         ` mkdir ${folderName} && cd ${folderName} && ${createReactApp} .`,

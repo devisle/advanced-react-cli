@@ -21,53 +21,37 @@ const prompt = inquirer.createPromptModule()
 */
 
 module.exports = class NodeSass {
-  installOrUninstall (packageInstaller) {
+  installOrUninstall (packageManager) {
     prompt(installOption).then(({ decision }) => {
       if (decision === 'Install') {
-        this.install(packageInstaller)
+        this.install(packageManager)
       } else if (decision === 'Uninstall') {
-        this.uninstall(packageInstaller)
+        this.uninstall(packageManager)
       }
     })
   }
 
-  install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${nodeSassObj.install}`,
-          'install',
-          'Package: node-sass has been installed successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${nodeSassObjYarn.install}`,
-          'install',
-          'Package: node-sass has been installed successfully!'
-        )
-        break
-    }
+  install (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${nodeSassObj.install}`
+          : `${nodeSassObjYarn.install}`
+      }`,
+      'install',
+      'Package: node-sass has been installed successfully!'
+    )
   }
 
-  uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${nodeSassObj.uninstall}`,
-          'uninstall',
-          'Package: node-sass has been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${nodeSassObjYarn.uninstall}`,
-          'uninstall',
-          'Package: node-sass has been uninstalled successfully!'
-        )
-        break
-    }
+  uninstall (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${nodeSassObj.uninstall}`
+          : `${nodeSassObjYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Package: node-sass has been uninstalled successfully!'
+    )
   }
 }

@@ -25,53 +25,37 @@ const prompt = inquirer.createPromptModule()
 */
 
 module.exports = class TypeScriptInstall {
-  installOrUninstall (packageInstaller) {
+  installOrUninstall (packageManager) {
     prompt(installOption).then(({ decision }) => {
       if (decision === 'Install') {
-        this.install(packageInstaller)
+        this.install(packageManager)
       } else if (decision === 'Uninstall') {
-        this.uninstall(packageInstaller)
+        this.uninstall(packageManager)
       }
     })
   }
 
-  install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${TypeScript.install}`,
-          'install',
-          'Package: typescript has been installed successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${TypeScriptYarn.install}`,
-          'install',
-          'Package: typescript has been installed successfully!'
-        )
-        break
-    }
+  install (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${TypeScript.install}`
+          : `${TypeScriptYarn.install}`
+      }`,
+      'install',
+      'Package: typescript has been installed successfully!'
+    )
   }
 
-  uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${TypeScript.uninstall}`,
-          'uninstall',
-          'Package: typescript has been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${TypeScriptYarn.uninstall}`,
-          'uninstall',
-          'Package: typescript has been uninstalled successfully!'
-        )
-        break
-    }
+  uninstall (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${TypeScript.uninstall}`
+          : `${TypeScriptYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Package: typescript has been uninstalled successfully!'
+    )
   }
 }

@@ -21,53 +21,37 @@ const prompt = inquirer.createPromptModule()
 */
 
 module.exports = class Reacta11y {
-  installOrUninstall (packageInstaller) {
+  installOrUninstall (packageManager) {
     prompt(installOption).then(({ decision }) => {
       if (decision === 'Install') {
-        this.install(packageInstaller)
+        this.install(packageManager)
       } else if (decision === 'Uninstall') {
-        this.uninstall(packageInstaller)
+        this.uninstall(packageManager)
       }
     })
   }
 
-  install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${reacta11yObj.install}`,
-          'Install',
-          'Package: react-a11y has been installed successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${reacta11yObjYarn.install}`,
-          'Install',
-          'Package: react-a11y has been installed successfully!'
-        )
-        break
-    }
+  install (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${reacta11yObj.install}`
+          : `${reacta11yObjYarn.install}`
+      }`,
+      'Install',
+      'Package: react-a11y has been installed successfully!'
+    )
   }
 
-  uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${reacta11yObj.uninstall}`,
-          'Uninstall',
-          'Package: react-a11y has been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${reacta11yObjYarn.uninstall}`,
-          'Uninstall',
-          'Package: react-a11y has been uninstalled successfully!'
-        )
-        break
-    }
+  uninstall (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${reacta11yObj.uninstall}`
+          : `${reacta11yObjYarn.uninstall}`
+      }`,
+      'Uninstall',
+      'Package: react-a11y has been uninstalled successfully!'
+    )
   }
 }

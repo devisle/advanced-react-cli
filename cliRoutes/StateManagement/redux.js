@@ -19,17 +19,17 @@ const ReduxBoilerPlate = require('../../cliModel/starter-code/redux')
 const prompt = inquirer.createPromptModule()
 
 module.exports = class Redux {
-  installOrUninstall (packageInstaller) {
+  installOrUninstall (packageManager) {
     prompt(installOption).then(({ decision }) => {
       if (decision === 'Install') {
-        this.install(packageInstaller)
+        this.install(packageManager)
       } else if (decision === 'Uninstall') {
-        this.uninstall(packageInstaller)
+        this.uninstall(packageManager)
       }
     })
   }
 
-  install (packageInstaller) {
+  install (packageManager) {
     fs.mkdir('./store', err => {
       if (err) throw err
     })
@@ -37,42 +37,26 @@ module.exports = class Redux {
     const writeStream = fs.createWriteStream('./store/store.js')
     writeStream.write(`${ReduxBoilerPlate}`)
 
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${reduxObj.install}`,
-          'install',
-          'Packages: redux & react-redux have been installed successfully! Redux Store has been created successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${reduxObjYarn.install}`,
-          'install',
-          'Packages: redux & react-redux have been installed successfully! Redux Store has been created successfully!'
-        )
-        break
-    }
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${reduxObj.install}`
+          : `${reduxObjYarn.install}`
+      }`,
+      'install',
+      'Packages: redux & react-redux have been installed successfully! Redux Store has been created successfully!'
+    )
   }
 
-  uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${reduxObj.uninstall}`,
-          'uninstall',
-          'Packages: redux & react-redux have been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${reduxObjYarn.uninstall}`,
-          'uninstall',
-          'Packages: redux & react-redux have been uninstalled successfully!'
-        )
-        break
-    }
+  uninstall (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${reduxObj.uninstall}`
+          : `${reduxObjYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Packages: redux & react-redux have been uninstalled successfully!'
+    )
   }
 }

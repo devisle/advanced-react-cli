@@ -14,8 +14,8 @@ const {
 // Import Redux Boilerplate
 const ReduxBoilerPlate = require('../../cliModel/starter-code/redux')
 
-module.exports = (folderName, packageInstaller) => {
-  switch (packageInstaller) {
+module.exports = (folderName, packageManager) => {
+  switch (packageManager) {
     case 'NPM':
       fs.appendFile('store.js', ReduxBoilerPlate, err => {
         if (err) throw err

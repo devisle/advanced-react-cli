@@ -25,53 +25,37 @@ const prompt = inquirer.createPromptModule()
 */
 
 module.exports = class TypesReactRouter {
-  installOrUninstall (packageInstaller) {
+  installOrUninstall (packageManager) {
     prompt(installOption).then(({ decision }) => {
       if (decision === 'Install') {
-        this.install(packageInstaller)
+        this.install(packageManager)
       } else if (decision === 'Uninstall') {
-        this.uninstall(packageInstaller)
+        this.uninstall(packageManager)
       }
     })
   }
 
-  install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesReactRouter.install}`,
-          'install',
-          'Package(s): @types/react-router @types/react-router-dom have been installed successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesReactRouterYarn.install}`,
-          'install',
-          'Package(s): @types/react-router @types/react-router-dom have been installed successfully!'
-        )
-        break
-    }
+  install (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${typesReactRouter.install}`
+          : `${typesReactRouterYarn.install}`
+      }`,
+      'install',
+      'Package(s): @types/react-router @types/react-router-dom have been installed successfully!'
+    )
   }
 
-  uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesReactRouter.uninstall}`,
-          'uninstall',
-          'Package(s): @types/react-router @types/react-router-dom have been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesReactRouterYarn.uninstall}`,
-          'uninstall',
-          'Package(s): @types/react-router @types/react-router-dom have been uninstalled successfully!'
-        )
-        break
-    }
+  uninstall (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${typesReactRouter.uninstall}`
+          : `${typesReactRouterYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Package(s): @types/react-router @types/react-router-dom have been uninstalled successfully!'
+    )
   }
 }

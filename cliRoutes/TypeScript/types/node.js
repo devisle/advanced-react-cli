@@ -25,53 +25,37 @@ const prompt = inquirer.createPromptModule()
 */
 
 module.exports = class TypesNodes {
-  installOrUninstall (packageInstaller) {
+  installOrUninstall (packageManager) {
     prompt(installOption).then(({ decision }) => {
       if (decision === 'Install') {
-        this.install(packageInstaller)
+        this.install(packageManager)
       } else if (decision === 'Uninstall') {
-        this.uninstall(packageInstaller)
+        this.uninstall(packageManager)
       }
     })
   }
 
-  install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesNode.install}`,
-          'install',
-          `Package(s): @types/node has been installed successfully!`
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesNodeYarn.install}`,
-          'install',
-          `Package(s): @types/node has been installed successfully!`
-        )
-        break
-    }
+  install (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${typesNode.install}`
+          : `${typesNodeYarn.install}`
+      }`,
+      'install',
+      `Package(s): @types/node has been installed successfully!`
+    )
   }
 
-  uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesNode.uninstall}`,
-          'uninstall',
-          `Package(s): @types/node has been uninstalled successfully!`
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesNodeYarn.uninstall}`,
-          'uninstall',
-          `Package(s): @types/node has been uninstalled successfully!`
-        )
-        break
-    }
+  uninstall (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${typesNode.uninstall}`
+          : `${typesNodeYarn.uninstall}`
+      }`,
+      'uninstall',
+      `Package(s): @types/node has been uninstalled successfully!`
+    )
   }
 }

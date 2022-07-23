@@ -25,53 +25,37 @@ const prompt = inquirer.createPromptModule()
 */
 
 module.exports = class TypesReactRedux {
-  installOrUninstall (packageInstaller) {
+  installOrUninstall (packageManager) {
     prompt(installOption).then(({ decision }) => {
       if (decision === 'Install') {
-        this.install(packageInstaller)
+        this.install(packageManager)
       } else if (decision === 'Uninstall') {
-        this.uninstall(packageInstaller)
+        this.uninstall(packageManager)
       }
     })
   }
 
-  install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesReactRedux.install}`,
-          'install',
-          'Package(s): @types/react-redux have been installed successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesReactReduxYarn.install}`,
-          'install',
-          'Package(s): @types/react-redux have been installed successfully!'
-        )
-        break
-    }
+  install (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${typesReactRedux.install}`
+          : `${typesReactReduxYarn.install}`
+      }`,
+      'install',
+      'Package(s): @types/react-redux have been installed successfully!'
+    )
   }
 
-  uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesReactRedux.uninstall}`,
-          'uninstall',
-          'Package(s): @types/react-redux have been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesReactReduxYarn.uninstall}`,
-          'uninstall',
-          'Package(s): @types/react-redux have been uninstalled successfully!'
-        )
-        break
-    }
+  uninstall (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${typesReactRedux.uninstall}`
+          : `${typesReactReduxYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Package(s): @types/react-redux have been uninstalled successfully!'
+    )
   }
 }

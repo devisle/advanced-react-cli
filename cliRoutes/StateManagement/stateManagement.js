@@ -23,20 +23,19 @@ const prompt = inquirer.createPromptModule()
 module.exports = class StateManagement {
   prompt () {
     prompt(YarnOrNpm).then(({ packageManager }) => {
-      const packageInstaller = packageManager
       prompt(stateOption).then(({ state }) => {
         if (state === 'Redux') {
-          new Redux().installOrUninstall(packageInstaller)
+          new Redux().installOrUninstall(packageManager)
         } else if (state === 'Unstated') {
           prompt(unstatedOption).then(({ state }) => {
             if (state === 'Unstated') {
-              new Unstated().installOrUninstall(packageInstaller)
+              new Unstated().installOrUninstall(packageManager)
             } else if (state === 'Unstated-next') {
-              new UnstatedNext().installOrUninstall(packageInstaller)
+              new UnstatedNext().installOrUninstall(packageManager)
             }
           })
         } else if (state === 'Redux-Thunk') {
-          new ReduxThunk().installOrUninstall(packageInstaller)
+          new ReduxThunk().installOrUninstall(packageManager)
         }
       })
     })

@@ -27,35 +27,34 @@ const prompt = inquirer.createPromptModule()
 module.exports = class TypeScript {
   prompt () {
     prompt(YarnOrNpm).then(({ packageManager }) => {
-      const packageInstaller = packageManager
       prompt(TypeScriptPackages).then(({ typescriptPackage }) => {
         switch (typescriptPackage) {
           case 'CustomInstall':
-            new CustomInstall().prompt(packageInstaller)
+            new CustomInstall().prompt(packageManager)
             break
 
           case 'TypeScript':
-            new TypeScriptInstall().installOrUninstall(packageInstaller)
+            new TypeScriptInstall().installOrUninstall(packageManager)
             break
 
           case '@types/node':
-            new TypesNode().installOrUninstall(packageInstaller)
+            new TypesNode().installOrUninstall(packageManager)
             break
 
           case '@types/react @types/react-dom':
-            new TypesReact().installOrUninstall(packageInstaller)
+            new TypesReact().installOrUninstall(packageManager)
             break
 
           case '@types/react-router @types/react-router-dom':
-            new TypesReactRouter().installOrUninstall(packageInstaller)
+            new TypesReactRouter().installOrUninstall(packageManager)
             break
 
           case '@types/react-redux':
-            new TypesReactRedux().installOrUninstall(packageInstaller)
+            new TypesReactRedux().installOrUninstall(packageManager)
             break
 
           case '@types/jest':
-            new TypesJest().installOrUninstall(packageInstaller)
+            new TypesJest().installOrUninstall(packageManager)
             break
         }
       })

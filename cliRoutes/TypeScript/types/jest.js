@@ -25,54 +25,37 @@ const prompt = inquirer.createPromptModule()
 */
 
 module.exports = class TypesJest {
-  installOrUninstall (packageInstaller) {
+  installOrUninstall (packageManager) {
     prompt(installOption).then(({ decision }) => {
       if (decision === 'Install') {
-        this.install(packageInstaller)
+        this.install(packageManager)
       } else if (decision === 'Uninstall') {
-        this.uninstall(packageInstaller)
+        this.uninstall(packageManager)
       }
     })
   }
 
-  install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesJest.install}`,
-
-          'install',
-          `Package: @types/jest has been installed successfully!`
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesJestYarn.install}`,
-          'install',
-          `Package: @types/jest has been installed successfully!`
-        )
-        break
-    }
+  install (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${typesJest.install}`
+          : `${typesJestYarn.install}`
+      }`,
+      'install',
+      `Package: @types/jest has been installed successfully!`
+    )
   }
 
-  uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesJest.uninstall}`,
-          'uninstall',
-          `Package: @types/jest has been uninstalled successfully!`
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesJestYarn.uninstall}`,
-          'uninstall',
-          `Package: @types/jest has been uninstalled successfully!`
-        )
-        break
-    }
+  uninstall (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${typesJest.uninstall}`
+          : `${typesJestYarn.uninstall}`
+      }`,
+      'uninstall',
+      `Package: @types/jest has been uninstalled successfully!`
+    )
   }
 }

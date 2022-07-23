@@ -20,15 +20,14 @@ const prompt = inquirer.createPromptModule()
 module.exports = class StylingPackages {
   prompt () {
     prompt(YarnOrNpm).then(({ packageManager }) => {
-      const packageInstaller = packageManager
       prompt(stylingPackage).then(({ stylingTool }) => {
         switch (stylingTool) {
           case 'StyledComponents':
-            new StyledComponents().installOrUninstall(packageInstaller)
+            new StyledComponents().installOrUninstall(packageManager)
             break
 
           case 'NodeSass':
-            new NodeSass().installOrUninstall(packageInstaller)
+            new NodeSass().installOrUninstall(packageManager)
             break
         }
       })

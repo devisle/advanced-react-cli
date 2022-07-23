@@ -21,53 +21,37 @@ const prompt = inquirer.createPromptModule()
 */
 
 module.exports = class Reactaxe {
-  installOrUninstall (packageInstaller) {
+  installOrUninstall (packageManager) {
     prompt(installOption).then(({ decision }) => {
       if (decision === 'Install') {
-        this.install(packageInstaller)
+        this.install(packageManager)
       } else if (decision === 'Uninstall') {
-        this.uninstall(packageInstaller)
+        this.uninstall(packageManager)
       }
     })
   }
 
-  install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${reactaxeObj.install}`,
-          'Install',
-          'Package: react-axe has been installed successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${reactaxeObjYarn.install}`,
-          'Install',
-          'Package: react-axe has been installed successfully!'
-        )
-        break
-    }
+  install (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${reactaxeObj.install}`
+          : `${reactaxeObjYarn.install}`
+      }`,
+      'Install',
+      'Package: react-axe has been installed successfully!'
+    )
   }
 
-  uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${reactaxeObj.uninstall}`,
-          'uninstall',
-          'Package: react-axe has been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${reactaxeObjYarn.uninstall}`,
-          'uninstall',
-          'Package: react-axe has been uninstalled successfully!'
-        )
-        break
-    }
+  uninstall (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${reactaxeObj.uninstall}`
+          : `${reactaxeObjYarn.uninstall}`
+      }`,
+      'Uninstall',
+      'Package: react-axe has been uninstalled successfully!'
+    )
   }
 }

@@ -25,53 +25,37 @@ const prompt = inquirer.createPromptModule()
 */
 
 module.exports = class TypesReact {
-  installOrUninstall (packageInstaller) {
+  installOrUninstall (packageManager) {
     prompt(installOption).then(({ decision }) => {
       if (decision === 'Install') {
-        this.install(packageInstaller)
+        this.install(packageManager)
       } else if (decision === 'Uninstall') {
-        this.uninstall(packageInstaller)
+        this.uninstall(packageManager)
       }
     })
   }
 
-  install (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesReact.install}`,
-          'install',
-          'Package(s): @types/react @types/react-dom have been installed successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesReactYarn.install}`,
-          'install',
-          'Package(s): @types/react @types/react-dom have been installed successfully!'
-        )
-        break
-    }
+  install (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${typesReact.install}`
+          : `${typesReactYarn.install}`
+      }`,
+      'install',
+      'Package(s): @types/react @types/react-dom have been installed successfully!'
+    )
   }
 
-  uninstall (packageInstaller) {
-    switch (packageInstaller) {
-      case 'NPM':
-        customCMD.get(
-          `${typesReact.uninstall}`,
-          'uninstall',
-          'Package(s): @types/react @types/react-dom have been uninstalled successfully!'
-        )
-        break
-
-      case 'Yarn':
-        customCMD.get(
-          `${typesReactYarn.uninstall}`,
-          'uninstall',
-          'Package(s): @types/react @types/react-dom have been uninstalled successfully!'
-        )
-        break
-    }
+  uninstall (packageManager) {
+    customCMD.get(
+      `${
+        packageManager === 'NPM'
+          ? `${typesReact.uninstall}`
+          : `${typesReactYarn.uninstall}`
+      }`,
+      'uninstall',
+      'Package(s): @types/react @types/react-dom have been uninstalled successfully!'
+    )
   }
 }
